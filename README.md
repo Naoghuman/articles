@@ -26,7 +26,11 @@ Articles<a name="Articles" />
 
 [SokubanFX]  
 * The article [01 Setup the project] describes the steps how to setup a new project in 
-  [GitHub] with my project template [Project-Template-afterburnerfx-Naoghuman].
+  [GitHub] with my project template:  
+  [Project-Template-afterburnerfx-Naoghuman].
+* The article [02 Create first protoptye] describes the steps how to create the first 
+  prototype from `SokubanFX`:  
+  [SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]
 
 
 
@@ -62,6 +66,7 @@ You can reach me under <peter.rogge@yahoo.de>.
 
 [//]: # (Links)
 [01 Setup the project]:SokubanFX/01_Setup-the-project.md
+[02 Create first protoptye]:SokubanFX/02_Create-first-protoptye.md
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
 [GitHub]:https://github.com/
 [Issue]:https://github.com/Naoghuman/lib-database-objectdb/issues
@@ -70,3 +75,5 @@ You can reach me under <peter.rogge@yahoo.de>.
 [Project-Template-afterburnerfx-Naoghuman]:https://github.com/Naoghuman/Project-Templates/tree/master/Project-Template-afterburnerfx-Naoghuman
 [Pull Request]:https://help.github.com/articles/using-pull-requests
 [SokubanFX]:https://github.com/Naoghuman/SokubanFX
+[SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]:https://github.com/Naoghuman/SokubanFX/releases/tag/v0.1.0
+
