@@ -35,7 +35,6 @@ with the head-quarters in Wolfsburg, Germany.
 Articles<a name="Articles" />
 ---
 
-[SokubanFX]  
 * _(started)_The article [01 Setup the project] describes the steps how to setup a new project in 
   [GitHub] with my project template:  
   [Project-Template-afterburnerfx-Naoghuman].
@@ -69,7 +68,7 @@ Contact<a name="Contact" />
 [//]: # (Links)
 [01 Setup the project]:01_Setup-the-project.md
 [02 Create first prototype]:02_Create-first-prototype.md
-[03 Stabilization from the prototype]:03_Stabilization-from-the-protoptye.md
+[03 Stabilization from the prototype]:03_Stabilization-from-the-prototype.md
 [04 Extend the prototype]:04_Extend-the-prototype.md
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
 [GitHub]:https://github.com/
