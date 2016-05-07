@@ -25,10 +25,10 @@ Articles<a name="Articles" />
 ---
 
 [SokubanFX]  
-* The article [01 Setup the project] describes the steps how to setup a new project in 
+* _(started)_The article [01 Setup the project] describes the steps how to setup a new project in 
   [GitHub] with my project template:  
   [Project-Template-afterburnerfx-Naoghuman].
-* The article [02 Create first protoptye] describes the steps how to create the first 
+* _(not started)_ The article [02 Create first protoptye] describes the steps how to create the first 
   prototype from `SokubanFX`:  
   [SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]
 
