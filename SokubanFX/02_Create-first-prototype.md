@@ -1,4 +1,4 @@
-02 Create first protoptye
+02 Create first prototype
 ===
 
 
@@ -35,19 +35,21 @@ with the head-quarters in Wolfsburg, Germany.
 Articles<a name="Articles" />
 ---
 
-[01 Setup the project]
-* Describes the steps how to setup a new project in [GitHub] with my project template:  
+* _(started)_The article [01 Setup the project] describes the steps how to setup a new project in 
+  [GitHub] with my project template:  
   [Project-Template-afterburnerfx-Naoghuman].
-
-[02 Create first protoptye]
-* Describes the steps how to create the first prototype from `SokubanFX`:  
+* _(not started)_ The article [02 Create first prototype] describes the steps how to create the first 
+  prototype from `SokubanFX`:  
   [SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]
+* _(not started)_ The article [03 Stabilization from the prototype] describes the steps to stabilize 
+  the prototype.
+* _(not started)_ The article [04 Extend the prototype] describes the steps to extend the prototype.
 
 
 License<a name="License" />
 ---
 
-* The article `02 Create first protoptye` is licensed under [General Public License 3.0].
+* The article `02 Create first prototype` is licensed under [General Public License 3.0].
 
 
 
@@ -64,7 +66,9 @@ Contact<a name="Contact" />
 
 [//]: # (Links)
 [01 Setup the project]:01_Setup-the-project.md
-[02 Create first protoptye]:02_Create-first-protoptye.md
+[02 Create first prototype]:02_Create-first-prototype.md
+[03 Stabilization from the prototype]:03_Stabilization-from-the-prototype.md
+[04 Extend the prototype]:04_Extend-the-prototype.md
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
 [GitHub]:https://github.com/
 [H&amp;D International Group]:https://www.hud.de/en/
