@@ -68,10 +68,10 @@ You can reach me under <peter.rogge@yahoo.de>.
 
 
 [//]: # (Links)
-[01 Setup the project]:01_Setup-the-project.md
-[02 Create first prototype]:02_Create-first-prototype.md
-[03 Stabilization from the prototype]:03_Stabilization-from-the-prototype.md
-[04 Extend the prototype]:04_Extend-the-prototype.md
+[01 Setup the project]:/SokubanFX/01_Setup-the-project.md
+[02 Create first prototype]:/SokubanFX/02_Create-first-prototype.md
+[03 Stabilization from the prototype]:/SokubanFX/03_Stabilization-from-the-prototype.md
+[04 Extend the prototype]:/SokubanFX/04_Extend-the-prototype.md
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
 [GitHub]:https://github.com/
 [Issue]:https://github.com/Naoghuman/lib-database-objectdb/issues
