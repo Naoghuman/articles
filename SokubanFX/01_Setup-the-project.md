@@ -3,13 +3,16 @@
 
 
 
+<br />
 Intention
 ---
 
 In `2008` I wrote a little game `Sokuban Clone` with [Java] and [Swing2D].
+
 ![sokuban-clone.png][sokuban-clone]
 * [GitHub] project: https://github.com/Naoghuman/sokuban-clone  
 * Download: https://github.com/Naoghuman/sokuban-clone/releases
+
 
 <br />
 In `April 2016` I decided to rewrite the game in [JavaFX].
@@ -22,6 +25,7 @@ what are the advantages from using this template:
 
 
 
+<br />
 Content
 ===
 
@@ -40,6 +44,7 @@ Content
 
 
 
+<br />
 About the autor<a name="Autor" />
 ---
 
@@ -49,6 +54,7 @@ in Wolfsburg, Germany.
 Since `2008` I work by [H+D International Group] which is an IT- and engineering 
 service provider represented nationally and internationally in over 20 locations 
 with the head-quarters in Wolfsburg, Germany.
+
 
 <br />
 In my free time I investigate between `2009` an `2012` some time in [NetBeans RCP] &#40;Rich 
@@ -71,6 +77,7 @@ So I decided to do this:
   where he introduce my plugin &#40;at 48:00&#41;.
 
 
+<br />
 #### Additional informations<a name="AdditionalInformations" />
 
 * The article `01 Setup the project` is licensed under [General Public License 3.0].
@@ -78,17 +85,20 @@ So I decided to do this:
 
 
 
+<br />
 Articles in this series<a name="Articles" />
 ---
 
 This article series described how I create the game [SokubanFX] with [JavaFX] and 
 [NetBeans IDE].
 
+
 <br />
 ##### 01 Setup the project<a name="SetupProject" />
 The article [01 Setup the project] describes the steps how to setup a new project 
 in [GitHub] with my project template and what are the advantages from using the 
 [Project-Template-afterburnerfx-Naoghuman].
+
 
 <br />
 ##### 02 Create first prototype<a name="CreatePrototype" />
@@ -97,10 +107,12 @@ to create the first prototype from `SokubanFX`:
 * `Video` [SokubanFX v0.1.0-PROTOTYPE]
 * `Download` [SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]
 
+
 <br />
 ##### 03 Stabilization from the prototype<a name="StabilizationPrototype" />
 _(not started)_ The article [03 Stabilization from the prototype] describes the 
 steps to stabilize the prototype.
+
 
 <br />
 ##### 04 Extend the prototype<a name="ExtendPrototype" />
@@ -109,6 +121,7 @@ extend the prototype.
 
 
 
+<br />
 Setup the project<a name="SetupTheProject" />
 ---
 
@@ -120,12 +133,12 @@ A demo from the minimal project template can be found under
 https://github.com/Naoghuman/Project-Templates/releases/tag/v0.1.0.
 * Unzip the `zip` file to a folder from your choose and doubleclick on the `jar` file.
 
+
 <br />
 ##### Download the project template<a name="DownloadTemplate" />
 
 There are two possiblilities to `included` the project template into your [NetBeans IDE]:
 
-<br />
 a) Download the `source code` from https://github.com/Naoghuman/Project-Templates/releases/tag/v0.1.0.
 * Unzip the source code to your workspace and open the project within the [NetBeans IDE].
 
@@ -133,6 +146,7 @@ b) Clone the project with https://github.com/Naoghuman/Project-Templates.git
 * Navigate into the new created project `Project-Templates`.
 * Copy and paste there the project `Project-Template-afterburnerfx-Naoghuman` 
   to the new destination.
+
 
 <br />
 ##### Tweak the project template<a name="TweakTemplate" />
@@ -154,6 +168,7 @@ which are necessary to tweak the template.
 * Tweak the file `nbactions.xml` (start class).
 * Move the folder 'me' to your `local` maven repository.
 
+
 <br />
 #### What is the advance from the template?<a name="AdvanceTemplate" />
 
@@ -169,6 +184,7 @@ with following advances:
 * The `log framework` [log4j2] is integrated into the project with good support from the library [lib-logger].
 * Integration from the file `application.properties` with helpful support from the library [lib-properties].
 * Automatically generation from the file `Preferences.properties` with helpful support from the library [lib-preferences]. 
+
 
 <br />
 #### Additional informations<a name="AdditionalInformations2" />
