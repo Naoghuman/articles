@@ -31,16 +31,16 @@ Content
 
 * [About the autor](#Autor)
     * [Additional informations](#AdditionalInformations)
-* [Articles in this series](#Articles)
-    * [01 Setup the project](#SetupProject)
-    * _(not started)_ [02 Create first prototype](#CreatePrototype)
-    * _(not started)_ [03 Stabilization from the prototype](#StabilizationPrototype)
-    * _(not started)_ [04 Extend the prototype](#ExtendPrototype)
 * [Setup the project](#SetupTheProject)
     * [Download the project template](#DownloadTemplate)
     * [Tweak the project template](#TweakTemplate)
     * [What is the advance from the template?](#AdvanceTemplate)
     * [Additional informations](#AdditionalInformations2)
+* [Articles in this series](#Articles)
+    * [01 Setup the project](#SetupProject)
+    * _(not started)_ [02 Create first prototype](#CreatePrototype)
+    * _(not started)_ [03 Stabilization from the prototype](#StabilizationPrototype)
+    * _(not started)_ [04 Extend the prototype](#ExtendPrototype)
 
 
 
@@ -82,42 +82,6 @@ So I decided to do this:
 
 * The article `01 Setup the project` is licensed under [General Public License 3.0].
 * You can reach me under <peter.rogge@yahoo.de>.
-
-
-
-<br />
-Articles in this series<a name="Articles" />
----
-
-This article series described how I create the game [SokubanFX] with [JavaFX] and 
-[NetBeans IDE].
-
-
-<br />
-##### 01 Setup the project<a name="SetupProject" />
-The article [01 Setup the project] describes the steps how to setup a new project 
-in [GitHub] with my project template and what are the advantages from using the 
-[Project-Template-afterburnerfx-Naoghuman].
-
-
-<br />
-##### 02 Create first prototype<a name="CreatePrototype" />
-_(not started)_ The article [02 Create first prototype] describes the steps how 
-to create the first prototype from `SokubanFX`:  
-* `Video` [SokubanFX v0.1.0-PROTOTYPE]
-* `Download` [SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]
-
-
-<br />
-##### 03 Stabilization from the prototype<a name="StabilizationPrototype" />
-_(not started)_ The article [03 Stabilization from the prototype] describes the 
-steps to stabilize the prototype.
-
-
-<br />
-##### 04 Extend the prototype<a name="ExtendPrototype" />
-_(not started)_ The article [04 Extend the prototype] describes the steps to 
-extend the prototype.
 
 
 
@@ -192,6 +156,46 @@ For the future I plan to upload my libraries and the project templates to [Maven
 
 Is that done, then it will be much easier to include my libraries into a project 
 or create a project template via maven.
+
+
+
+<br />
+Articles in this series<a name="Articles" />
+---
+
+This article series described how I create the game [SokubanFX] with [JavaFX] and 
+[NetBeans IDE].
+
+
+<br />
+##### 01 Setup the project<a name="SetupProject" />
+
+The article [01 Setup the project] describes the steps how to setup a new project 
+in [GitHub] with my project template and what are the advantages from using the 
+[Project-Template-afterburnerfx-Naoghuman].
+
+
+<br />
+##### 02 Create first prototype<a name="CreatePrototype" />
+
+_(not started)_ The article [02 Create first prototype] describes the steps how 
+to create the first prototype from `SokubanFX`:  
+* `Video` [SokubanFX v0.1.0-PROTOTYPE]
+* `Download` [SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]
+
+
+<br />
+##### 03 Stabilization from the prototype<a name="StabilizationPrototype" />
+
+_(not started)_ The article [03 Stabilization from the prototype] describes the 
+steps to stabilize the prototype.
+
+
+<br />
+##### 04 Extend the prototype<a name="ExtendPrototype" />
+
+_(not started)_ The article [04 Extend the prototype] describes the steps to 
+extend the prototype.
 
 
 
