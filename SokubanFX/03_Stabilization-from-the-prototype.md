@@ -35,7 +35,6 @@ with the head-quarters in Wolfsburg, Germany.
 Articles<a name="Articles" />
 ---
 
-[SokubanFX]  
 * _(started)_The article [01 Setup the project] describes the steps how to setup a new project in 
   [GitHub] with my project template:  
   [Project-Template-afterburnerfx-Naoghuman].
@@ -51,7 +50,7 @@ Articles<a name="Articles" />
 License<a name="License" />
 ---
 
-* The article `03 Stabilization from the protoptye` is licensed under [General Public License 3.0].
+* The article `03 Stabilization from the prototype` is licensed under [General Public License 3.0].
 
 
 
