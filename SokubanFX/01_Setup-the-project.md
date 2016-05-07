@@ -11,6 +11,7 @@ In `2008` I wrote a little game `Sokuban Clone` with [Java] and [Swing2D].
 * [GitHub] project: https://github.com/Naoghuman/sokuban-clone  
 * Download: https://github.com/Naoghuman/sokuban-clone/releases
 
+<br />
 In `April 2016` I decided to rewrite the game in [JavaFX].
 
 In this first article I will write down the steps how I setup the new project with 
@@ -41,7 +42,7 @@ Since `2008` I work by [H+D International Group] which is an IT- and engineering
 service provider represented nationally and internationally in over 20 locations 
 with the head-quarters in Wolfsburg, Germany.
 
-
+<br />
 In my free time I investigate between `2009` an `2012` some time in [NetBeans RCP] &#40;Rich 
 Client Platform&#41; development.  
 See  
@@ -50,6 +51,7 @@ See
 * The `book` [NetBeans Platform 6.9 Developer's Guide] &#40;08.2010&#41; which I helped to 
   translate from Germany to English.
 
+<br />
 Since `2011` I change my focus to JavaFX -> [JavaFX 2.0], [JavaFX 2.1], [JavaFX 2.2] and 
 [JavaFX 8] although in `2015` I saw a video from [Adam Bien] where he mention he would love 
 to write a [NetBeans RCP] plugin for his library [afterburner.fx] when he had more time.  
