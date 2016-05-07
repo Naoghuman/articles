@@ -116,12 +116,11 @@ In this section I will explain how to download the project template
 [Project-Template-afterburnerfx-Naoghuman] and then after installation into the 
 [NetBeans IDE] how to tweak it for the new requirements for the game `SokubanFX`.
 
-<br />
 A demo from the minimal project template can be found under 
 https://github.com/Naoghuman/Project-Templates/releases/tag/v0.1.0.
 * Unzip the `zip` file to a folder from your choose and doubleclick on the `jar` file.
 
-
+<br />
 ##### Download the project template<a name="DownloadTemplate" />
 
 There are two possiblilities to `included` the project template into your [NetBeans IDE]:
@@ -135,7 +134,7 @@ b) Clone the project with https://github.com/Naoghuman/Project-Templates.git
 * Copy and paste there the project `Project-Template-afterburnerfx-Naoghuman` 
   to the new destination.
 
-
+<br />
 ##### Tweak the project template<a name="TweakTemplate" />
 
 In the project is a file `Tweak-Project-Template.txt` where the steps are listed 
@@ -155,7 +154,7 @@ which are necessary to tweak the template.
 * Tweak the file `nbactions.xml` (start class).
 * Move the folder 'me' to your `local` maven repository.
 
-
+<br />
 #### What is the advance from the template?<a name="AdvanceTemplate" />
 
 After the preperation from the project template we will have a minimal project 
@@ -171,7 +170,7 @@ with following advances:
 * Integration from the file `application.properties` with helpful support from the library [lib-properties].
 * Automatically generation from the file `Preferences.properties` with helpful support from the library [lib-preferences]. 
 
-
+<br />
 #### Additional informations<a name="AdditionalInformations2" />
 For the future I plan to upload my libraries and the project templates to [Maven Central].
 
