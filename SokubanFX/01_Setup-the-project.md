@@ -12,8 +12,10 @@ In `2008` I wrote a little game `Sokuban Clone` with [Java] and [Swing2D].
 * Download: https://github.com/Naoghuman/sokuban-clone/releases
 
 In `April 2016` I decided to rewrite the game in [JavaFX].
+
 In this first article I will write down the steps how I setup the new project with 
-another [GitHub] project from me: `Project-Template-afterburnerfx-Naoghuman`.
+another [GitHub] project from me `Project-Template-afterburnerfx-Naoghuman` and 
+why I setup the project with my template (what are the advantages):
 * [GitHub] project: https://github.com/Naoghuman/Project-Templates
 * Download: https://github.com/Naoghuman/Project-Templates/releases
 
