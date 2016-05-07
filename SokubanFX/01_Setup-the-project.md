@@ -42,23 +42,23 @@ service provider represented nationally and internationally in over 20 locations
 with the head-quarters in Wolfsburg, Germany.
 
 
-In my free time I investigate between `2009` an `2012` some time in [NetBeans RCP] (Rich 
-Client Platform) development.  
+In my free time I investigate between `2009` an `2012` some time in [NetBeans RCP] &#40;Rich 
+Client Platform&#41; development.  
 See  
-* The `interview` [Help for Multilingual NetBeans Platform Applications] (09.2009) with 
+* The `interview` [Help for Multilingual NetBeans Platform Applications] &#40;09.2009&#41; with 
   [Geertjan Wielenga] and me.
-* The `book` [NetBeans Platform 6.9 Developer's Guide] (08.2010) which I helped to 
+* The `book` [NetBeans Platform 6.9 Developer's Guide] &#40;08.2010&#41; which I helped to 
   translate from Germany to English.
 
 Since `2011` I change my focus to JavaFX -> [JavaFX 2.0], [JavaFX 2.1], [JavaFX 2.2] and 
 [JavaFX 8] although in `2015` I saw a video from [Adam Bien] where he mention he would love 
 to write a [NetBeans RCP] plugin for his library [afterburner.fx] when he had more time.  
 So I decided to do this:
-* See the [GitHub] project [NetBeansIDE-AfterburnerFX-Plugin] (since 09.2015) which is 
+* See the [GitHub] project [NetBeansIDE-AfterburnerFX-Plugin] &#40;since 09.2015&#41; which is 
   really helpful to speed up the development in combination with the library [afterburner.fx].
-* The `interview` [Afterburner.fx NetBeans Plugin Release] (11.2015) with [Adam Bien] and me.
+* The `interview` [Afterburner.fx NetBeans Plugin Release] &#40;11.2015&#41; with [Adam Bien] and me.
 * The `video` [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive] from [Adam Bien] 
-  where he introduce my plugin (at 48:00).
+  where he introduce my plugin &#40;at 48:00&#41;.
 
 
 
