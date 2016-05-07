@@ -1,4 +1,4 @@
-03 Stabilization from the protoptye
+03 Stabilization from the prototype
 ===
 
 
