@@ -16,7 +16,7 @@ In `April 2016` I decided to rewrite the game in [JavaFX].
 
 In this first article I will write down the steps how I setup the new project with 
 another [GitHub] project from me `Project-Template-afterburnerfx-Naoghuman` and 
-what are the advantages to use this template:
+what are the advantages from using this template:
 * [GitHub] project: https://github.com/Naoghuman/Project-Templates
 * Download: https://github.com/Naoghuman/Project-Templates/releases
 
@@ -27,6 +27,10 @@ Content
 
 * [About the autor](#Autor)
 * [Articles in this series](#Articles)
+    * [Setup the project](#SetupProject)
+    * _(not started)_ [Create first prototype](#CreatePrototype)
+    * _(not started)_ [Stabilization from the prototype](#StabilizationPrototype)
+    * _(not started)_ [Extend the prototype](#ExtendPrototype)
 * [License](#License)
 * [Contact](#Contact)
 
@@ -67,15 +71,31 @@ So I decided to do this:
 Articles in this series<a name="Articles" />
 ---
 
-* The article [01 Setup the project] describes the steps how to setup a new project in [GitHub] 
-  with my project template and what are the advantages to use the [Project-Template-afterburnerfx-Naoghuman].
-* _(not started)_ The article [02 Create first prototype] describes the steps how to create the first 
-  prototype from `SokubanFX`:  
-    - `Video` [SokubanFX v0.1.0-PROTOTYPE]
-    - `Download` [SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]
-* _(not started)_ The article [03 Stabilization from the prototype] describes the steps to stabilize 
-  the prototype.
-* _(not started)_ The article [04 Extend the prototype] describes the steps to extend the prototype.
+This article series described how I create the game [SokubanFX] with [JavaFX] and 
+[NetBeans IDE].
+
+
+##### Setup the project<a name="SetupProject" />
+The article [01 Setup the project] describes the steps how to setup a new project 
+in [GitHub] with my project template and what are the advantages from using the 
+[Project-Template-afterburnerfx-Naoghuman].
+
+
+##### Create first prototype<a name="CreatePrototype" />
+_(not started)_ The article [02 Create first prototype] describes the steps how 
+to create the first prototype from `SokubanFX`:  
+* `Video` [SokubanFX v0.1.0-PROTOTYPE]
+* `Download` [SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]
+
+
+##### Stabilization from the prototype<a name="StabilizationPrototype" />
+_(not started)_ The article [03 Stabilization from the prototype] describes the 
+steps to stabilize the prototype.
+
+
+##### Extend the prototype<a name="ExtendPrototype" />
+_(not started)_ The article [04 Extend the prototype] describes the steps to 
+extend the prototype.
 
 
 
@@ -118,6 +138,7 @@ Contact<a name="Contact" />
 [JavaFX 2.2]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_2.2
 [JavaFX 8]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_8
 [JavaFX]:http://docs.oracle.com/javase/8/javase-clienttechnologies.htm
+[NetBeans IDE]:https://netbeans.org/
 [NetBeans Platform 6.9 Developer's Guide]:https://www.packtpub.com/application-development/netbeans-platform-69-developers-guide
 [NetBeans RCP]:https://netbeans.org/kb/trails/platform.html
 [NetBeansIDE-AfterburnerFX-Plugin]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin

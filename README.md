@@ -14,6 +14,7 @@ Content
 ---
 
 * [Articles](#Articles)
+    * [How to create the game SokubanFX](#ArticlesSokubanFX)
 * [Contribution](#Contribution)
 * [License](#License)
 * [Autor](#Autor)
@@ -24,13 +25,15 @@ Content
 Articles<a name="Articles" />
 ---
 
-[SokubanFX]  
-* _(started)_ The article [01 Setup the project] describes the steps how to setup a new project in 
-  [GitHub] with my project template:  
-  [Project-Template-afterburnerfx-Naoghuman].
+##### How to create the game SokubanFX<a name="ArticlesSokubanFX" />
+
+This article series described how I create the game [SokubanFX] with [JavaFX] and 
+[NetBeans IDE].
+
+* The article [01 Setup the project] describes the steps how to setup a new project in [GitHub] 
+  with my project template and what are the advantages from using the [Project-Template-afterburnerfx-Naoghuman].
 * _(not started)_ The article [02 Create first prototype] describes the steps how to create the first 
-  prototype from `SokubanFX`:  
-  [SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]
+  prototype from `SokubanFX`.
 * _(not started)_ The article [03 Stabilization from the prototype] describes the steps to stabilize 
   the prototype.
 * _(not started)_ The article [04 Extend the prototype] describes the steps to extend the prototype.
@@ -77,8 +80,7 @@ You can reach me under <peter.rogge@yahoo.de>.
 [Issue]:https://github.com/Naoghuman/lib-database-objectdb/issues
 [Java]:https://en.wikipedia.org/wiki/Java_%28programming_language%29
 [JavaFX]:http://docs.oracle.com/javase/8/javase-clienttechnologies.htm
+[NetBeans IDE]:https://netbeans.org/
 [Project-Template-afterburnerfx-Naoghuman]:https://github.com/Naoghuman/Project-Templates/tree/master/Project-Template-afterburnerfx-Naoghuman
 [Pull Request]:https://help.github.com/articles/using-pull-requests
 [SokubanFX]:https://github.com/Naoghuman/SokubanFX
-[SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]:https://github.com/Naoghuman/SokubanFX/releases/tag/v0.1.0
-
