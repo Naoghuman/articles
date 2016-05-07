@@ -16,7 +16,7 @@ In `April 2016` I decided to rewrite the game in [JavaFX].
 
 In this first article I will write down the steps how I setup the new project with 
 another [GitHub] project from me `Project-Template-afterburnerfx-Naoghuman` and 
-why I setup the project with my template (what are the advantages):
+what are the advantages to use this template:
 * [GitHub] project: https://github.com/Naoghuman/Project-Templates
 * Download: https://github.com/Naoghuman/Project-Templates/releases
 
@@ -26,7 +26,7 @@ Content
 ===
 
 * [About the autor](#Autor)
-* [Articles](#Articles)
+* [Articles in this series](#Articles)
 * [License](#License)
 * [Contact](#Contact)
 
@@ -64,15 +64,15 @@ So I decided to do this:
 
 
 
-Articles<a name="Articles" />
+Articles in this series<a name="Articles" />
 ---
 
-* _(started)_ The article [01 Setup the project] describes the steps how to setup a new project in 
-  [GitHub] with my project template:  
-  [Project-Template-afterburnerfx-Naoghuman].
+* The article [01 Setup the project] describes the steps how to setup a new project in [GitHub] 
+  with my project template and what are the advantages to use the [Project-Template-afterburnerfx-Naoghuman].
 * _(not started)_ The article [02 Create first prototype] describes the steps how to create the first 
   prototype from `SokubanFX`:  
-  [SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]
+    - `Video` [SokubanFX v0.1.0-PROTOTYPE]
+    - `Download` [SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]
 * _(not started)_ The article [03 Stabilization from the prototype] describes the steps to stabilize 
   the prototype.
 * _(not started)_ The article [04 Extend the prototype] describes the steps to extend the prototype.
@@ -122,5 +122,6 @@ Contact<a name="Contact" />
 [NetBeans RCP]:https://netbeans.org/kb/trails/platform.html
 [NetBeansIDE-AfterburnerFX-Plugin]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin
 [Project-Template-afterburnerfx-Naoghuman]:https://github.com/Naoghuman/Project-Templates/tree/master/Project-Template-afterburnerfx-Naoghuman
+[SokubanFX v0.1.0-PROTOTYPE]:https://www.youtube.com/watch?v=Kp1vWjLTIvY
 [SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]:https://github.com/Naoghuman/SokubanFX/releases/tag/v0.1.0
 [Swing2D]:https://docs.oracle.com/javase/tutorial/2d/
