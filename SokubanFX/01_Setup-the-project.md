@@ -26,13 +26,12 @@ Content
 ===
 
 * [About the autor](#Autor)
+    * [Additional informations](#AdditionalInformations)
 * [Articles in this series](#Articles)
     * [Setup the project](#SetupProject)
     * _(not started)_ [Create first prototype](#CreatePrototype)
     * _(not started)_ [Stabilization from the prototype](#StabilizationPrototype)
     * _(not started)_ [Extend the prototype](#ExtendPrototype)
-* [License](#License)
-* [Contact](#Contact)
 
 
 
@@ -67,6 +66,12 @@ So I decided to do this:
   where he introduce my plugin &#40;at 48:00&#41;.
 
 
+#### Additional informations<a name="AdditionalInformations" />
+
+* The article `01 Setup the project` is licensed under [General Public License 3.0].
+* You can reach me under <peter.rogge@yahoo.de>.
+
+
 
 Articles in this series<a name="Articles" />
 ---
@@ -96,20 +101,6 @@ steps to stabilize the prototype.
 ##### Extend the prototype<a name="ExtendPrototype" />
 _(not started)_ The article [04 Extend the prototype] describes the steps to 
 extend the prototype.
-
-
-
-License<a name="License" />
----
-
-* The article `01 Setup the project` is licensed under [General Public License 3.0].
-
-
-
-Contact<a name="Contact" />
----
-
-* You can reach me under <peter.rogge@yahoo.de>.
 
 
 
