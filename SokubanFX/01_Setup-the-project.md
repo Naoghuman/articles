@@ -32,11 +32,11 @@ Content
     * _(not started)_ [02 Create first prototype](#CreatePrototype)
     * _(not started)_ [03 Stabilization from the prototype](#StabilizationPrototype)
     * _(not started)_ [04 Extend the prototype](#ExtendPrototype)
-* [Setup the project](#SetupProject)
+* [Setup the project](#SetupTheProject)
     * [Download the project template](#DownloadTemplate)
     * [Tweak the project template](#TweakTemplate)
     * [What is the advance from the template?](#AdvanceTemplate)
-    * [Additional informations](#AdditionalInformations)
+    * [Additional informations](#AdditionalInformations2)
 
 
 
@@ -109,7 +109,7 @@ extend the prototype.
 
 
 
-Setup the project<a name="SetupProject" />
+Setup the project<a name="SetupTheProject" />
 ---
 
 In this section I will explain how to download the project template 
@@ -172,7 +172,7 @@ with following advances:
 * Automatically generation from the file `Preferences.properties` with helpful support from the library [lib-preferences]. 
 
 
-#### Additional informations<a name="AdditionalInformations" />
+#### Additional informations<a name="AdditionalInformations2" />
 For the future I plan to upload my libraries and the project templates to [Maven Central].
 
 Is that done, then it will be much easier to include my libraries into a project 
