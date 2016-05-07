@@ -39,12 +39,12 @@ Articles<a name="Articles" />
 * _(started)_The article [01 Setup the project] describes the steps how to setup a new project in 
   [GitHub] with my project template:  
   [Project-Template-afterburnerfx-Naoghuman].
-* _(not started)_ The article [02 Create first protoptye] describes the steps how to create the first 
+* _(not started)_ The article [02 Create first prototype] describes the steps how to create the first 
   prototype from `SokubanFX`:  
   [SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]
-* _(not started)_ The article [03 Stabilization from the protoptye] describes the steps to stabilize 
+* _(not started)_ The article [03 Stabilization from the prototype] describes the steps to stabilize 
   the prototype.
-* _(not started)_ The article [04 Extend the protoptye] describes the steps to extend the prototype.
+* _(not started)_ The article [04 Extend the prototype] describes the steps to extend the prototype.
 
 
 
@@ -68,9 +68,9 @@ Contact<a name="Contact" />
 
 [//]: # (Links)
 [01 Setup the project]:01_Setup-the-project.md
-[02 Create first protoptye]:02_Create-first-protoptye.md
-[03 Stabilization from the protoptye]:03_Stabilization-from-the-protoptye.md
-[04 Extend the protoptye]:04_Extend-the-protoptye.md
+[02 Create first prototype]:02_Create-first-prototype.md
+[03 Stabilization from the prototype]:03_Stabilization-from-the-prototype.md
+[04 Extend the prototype]:04_Extend-the-prototype.md
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
 [GitHub]:https://github.com/
 [H&amp;D International Group]:https://www.hud.de/en/
