@@ -188,7 +188,9 @@ to create the first prototype from `SokubanFX`:
 ##### 03 Stabilization from the prototype<a name="StabilizationPrototype" />
 
 _(not started)_ The article [03 Stabilization from the prototype] describes the 
-steps to stabilize the prototype.
+steps to stabilize the prototype.  
+* `Video` [SokubanFX v0.2.0-PROTOTYPE]
+* `Download` [SokubanFX-v0.2.0-PROTOTYPE_2016-05-08_18-44.zip]
 
 
 <br />
@@ -241,4 +243,6 @@ extend the prototype.
 [SokubanFX]:https://github.com/Naoghuman/SokubanFX
 [SokubanFX v0.1.0-PROTOTYPE]:https://www.youtube.com/watch?v=Kp1vWjLTIvY
 [SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]:https://github.com/Naoghuman/SokubanFX/releases/tag/v0.1.0
+[SokubanFX v0.2.0-PROTOTYPE]:https://youtu.be/iKBfqk0ANj8
+[SokubanFX-v0.2.0-PROTOTYPE_2016-05-08_18-44.zip]:https://github.com/Naoghuman/SokubanFX/releases/tag/v0.2.0
 [Swing2D]:https://docs.oracle.com/javase/tutorial/2d/
