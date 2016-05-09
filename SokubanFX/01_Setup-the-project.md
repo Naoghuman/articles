@@ -238,6 +238,7 @@ extend the prototype.
 [NetBeans RCP]:https://netbeans.org/kb/trails/platform.html
 [NetBeansIDE-AfterburnerFX-Plugin]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin
 [Project-Template-afterburnerfx-Naoghuman]:https://github.com/Naoghuman/Project-Templates/tree/master/Project-Template-afterburnerfx-Naoghuman
+[SokubanFX]:https://github.com/Naoghuman/SokubanFX
 [SokubanFX v0.1.0-PROTOTYPE]:https://www.youtube.com/watch?v=Kp1vWjLTIvY
 [SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]:https://github.com/Naoghuman/SokubanFX/releases/tag/v0.1.0
 [Swing2D]:https://docs.oracle.com/javase/tutorial/2d/
