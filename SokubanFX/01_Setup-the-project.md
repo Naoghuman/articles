@@ -27,10 +27,10 @@ what are the advantages from using this template:
 
 <br />
 Content
-===
+---
 
 * [About the autor](#Autor)
-    * [Additional informations](#AdditionalInformations)
+    * [Contact](#Contact)
 * [Setup the project](#SetupTheProject)
     * [Download the project template](#DownloadTemplate)
     * [Tweak the project template](#TweakTemplate)
@@ -79,7 +79,7 @@ So I decided to do this:
 
 
 <br />
-#### Additional informations<a name="AdditionalInformations" />
+##### Contact<a name="Contact" />
 
 * You can reach me under <peter.rogge@yahoo.de>.
 
