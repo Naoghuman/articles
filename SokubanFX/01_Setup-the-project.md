@@ -34,8 +34,8 @@ Content
 * [Setup the project](#SetupTheProject)
     * [Download the project template](#DownloadTemplate)
     * [Tweak the project template](#TweakTemplate)
-    * [What is the advance from the template?](#AdvanceTemplate)
     * [Additional informations](#AdditionalInformations2)
+    * [What is the advance from the template?](#AdvanceTemplate)
 * [Articles in this series](#Articles)
     * [01 Setup the project](#SetupProject)
     * _(not started)_ [02 Create first prototype](#CreatePrototype)
@@ -134,6 +134,14 @@ which are necessary to tweak the template.
 
 
 <br />
+#### Additional informations<a name="AdditionalInformations2" />
+For the future I plan to upload my libraries and the project templates to [Maven Central].
+
+Is that done, then it will be much easier to include my libraries into a project 
+or create a project template via maven.
+
+
+<br />
 #### What is the advance from the template?<a name="AdvanceTemplate" />
 
 After the preperation from the project template we will have a minimal project 
@@ -148,14 +156,6 @@ with following advances:
 * The `log framework` [log4j2] is integrated into the project with good support from the library [lib-logger].
 * Integration from the file `application.properties` with helpful support from the library [lib-properties].
 * Automatically generation from the file `Preferences.properties` with helpful support from the library [lib-preferences]. 
-
-
-<br />
-#### Additional informations<a name="AdditionalInformations2" />
-For the future I plan to upload my libraries and the project templates to [Maven Central].
-
-Is that done, then it will be much easier to include my libraries into a project 
-or create a project template via maven.
 
 
 
