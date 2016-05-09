@@ -71,7 +71,8 @@ Since `2011` I change my focus to JavaFX -> [JavaFX 2.0], [JavaFX 2.1], [JavaFX 
 to write a [NetBeans RCP] plugin for his library [afterburner.fx] when he had more time.  
 So I decided to do this:
 * See the [GitHub] project [NetBeansIDE-AfterburnerFX-Plugin] &#40;since 09.2015&#41; which is 
-  really helpful to speed up the development in combination with the library [afterburner.fx].
+  really helpful to speed up the development in combination with the library [afterburner.fx]
+  in [JavaFX] applications.
 * The `interview` [Afterburner.fx NetBeans Plugin Release] &#40;11.2015&#41; with [Adam Bien] and me.
 * The `video` [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive] from [Adam Bien] 
   where he introduce my plugin &#40;at 48:00&#41;.
@@ -80,7 +81,6 @@ So I decided to do this:
 <br />
 #### Additional informations<a name="AdditionalInformations" />
 
-* The article `01 Setup the project` is licensed under [General Public License 3.0].
 * You can reach me under <peter.rogge@yahoo.de>.
 
 
@@ -163,23 +163,24 @@ with following advances:
 Articles in this series<a name="Articles" />
 ---
 
-This article series described how I create the game [SokubanFX] with [JavaFX] and 
-[NetBeans IDE].
+* The articles in this series are licensed under [General Public License 3.0].
+* This article series described how I create the game [SokubanFX] with [JavaFX] 
+  and [NetBeans IDE].
 
 
 <br />
 ##### 01 Setup the project<a name="SetupProject" />
 
 The article [01 Setup the project] describes the steps how to setup a new project 
-in [GitHub] with my project template and what are the advantages from using the 
+in [GitHub] with my project template and what are the advantages from using this 
 [Project-Template-afterburnerfx-Naoghuman].
 
 
 <br />
 ##### 02 Create first prototype<a name="CreatePrototype" />
 
-_(not started)_ The article [02 Create first prototype] describes the steps how 
-to create the first prototype from `SokubanFX`:  
+_(not started)_ The article [02 Create first prototype] describes the steps and 
+decisions how to create the first prototype from `SokubanFX`:  
 * `Video` [SokubanFX v0.1.0-PROTOTYPE]
 * `Download` [SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]
 
@@ -188,7 +189,7 @@ to create the first prototype from `SokubanFX`:
 ##### 03 Stabilization from the prototype<a name="StabilizationPrototype" />
 
 _(not started)_ The article [03 Stabilization from the prototype] describes the 
-steps to stabilize the prototype.  
+steps how I stabilize the prototype.  
 * `Video` [SokubanFX v0.2.0-PROTOTYPE]
 * `Download` [SokubanFX-v0.2.0-PROTOTYPE_2016-05-08_18-44.zip]
 
