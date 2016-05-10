@@ -7,7 +7,19 @@
 Intention
 ---
 
-TODO
+In the last article [01 Setup the project] I show how to setup the new project 
+with another [GitHub] project from me [Project-Template-afterburnerfx-Naoghuman] 
+and what the advantages are from using this template.
+
+In this article I describes the steps and decisions which I make during the 
+implementation from the first `prototype`. Click on the picture to see the 
+`SokubanFX v0.1.0-PROTOTYPE` in action ![emoticon_smile.png][emoticon_smile] in 
+YouTube.
+
+[![sokubanfx_v0.1.0-PROTOTYPE.png][sokubanfx_v0.1.0-PROTOTYPE]](https://www.youtube.com/watch?v=Kp1vWjLTIvY "SokubanFX v0.1.0-PROTOTYPE")
+
+<br/>
+You can download the `prototype` here: [SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]
 
 
 
@@ -106,7 +118,10 @@ extend the prototype.
 
 
 [//]: # (Images)
-
+[emoticon_smile]:https://cloud.githubusercontent.com/assets/8161815/10268707/76d6c5f2-6ac1-11e5-9330-15a8943f1b0d.png
+[emoticon_grin]:https://cloud.githubusercontent.com/assets/8161815/10268709/7b073800-6ac1-11e5-85b3-d0e342acc403.png
+[emoticon_tongue]:https://cloud.githubusercontent.com/assets/8161815/10268706/741f41fe-6ac1-11e5-88ea-1b4d807b2283.png
+[sokubanfx_v0.1.0-PROTOTYPE]:https://cloud.githubusercontent.com/assets/8161815/15157275/305a7ba6-16eb-11e6-9b1f-737c9a0ca2b8.png
 
 
 [//]: # (Links)
@@ -135,6 +150,5 @@ extend the prototype.
 [NetBeansIDE-AfterburnerFX-Plugin]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin
 [Project-Template-afterburnerfx-Naoghuman]:https://github.com/Naoghuman/Project-Templates/tree/master/Project-Template-afterburnerfx-Naoghuman
 [SokubanFX]:https://github.com/Naoghuman/SokubanFX
-[SokubanFX v0.1.0-PROTOTYPE]:https://www.youtube.com/watch?v=Kp1vWjLTIvY
 [SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]:https://github.com/Naoghuman/SokubanFX/releases/tag/v0.1.0
 [Swing2D]:https://docs.oracle.com/javase/tutorial/2d/
