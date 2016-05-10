@@ -70,35 +70,31 @@ So I decided to do this:
 Articles in this series<a name="Articles" />
 ---
 
-* The articles in this series are licensed under [General Public License 3.0].
 * This article series described how I create the game [SokubanFX] with [JavaFX] 
   and [NetBeans IDE].
+* The articles in this series are licensed under [General Public License 3.0].
 
 
 <br />
 ##### 01 Setup the project<a name="SetupProject" />
 
 The article [01 Setup the project] describes the steps how to setup a new project 
-in [GitHub] with my project template and what are the advantages from using this 
-[Project-Template-afterburnerfx-Naoghuman].
+in [GitHub] with my project template and what are the advantages from using this
+template [Project-Template-afterburnerfx-Naoghuman].
 
 
 <br />
 ##### 02 Create first prototype<a name="CreatePrototype" />
 
 _(not started)_ The article [02 Create first prototype] describes the steps and 
-decisions how to create the first prototype from `SokubanFX`:  
-* `Video` [SokubanFX v0.1.0-PROTOTYPE]
-* `Download` [SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]
+decisions which I make during the implementation from the first `prototype`.
 
 
 <br />
 ##### 03 Stabilization from the prototype<a name="StabilizationPrototype" />
 
 _(not started)_ The article [03 Stabilization from the prototype] describes the 
-steps how I stabilize the prototype.  
-* `Video` [SokubanFX v0.2.0-PROTOTYPE]
-* `Download` [SokubanFX-v0.2.0-PROTOTYPE_2016-05-08_18-44.zip]
+steps how I stabilize the prototype.
 
 
 <br />
@@ -139,8 +135,6 @@ extend the prototype.
 [NetBeansIDE-AfterburnerFX-Plugin]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin
 [Project-Template-afterburnerfx-Naoghuman]:https://github.com/Naoghuman/Project-Templates/tree/master/Project-Template-afterburnerfx-Naoghuman
 [SokubanFX]:https://github.com/Naoghuman/SokubanFX
-[SokubanFX v0.1.0-PROTOTYPE]:https://www.youtube.com/watch?v=Kp1vWjLTIvY
-[SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]:https://github.com/Naoghuman/SokubanFX/releases/tag/v0.1.0
 [SokubanFX v0.2.0-PROTOTYPE]:https://youtu.be/iKBfqk0ANj8
 [SokubanFX-v0.2.0-PROTOTYPE_2016-05-08_18-44.zip]:https://github.com/Naoghuman/SokubanFX/releases/tag/v0.2.0
 [Swing2D]:https://docs.oracle.com/javase/tutorial/2d/

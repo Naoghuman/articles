@@ -91,17 +91,19 @@ Setup the project<a name="SetupTheProject" />
 
 In this section I will explain how to download the project template 
 [Project-Template-afterburnerfx-Naoghuman] and then after installation into the 
-[NetBeans IDE] how to tweak it for the new requirements for the game `SokubanFX`.
+[NetBeans IDE] or another from you preferred IDE how to tweak it for the new 
+requirements for the game `SokubanFX`.
 
 A demo from the minimal project template can be found under 
 https://github.com/Naoghuman/Project-Templates/releases/tag/v0.1.0.
-* Unzip the `zip` file to a folder from your choose and doubleclick on the `jar` file.
+* Unzip the `zip` file to a folder from your choose and doubleclick the `jar` file.
 
 
 <br />
 ##### Download the project template<a name="DownloadTemplate" />
 
-There are two possiblilities to `included` the project template into your [NetBeans IDE]:
+There are two possiblilities to `included` the project template into your 
+preferred IDE &#40;for me that is [NetBeans IDE]&#41;:
 
 a) Download the `source code` from https://github.com/Naoghuman/Project-Templates/releases/tag/v0.1.0.
 * Unzip the source code to your workspace and open the project within the [NetBeans IDE].
@@ -109,7 +111,7 @@ a) Download the `source code` from https://github.com/Naoghuman/Project-Template
 b) Clone the project with https://github.com/Naoghuman/Project-Templates.git
 * Navigate into the new created project `Project-Templates`.
 * Copy and paste there the project `Project-Template-afterburnerfx-Naoghuman` 
-  to the new destination.
+  to a new destination.
 
 
 <br />
@@ -147,27 +149,32 @@ which are necessary to tweak the template.
 
 <br />
 #### Additional informations<a name="AdditionalInformations2" />
-For the future I plan to upload my libraries and the project templates to [Maven Central].
 
-Is that done, then it will be much easier to include my libraries into a project 
-or create a project template via maven.
+* For the future I plan to upload my libraries and the project templates to 
+  [Maven Central].
 
 
 <br />
 #### What is the advance from the template?<a name="AdvanceTemplate" />
 
-After the preperation from the project template we will have a minimal project 
-with following advances:
+After the preperation from the project template we will have a well configured 
+minimal desktop application with following advantages:
 
-* A minimal working [JavaFX], [Maven] desktop application.
 * With the [javafx-maven-plugin] an executable jar file can be easily created.
-* Included is the library [afterburner.fx] which help really much by the development 
-  from the Views (`fxml`, `presenter` and `view` and optional files). 
-* Action events can be easily `registered` and `handled` with my library [lib-action].
-* With the library [lib-database-objectdb] an `ObjectDB` database is integrated into the project.
-* The `log framework` [log4j2] is integrated into the project with good support from the library [lib-logger].
-* Integration from the file `application.properties` with helpful support from the library [lib-properties].
-* Automatically generation from the file `Preferences.properties` with helpful support from the library [lib-preferences]. 
+    * See the commentary over the injection from the plugin in the `pom.xml` how 
+      to create with the simple maven command `mvn jfx:jar` the exceutable jar 
+      and all needed libraries.
+* Included is the library [afterburner.fx] which is really helpful by the 
+  development from [JavaFX] applications.
+* Action events can be easily `registered` and `handled` with the library [lib-action].
+* With the library [lib-database-objectdb] an `ObjectDB` database is integrated 
+  into the project.
+* The `log framework` [log4j2] is integrated into the project with good support 
+  from the library [lib-logger].
+* Integration from the file `application.properties` with helpful support from 
+  the library [lib-properties].
+* Automatically generation from the file `Preferences.properties` with helpful 
+  support from the library [lib-preferences]. 
 
 
 
@@ -175,35 +182,31 @@ with following advances:
 Articles in this series<a name="Articles" />
 ---
 
-* The articles in this series are licensed under [General Public License 3.0].
 * This article series described how I create the game [SokubanFX] with [JavaFX] 
   and [NetBeans IDE].
+* The articles in this series are licensed under [General Public License 3.0].
 
 
 <br />
 ##### 01 Setup the project<a name="SetupProject" />
 
 The article [01 Setup the project] describes the steps how to setup a new project 
-in [GitHub] with my project template and what are the advantages from using this 
-[Project-Template-afterburnerfx-Naoghuman].
+in [GitHub] with my project template and what are the advantages from using this
+template [Project-Template-afterburnerfx-Naoghuman].
 
 
 <br />
 ##### 02 Create first prototype<a name="CreatePrototype" />
 
 _(not started)_ The article [02 Create first prototype] describes the steps and 
-decisions how to create the first prototype from `SokubanFX`:  
-* `Video` [SokubanFX v0.1.0-PROTOTYPE]
-* `Download` [SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]
+decisions which I make during the implementation from the first `prototype`.
 
 
 <br />
 ##### 03 Stabilization from the prototype<a name="StabilizationPrototype" />
 
 _(not started)_ The article [03 Stabilization from the prototype] describes the 
-steps how I stabilize the prototype.  
-* `Video` [SokubanFX v0.2.0-PROTOTYPE]
-* `Download` [SokubanFX-v0.2.0-PROTOTYPE_2016-05-08_18-44.zip]
+steps how I stabilize the prototype.
 
 
 <br />
@@ -254,8 +257,4 @@ extend the prototype.
 [NetBeansIDE-AfterburnerFX-Plugin]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin
 [Project-Template-afterburnerfx-Naoghuman]:https://github.com/Naoghuman/Project-Templates/tree/master/Project-Template-afterburnerfx-Naoghuman
 [SokubanFX]:https://github.com/Naoghuman/SokubanFX
-[SokubanFX v0.1.0-PROTOTYPE]:https://www.youtube.com/watch?v=Kp1vWjLTIvY
-[SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]:https://github.com/Naoghuman/SokubanFX/releases/tag/v0.1.0
-[SokubanFX v0.2.0-PROTOTYPE]:https://youtu.be/iKBfqk0ANj8
-[SokubanFX-v0.2.0-PROTOTYPE_2016-05-08_18-44.zip]:https://github.com/Naoghuman/SokubanFX/releases/tag/v0.2.0
 [Swing2D]:https://docs.oracle.com/javase/tutorial/2d/
