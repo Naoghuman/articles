@@ -124,7 +124,6 @@ which are necessary to tweak the template.
    * `General`-> GroupId, ArtefactId, Version, Name, Description.
    * `Run` -> Update the start class.
    * `License Header` -> If you don't want the pre-choosen [General Public License 3.0].
-
 * Update the reference in the tag `fx:controller` in the file `application.fxml`.
 * Refactore the `path` from the parameter `KEY__APPLICATION__RESOURCE_BUNDLE` 
   from the interface `IApplicationConfiguration` in the folder 
@@ -133,7 +132,6 @@ which are necessary to tweak the template.
   if needed.
 * Update the file `log4j2.xml` in the default package from `Other Sources/` if 
   needed.
-
 * If your project license different from [General Public License 3.0] which is 
   preselect then you can refactore the `licence` in java files and 
   `application.properties` with following steps:
@@ -144,7 +142,6 @@ which are necessary to tweak the template.
       function under `Edit` in the main menu.
 * Rename the `autor` in all `java` files and `application.properties`.
     * Same here -> `Replace...`, `Replace in Projects...`.
-
 * Move the folder 'me' to your `local` maven repository.
 
 
