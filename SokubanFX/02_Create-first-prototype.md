@@ -140,6 +140,7 @@ Any question? Some helpful criticism?
 [Geertjan Wielenga]:https://blogs.oracle.com/geertjan/entry/welcome_to_me
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
 [GitHub]:https://github.com/
+[Issue]:https://github.com/Naoghuman/articles/issues
 [H+D International Group]:https://www.hud.de/en/
 [Help for Multilingual NetBeans Platform Applications]:
 [Java]:https://en.wikipedia.org/wiki/Java_%28programming_language%29
