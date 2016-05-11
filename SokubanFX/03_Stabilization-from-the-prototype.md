@@ -16,12 +16,12 @@ Content
 ---
 
 * [About the autor](#Autor)
-    * [Contact](#Contact)
 * [Articles in this series](#Articles)
     * [01 Setup the project](#SetupProject)
     * _(not started)_ [02 Create first prototype](#CreatePrototype)
     * _(not started)_ [03 Stabilization from the prototype](#StabilizationPrototype)
     * _(not started)_ [04 Extend the prototype](#ExtendPrototype)
+* [Contact](#Contact)
 
 
 
@@ -57,12 +57,6 @@ So I decided to do this:
 * The `interview` [Afterburner.fx NetBeans Plugin Release] &#40;11.2015&#41; with [Adam Bien] and me.
 * Have a look in the `video` [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive] where 
   [Adam Bien] introduce my plugin &#40;at 48:00&#41;.
-
-
-<br />
-##### Contact<a name="Contact" />
-
-* You can reach me under <peter.rogge@yahoo.de>.
 
 
 
@@ -105,6 +99,16 @@ extend the prototype.
 
 
 
+<br />
+Contact<a name="Contact" />
+---
+
+Any question? Some helpful criticism?
+* Please write an [Issue] or
+* send me an `email` to <peter.rogge@yahoo.de>
+
+
+
 [//]: # (Images)
 
 
@@ -123,6 +127,7 @@ extend the prototype.
 [GitHub]:https://github.com/
 [H+D International Group]:https://www.hud.de/en/
 [Help for Multilingual NetBeans Platform Applications]:
+[Issue]:https://github.com/Naoghuman/articles/issues
 [Java]:https://en.wikipedia.org/wiki/Java_%28programming_language%29
 [JavaFX]:http://docs.oracle.com/javase/8/javase-clienttechnologies.htm
 [JavaFX 2.0]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_2.0
