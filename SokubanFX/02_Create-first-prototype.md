@@ -59,16 +59,16 @@ See
   translate from Germany to English.
 
 <br />
-Since `2011` I change my focus to [JavaFX] -> [JavaFX 2.0], [JavaFX 2.1], [JavaFX 2.2] and 
-[JavaFX 8] although in `2015` I saw a video from [Adam Bien] where he mention he would love 
-to write a [NetBeans RCP] plugin for his library [afterburner.fx] when he had more time.  
+Since `2011` I change my focus to [JavaFX] -> [JavaFX 2.0] to [JavaFX 8] although in `2015` 
+I saw a video from [Adam Bien] where he mention he would love to write a [NetBeans RCP] 
+plugin for his library [afterburner.fx] when he had more time.  
 So I decided to do this:
 * See the [GitHub] project [NetBeansIDE-AfterburnerFX-Plugin] &#40;since 09.2015&#41; which is 
   really helpful to speed up the development in combination with the library [afterburner.fx]
-  in [JavaFX] applications.
+  in [JavaFX] application.
 * The `interview` [Afterburner.fx NetBeans Plugin Release] &#40;11.2015&#41; with [Adam Bien] and me.
-* The `video` [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive] from [Adam Bien] 
-  where he introduce my plugin &#40;at 48:00&#41;.
+* Have a look in the `video` [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive] where 
+  [Adam Bien] introduce my plugin &#40;at 48:00&#41;.
 
 
 
@@ -146,8 +146,6 @@ Any question? Some helpful criticism?
 [Java]:https://en.wikipedia.org/wiki/Java_%28programming_language%29
 [JavaFX]:http://docs.oracle.com/javase/8/javase-clienttechnologies.htm
 [JavaFX 2.0]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_2.0
-[JavaFX 2.1]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_2.1
-[JavaFX 2.2]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_2.2
 [JavaFX 8]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_8
 [NetBeans IDE]:https://netbeans.org/
 [NetBeans Platform 6.9 Developer's Guide]:https://www.packtpub.com/application-development/netbeans-platform-69-developers-guide
