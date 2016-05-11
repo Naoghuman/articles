@@ -32,7 +32,11 @@ Content
 * [About the autor](#Autor)
 * [Setup the project](#SetupTheProject)
     * [Download the project template](#DownloadTemplate)
-    * [Tweak the project template](#TweakTemplate)
+    * [Tweak the project template](#TweakTemplate)  
+      [_Tweak the project &#40;name, properties, packages...&#41;_](#TweakProject)  
+      [_Update different files like `log4j2.xml`, `application.properties`, `application.fxml`..._](#UpdateFiles)  
+      [_Update the JavaDoc &#40;license, autor&#41; if needed_](#UpdateJavaDoc)  
+      [_Last steps..._](#LastSteps)
     * [What is the advance from the template?](#AdvanceTemplate)
 * [Articles in this series](#Articles)
     * [01 Setup the project](#SetupProject)
@@ -113,13 +117,22 @@ b) Clone the project with https://github.com/Naoghuman/Project-Templates.git
 In the project is a file `Tweak-Project-Template.txt` where the steps are listed 
 which are necessary to tweak the template.
 
+
+<br />
+##### _Tweak the project &#40;name, properties, packages...&#41;_<a name="TweakProject" />
+
 * Rename the project `name` (display name, artefactID and folder).
 * Update the `packages` in the folders `Source Packages/` and `Other Sources/`.
-* Open the project `properties` window to tweak following points.
+* Open the project `properties` window to tweak following parameters.
    * `General`-> GroupId, ArtefactId, Version, Name, Description.
    * `Run` -> Update the start class.
    * `License Header` -> If you don't want the pre-choosen [General Public License 3.0].
-* Update the reference in the tag `fx:controller` in the file `application.fxml`.
+
+<br />
+##### _Update different files like `log4j2.xml`, `application.properties`, application.fxml..._<a name="UpdateFiles" />
+
+* Update the reference in the tag `fx:controller` in the file 
+  `Source Packages/yourpackage/application/application.fxml`.
 * Refactore the `path` from the parameter `KEY__APPLICATION__RESOURCE_BUNDLE` 
   from the interface `IApplicationConfiguration` in the folder 
   `Source Packages/yourpackage/configuration/`.
@@ -127,17 +140,27 @@ which are necessary to tweak the template.
   if needed.
 * Update the file `log4j2.xml` in the default package from `Other Sources/` if 
   needed.
+
+<br />
+##### _Update the JavaDoc &#40;license, autor&#41; if needed_<a name="UpdateJavaDoc" />
+
 * If your project license different from [General Public License 3.0] which is 
-  preselect then you can refactore the `licence` in java files and 
-  `application.properties` with following steps:
+  preselect in the project template then you can refactore the `licence` in all 
+  java files and `application.properties` with following steps:
     * Change in the project under `properties` the license.
     * Generate a new java file.
-    * Copy and paste the new generated license as needed.
-    * Another possiblitiy is to use the `Replace...`, `Replace in Projects...` 
+    * Copy and paste the new generated license as needed.  
+      Another possiblitiy is to use the `Replace...`, `Replace in Projects...` 
       function under `Edit` in the main menu.
 * Rename the `autor` in all `java` files and `application.properties`.
     * Same here -> `Replace...`, `Replace in Projects...`.
+
+<br />
+##### _Last steps..._<a name="LastSteps" />
+
 * Move the folder 'me' to your `local` maven repository.
+* The folder contains my above described libraries which are `momentary` not in 
+  [Maven Central] available.
 
 
 <br />
