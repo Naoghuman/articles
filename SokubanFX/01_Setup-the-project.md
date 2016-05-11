@@ -33,7 +33,6 @@ Content
 * [Setup the project](#SetupTheProject)
     * [Download the project template](#DownloadTemplate)
     * [Tweak the project template](#TweakTemplate)
-    * [Additional informations](#AdditionalInformations2)
     * [What is the advance from the template?](#AdvanceTemplate)
 * [Articles in this series](#Articles)
     * [01 Setup the project](#SetupProject)
@@ -139,13 +138,6 @@ which are necessary to tweak the template.
 * Rename the `autor` in all `java` files and `application.properties`.
     * Same here -> `Replace...`, `Replace in Projects...`.
 * Move the folder 'me' to your `local` maven repository.
-
-
-<br />
-#### Additional informations<a name="AdditionalInformations2" />
-
-* For the future I plan to upload my libraries and the project templates to 
-  [Maven Central].
 
 
 <br />
