@@ -38,6 +38,7 @@ Content
       [_Update the JavaDoc &#40;license, autor&#41; if needed_](#UpdateJavaDoc)  
       [_Last steps..._](#LastSteps)
     * [What is the advance from the template?](#AdvanceTemplate)
+* [Summary from this article](#Summary)
 * [Articles in this series](#Articles)
     * [01 Setup the project](#SetupProject)
     * _(not started)_ [02 Create first prototype](#CreatePrototype)
@@ -184,6 +185,14 @@ minimal desktop application with following advantages:
   the library [lib-properties].
 * Automatically generation from the file `Preferences.properties` with helpful 
   support from the library [lib-preferences]. 
+
+
+
+<br />
+Summary from this article<a name="Summary" />
+---
+
+TODO write summary
 
 
 

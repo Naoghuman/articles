@@ -16,6 +16,7 @@ Content
 ---
 
 * [About the autor](#Autor)
+* [Summary from this article](#Summary)
 * [Articles in this series](#Articles)
     * [01 Setup the project](#SetupProject)
     * _(not started)_ [02 Create first prototype](#CreatePrototype)
@@ -57,6 +58,14 @@ So I decided to do this:
 * The `interview` [Afterburner.fx NetBeans Plugin Release] &#40;11.2015&#41; with [Adam Bien] and me.
 * Have a look in the `video` [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive] where 
   [Adam Bien] introduce my plugin &#40;at 48:00&#41;.
+
+
+
+<br />
+Summary from this article<a name="Summary" />
+---
+
+TODO write summary
 
 
 

@@ -34,6 +34,7 @@ Content
     * [Functionalities like collision, movement...](#Functionalities)
     * [Persistence from the maps](#PersistenceMaps)
     * [Textbased maps in views](#TextbasedMaps)
+* [Summary from this article](#Summary)
 * [Articles in this series](#Articles)
     * [01 Setup the project](#SetupProject)
     * _(not started)_ [02 Create first prototype](#CreatePrototype)
@@ -120,6 +121,7 @@ Following workflow is given:
 * Finally after a successful move the game should be checked if the map is finished.
   If so the next map can be shown.
 
+<br />
 `GamePresenter.java` - user press the key DOWN
 ```java
 public void onActionButtonDown() {
@@ -136,6 +138,7 @@ public void onActionButtonDown() {
 }
 ```
 
+<br />
 `MapMovement.java` - check possible collisions return what happen
 ```java
 public CheckMovementResult checkMovePlayerTo(EDirection direction, MapModel mapModel) {
@@ -155,6 +158,7 @@ public CheckMovementResult checkMovePlayerTo(EDirection direction, MapModel mapM
 }
 ```
 
+<br />
 `CollisionResult.java` - shows what collisions are possible
 ```java
 public enum CollisionResult {
@@ -171,6 +175,7 @@ public enum CollisionResult {
 }
 ```
 
+<br />
 `GamePresenter.java` - if a new map should shown
 ```java
 private void displayMap() {
@@ -294,6 +299,15 @@ class MapLoader implements IMapConfiguration {
 Because we are in a prototype I deside for me
 
 TODO add one screenshot. left -> preview-map, right -> game-map
+
+
+
+<br />
+Summary from this article<a name="Summary" />
+---
+
+TODO write summary
+
 
 
 <br />
