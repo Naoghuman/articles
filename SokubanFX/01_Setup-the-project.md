@@ -29,7 +29,6 @@ what are the advantages from using this template:
 Content
 ---
 
-* [About the autor](#Autor)
 * [Setup the project](#SetupTheProject)
     * [Download the project template](#DownloadTemplate)
     * [Tweak the project template](#TweakTemplate)  
@@ -39,47 +38,13 @@ Content
       [_Last steps..._](#LastSteps)
     * [What is the advance from the template?](#AdvanceTemplate)
 * [Conclusion](#Conclusion)
+* [About the autor](#Autor)
 * [Articles in this series](#Articles)
     * [01 Setup the project](#SetupProject)
     * _(not started)_ [02 Create first prototype](#CreatePrototype)
     * _(not started)_ [03 Stabilization from the prototype](#StabilizationPrototype)
     * _(not started)_ [04 Extend the prototype](#ExtendPrototype)
 * [Contact](#Contact)
-
-
-
-<br />
-About the autor<a name="Autor" />
----
-
-Let me introduce myself. My name is `Peter Rogge` and I'm a software developer 
-in Wolfsburg, Germany.
-
-Since `2008` I work by [H+D International Group] which is an IT- and engineering 
-service provider represented nationally and internationally in over 20 locations 
-with the head-quarters in Wolfsburg, Germany.
-
-
-<br />
-In my free time I investigate between `2009` an `2012` some time in [NetBeans RCP] &#40;Rich 
-Client Platform&#41; development.  
-See  
-* The `interview` [Help for Multilingual NetBeans Platform Applications] &#40;09.2009&#41; with 
-  [Geertjan Wielenga] and me.
-* The `book` [NetBeans Platform 6.9 Developer's Guide] &#40;08.2010&#41; which I helped to 
-  translate from Germany to English.
-
-<br />
-Since `2011` I change my focus to [JavaFX] -> [JavaFX 2.0] to [JavaFX 8] although in `2015` 
-I saw a video from [Adam Bien] where he mention he would love to write a [NetBeans RCP] 
-plugin for his library [afterburner.fx] when he had more time.  
-So I decided to do this:
-* See the [GitHub] project [NetBeansIDE-AfterburnerFX-Plugin] &#40;since 09.2015&#41; which is 
-  really helpful to speed up the development in combination with the library [afterburner.fx]
-  in [JavaFX] application.
-* The `interview` [Afterburner.fx NetBeans Plugin Release] &#40;11.2015&#41; with [Adam Bien] and me.
-* Have a look in the `video` [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive] where 
-  [Adam Bien] introduce my plugin &#40;at 48:00&#41;.
 
 
 
@@ -193,6 +158,41 @@ Conclusion<a name="Conclusion" />
 ---
 
 TODO write conclusion
+
+
+
+<br />
+About the autor<a name="Autor" />
+---
+
+Let me introduce myself. My name is `Peter Rogge` and I'm a software developer 
+in Wolfsburg, Germany.
+
+Since `2008` I work by [H+D International Group] which is an IT- and engineering 
+service provider represented nationally and internationally in over 20 locations 
+with the head-quarters in Wolfsburg, Germany.
+
+
+<br />
+In my free time I investigate between `2009` an `2012` some time in [NetBeans RCP] &#40;Rich 
+Client Platform&#41; development.  
+See  
+* The `interview` [Help for Multilingual NetBeans Platform Applications] &#40;09.2009&#41; with 
+  [Geertjan Wielenga] and me.
+* The `book` [NetBeans Platform 6.9 Developer's Guide] &#40;08.2010&#41; which I helped to 
+  translate from Germany to English.
+
+<br />
+Since `2011` I change my focus to [JavaFX] -> [JavaFX 2.0] to [JavaFX 8] although in `2015` 
+I saw a video from [Adam Bien] where he mention he would love to write a [NetBeans RCP] 
+plugin for his library [afterburner.fx] when he had more time.  
+So I decided to do this:
+* See the [GitHub] project [NetBeansIDE-AfterburnerFX-Plugin] &#40;since 09.2015&#41; which is 
+  really helpful to speed up the development in combination with the library [afterburner.fx]
+  in [JavaFX] application.
+* The `interview` [Afterburner.fx NetBeans Plugin Release] &#40;11.2015&#41; with [Adam Bien] and me.
+* Have a look in the `video` [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive] where 
+  [Adam Bien] introduce my plugin &#40;at 48:00&#41;.
 
 
 

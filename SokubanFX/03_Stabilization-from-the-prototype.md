@@ -15,14 +15,22 @@ Intention
 Content
 ---
 
-* [About the autor](#Autor)
 * [Conclusion](#Conclusion)
+* [About the autor](#Autor)
 * [Articles in this series](#Articles)
     * [01 Setup the project](#SetupProject)
     * _(not started)_ [02 Create first prototype](#CreatePrototype)
     * _(not started)_ [03 Stabilization from the prototype](#StabilizationPrototype)
     * _(not started)_ [04 Extend the prototype](#ExtendPrototype)
 * [Contact](#Contact)
+
+
+
+<br />
+Conclusion<a name="Conclusion" />
+---
+
+TODO write conclusion
 
 
 
@@ -58,14 +66,6 @@ So I decided to do this:
 * The `interview` [Afterburner.fx NetBeans Plugin Release] &#40;11.2015&#41; with [Adam Bien] and me.
 * Have a look in the `video` [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive] where 
   [Adam Bien] introduce my plugin &#40;at 48:00&#41;.
-
-
-
-<br />
-Conclusion<a name="Conclusion" />
----
-
-TODO write conclusion
 
 
 
