@@ -16,7 +16,7 @@ Content
 ---
 
 * [About the autor](#Autor)
-* [Summary from this article](#Summary)
+* [Conclusion](#Conclusion)
 * [Articles in this series](#Articles)
     * [01 Setup the project](#SetupProject)
     * _(not started)_ [02 Create first prototype](#CreatePrototype)
@@ -62,10 +62,10 @@ So I decided to do this:
 
 
 <br />
-Summary from this article<a name="Summary" />
+Conclusion<a name="Conclusion" />
 ---
 
-TODO write summary
+TODO write conclusion
 
 
 

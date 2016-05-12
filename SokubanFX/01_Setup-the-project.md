@@ -38,7 +38,7 @@ Content
       [_Update the JavaDoc &#40;license, autor&#41; if needed_](#UpdateJavaDoc)  
       [_Last steps..._](#LastSteps)
     * [What is the advance from the template?](#AdvanceTemplate)
-* [Summary from this article](#Summary)
+* [Conclusion](#Conclusion)
 * [Articles in this series](#Articles)
     * [01 Setup the project](#SetupProject)
     * _(not started)_ [02 Create first prototype](#CreatePrototype)
@@ -189,10 +189,10 @@ minimal desktop application with following advantages:
 
 
 <br />
-Summary from this article<a name="Summary" />
+Conclusion<a name="Conclusion" />
 ---
 
-TODO write summary
+TODO write conclusion
 
 
 

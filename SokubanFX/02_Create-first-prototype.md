@@ -34,7 +34,7 @@ Content
     * [Functionalities like collision, movement...](#Functionalities)
     * [Persistence from the maps](#PersistenceMaps)
     * [Textbased maps in views](#TextbasedMaps)
-* [Summary from this article](#Summary)
+* [Conclusion](#Conclusion)
 * [Articles in this series](#Articles)
     * [01 Setup the project](#SetupProject)
     * _(not started)_ [02 Create first prototype](#CreatePrototype)
@@ -303,10 +303,10 @@ TODO add one screenshot. left -> preview-map, right -> game-map
 
 
 <br />
-Summary from this article<a name="Summary" />
+Conclusion<a name="Conclusion" />
 ---
 
-TODO write summary
+TODO write conclusion
 
 
 
