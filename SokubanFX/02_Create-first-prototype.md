@@ -37,10 +37,6 @@ Content
 * [About the autor](#Autor)
     * [Contact](#Contact)
 * [Articles in this series](#Articles)
-    * [01 Setup the project](#SetupProject)
-    * _(not started)_ [02 Create first prototype](#CreatePrototype)
-    * _(not started)_ [03 Stabilization from the prototype](#StabilizationPrototype)
-    * _(not started)_ [04 Extend the prototype](#ExtendPrototype)
 
 
 
@@ -141,7 +137,7 @@ public enum CollisionResult {
 ```
 
 <br />
-`GamePresenter.java` - if a new map should shown
+`GamePresenter.java` - if a new map be should shown
 ```java
 private void displayMap() {
     LoggerFacade.INSTANCE.debug(this.getClass(), "Display Map"); // NOI18N
@@ -326,34 +322,16 @@ Articles in this series<a name="Articles" />
   and [NetBeans IDE].
 * The articles in this series are licensed under [General Public License 3.0].
 
-
 <br />
-##### 01 Setup the project<a name="SetupProject" />
-
-The article [01 Setup the project] describes the steps how to setup a new project 
-in [GitHub] with my project template and what are the advantages from using this
-template [Project-Template-afterburnerfx-Naoghuman].
-
-
-<br />
-##### 02 Create first prototype<a name="CreatePrototype" />
-
-_(not started)_ The article [02 Create first prototype] describes the steps and 
-decisions which I make during the implementation from the first `prototype`.
-
-
-<br />
-##### 03 Stabilization from the prototype<a name="StabilizationPrototype" />
-
-_(not started)_ The article [03 Stabilization from the prototype] describes the 
-steps how I stabilize the prototype.
-
-
-<br />
-##### 04 Extend the prototype<a name="ExtendPrototype" />
-
-_(not started)_ The article [04 Extend the prototype] describes the steps to 
-extend the prototype.
+* The article [01 Setup the project] describes the steps how to setup a new project 
+  in [GitHub] with my project template and what are the advantages from using this
+  template [Project-Template-afterburnerfx-Naoghuman].
+* _(not started)_ The article [02 Create first prototype] describes the steps and 
+ decisions which I make during the implementation from the first `prototype`.
+* _(not started)_ The article [03 Stabilization from the prototype] describes the 
+  steps how I stabilize the prototype.
+* _(not started)_ The article [04 Extend the prototype] describes the steps to 
+  extend the prototype.
 
 
 
