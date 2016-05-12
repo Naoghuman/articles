@@ -9,7 +9,7 @@ Intention
 
 In the last article [01 Setup the project] I show how to setup the new project 
 with another [GitHub] project from me [Project-Template-afterburnerfx-Naoghuman] 
-and what the advantages are from using this template.
+and what are the advantages are from using this template.
 
 In this article I describes the steps and decisions which I make during the 
 implementation from the first `prototype`. Click on the picture to see the 
@@ -28,6 +28,12 @@ Content
 ---
 
 * [About the autor](#Autor)
+* [Create first prototype](#CreateFirstPrototype)
+    * [Basic functionalities from the project](#BasicFunctionalities)
+    * [Project structure](#ProjectStructure)
+    * [Functionalities like collision, movement...](#Functionalities)
+    * [Persistence from the maps](#PersistenceMaps)
+    * [Textbased maps in views](#TextbasedMaps)
 * [Articles in this series](#Articles)
     * [01 Setup the project](#SetupProject)
     * _(not started)_ [02 Create first prototype](#CreatePrototype)
@@ -70,6 +76,224 @@ So I decided to do this:
 * Have a look in the `video` [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive] where 
   [Adam Bien] introduce my plugin &#40;at 48:00&#41;.
 
+
+
+<br />
+Create first prototype<a name="CreateFirstPrototype" />
+---
+
+Like I said in the section `Intention` here are the steps and decisions which I 
+make during the implementation from the first `prototype` from [SokubanFX].
+
+
+<br />
+##### Basic functionalities from the project<a name="BasicFunctionalities" />
+
+Because I used my project template [Project-Template-afterburnerfx-Naoghuman] to  
+create the [SokubanFX] project all basic functionalities which I want was 
+implemented ![emoticon_smile.png][emoticon_smile] .
+
+> Logging, Database-Handling, ActionEvent-Handling, Properties-Handling and support 
+> for the [JavaFX] development, easy generation from an executable jar file.
+
+For more detailed informations plz see the article [01 Setup the project].
+
+
+<br />
+##### Project structure<a name="ProjectStructure" />
+
+TODO clean code
+
+
+<br />
+##### Functionalities like collision, movement...<a name="Functionalities" />
+
+What are the basic funcitionalities for the game? Loading and converting a 
+map I will described in the article a little later.  
+So I will speak in this section about `collision` and `movement`.
+
+Following workflow is given:
+* User want to move the player, for example he press the key DOWN.
+* Now all possible collisions must be checked, before something can moved or not.
+* With the `CheckMovementResult` then the movement from the player (and optional 
+  a box) will be done or not.
+* Finally after a successful move the game should be checked if the map is finished.
+  If so the next map can be shown.
+
+`GamePresenter.java` - user press the key DOWN
+```java
+public void onActionButtonDown() {
+    LoggerFacade.INSTANCE.debug(this.getClass(), "On action Button down"); // NOI18N
+        
+    final CheckMovementResult checkMovementResult = MapFacade.INSTANCE.playerMoveTo(EDirection.DOWN, actualMapModel);
+    this.evaluatePlayerMoveTo(checkMovementResult);
+        
+    final boolean shouldCheckIfMapIsFinished = checkMovementResult.isCheckIsMapFinish();
+    if (shouldCheckIfMapIsFinished) {
+        final boolean isMapFinish = MapFacade.INSTANCE.isMapFinish(actualMapModel);
+        this.evaluateIsMapFinish(isMapFinish);
+    }
+}
+```
+
+`MapMovement.java` - check possible collisions return what happen
+```java
+public CheckMovementResult checkMovePlayerTo(EDirection direction, MapModel mapModel) {
+    LoggerFacade.INSTANCE.debug(this.getClass(), "Check move player to direction: " + direction.toString()); // NOI18N
+
+    // Player -> Wall
+    final CollisionResult collisionResultCheckCollisionPlayerWall = CollisionChecker.getDefault().checkCollisionPlayerWall(direction, mapModel);
+    final CheckMovementResult checkMovementResult = CheckMovementResult.getDefault();
+    if (collisionResultCheckCollisionPlayerWall.equals(CollisionResult.PLAYER_AGAINST__WALL)) {
+        checkMovementResult.setAnimation(EAnimation.WHAT_HAPPEN);
+        checkMovementResult.setMovement(EMovement.NONE);
+            
+        return checkMovementResult;
+    }
+	
+	// and do all other collision checks also here.
+}
+```
+
+`CollisionResult.java` - shows what collisions are possible
+```java
+public enum CollisionResult {
+    
+    NONE,                      // ...
+    PLAYER_AGAINST__BOX,       // player -> box
+    PLAYER_AGAINST__BOX_BOX,   // player -> box -> box
+    PLAYER_AGAINST__BOX_NONE,  // player -> box -> none
+    PLAYER_AGAINST__BOX_PLACE, // player -> box -> place
+    PLAYER_AGAINST__BOX_PLACE_AND_FINISH, // player -> box -> place -> finish
+    PLAYER_AGAINST__BOX_WALL,  // player -> box -> wall
+    PLAYER_AGAINST__WALL;      // player -> wall
+    
+}
+```
+
+`GamePresenter.java` - if a new map should shown
+```java
+private void displayMap() {
+    LoggerFacade.INSTANCE.debug(this.getClass(), "Display Map"); // NOI18N
+        
+    lMapInfo.setText("Map " + actualMapModel.getLevel()); // NOI18N
+        
+    final List<String> mapAsStrings = MapFacade.INSTANCE.convertMapCoordinatesToStrings(actualMapModel);
+    taMapDisplay.setText(null);
+    mapAsStrings.stream().forEach((line) -> {
+        taMapDisplay.appendText(line);
+        taMapDisplay.appendText("\n"); // NOI18N
+    });
+}
+```
+
+
+<br />
+##### Persistence from the maps<a name="PersistenceMaps" />
+
+In my old [Java] [Swing2D] game [Sokuban-Clone] the maps are persist as txt-files.
+
+TODO screenshot folder maps + one map open
+
+<br />
+The maps was readed with:
+```java
+public final boolean loadTileMap(int level)
+{
+    ArrayList<String> lines = new ArrayList();
+    
+    int w = 0;
+    int h = 0;
+    
+    String line = null;
+    BufferedReader reader = null;
+    try
+    {
+      reader = new BufferedReader(new InputStreamReader(
+        ClassLoader.getSystemResourceAsStream(
+        "maps/map" + level + ".txt")));
+      while (Boolean.TRUE.booleanValue())
+	  {
+        line = reader.readLine();
+        if (line == null)
+		{
+          reader.close(); break;
+        }
+        if (!line.startsWith("#"))
+		{
+          lines.add(line);
+          w = Math.max(w, line.length());
+        }
+      }
+    }
+    catch (IOException e)
+    {
+      e.printStackTrace();
+    }
+	
+    ...
+}
+```
+
+In the method are a lot of more code for converting the map but that
+* isn't relevant for reading the map from a txt-file and
+* wasn't a good decision which I made 2008
+    * see [Single Responsibility Principle (SRP)]
+    * see [Separation of Concerns (SoC)]
+
+
+<br />
+In [SokubanFX] I decide to be a little lazy and use for all maps one properties-file.
+
+TODO screenshot from the package with maps.properties and the open file.
+
+So its really easy to read a map and convert it to a `List<String>`:
+```java
+class MapLoader implements IMapConfiguration {
+    
+    MapLoader() {
+        this.init();
+    }
+    
+    // Register the maps.properties file as a ResourceBundle.
+    private void init() {
+        LoggerFacade.INSTANCE.debug(this.getClass(), "Init MapLoader"); // NOI18N
+        
+        PropertiesFacade.INSTANCE.register(KEY__MAP__RESOURCE_BUNDLE);
+    }
+    
+    // Returns the mapped value from the key.
+    private String getProperty(String propertyKey) {
+        return PropertiesFacade.INSTANCE.getProperty(KEY__MAP__RESOURCE_BUNDLE, propertyKey);
+    }
+	
+    /**
+     * Loads the map from the ResourceBundle and returns the converted map as a List<String>.
+     * 
+     * @param level Which map should be loaded?
+     * return The converted map as a list from strings. 
+     */
+    public List<String> loadMapAsStrings(int level) {
+        LoggerFacade.INSTANCE.debug(this.getClass(), "Load map as Strings: " + level); // NOI18N
+        
+        final List<String> mapAsStrings = FXCollections.observableArrayList();
+        final String mapAsString = this.getProperty(KEY__MAP__POINT + level);
+        final String[] splits = mapAsString.split(";"); // NOI18N
+        mapAsStrings.addAll(Arrays.asList(splits));
+        
+        return mapAsStrings;
+    }
+
+}
+```
+
+
+<br />
+##### Textbased maps in views<a name="TextbasedMaps" />
+
+Because we are in a prototype I deside for me
+
+TODO add one screenshot. left -> preview-map, right -> game-map
 
 
 <br />
@@ -152,6 +376,9 @@ Any question? Some helpful criticism?
 [NetBeans RCP]:https://netbeans.org/kb/trails/platform.html
 [NetBeansIDE-AfterburnerFX-Plugin]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin
 [Project-Template-afterburnerfx-Naoghuman]:https://github.com/Naoghuman/Project-Templates/tree/master/Project-Template-afterburnerfx-Naoghuman
+[Separation of Concerns (SoC)]:https://en.wikipedia.org/wiki/Separation_of_concerns
+[Single Responsibility Principle (SRP)]:https://en.wikipedia.org/wiki/Single_responsibility_principle
 [SokubanFX]:https://github.com/Naoghuman/SokubanFX
+[Sokuban-Clone]:https://github.com/Naoghuman/sokuban-clone
 [SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]:https://github.com/Naoghuman/SokubanFX/releases/tag/v0.1.0
 [Swing2D]:https://docs.oracle.com/javase/tutorial/2d/
