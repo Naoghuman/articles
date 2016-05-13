@@ -25,6 +25,10 @@ Content
 Articles<a name="Articles" />
 ---
 
+* The articles in this series are licensed under [General Public License 3.0].
+
+
+<br />
 ##### How to create the game SokubanFX<a name="ArticlesSokubanFX" />
 
 This article series described how I create the game [SokubanFX] with [JavaFX] and 
@@ -40,13 +44,6 @@ decided to rewrite the game in `April 2016`.
   steps how I stabilize the prototype.
 * _&#40;not started&#41;_ The article [04 Extend the prototype] describes the steps to 
   extend the prototype.
-
-
-
-License<a name="License" />
----
-
-The project `articles` and all subprojects are licensed under [General Public License 3.0].
 
 
 
