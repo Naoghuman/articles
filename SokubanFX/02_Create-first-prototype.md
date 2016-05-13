@@ -328,10 +328,10 @@ Articles in this series<a name="Articles" />
   the advantages from using this template [Project-Template-afterburnerfx-Naoghuman].
 * **&#40;new&#41;** The article [02 Create first prototype] describes the steps and 
   decisions which I make during the implementation from the first `prototype`.
-* _(not started)_ The article [03 Stabilization from the prototype] describes the 
-  steps how I stabilize the prototype.
-* _(not started)_ The article [04 Extend the prototype] describes the steps to 
-  extend the prototype.
+* _&#40;not started&#41;_ The article [03 Stabilization from the prototype] 
+  describes the steps how I stabilize the prototype.
+* _&#40;not started&#41;_ The article [04 Extend the prototype] describes the 
+  steps to extend the prototype.
 
 
 

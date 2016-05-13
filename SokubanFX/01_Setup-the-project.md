@@ -91,7 +91,7 @@ which are necessary to tweak the template.
    * `License Header` -> If you don't want the pre-choosen [General Public License 3.0].
 
 <br />
-##### **&#40;updated&#41;**_Update different files like `log4j2.xml`, `application.properties`, application.fxml..._<a name="UpdateFiles" />
+##### **&#40;updated&#41;** _Update different files like `log4j2.xml`, `application.properties`, application.fxml..._<a name="UpdateFiles" />
 
 * Update the reference in the tag `fx:controller` in the file 
   `Source Packages/yourpackage/application/application.fxml`.
@@ -104,7 +104,7 @@ which are necessary to tweak the template.
   needed.
 
 <br />
-##### **&#40;updated&#41;**_Update the JavaDoc &#40;license, autor&#41; if needed_<a name="UpdateJavaDoc" />
+##### **&#40;updated&#41;** _Update the JavaDoc &#40;license, autor&#41; if needed_<a name="UpdateJavaDoc" />
 
 * If your project license different from [General Public License 3.0] which is 
   preselect in the project template then you can refactore the `licence` in all 
@@ -118,7 +118,7 @@ which are necessary to tweak the template.
     * Same here -> `Replace...`, `Replace in Projects...`.
 
 <br />
-##### **&#40;updated&#41;**_Last steps..._<a name="LastSteps" />
+##### **&#40;updated&#41;** _Last steps..._<a name="LastSteps" />
 
 * Move the folder 'me' to your `local` maven repository.
 * The folder contains my above described libraries which are `momentary` not in 
@@ -214,10 +214,10 @@ Articles in this series<a name="Articles" />
   the advantages from using this template [Project-Template-afterburnerfx-Naoghuman].
 * **&#40;new&#41;** The article [02 Create first prototype] describes the steps and 
   decisions which I make during the implementation from the first `prototype`.
-* _(not started)_ The article [03 Stabilization from the prototype] describes the 
-  steps how I stabilize the prototype.
-* _(not started)_ The article [04 Extend the prototype] describes the steps to 
-  extend the prototype.
+* _&#40;not started&#41;_ The article [03 Stabilization from the prototype] 
+  describes the steps how I stabilize the prototype.
+* _&#40;not started&#41;_ The article [04 Extend the prototype] describes the 
+  steps to extend the prototype.
 
 
 
