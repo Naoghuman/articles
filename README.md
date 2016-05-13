@@ -16,7 +16,6 @@ Content
 
 * [Articles](#Articles)
     * [How to create the game SokubanFX](#ArticlesSokubanFX)
-* [Contribution](#Contribution)
 * [License](#License)
 * [Autor](#Autor)
 * [Contact](#Contact)
@@ -44,15 +43,6 @@ decided to rewrite the game in `April 2016`.
 
 
 
-Contribution<a name="Contribution" />
----
-
-* If you find a `Bug` I will be glad if you will report an [Issue].
-* If you want to contribute to the project plz fork the project and do 
-  a [Pull Request].
-
-
-
 License<a name="License" />
 ---
 
@@ -71,7 +61,9 @@ See [Contact](#Contact).
 Contact<a name="Contact" />
 ---
 
-You can reach me under <peter.rogge@yahoo.de>.
+Any question? Some helpful criticism?
+* Please write an [Issue] or
+* send me an `email` to <peter.rogge@yahoo.de>
 
 
 
@@ -89,5 +81,4 @@ You can reach me under <peter.rogge@yahoo.de>.
 [NetBeans IDE]:https://netbeans.org/
 [NetBeans RCP]:https://netbeans.org/kb/trails/platform.html
 [Project-Template-afterburnerfx-Naoghuman]:https://github.com/Naoghuman/Project-Templates/tree/master/Project-Template-afterburnerfx-Naoghuman
-[Pull Request]:https://help.github.com/articles/using-pull-requests
 [SokubanFX]:https://github.com/Naoghuman/SokubanFX
