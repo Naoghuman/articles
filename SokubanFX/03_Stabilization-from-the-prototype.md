@@ -78,7 +78,8 @@ Articles in this series<a name="Articles" />
 ---
 
 * This article series described how I create the game [SokubanFX] with [JavaFX] 
-  and [NetBeans IDE].
+  and [NetBeans IDE] inspired by my [Java] [Swing2D] game [Sokuban-Clone] which 
+  I wrote `2008`.
 * The articles in this series are licensed under [General Public License 3.0].
 
 
@@ -124,5 +125,6 @@ Articles in this series<a name="Articles" />
 [SokubanFX]:https://github.com/Naoghuman/SokubanFX
 [SokubanFX v0.2.0-PROTOTYPE]:https://youtu.be/iKBfqk0ANj8
 [SokubanFX-v0.2.0-PROTOTYPE_2016-05-08_18-44.zip]:https://github.com/Naoghuman/SokubanFX/releases/tag/v0.2.0
+[Sokuban-Clone]:https://github.com/Naoghuman/sokuban-clone
 [Swing2D]:https://docs.oracle.com/javase/tutorial/2d/
 
