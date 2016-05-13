@@ -13,8 +13,7 @@ and what are the advantages are from using this template.
 
 In this article I describes the steps and decisions which I make during the 
 implementation from the first `prototype`. Click on the picture to see the 
-`SokubanFX v0.1.0-PROTOTYPE` in action ![emoticon_smile.png][emoticon_smile] in 
-YouTube.
+`SokubanFX v0.1.0-PROTOTYPE` in action :smile: in YouTube.
 
 [![sokubanfx_v0.1.0-PROTOTYPE.png][sokubanfx_v0.1.0-PROTOTYPE]](https://www.youtube.com/watch?v=Kp1vWjLTIvY "SokubanFX v0.1.0-PROTOTYPE")
 
@@ -51,9 +50,9 @@ make during the implementation from the first `prototype` from [SokubanFX].
 <br />
 ##### Basic functionalities from the project<a name="BasicFunctionalities" />
 
-Because I used my project template [Project-Template-afterburnerfx-Naoghuman] to  
+Because I used my project template [Project-Template-afterburnerfx-Naoghuman] to 
 create the [SokubanFX] project all basic functionalities which I want was 
-implemented ![emoticon_smile.png][emoticon_smile] .
+implemented :grinning: :sunglasses: .
 
 > Logging, Database-Handling, ActionEvent-Handling, Properties-Handling and support 
 > for the [JavaFX] development, easy generation from an executable jar file.
@@ -336,9 +335,6 @@ Articles in this series<a name="Articles" />
 
 
 [//]: # (Images)
-[emoticon_smile]:https://cloud.githubusercontent.com/assets/8161815/10268707/76d6c5f2-6ac1-11e5-9330-15a8943f1b0d.png
-[emoticon_grin]:https://cloud.githubusercontent.com/assets/8161815/10268709/7b073800-6ac1-11e5-85b3-d0e342acc403.png
-[emoticon_tongue]:https://cloud.githubusercontent.com/assets/8161815/10268706/741f41fe-6ac1-11e5-88ea-1b4d807b2283.png
 [sokubanfx_v0.1.0-PROTOTYPE]:https://cloud.githubusercontent.com/assets/8161815/15157275/305a7ba6-16eb-11e6-9b1f-737c9a0ca2b8.png
 
 
