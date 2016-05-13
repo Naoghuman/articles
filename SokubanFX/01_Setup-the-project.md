@@ -31,13 +31,13 @@ Content
 
 * [Setup the project](#SetupTheProject)
     * [Download the project template](#DownloadTemplate)
-    * [Tweak the project template](#TweakTemplate)  
-      [_Tweak the project &#40;name, properties, packages...&#41;_](#TweakProject)  
-      [_Update different files like `log4j2.xml`, `application.properties`, `application.fxml`..._](#UpdateFiles)  
-      [_Update the JavaDoc &#40;license, autor&#41; if needed_](#UpdateJavaDoc)  
-      [_Last steps..._](#LastSteps)
+    * **&#40;updated&#41;** [Tweak the project template](#TweakTemplate)  
+      **&#40;updated&#41;** [_Tweak the project &#40;name, properties, packages...&#41;_](#TweakProject)  
+      **&#40;updated&#41;** [_Update different files like `log4j2.xml`, `application.properties`, `application.fxml`..._](#UpdateFiles)  
+      **&#40;updated&#41;** [_Update the JavaDoc &#40;license, autor&#41; if needed_](#UpdateJavaDoc)  
+      **&#40;updated&#41;** [_Last steps..._](#LastSteps)
     * [What is the advance from the template?](#AdvanceTemplate)
-* [Conclusion](#Conclusion)
+* **&#40;new&#41;** [Conclusion](#Conclusion)
 * [About the autor](#Autor)
     * [Contact](#Contact)
 * [Articles in this series](#Articles)
@@ -81,7 +81,7 @@ which are necessary to tweak the template.
 
 
 <br />
-##### _Tweak the project &#40;name, properties, packages...&#41;_<a name="TweakProject" />
+##### **&#40;updated&#41;** _Tweak the project &#40;name, properties, packages...&#41;_<a name="TweakProject" />
 
 * Rename the project `name` (display name, artefactID and folder).
 * Update the `packages` in the folders `Source Packages/` and `Other Sources/`.
@@ -91,7 +91,7 @@ which are necessary to tweak the template.
    * `License Header` -> If you don't want the pre-choosen [General Public License 3.0].
 
 <br />
-##### _Update different files like `log4j2.xml`, `application.properties`, application.fxml..._<a name="UpdateFiles" />
+##### **&#40;updated&#41;**_Update different files like `log4j2.xml`, `application.properties`, application.fxml..._<a name="UpdateFiles" />
 
 * Update the reference in the tag `fx:controller` in the file 
   `Source Packages/yourpackage/application/application.fxml`.
@@ -104,7 +104,7 @@ which are necessary to tweak the template.
   needed.
 
 <br />
-##### _Update the JavaDoc &#40;license, autor&#41; if needed_<a name="UpdateJavaDoc" />
+##### **&#40;updated&#41;**_Update the JavaDoc &#40;license, autor&#41; if needed_<a name="UpdateJavaDoc" />
 
 * If your project license different from [General Public License 3.0] which is 
   preselect in the project template then you can refactore the `licence` in all 
@@ -118,7 +118,7 @@ which are necessary to tweak the template.
     * Same here -> `Replace...`, `Replace in Projects...`.
 
 <br />
-##### _Last steps..._<a name="LastSteps" />
+##### **&#40;updated&#41;**_Last steps..._<a name="LastSteps" />
 
 * Move the folder 'me' to your `local` maven repository.
 * The folder contains my above described libraries which are `momentary` not in 
@@ -150,7 +150,7 @@ minimal desktop application with following advantages:
 
 
 <br />
-Conclusion<a name="Conclusion" />
+**&#40;new&#41;** Conclusion<a name="Conclusion" />
 ---
 
 TODO write conclusion
@@ -209,11 +209,11 @@ Articles in this series<a name="Articles" />
 * The articles in this series are licensed under [General Public License 3.0].
 
 <br />
-* The article [01 Setup the project] describes the steps how to setup a new project 
-  in [GitHub] with my project template and what are the advantages from using this
-  template [Project-Template-afterburnerfx-Naoghuman].
-* _(not started)_ The article [02 Create first prototype] describes the steps and 
- decisions which I make during the implementation from the first `prototype`.
+* **&#40;updated&#41;** The article [01 Setup the project] describes the steps 
+  how to setup a new project in [GitHub] with my project template and what are 
+  the advantages from using this template [Project-Template-afterburnerfx-Naoghuman].
+* **&#40;new&#41;** The article [02 Create first prototype] describes the steps and 
+  decisions which I make during the implementation from the first `prototype`.
 * _(not started)_ The article [03 Stabilization from the prototype] describes the 
   steps how I stabilize the prototype.
 * _(not started)_ The article [04 Extend the prototype] describes the steps to 

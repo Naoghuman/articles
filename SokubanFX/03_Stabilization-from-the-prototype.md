@@ -82,11 +82,11 @@ Articles in this series<a name="Articles" />
 * The articles in this series are licensed under [General Public License 3.0].
 
 <br />
-* The article [01 Setup the project] describes the steps how to setup a new project 
-  in [GitHub] with my project template and what are the advantages from using this
-  template [Project-Template-afterburnerfx-Naoghuman].
-* _(not started)_ The article [02 Create first prototype] describes the steps and 
- decisions which I make during the implementation from the first `prototype`.
+* **&#40;updated&#41;** The article [01 Setup the project] describes the steps 
+  how to setup a new project in [GitHub] with my project template and what are 
+  the advantages from using this template [Project-Template-afterburnerfx-Naoghuman].
+* **&#40;new&#41;** The article [02 Create first prototype] describes the steps and 
+  decisions which I make during the implementation from the first `prototype`.
 * _(not started)_ The article [03 Stabilization from the prototype] describes the 
   steps how I stabilize the prototype.
 * _(not started)_ The article [04 Extend the prototype] describes the steps to 
