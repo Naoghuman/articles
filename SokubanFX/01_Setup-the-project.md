@@ -216,8 +216,6 @@ Articles in this series<a name="Articles" />
   decisions which I make during the implementation from the first `prototype`.
 * _&#40;not started&#41;_ The article [03 Stabilization from the prototype] 
   describes the steps how I stabilize the prototype.
-* _&#40;not started&#41;_ The article [04 Extend the prototype] describes the 
-  steps to extend the prototype.
 
 
 
@@ -230,7 +228,6 @@ Articles in this series<a name="Articles" />
 [01 Setup the project]:01_Setup-the-project.md
 [02 Create first prototype]:02_Create-first-prototype.md
 [03 Stabilization from the prototype]:03_Stabilization-from-the-prototype.md
-[04 Extend the prototype]:04_Extend-the-prototype.md
 [Adam Bien]:http://www.adam-bien.com/roller/abien/
 [Afterburner.fx NetBeans Plugin Release]:http://www.adam-bien.com/roller/abien/entry/afterburner_fx_netbeans_plugin_release
 [afterburner.fx]:https://github.com/AdamBien/afterburner.fx

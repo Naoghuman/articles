@@ -20,8 +20,7 @@ Content
     * [How to create the game SokubanFX](#ArticlesSokubanFX)  
       **&#40;updated&#41;** [_01 Setup the project_](#SetupProject)  
       **&#40;new&#41;** [_02 Create first prototype_](#FirstPrototype)  
-      _&#40;not started&#41;_ [_03 Stabilization from the prototype_](#StabilizationPrototype)  
-      _&#40;not started&#41;_ [_04 Extend the prototype_](#ExtendPrototype)
+      _&#40;not started&#41;_ [_03 Stabilization from the prototype_](#StabilizationPrototype)
 * [About the autor](#Autor)
     * [Contact](#Contact)
 
@@ -51,8 +50,6 @@ decided to rewrite the game in `April 2016`.
 * _&#40;not started&#41;_ <a name="StabilizationPrototype" />The article 
   [03 Stabilization from the prototype] describes the steps how I stabilize the 
   prototype.
-* _&#40;not started&#41;_ <a name="ExtendPrototype" />The article 
-  [04 Extend the prototype] describes the steps to extend the prototype.
 
 
 
@@ -103,7 +100,6 @@ Any question? Some helpful criticism?
 [01 Setup the project]:/SokubanFX/01_Setup-the-project.md
 [02 Create first prototype]:/SokubanFX/02_Create-first-prototype.md
 [03 Stabilization from the prototype]:/SokubanFX/03_Stabilization-from-the-prototype.md
-[04 Extend the prototype]:/SokubanFX/04_Extend-the-prototype.md
 [Adam Bien]:http://www.adam-bien.com/roller/abien/
 [Afterburner.fx NetBeans Plugin Release]:http://www.adam-bien.com/roller/abien/entry/afterburner_fx_netbeans_plugin_release
 [afterburner.fx]:https://github.com/AdamBien/afterburner.fx
