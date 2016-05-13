@@ -6,7 +6,8 @@ Articles
 Intention
 ---
 
-Contains different articles from me around [Java], [JavaFX] and other stuff.
+Contains different articles from me around [Java], [JavaFX], [NetBeans], 
+[NetBeans RCP] and other stuff.
 
 
 
@@ -31,10 +32,10 @@ This article series described how I create the game [SokubanFX] with [JavaFX] an
 [NetBeans IDE]. Inspired by my [Java] game `Sokuban-Clone` which I wrote 2008 I 
 decided to rewrite the game in `April 2016`.
 
-* The article [01 Setup the project] describes the steps how to setup a new project 
-  in [GitHub] with my project template and what are the advantages from using 
-  this template [Project-Template-afterburnerfx-Naoghuman].
-* _(not started)_ The article [02 Create first prototype] describes the steps and 
+* **(updated)** The article [01 Setup the project] describes the steps how to 
+  setup a new project in [GitHub] with my project template and what are the 
+  advantages from using this template [Project-Template-afterburnerfx-Naoghuman].
+* **(new)** The article [02 Create first prototype] describes the steps and 
   decisions which I make during the implementation from the first `prototype`.
 * _(not started)_ The article [03 Stabilization from the prototype] describes the 
   steps how I stabilize the prototype.
@@ -84,7 +85,9 @@ You can reach me under <peter.rogge@yahoo.de>.
 [Issue]:https://github.com/Naoghuman/lib-database-objectdb/issues
 [Java]:https://en.wikipedia.org/wiki/Java_%28programming_language%29
 [JavaFX]:http://docs.oracle.com/javase/8/javase-clienttechnologies.htm
+[NetBeans]:https://netbeans.org/
 [NetBeans IDE]:https://netbeans.org/
+[NetBeans RCP]:https://netbeans.org/kb/trails/platform.html
 [Project-Template-afterburnerfx-Naoghuman]:https://github.com/Naoghuman/Project-Templates/tree/master/Project-Template-afterburnerfx-Naoghuman
 [Pull Request]:https://help.github.com/articles/using-pull-requests
 [SokubanFX]:https://github.com/Naoghuman/SokubanFX
