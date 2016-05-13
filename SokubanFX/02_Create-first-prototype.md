@@ -322,7 +322,9 @@ Articles in this series<a name="Articles" />
   and [NetBeans IDE].
 * The articles in this series are licensed under [General Public License 3.0].
 
+
 <br />
+##### Articles
 * **&#40;updated&#41;** The article [01 Setup the project] describes the steps 
   how to setup a new project in [GitHub] with my project template and what are 
   the advantages from using this template [Project-Template-afterburnerfx-Naoghuman].
