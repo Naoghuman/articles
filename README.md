@@ -19,7 +19,7 @@ Content
 * [Articles](#Articles)
     * [How to create the game SokubanFX](#ArticlesSokubanFX)
 * [About the autor](#Autor)
-* [Contact](#Contact)
+    * [Contact](#Contact)
 
 
 
@@ -83,10 +83,8 @@ So I decided to do this:
   [Adam Bien] introduce my plugin &#40;at 48:00&#41;.
 
 
-
 <br />
-Contact<a name="Contact" />
----
+##### Contact<a name="Contact" />
 
 Any question? Some helpful criticism?
 * Please write an [Issue] or
