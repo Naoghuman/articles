@@ -3,6 +3,7 @@ Articles
 
 
 
+<br />
 Intention
 ---
 
@@ -11,6 +12,7 @@ Contains different articles from me around [Java], [JavaFX], [NetBeans],
 
 
 
+<br />
 Content
 ---
 
@@ -22,6 +24,7 @@ Content
 
 
 
+<br />
 Articles<a name="Articles" />
 ---
 
@@ -47,6 +50,7 @@ decided to rewrite the game in `April 2016`.
 
 
 
+<br />
 Autor<a name="Autor" />
 ---
 
@@ -55,6 +59,7 @@ See [Contact](#Contact).
 
 
 
+<br />
 Contact<a name="Contact" />
 ---
 
