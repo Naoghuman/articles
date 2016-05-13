@@ -236,7 +236,7 @@ class MapLoader implements IMapConfiguration {
      * Loads the map from the ResourceBundle and returns the loaded map as a List<String>.
      * 
      * @param level Which map should be loaded?
-     * return The converted map as a list from strings. 
+     * return The loaded map as a list from strings. 
      */
     public List<String> loadMapAsStrings(int level) {
         LoggerFacade.INSTANCE.debug(this.getClass(), "Load map as Strings: " + level); // NOI18N
