@@ -91,7 +91,7 @@ which are necessary to tweak the template.
    * `License Header` -> If you don't want the pre-choosen [General Public License 3.0].
 
 <br />
-##### **&#40;updated&#41;** _Update different files like `log4j2.xml`, `application.properties`, application.fxml..._<a name="UpdateFiles" />
+##### **&#40;updated&#41;** _Update different files like `log4j2.xml`, `application.properties`, `application.fxml`..._<a name="UpdateFiles" />
 
 * Update the reference in the tag `fx:controller` in the file 
   `Source Packages/yourpackage/application/application.fxml`.
@@ -122,7 +122,8 @@ which are necessary to tweak the template.
 
 * Move the folder 'me' to your `local` maven repository.
 * The folder contains my above described libraries which are `momentary` not in 
-  [Maven Central] available.
+  [Maven Central] available. I plan for the future to upload my libraries to the 
+  [Maven Central], then this step wouldn't be necessary anymore.
 
 
 <br />
