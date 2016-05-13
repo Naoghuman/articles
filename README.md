@@ -18,7 +18,6 @@ Content
 
 * [Articles](#Articles)
     * [How to create the game SokubanFX](#ArticlesSokubanFX)
-* [License](#License)
 * [Autor](#Autor)
 * [Contact](#Contact)
 
