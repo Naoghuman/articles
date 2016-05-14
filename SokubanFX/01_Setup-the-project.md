@@ -39,8 +39,7 @@ Content
     * **&#40;updated&#41;** [What is the advantages from using this template?](#AdvanceTemplate)  
       [_The advantage from the plugin `javafx-maven-plugin`_](#AdvJavMavPlu)  
       [_The advantage from the library `afterburner.fx`_](#AdvAft)  
-      [_The advantage from the library `lib-action`_](#AdvLibAct)  
-      [_The advantage from the library `lib-database-objectdb`_](#AdvLibDatObj)  
+      [_The advantage from the library `lib-action`_](#AdvLibAct)    
       [_The advantage from the library `lib-logger`_](#AdvLibLog)  
       [_The advantage from the library `lib-preferences`_](#AdvLibPre)  
       [_The advantage from the library `lib-properties`_](#AdvLibPro)
@@ -139,14 +138,14 @@ which are necessary to tweak the template.
 After the preperation from the project template we will have a well configured 
 minimal [JavaFX], [Maven] desktop application with following below listed 
 advantages. Also every library have for its own great functionalities its the 
-interaction from all libraries in the working project which is the greatest 
+`interaction` from all libraries in the working project which is the greatest 
 advantage :innocent: from the template.
 
 
 <br />
 ##### _The advantage from the plugin `javafx-maven-plugin`_<a name="AdvJavMavPlu" />
 
-* An interactive guide `how to configured` the plugin can be found under:  
+* An interactive guide `how to configured` the plugin can be found under: 
   https://javafx-maven-plugin.github.io/
 * Copy and paste the configuration into your `pom.xml`.
 * Now execute the command `mvn jfx:jar` into your project folder and magically 
@@ -175,14 +174,14 @@ for (CategoryModel categoryModel : categoryModels) {
 
 
 <br />
-One more advantage from the `usage` from [afterburner.fx] with [NetBeans IDE] is 
-that you can use a plugin from me which helps zu generate the files:
+One more advantage from the `usage` from the library [afterburner.fx] with 
+[NetBeans IDE] is that you can use a plugin from me which helps zu generate the 
+files:
 
 ![generated-files-plugin.png][generated-files-plugin]
 
 The plugin is available above the `Update Center` from [NetBeans IDE] or in the 
-[GitHub] project:  
-https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin/releases
+[GitHub] project: https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin/releases
 
 
 <br />
@@ -262,19 +261,10 @@ public class PreviewPresenter implements Initializable, IActionConfiguration, IR
 ```
 
 Its also possible to define a `com.github.naoghuman.lib.action.api.TransferData` 
-which can store for example `data models`. For more informations plz see:  
-https://github.com/Naoghuman/lib-action
+which can store for example `data models`. The library is well documented so see 
+for more informations plz: https://github.com/Naoghuman/lib-action
 
 
-<br />
-##### _The advantage from the library `lib-database-objectdb`_<a name="AdvLibDatObj" />
-
-* With the library [lib-database-objectdb] an `ObjectDB` database is integrated 
-  into the project.
-
-
-```java
-```
 <br />
 ##### _The advantage from the library `lib-logger`_<a name="AdvLibLog" />
 
@@ -380,7 +370,7 @@ Articles in this series<a name="Articles" />
 
 
 [//]: # (Images)
-[generated-jar-file]:https://cloud.githubusercontent.com/assets/8161815/15264356/c327cbda-1972-11e6-8719-1af408843d91.png
+[generated-jar-file]:https://cloud.githubusercontent.com/assets/8161815/15267366/771bf8b2-19c0-11e6-8157-adb76eff4cbf.png
 [generated-files-plugin]:https://cloud.githubusercontent.com/assets/8161815/15264601/3525b25e-1975-11e6-85d1-74fac8aa2196.png
 [sokuban-clone-png]:https://cloud.githubusercontent.com/assets/8161815/12365174/72d57abc-bbd3-11e5-84d8-80c5d647b897.png
 
