@@ -268,12 +268,49 @@ for more informations plz: https://github.com/Naoghuman/lib-action
 <br />
 ##### _The advantage from the library `lib-logger`_<a name="AdvLibLog" />
 
-* The `log framework` [log4j2] is integrated into the project with good support 
-  from the library [lib-logger].
+* The library [lib-logger] delivers a clean `api` the logging with the log 
+  framework [log4j2] in a [JavaFX] application.
 
+There are also many additional methods like logging a message at start or end 
+from the application:
 
 ```java
+public class StartApplication extends Application implements IApplicationConfiguration {
+
+    @Override
+    public void init() throws Exception {
+        super.init();
+        
+        final char borderSign = this.getProperty(KEY__APPLICATION__BORDER_SIGN).charAt(0);
+        final String message = this.getProperty(KEY__APPLICATION__MESSAGE_START);
+        final String title = this.getProperty(KEY__APPLICATION__TITLE) + this.getProperty(KEY__APPLICATION__VERSION);
+        LoggerFacade.INSTANCE.message(borderSign, 80, String.format(message, title));
+        
+        ...
+    }
+
+    ...
+}
 ```
+
+which will log:
+```
+2016-05-14 10:50:50,915  INFO  
+################################################################################
+Start SokubanFX v0.1.0-PROTOTYPE.
+################################################################################     [LibLogger]
+```
+
+With the project template comes also a predefined `log4j2.xml` which can be 
+easily updated for the needs from the project.  
+See also the section [_Update different files like `log4j2.xml`, `application.properties`, `application.fxml`..._](#UpdateFiles)
+
+![log4j2-png.png][log4j2-png]
+
+The library is well documentated, plz see the project `ReadMe` for more details: 
+https://github.com/Naoghuman/lib-logger
+
+
 <br />
 ##### _The advantage from the library `lib-preferences`_<a name="AdvLibPre" />
 
@@ -372,6 +409,7 @@ Articles in this series<a name="Articles" />
 [//]: # (Images)
 [generated-jar-file]:https://cloud.githubusercontent.com/assets/8161815/15267366/771bf8b2-19c0-11e6-8157-adb76eff4cbf.png
 [generated-files-plugin]:https://cloud.githubusercontent.com/assets/8161815/15264601/3525b25e-1975-11e6-85d1-74fac8aa2196.png
+[log4j2-png]:https://cloud.githubusercontent.com/assets/8161815/15267556/acc011ba-19c5-11e6-8428-e42abe8e01ff.png
 [sokuban-clone-png]:https://cloud.githubusercontent.com/assets/8161815/12365174/72d57abc-bbd3-11e5-84d8-80c5d647b897.png
 
 
