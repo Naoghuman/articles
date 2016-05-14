@@ -32,18 +32,18 @@ Content
 * [Setup the project](#SetupTheProject)
     * [Download the project template](#DownloadTemplate)
     * **&#40;updated&#41;** [Tweak the project template](#TweakTemplate)  
-      **&#40;updated&#41;** [_Tweak the project &#40;name, properties, packages...&#41;_](#TweakProject)  
-      **&#40;updated&#41;** [_Update different files like `log4j2.xml`, `application.properties`, `application.fxml`..._](#UpdateFiles)  
-      **&#40;updated&#41;** [_Update the JavaDoc &#40;license, autor&#41; if needed_](#UpdateJavaDoc)  
-      **&#40;updated&#41;** [_Last steps..._](#LastSteps)
+      [_Tweak the project &#40;name, properties, packages...&#41;_](#TweakProject)  
+      [_Update different files like `log4j2.xml`, `application.properties`, `application.fxml`..._](#UpdateFiles)  
+      [_Update the JavaDoc &#40;license, autor&#41; if needed_](#UpdateJavaDoc)  
+      [_Last steps..._](#LastSteps)
     * **&#40;updated&#41;** [What is the advantages from using the template?](#AdvanceTemplate)  
-      **&#40;updated&#41;** [_The advantage from javafx-maven-plugin_](#AdvJavMavPlu)  
-      **&#40;updated&#41;** [_The advantage from afterburner.fx_](#AdvAft)  
-      **&#40;updated&#41;** [_The advantage from lib-action_](#AdvLibAct)  
-      **&#40;updated&#41;** [_The advantage from lib-database-objectdb_](#AdvLibDatObj)  
-      **&#40;updated&#41;** [_The advantage from lib-logger_](#AdvLibLog)  
-      **&#40;updated&#41;** [_The advantage from lib-preferences_](#AdvLibPre)  
-      **&#40;updated&#41;** [_The advantage from lib-properties_](#AdvLibPro)
+      [_The advantage from javafx-maven-plugin_](#AdvJavMavPlu)  
+      [_The advantage from afterburner.fx_](#AdvAft)  
+      [_The advantage from lib-action_](#AdvLibAct)  
+      [_The advantage from lib-database-objectdb_](#AdvLibDatObj)  
+      [_The advantage from lib-logger_](#AdvLibLog)  
+      [_The advantage from lib-preferences_](#AdvLibPre)  
+      [_The advantage from lib-properties_](#AdvLibPro)
 * **&#40;new&#41;** [Conclusion](#Conclusion)
 * [About the autor](#Autor)
     * [Contact](#Contact)
@@ -88,7 +88,7 @@ which are necessary to tweak the template.
 
 
 <br />
-##### **&#40;updated&#41;** _Tweak the project &#40;name, properties, packages...&#41;_<a name="TweakProject" />
+##### _Tweak the project &#40;name, properties, packages...&#41;_<a name="TweakProject" />
 
 * Rename the project `name` (display name, artefactID and folder).
 * Update the `packages` in the folders `Source Packages/` and `Other Sources/`.
@@ -98,7 +98,7 @@ which are necessary to tweak the template.
    * `License Header` -> If you don't want the pre-choosen [General Public License 3.0].
 
 <br />
-##### **&#40;updated&#41;** _Update different files like `log4j2.xml`, `application.properties`, `application.fxml`..._<a name="UpdateFiles" />
+##### _Update different files like `log4j2.xml`, `application.properties`, `application.fxml`..._<a name="UpdateFiles" />
 
 * Update the reference in the tag `fx:controller` in the file 
   `Source Packages/yourpackage/application/application.fxml`.
@@ -111,7 +111,7 @@ which are necessary to tweak the template.
   needed.
 
 <br />
-##### **&#40;updated&#41;** _Update the JavaDoc &#40;license, autor&#41; if needed_<a name="UpdateJavaDoc" />
+##### _Update the JavaDoc &#40;license, autor&#41; if needed_<a name="UpdateJavaDoc" />
 
 * If your project license different from [General Public License 3.0] which is 
   preselect in the project template then you can refactore the `licence` in all 
@@ -125,7 +125,7 @@ which are necessary to tweak the template.
     * Same here -> `Replace...`, `Replace in Projects...`.
 
 <br />
-##### **&#40;updated&#41;** _Last steps..._<a name="LastSteps" />
+##### _Last steps..._<a name="LastSteps" />
 
 * Move the folder 'me' to your `local` maven repository.
 * The folder contains my above described libraries which are `momentary` not in 
@@ -134,7 +134,7 @@ which are necessary to tweak the template.
 
 
 <br />
-#### What is the advantages from using the template?<a name="AdvanceTemplate" />
+#### **&#40;updated&#41;** What is the advantages from using the template?<a name="AdvanceTemplate" />
 
 After the preperation from the project template we will have a well configured 
 minimal [JavaFX], [Maven] desktop application with following below listed 
@@ -144,7 +144,7 @@ advantage :innocent: from the template.
 
 
 <br />
-##### **&#40;updated&#41;** _The advantage from javafx-maven-plugin_<a name="AdvJavMavPlu" />
+##### _The advantage from javafx-maven-plugin_<a name="AdvJavMavPlu" />
 
 * An interactive guide `how to configured` the plugin can be found under:  
   https://javafx-maven-plugin.github.io/
@@ -156,7 +156,7 @@ advantage :innocent: from the template.
 
 
 <br />
-##### **&#40;updated&#41;** _The advantage from afterburner.fx_<a name="AdvAft" />
+##### _The advantage from afterburner.fx_<a name="AdvAft" />
 
 * Included is the library [afterburner.fx] which is really helpful by the 
   development from [JavaFX] applications.
@@ -186,7 +186,7 @@ https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin/releases
 
 
 <br />
-##### **&#40;updated&#41;** _The advantage from lib-action_<a name="AdvLibAct" />
+##### _The advantage from lib-action_<a name="AdvLibAct" />
 
 * Action events can be easily `registered` and `handled` with the library [lib-action].
 
@@ -265,7 +265,7 @@ https://github.com/Naoghuman/lib-action
 
 
 <br />
-##### **&#40;updated&#41;** _The advantage from lib-database-objectdb_<a name="AdvLibDatObj" />
+##### _The advantage from lib-database-objectdb_<a name="AdvLibDatObj" />
 
 * With the library [lib-database-objectdb] an `ObjectDB` database is integrated 
   into the project.
@@ -274,7 +274,7 @@ https://github.com/Naoghuman/lib-action
 ```java
 ```
 <br />
-##### **&#40;updated&#41;** _The advantage from lib-logger_<a name="AdvLibLog" />
+##### _The advantage from lib-logger_<a name="AdvLibLog" />
 
 * The `log framework` [log4j2] is integrated into the project with good support 
   from the library [lib-logger].
@@ -283,7 +283,7 @@ https://github.com/Naoghuman/lib-action
 ```java
 ```
 <br />
-##### **&#40;updated&#41;** _The advantage from lib-preferences_<a name="AdvLibPre" />
+##### _The advantage from lib-preferences_<a name="AdvLibPre" />
 
 * Automatically generation from the file `Preferences.properties` with helpful 
   support from the library [lib-preferences].
@@ -292,7 +292,7 @@ https://github.com/Naoghuman/lib-action
 ```java
 ```
 <br />
-##### **&#40;updated&#41;** _The advantage from lib-properties_<a name="AdvLibPro" />
+##### _The advantage from lib-properties_<a name="AdvLibPro" />
 
 * Integration from the file `application.properties` with helpful support from 
   the library [lib-properties].
@@ -307,8 +307,8 @@ https://github.com/Naoghuman/lib-action
 ---
 
 It seems there are many points which should be updated in the project template. 
-For me it needs 12min - 15min and all things are done and the project with above 
-listed advantages :smile: is ready.
+For me it takes 10min and all things are done and the project with above listed 
+advantages :smile: is ready.
 
 
 
