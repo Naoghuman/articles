@@ -235,11 +235,13 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
 
 1. With the interface `com.github.naoghuman.lib.action.api.IRegisterActions` the 
    developer override the method `registerActions()`.
-2. In this method all individual actions will be registered.
-3. If the `View` should be instantiate, then over the `Presenter` the method 
-   `registerActions()` will be called and then all actions registered.
+2. In this method all individual actions from `ApplicationPresenter` will be 
+   registered.
+3. If the `GameView` will be instantiate, then over the `GamePresenter` the method 
+   `registerActions()` will be called and then all actions in the class will be 
+   registered.
 4. Acces to the action can be done with the `action-key`. In this case is that 
-   `ON_ACTION__CHANGE_TO_GAMEVIEW`.
+   `ON_ACTION__CHANGE_TO_GAMEVIEW` next code snippet.
 
 ```java
 public class PreviewPresenter implements Initializable, IActionConfiguration, IRegisterActions {
@@ -259,7 +261,7 @@ public class PreviewPresenter implements Initializable, IActionConfiguration, IR
 }
 ```
 
-Its also possible to define `com.github.naoghuman.lib.action.api.TransferData` 
+Its also possible to define a `com.github.naoghuman.lib.action.api.TransferData` 
 which can store for example `data models`. For more informations plz see:  
 https://github.com/Naoghuman/lib-action
 
