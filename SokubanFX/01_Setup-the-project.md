@@ -36,14 +36,14 @@ Content
       [_Update different files like `log4j2.xml`, `application.properties`, `application.fxml`..._](#UpdateFiles)  
       [_Update the JavaDoc &#40;license, autor&#41; if needed_](#UpdateJavaDoc)  
       [_Last steps..._](#LastSteps)
-    * **&#40;updated&#41;** [What is the advantages from using the template?](#AdvanceTemplate)  
-      [_The advantage from javafx-maven-plugin_](#AdvJavMavPlu)  
-      [_The advantage from afterburner.fx_](#AdvAft)  
-      [_The advantage from lib-action_](#AdvLibAct)  
-      [_The advantage from lib-database-objectdb_](#AdvLibDatObj)  
-      [_The advantage from lib-logger_](#AdvLibLog)  
-      [_The advantage from lib-preferences_](#AdvLibPre)  
-      [_The advantage from lib-properties_](#AdvLibPro)
+    * **&#40;updated&#41;** [What is the advantages from using this template?](#AdvanceTemplate)  
+      [_The advantage from the plugin `javafx-maven-plugin`_](#AdvJavMavPlu)  
+      [_The advantage from the library `afterburner.fx`_](#AdvAft)  
+      [_The advantage from the library `lib-action`_](#AdvLibAct)  
+      [_The advantage from the library `lib-database-objectdb`_](#AdvLibDatObj)  
+      [_The advantage from the library `lib-logger`_](#AdvLibLog)  
+      [_The advantage from the library `lib-preferences`_](#AdvLibPre)  
+      [_The advantage from the library `lib-properties`_](#AdvLibPro)
 * **&#40;new&#41;** [Conclusion](#Conclusion)
 * [About the autor](#Autor)
     * [Contact](#Contact)
@@ -134,7 +134,7 @@ which are necessary to tweak the template.
 
 
 <br />
-#### **&#40;updated&#41;** What is the advantages from using the template?<a name="AdvanceTemplate" />
+#### **&#40;updated&#41;** What is the advantages from using this template?<a name="AdvanceTemplate" />
 
 After the preperation from the project template we will have a well configured 
 minimal [JavaFX], [Maven] desktop application with following below listed 
@@ -144,7 +144,7 @@ advantage :innocent: from the template.
 
 
 <br />
-##### _The advantage from javafx-maven-plugin_<a name="AdvJavMavPlu" />
+##### _The advantage from the plugin `javafx-maven-plugin`_<a name="AdvJavMavPlu" />
 
 * An interactive guide `how to configured` the plugin can be found under:  
   https://javafx-maven-plugin.github.io/
@@ -156,7 +156,7 @@ advantage :innocent: from the template.
 
 
 <br />
-##### _The advantage from afterburner.fx_<a name="AdvAft" />
+##### _The advantage from the library `afterburner.fx`_<a name="AdvAft" />
 
 * Included is the library [afterburner.fx] which is really helpful by the 
   development from [JavaFX] applications.
@@ -186,7 +186,7 @@ https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin/releases
 
 
 <br />
-##### _The advantage from lib-action_<a name="AdvLibAct" />
+##### _The advantage from the library `lib-action`_<a name="AdvLibAct" />
 
 * Action events can be easily `registered` and `handled` with the library [lib-action].
 
@@ -265,7 +265,7 @@ https://github.com/Naoghuman/lib-action
 
 
 <br />
-##### _The advantage from lib-database-objectdb_<a name="AdvLibDatObj" />
+##### _The advantage from the library `lib-database-objectdb`_<a name="AdvLibDatObj" />
 
 * With the library [lib-database-objectdb] an `ObjectDB` database is integrated 
   into the project.
@@ -274,7 +274,7 @@ https://github.com/Naoghuman/lib-action
 ```java
 ```
 <br />
-##### _The advantage from lib-logger_<a name="AdvLibLog" />
+##### _The advantage from the library `lib-logger`_<a name="AdvLibLog" />
 
 * The `log framework` [log4j2] is integrated into the project with good support 
   from the library [lib-logger].
@@ -283,7 +283,7 @@ https://github.com/Naoghuman/lib-action
 ```java
 ```
 <br />
-##### _The advantage from lib-preferences_<a name="AdvLibPre" />
+##### _The advantage from the library `lib-preferences`_<a name="AdvLibPre" />
 
 * Automatically generation from the file `Preferences.properties` with helpful 
   support from the library [lib-preferences].
@@ -292,7 +292,7 @@ https://github.com/Naoghuman/lib-action
 ```java
 ```
 <br />
-##### _The advantage from lib-properties_<a name="AdvLibPro" />
+##### _The advantage from the library `lib-properties`_<a name="AdvLibPro" />
 
 * Integration from the file `application.properties` with helpful support from 
   the library [lib-properties].
