@@ -315,12 +315,93 @@ https://github.com/Naoghuman/lib-logger
 <br />
 ##### _The advantage from the library `lib-preferences`_<a name="AdvLibPre" />
 
-* Automatically generation from the file `Preferences.properties` with helpful 
-  support from the library [lib-preferences].
+* Sometimes we have simple data like user have open a specific dialog, choose a
+  checkbox, move the application on the desktop and so on.
+* So the question is where this data should be stored? In a database or something 
+  else?
+* The library [lib-preferences] allowed to store this simple data in a file 
+  named `Preferences.properties`.
+
+![preferences-file.png][preferences-file]
 
 
+<br />
+How does this works?  
+* In [SokubanFX] is an interface `IMapConfiguration` defined which contains among 
+  others following constants.
+* This allowed me to store the information which is the actual `map` from the 
+  player. Have he played successful a map, then the counter will increased by `one`.
 ```java
+public interface IMapConfiguration {
+    
+    ...
+    
+    public static final String PROP__ACTUAL_MAP = "PROP__ACTUAL_MAP"; // NOI18N
+    public static final int PROP__ACTUAL_MAP__DEFAULT_VALUE = 1;
+    
+}
 ```
+
+
+<br />
+Here one example how to ready this information:
+```java
+public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
+
+    private void loadActualMap() {
+        LoggerFacade.INSTANCE.debug(this.getClass(), "Load actual Map"); // NOI18N
+        
+        final int actualMap = PreferencesFacade.INSTANCE.getInt(
+                IMapConfiguration.PROP__ACTUAL_MAP,
+                IMapConfiguration.PROP__ACTUAL_MAP__DEFAULT_VALUE);
+        
+        actualMapModel = MapFacade.INSTANCE.loadMap(actualMap);
+    }
+
+    ...
+}
+```
+
+<br />
+and here how to store this information in the file.
+```java
+public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
+
+    private void evaluateIsMapFinish(boolean isMapFinish) {
+        LoggerFacade.INSTANCE.debug(this.getClass(), "Evaluate is Map finish"); // NOI18N
+        
+        // Keep going :)
+        if (!isMapFinish) {
+            return;
+        }
+
+        // map-level += 1
+        final int actualMap = PreferencesFacade.INSTANCE.getInt(
+                IMapConfiguration.PROP__ACTUAL_MAP,
+                IMapConfiguration.PROP__ACTUAL_MAP__DEFAULT_VALUE);
+        PreferencesFacade.INSTANCE.putInt(
+                IMapConfiguration.PROP__ACTUAL_MAP,
+                actualMap + 1);
+
+        // load next map
+        this.loadActualMap();
+        this.displayMap();
+    }
+
+    ...
+}
+```
+
+<br />
+There are many more functionalitites like add a `java.util.prefs.PreferenceChangeListener` 
+to the `Preferences` via the methods `forApplication(): Preferences` and / or 
+`forModule(Class): Preferences`.
+
+The library is well documentated, plz see the project `ReadMe` for more details: 
+https://github.com/Naoghuman/lib-preferences
+
+
+
 <br />
 ##### _The advantage from the library `lib-properties`_<a name="AdvLibPro" />
 
@@ -340,8 +421,8 @@ It seems there are many points which should be updated in the project template.
 For me it takes 10min and all things are done and the project with above listed 
 advantages :smile: is ready.
 
-And plz don't forget that the harmonic and great `interaction` from all libraries 
-and ... is the `greatest` advantage for the developer and customer.
+And plz don't forget that the `greatest` advantage in a project is the harmonic 
+`interaction` from all libraries and components.
 
 
 
@@ -414,6 +495,7 @@ Articles in this series<a name="Articles" />
 [generated-jar-file]:https://cloud.githubusercontent.com/assets/8161815/15267366/771bf8b2-19c0-11e6-8157-adb76eff4cbf.png
 [generated-files-plugin]:https://cloud.githubusercontent.com/assets/8161815/15264601/3525b25e-1975-11e6-85d1-74fac8aa2196.png
 [log4j2-png]:https://cloud.githubusercontent.com/assets/8161815/15267556/acc011ba-19c5-11e6-8428-e42abe8e01ff.png
+[preferences-file]:https://cloud.githubusercontent.com/assets/8161815/15269279/4405d3b4-19fa-11e6-8d67-327b8eeb1080.png
 [sokuban-clone-png]:https://cloud.githubusercontent.com/assets/8161815/12365174/72d57abc-bbd3-11e5-84d8-80c5d647b897.png
 
 
