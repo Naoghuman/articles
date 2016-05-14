@@ -301,6 +301,7 @@ Start SokubanFX v0.1.0-PROTOTYPE.
 ################################################################################     [LibLogger]
 ```
 
+<br />
 With the project template comes also a predefined `log4j2.xml` which can be 
 easily updated for the needs from the project.  
 See also the section [_Update different files like `log4j2.xml`, `application.properties`, `application.fxml`..._](#UpdateFiles)
@@ -338,6 +339,9 @@ https://github.com/Naoghuman/lib-logger
 It seems there are many points which should be updated in the project template. 
 For me it takes 10min and all things are done and the project with above listed 
 advantages :smile: is ready.
+
+And plz don't forget that the harmonic and great `interaction` from all libraries 
+and ... is the `greatest` advantage for the developer and customer.
 
 
 
