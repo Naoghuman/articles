@@ -9,7 +9,7 @@ Intention
 
 In `2008` I wrote a little game [Sokuban-Clone] with [Java] and [Swing2D].
 
-![sokuban-clone.png][sokuban-clone]
+![sokuban-clone.png][sokuban-clone-png]
 * [GitHub] project: https://github.com/Naoghuman/sokuban-clone  
 * Download: https://github.com/Naoghuman/sokuban-clone/releases
 
@@ -36,7 +36,14 @@ Content
       **&#40;updated&#41;** [_Update different files like `log4j2.xml`, `application.properties`, `application.fxml`..._](#UpdateFiles)  
       **&#40;updated&#41;** [_Update the JavaDoc &#40;license, autor&#41; if needed_](#UpdateJavaDoc)  
       **&#40;updated&#41;** [_Last steps..._](#LastSteps)
-    * [What is the advance from the template?](#AdvanceTemplate)
+    * **&#40;updated&#41;** [What is the advantages from using the template?](#AdvanceTemplate)  
+      **&#40;updated&#41;** [_The advantage from javafx-maven-plugin_](#AdvJavMavPlu)  
+      **&#40;updated&#41;** [_The advantage from afterburner.fx_](#AdvAft)  
+      **&#40;updated&#41;** [_The advantage from lib-action_](#AdvLibAct)  
+      **&#40;updated&#41;** [_The advantage from lib-database-objectdb_](#AdvLibDatObj)  
+      **&#40;updated&#41;** [_The advantage from lib-logger_](#AdvLibLog)  
+      **&#40;updated&#41;** [_The advantage from lib-preferences_](#AdvLibPre)  
+      **&#40;updated&#41;** [_The advantage from lib-properties_](#AdvLibPro)
 * **&#40;new&#41;** [Conclusion](#Conclusion)
 * [About the autor](#Autor)
     * [Contact](#Contact)
@@ -127,34 +134,181 @@ which are necessary to tweak the template.
 
 
 <br />
-#### What is the advance from the template?<a name="AdvanceTemplate" />
+#### What is the advantages from using the template?<a name="AdvanceTemplate" />
 
 After the preperation from the project template we will have a well configured 
-minimal desktop application with following advantages:
+minimal [JavaFX], [Maven] desktop application with following below listed 
+advantages. Also every library have for its own great functionalities its the 
+interaction from all libraries in the working project which is the greatest 
+advantage :innocent: from the template.
 
-* With the [javafx-maven-plugin] an executable jar file can be easily created.
-    * See the commentary over the injection from the plugin in the `pom.xml` how 
-      to create with the simple maven command `mvn jfx:jar` the exceutable jar 
-      and all needed libraries.
+
+<br />
+##### **&#40;updated&#41;** _The advantage from javafx-maven-plugin_<a name="AdvJavMavPlu" />
+
+* An interactive guide `how to configured` the plugin can be found under:  
+  https://javafx-maven-plugin.github.io/
+* Copy and paste the configuration into your `pom.xml`.
+* Now execute the command `mvn jfx:jar` into your project folder and magically 
+  the jar file will be generated with all needed libraries.
+
+![generated-jar-file.png][generated-jar-file]
+
+
+<br />
+##### **&#40;updated&#41;** _The advantage from afterburner.fx_<a name="AdvAft" />
+
 * Included is the library [afterburner.fx] which is really helpful by the 
   development from [JavaFX] applications.
+
+With the library 'afterburner.fx' its possible to do something like:
+```java
+final List<CategoryModel> categoryModels = SqlFacade.INSTANCE.getCategorySqlProvider().findAll(matrixModel.getId());
+final List<Parent> categoryThumbnailViews = FXCollections.observableArrayList();
+for (CategoryModel categoryModel : categoryModels) {
+    final CategoryThumbnailView categoryThumbnailView = new CategoryThumbnailView();
+    final CategoryThumbnailPresenter categoryThumbnailPresenter = categoryThumbnailView.getRealPresenter();
+    categoryThumbnailPresenter.initialize(categoryModel);
+    categoryThumbnailViews.add(categoryThumbnailView.getView());
+}
+```
+
+
+<br />
+One more advantage from the `usage` from [afterburner.fx] with [NetBeans IDE] is 
+that you can use a plugin from me which helps zu generate the files:
+
+![generated-files-plugin.png][generated-files-plugin]
+
+The plugin is available above the `Update Center` from [NetBeans IDE] or in the 
+[GitHub] project:  
+https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin/releases
+
+
+<br />
+##### **&#40;updated&#41;** _The advantage from lib-action_<a name="AdvLibAct" />
+
 * Action events can be easily `registered` and `handled` with the library [lib-action].
+
+For example have a look here how to `register` an action:
+```java
+public class ApplicationPresenter implements Initializable, IActionConfiguration, IRegisterActions {
+    ...
+
+    @Override
+    public void registerActions() {
+        LoggerFacade.INSTANCE.debug(this.getClass(), "Register actions in ApplicationPresenter"); // NOI18N
+        
+        this.registerOnActionChangeToGameView();
+        this.registerOnActionHideMainMenu();
+        this.registerOnActionShowMainMenu();
+    }
+
+    private void registerOnActionChangeToGameView() {
+        LoggerFacade.INSTANCE.debug(this.getClass(), "Register on action change to GameView");
+        
+        ActionFacade.INSTANCE.register(
+                ON_ACTION__CHANGE_TO_GAMEVIEW,
+                (ActionEvent event) -> {
+                    PreferencesFacade.INSTANCE.putBoolean(
+                            IPreviewConfiguration.PROP__KEY_RELEASED__FOR_PREVIEW, 
+                            Boolean.FALSE);
+        
+                    this.onActionChangeToGameView();
+                }
+        );
+    }
+
+    private void onActionChangeToGameView() {
+        ...
+
+        final GameView gameView = new GameView();
+        final GamePresenter gamePresenter = gameView.getRealPresenter();
+        gamePresenter.registerActions();
+
+        ...
+    }
+
+    ...
+}
+```
+
+1. With the interface `com.github.naoghuman.lib.action.api.IRegisterActions` the 
+   developer override the method `registerActions()`.
+2. In this method all individual actions will be registered.
+3. If the `View` should be instantiate, then over the `Presenter` the method 
+   `registerActions()` will be called and then all actions registered.
+4. Acces to the action can be done with the `action-key`. In this case is that 
+   `ON_ACTION__CHANGE_TO_GAMEVIEW`.
+
+```java
+public class PreviewPresenter implements Initializable, IActionConfiguration, IRegisterActions {
+    ...
+
+    public void onActionStartGame() {
+        LoggerFacade.INSTANCE.debug(this.getClass(), "On action start Game"); // NOI18N
+        
+        if (ptShowNextRandomMap.getStatus().equals(Animation.Status.RUNNING)) {
+            ptShowNextRandomMap.stop();
+        }
+        
+        ActionFacade.INSTANCE.handle(ON_ACTION__CHANGE_TO_GAMEVIEW);
+    }
+
+    ...
+}
+```
+
+Its also possible to define `com.github.naoghuman.lib.action.api.TransferData` 
+which can store for example `data models`. For more informations plz see:  
+https://github.com/Naoghuman/lib-action
+
+
+<br />
+##### **&#40;updated&#41;** _The advantage from lib-database-objectdb_<a name="AdvLibDatObj" />
+
 * With the library [lib-database-objectdb] an `ObjectDB` database is integrated 
   into the project.
+
+
+```java
+```
+<br />
+##### **&#40;updated&#41;** _The advantage from lib-logger_<a name="AdvLibLog" />
+
 * The `log framework` [log4j2] is integrated into the project with good support 
   from the library [lib-logger].
+
+
+```java
+```
+<br />
+##### **&#40;updated&#41;** _The advantage from lib-preferences_<a name="AdvLibPre" />
+
+* Automatically generation from the file `Preferences.properties` with helpful 
+  support from the library [lib-preferences].
+
+
+```java
+```
+<br />
+##### **&#40;updated&#41;** _The advantage from lib-properties_<a name="AdvLibPro" />
+
 * Integration from the file `application.properties` with helpful support from 
   the library [lib-properties].
-* Automatically generation from the file `Preferences.properties` with helpful 
-  support from the library [lib-preferences]. 
 
+
+```java
+```
 
 
 <br />
 **&#40;new&#41;** Conclusion<a name="Conclusion" />
 ---
 
-TODO write conclusion
+It seems there are many points which should be updated in the project template. 
+For me it needs 12min - 15min and all things are done and the project with above 
+listed advantages :smile: is ready.
 
 
 
@@ -224,7 +378,9 @@ Articles in this series<a name="Articles" />
 
 
 [//]: # (Images)
-[sokuban-clone]:https://cloud.githubusercontent.com/assets/8161815/12365174/72d57abc-bbd3-11e5-84d8-80c5d647b897.png
+[generated-jar-file]:https://cloud.githubusercontent.com/assets/8161815/15264356/c327cbda-1972-11e6-8719-1af408843d91.png
+[generated-files-plugin]:https://cloud.githubusercontent.com/assets/8161815/15264601/3525b25e-1975-11e6-85d1-74fac8aa2196.png
+[sokuban-clone-png]:https://cloud.githubusercontent.com/assets/8161815/12365174/72d57abc-bbd3-11e5-84d8-80c5d647b897.png
 
 
 
