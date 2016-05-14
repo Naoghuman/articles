@@ -405,12 +405,71 @@ https://github.com/Naoghuman/lib-preferences
 <br />
 ##### _The advantage from the library `lib-properties`_<a name="AdvLibPro" />
 
-* Integration from the file `application.properties` with helpful support from 
-  the library [lib-properties].
+* With the library [lib-properties] easy `registering` and `accessing` from own 
+  properties files are possible.
+    * _Hint:_  
+      `Own` properties means properties files which are not automatically included 
+      into the `Presenter`s through the library [afterburner.fx].
 
-
+<br />
+How to register a resource bundle
 ```java
+public interface IApplicationConfiguration {
+    
+    ...
+    public static final String KEY__APPLICATION__RESOURCE_BUNDLE = "/com/github/naoghuman/sokubanfx/application/application.properties"; // NOI18N
+    public static final String KEY__APPLICATION__TITLE = "application.title"; // NOI18N
+    public static final String KEY__APPLICATION__VERSION = "application.version"; // NOI18N
+
+}
+
+public class StartApplication extends Application implements IActionConfiguration, IApplicationConfiguration {
+
+    @Override
+    public void init() throws Exception {
+        super.init();
+        
+        PropertiesFacade.INSTANCE.register(KEY__APPLICATION__RESOURCE_BUNDLE);
+        ...
+    }
+    ...
+}
 ```
+
+![properties-file.png][properties-file]
+
+<br />
+Access to a property is done with
+```java
+public class StartApplication extends Application implements IActionConfiguration, IApplicationConfiguration {
+
+    private String getProperty(String propertyKey) {
+        return PropertiesFacade.INSTANCE.getProperty(KEY__APPLICATION__RESOURCE_BUNDLE, propertyKey);
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        final ApplicationView applicationView = new ApplicationView();
+        final ApplicationPresenter applicationPresenter = applicationView.getRealPresenter();
+        
+        final Scene scene = new Scene(applicationView.getView(), 1280, 720);
+        scene.setOnKeyReleased((KeyEvent event) -> {
+            this.onKeyReleased(event);
+        });
+        primaryStage.setTitle(this.getProperty(KEY__APPLICATION__TITLE) + this.getProperty(KEY__APPLICATION__VERSION));
+        ...
+    }
+    ...
+}
+```
+
+<br />
+
+It's also possible to register and access `SystemProperties` via the library.
+
+The library is well documentated, when you are interested plz see the project 
+`ReadMe` for more details: 
+https://github.com/Naoghuman/lib-properties
 
 
 <br />
@@ -496,6 +555,7 @@ Articles in this series<a name="Articles" />
 [generated-files-plugin]:https://cloud.githubusercontent.com/assets/8161815/15264601/3525b25e-1975-11e6-85d1-74fac8aa2196.png
 [log4j2-png]:https://cloud.githubusercontent.com/assets/8161815/15267556/acc011ba-19c5-11e6-8428-e42abe8e01ff.png
 [preferences-file]:https://cloud.githubusercontent.com/assets/8161815/15269279/4405d3b4-19fa-11e6-8d67-327b8eeb1080.png
+[properties-file]:https://cloud.githubusercontent.com/assets/8161815/15269750/802067d8-1a09-11e6-8c18-d3e91bf9f265.png
 [sokuban-clone-png]:https://cloud.githubusercontent.com/assets/8161815/12365174/72d57abc-bbd3-11e5-84d8-80c5d647b897.png
 
 
