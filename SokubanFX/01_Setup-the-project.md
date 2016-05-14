@@ -407,12 +407,11 @@ https://github.com/Naoghuman/lib-preferences
 
 * With the library [lib-properties] easy `registering` and `accessing` from own 
   properties files are possible.
-    * _Hint:_  
-      `Own` properties means properties files which are not automatically included 
-      into the `Presenter`s through the library [afterburner.fx].
+    * _Hint:_ `Own` properties means properties files which are not automatically 
+      included into the `Presenter`s through the library [afterburner.fx].
 
 <br />
-How to register a resource bundle
+How to register a resource bundle:
 ```java
 public interface IApplicationConfiguration {
     
@@ -439,7 +438,7 @@ public class StartApplication extends Application implements IActionConfiguratio
 ![properties-file.png][properties-file]
 
 <br />
-Access to a property is done with
+Access to a property is done with:
 ```java
 public class StartApplication extends Application implements IActionConfiguration, IApplicationConfiguration {
 
