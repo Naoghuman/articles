@@ -160,10 +160,10 @@ private void displayMap() {
 
 In my old [Java] [Swing2D] game [Sokuban-Clone] the maps are persist as txt-files.
 
-TODO screenshot folder maps + one map open
+![sokuban-clone-map-txt.png][sokuban-clone-map-txt]
 
 <br />
-The maps was readed with:
+This maps was readed with:
 ```java
 public final boolean loadTileMap(int level)
 {
@@ -204,16 +204,16 @@ public final boolean loadTileMap(int level)
 
 In the method are a lot of more code for converting the map but that
 * isn't relevant for reading the map from a txt-file and
-* wasn't a good decision which I made 2008
+* wasn't a good decision which I made `2008`...
     * see [Single Responsibility Principle (SRP)]
     * see [Separation of Concerns (SoC)]
-
 
 <br />
 In [SokubanFX] I decide to be a little lazy and use for all maps one properties-file.
 
-TODO screenshot from the package with maps.properties and the open file.
+![sokuban-map-properties.png][sokuban-map-properties]
 
+<br />
 So its really easy to read a map and convert it to a `List<String>`:
 ```java
 class MapLoader implements IMapConfiguration {
@@ -338,6 +338,8 @@ Articles in this series<a name="Articles" />
 
 
 [//]: # (Images)
+[sokuban-clone-map-txt]:https://cloud.githubusercontent.com/assets/8161815/15273067/655c12dc-1a8e-11e6-97b2-34dc48d8ec2f.png
+[sokuban-map-properties]:https://cloud.githubusercontent.com/assets/8161815/15273091/1d577e76-1a8f-11e6-8436-2268932e30b0.png
 [sokubanfx_v0.1.0-PROTOTYPE]:https://cloud.githubusercontent.com/assets/8161815/15157275/305a7ba6-16eb-11e6-9b1f-737c9a0ca2b8.png
 
 
