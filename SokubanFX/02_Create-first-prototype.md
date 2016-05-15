@@ -350,7 +350,11 @@ TODO add one screenshot. left -> preview-map, right -> game-map
 Conclusion<a name="Conclusion" />
 ---
 
-TODO write conclusion
+With the decisions to read the maps from a `.properties` file and show the maps 
+as `text-based` I was be able to focused my energie on the main functionalities 
+in the game like `collisions`, `evaluations` and `movement`.
+
+So I have my prototype in a few hours implemented :thumbsup: .
 
 
 
