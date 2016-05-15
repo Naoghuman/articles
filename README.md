@@ -86,7 +86,7 @@ Any question? Some helpful criticism?
 
 
 <br />
-##### Articles<a name="Articles" />
+##### License<a name="License" />
 
 * The articles in this series are licensed under [General Public License 3.0].
 
