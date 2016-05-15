@@ -46,6 +46,16 @@ Like I said in the section `Intention` here are the steps and decisions which I
 make during the implementation from the first `prototype` from my new [JavaFX], 
 [Maven] game [SokubanFX].
 
+> So here is the `importants` decision from me -> no game-engine :flushed: .
+
+Normally a game have a game-loop which runs with xy fps. Loops over the `update()` 
+and `render()` methods. [JavaFX] comes with own classes around this topic like 
+[Animation] -> the parent class from [Timeline] and [Transition].
+
+If the functionality from this classes and all sub-classes not enough, then I 
+have the possibility to use the class [AnimationTimer] which triggers the 
+method `handle(long)` in every frame (which leeds then to a game-engine :grin: ).
+
 
 <br />
 ##### Basic functionalities from the project<a name="BasicFunctionalities" />
@@ -422,6 +432,8 @@ Articles in this series<a name="Articles" />
 [Adam Bien]:http://www.adam-bien.com/roller/abien/
 [Afterburner.fx NetBeans Plugin Release]:http://www.adam-bien.com/roller/abien/entry/afterburner_fx_netbeans_plugin_release
 [afterburner.fx]:https://github.com/AdamBien/afterburner.fx
+[Animation]:https://docs.oracle.com/javase/8/javafx/api/javafx/animation/Animation.html
+[AnimationTimer]:https://docs.oracle.com/javase/8/javafx/api/javafx/animation/AnimationTimer.html
 [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive]:https://www.youtube.com/watch?v=WsV7kSSSOGs
 [Geertjan Wielenga]:https://blogs.oracle.com/geertjan/entry/welcome_to_me
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
@@ -445,3 +457,5 @@ Articles in this series<a name="Articles" />
 [Sokuban-Clone]:https://github.com/Naoghuman/sokuban-clone
 [SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]:https://github.com/Naoghuman/SokubanFX/releases/tag/v0.1.0
 [Swing2D]:https://docs.oracle.com/javase/tutorial/2d/
+[Timeline]:https://docs.oracle.com/javase/8/javafx/api/javafx/animation/Timeline.html
+[Transition]:https://docs.oracle.com/javase/8/javafx/api/javafx/animation/Transition.html
