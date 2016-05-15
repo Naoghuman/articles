@@ -16,25 +16,18 @@ Contains different articles from me around [Java], [JavaFX], [NetBeans],
 Content
 ---
 
-* [Articles](#Articles)
-    * [How to create the game SokubanFX](#ArticlesSokubanFX)  
-      This article series described how I create the game [SokubanFX] with 
-      [JavaFX] and [NetBeans IDE]. Inspired by my [Java] game `Sokuban-Clone` 
-      which I wrote 2008 I decided to rewrite the game in `April 2016`.
+* [How to create the game SokubanFX](#ArticlesSokubanFX)  
+  This article series described how I create the game [SokubanFX] with [JavaFX] 
+  and [NetBeans IDE]. Inspired by my [Java] game `Sokuban-Clone` which I wrote 
+  2008 I decided to rewrite the game in `April 2016`.
 * [About the autor](#Autor)
     * [Contact](#Contact)
-
+    * [License](#License)
 
 
 <br />
-Articles<a name="Articles" />
+How to create the game SokubanFX<a name="ArticlesSokubanFX" />
 ---
-
-* The articles in this series are licensed under [General Public License 3.0].
-
-
-<br />
-##### How to create the game SokubanFX<a name="ArticlesSokubanFX" />
 
 This article series described how I create the game [SokubanFX] with [JavaFX] and 
 [NetBeans IDE]. Inspired by my [Java] game `Sokuban-Clone` which I wrote 2008 I 
@@ -90,6 +83,12 @@ So I decided to do this:
 Any question? Some helpful criticism?
 * Please write an [Issue] or
 * send me an `email` to <peter.rogge@yahoo.de>
+
+
+<br />
+##### Articles<a name="Articles" />
+
+* The articles in this series are licensed under [General Public License 3.0].
 
 
 
