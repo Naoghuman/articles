@@ -17,7 +17,7 @@ and [NetBeans IDE]. Inspired by my [Java] game `Sokuban-Clone` which I wrote
 Content
 ---
 
-* [How to create the game SokubanFX](#ArticlesSokubanFX)
+* [How to create the game SokubanFX](#ArticlesSokubanFX)  
   This article series described how I create the game [SokubanFX] with [JavaFX] 
   and [NetBeans IDE]. Inspired by my [Java] game `Sokuban-Clone` which I wrote 
   2008 I decided to rewrite the game in `April 2016`.

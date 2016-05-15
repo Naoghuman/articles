@@ -137,7 +137,7 @@ which are necessary to tweak the template.
 
 After the preperation from the project template we will have a well configured 
 minimal [JavaFX], [Maven] desktop application with following below listed 
-advantages. Also every library have for its own great functionalities its the 
+advantages. Also every library have for it's own great functionalities its the 
 `interaction` from all libraries in the working project which is the greatest 
 advantage :innocent: from the template.
 
@@ -160,7 +160,8 @@ advantage :innocent: from the template.
 * Included is the library [afterburner.fx] which is really helpful by the 
   development from [JavaFX] applications.
 
-With the library 'afterburner.fx' its possible to do something like:
+<br />
+With the library 'afterburner.fx' it's possible to do something like:
 ```java
 final List<CategoryModel> categoryModels = SqlFacade.INSTANCE.getCategorySqlProvider().findAll(matrixModel.getId());
 final List<Parent> categoryThumbnailViews = FXCollections.observableArrayList();
@@ -260,7 +261,7 @@ public class PreviewPresenter implements Initializable, IActionConfiguration, IR
 }
 ```
 
-Its also possible to define a `com.github.naoghuman.lib.action.api.TransferData` 
+It's also possible to define a `com.github.naoghuman.lib.action.api.TransferData` 
 which can store for example `data models`. The library is well documented so see 
 for more informations plz: https://github.com/Naoghuman/lib-action
 
