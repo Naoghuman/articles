@@ -70,10 +70,11 @@ TODO clean code
 <br />
 ##### Functionalities like collision, movement...<a name="Functionalities" />
 
-What are the basic funcitionalities for the game? Loading and converting a 
-map I will described in the article a little later.  
-So I will speak in this section about `collision` and `movement`.
+In this section I will speak about `collision` and `movement`. Beside `loading` 
+and `converting` a map &#40;which I described later in this article&#41; this 
+are the main funcitionalities in the game.
 
+<br />
 Following workflow is given:
 * User want to move the player, for example he press the key DOWN.
 * Now all possible collisions must be checked, before something can moved or not.
@@ -83,7 +84,7 @@ Following workflow is given:
   If so the next map can be shown.
 
 <br />
-`GamePresenter.java` - user press the key DOWN
+User press the key DOWN - `GamePresenter.java`
 ```java
 public void onActionButtonDown() {
     LoggerFacade.INSTANCE.debug(this.getClass(), "On action Button down"); // NOI18N
@@ -100,7 +101,7 @@ public void onActionButtonDown() {
 ```
 
 <br />
-`MapMovement.java` - check possible collisions return what happen
+Check possible collisions return what happen - `MapMovement.java`
 ```java
 public CheckMovementResult checkMovePlayerTo(EDirection direction, MapModel mapModel) {
     LoggerFacade.INSTANCE.debug(this.getClass(), "Check move player to direction: " + direction.toString()); // NOI18N
@@ -120,7 +121,7 @@ public CheckMovementResult checkMovePlayerTo(EDirection direction, MapModel mapM
 ```
 
 <br />
-`CollisionResult.java` - shows what collisions are possible
+Shows what collisions are possible - `CollisionResult.java`
 ```java
 public enum CollisionResult {
     
@@ -137,7 +138,7 @@ public enum CollisionResult {
 ```
 
 <br />
-`GamePresenter.java` - if a new map be should shown
+If a new map be should shown - `GamePresenter.java`
 ```java
 private void displayMap() {
     LoggerFacade.INSTANCE.debug(this.getClass(), "Display Map"); // NOI18N
