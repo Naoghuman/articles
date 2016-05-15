@@ -55,8 +55,8 @@ Because I used my project template [Project-Template-afterburnerfx-Naoghuman] to
 create the [SokubanFX] project all basic functionalities which I want was 
 implemented :grinning: :sunglasses: .
 
-> Logging, Database-Handling, ActionEvent-Handling, Properties-Handling and support 
-> for the [JavaFX] development, easy generation from an executable jar file.
+> Logging, ActionEvent- and Properties-Handling,  support for the [JavaFX] 
+> development, easy generation from an executable jar file aso.
 
 For more detailed informations plz see the article [01 Setup the project].
 
