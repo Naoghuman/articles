@@ -340,9 +340,122 @@ class MapLoader implements IMapConfiguration {
 <br />
 ##### Textbased maps in views<a name="TextbasedMaps" />
 
-Because we are in a prototype I deside for me
+Because we are in a prototype I decided for me to show the game without `graphics`, 
+means `text based`:
 
-TODO add one screenshot. left -> preview-map, right -> game-map
+`Preview` view
+![preview-view.png][preview-view]
+
+`Game` view
+![game-view.png][game-view]
+
+<br />
+Loading a map from the `.properties` file
+```java
+class MapLoader implements IMapConfiguration {
+    public List<String> loadMapAsStrings(int level) {
+        LoggerFacade.INSTANCE.debug(this.getClass(), "Load map as Strings: " + level); // NOI18N
+        
+        final List<String> mapAsStrings = FXCollections.observableArrayList();
+        final String mapAsString = this.getProperty(KEY__MAP__POINT + level);
+        final String[] splits = mapAsString.split(";"); // NOI18N
+        mapAsStrings.addAll(Arrays.asList(splits));
+        
+        return mapAsStrings;
+    }
+    ...
+}
+```
+
+<br />
+Converting a List<String> to a `MapModel`
+```java
+public class MapConverter {
+    public MapModel convertStringsToMap(final int level, final List<String> mapAsStrings) {
+        LoggerFacade.INSTANCE.debug(this.getClass(), "Convert strings to MapModel"); // NOI18N
+        
+        final MapModel mapModel = new MapModel();
+        mapModel.setLevel(level);
+        mapModel.setMapAsStrings(mapAsStrings);
+        
+        int columns = 0;
+        int rows = 0;
+        for (String line : mapAsStrings) {
+            for (int x = 0; x < line.length(); x++) {
+                columns = Math.max(columns, x + 1);
+                
+                final Character c = line.charAt(x);
+                final int x1 = x + 1;
+                final int y1 = rows + 1;
+                switch(c) {
+                    case 'A': // NOI18N
+                    case 'B': { mapModel.addWall(x1, y1);   break; } // NOI18N
+                    
+                    case '0': { mapModel.setPlayer(x1, y1); break; } // NOI18N
+                    case '1': { mapModel.addBox(x1, y1);    break; } // NOI18N
+                    case '2': { mapModel.addPlace(x1, y1);  break; } // NOI18N
+                    
+                    case '-': // NOI18N
+                    default: { }
+                }
+            }
+            
+            rows = rows + 1;
+        }
+        
+        mapModel.setColumns(columns);
+        mapModel.setRows(rows);
+        
+        return mapModel;
+    }
+    ...
+}
+```
+
+<br />
+Converting a MapModel to a `List<String>`
+```java
+public class MapConverter {
+    public List<String> convertMapCoordinatesToStrings(MapModel mapModel) {
+        final List<String> mapAsStrings = FXCollections.observableArrayList();
+        final int columns = mapModel.getColumns();
+        final int rows = mapModel.getRows();
+        final int level = mapModel.getLevel();
+        
+        final Coordinates player = mapModel.getPlayer();
+        final List<Coordinates> boxes = mapModel.getBoxes();
+        final List<Coordinates> places = mapModel.getPlaces();
+        final List<Coordinates> walls = mapModel.getWalls();
+
+        // - = Empty sign
+        for (int ro = 0; ro < rows; ro++) {
+            final StringBuilder sb = new StringBuilder();
+            for (int col = 0; col < columns; col++) {
+                sb.append("-"); // NOI18N
+            }
+            mapAsStrings.add(sb.toString());
+        }
+        
+        // A, B = Walls from the level
+        for (int ro = 1; ro <= rows; ro++) {
+            for (int col = 1; col <= columns; col++) {
+                for (Coordinates wall : walls) {
+                    if (wall.getX() == col && wall.getY() == ro) {
+                        final StringBuilder sb = new StringBuilder();
+                        sb.append(mapAsStrings.get(ro - 1));
+                        sb.replace(col - 1, col, level % 2 != 0 ? "A" : "B"); // NOI18N
+                        mapAsStrings.remove(ro - 1);
+                        mapAsStrings.add(ro - 1, sb.toString());
+                    }
+                }
+            }
+        }
+
+        ...
+    }
+    ...
+}
+```
 
 
 
@@ -355,7 +468,8 @@ as `text-based` I was be able to focused my energie on the main functionalities
 in the game like `collisions`, `evaluations` and `movement`.  
 So I have my prototype in a few hours implemented :thumbsup: .
 
-Download: [SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]
+Download:  
+[SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]
 
 YouTube:
 [![sokubanfx_v0.1.0-PROTOTYPE.png][sokubanfx_v0.1.0-PROTOTYPE]](https://www.youtube.com/watch?v=Kp1vWjLTIvY "SokubanFX v0.1.0-PROTOTYPE")
@@ -433,6 +547,7 @@ Articles in this series<a name="Articles" />
 [sokubanfx_v0.1.0-PROTOTYPE]:https://cloud.githubusercontent.com/assets/8161815/15157275/305a7ba6-16eb-11e6-9b1f-737c9a0ca2b8.png
 
 
+
 [//]: # (Links)
 [01 Setup the project]:01_Setup-the-project.md
 [02 Create first prototype]:02_Create-first-prototype.md
@@ -443,6 +558,7 @@ Articles in this series<a name="Articles" />
 [Animation]:https://docs.oracle.com/javase/8/javafx/api/javafx/animation/Animation.html
 [AnimationTimer]:https://docs.oracle.com/javase/8/javafx/api/javafx/animation/AnimationTimer.html
 [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive]:https://www.youtube.com/watch?v=WsV7kSSSOGs
+[game-view]:https://cloud.githubusercontent.com/assets/8161815/15275677/33cb69ae-1ad2-11e6-9591-12e6f95e5ab1.png
 [Geertjan Wielenga]:https://blogs.oracle.com/geertjan/entry/welcome_to_me
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
 [GitHub]:https://github.com/
@@ -458,6 +574,7 @@ Articles in this series<a name="Articles" />
 [NetBeans Platform 6.9 Developer's Guide]:https://www.packtpub.com/application-development/netbeans-platform-69-developers-guide
 [NetBeans RCP]:https://netbeans.org/kb/trails/platform.html
 [NetBeansIDE-AfterburnerFX-Plugin]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin
+[preview-view]:https://cloud.githubusercontent.com/assets/8161815/15275673/2e051eac-1ad2-11e6-9fd1-b3c893f03cff.png
 [Project-Template-afterburnerfx-Naoghuman]:https://github.com/Naoghuman/Project-Templates/tree/master/Project-Template-afterburnerfx-Naoghuman
 [Separation of Concerns (SoC)]:https://en.wikipedia.org/wiki/Separation_of_concerns
 [Single Responsibility Principle (SRP)]:https://en.wikipedia.org/wiki/Single_responsibility_principle
