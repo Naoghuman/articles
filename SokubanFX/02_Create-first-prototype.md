@@ -28,7 +28,6 @@ Content
 
 * [Create first prototype](#CreateFirstPrototype)
     * [Basic functionalities from the project](#BasicFunctionalities)
-    * [Project structure](#ProjectStructure)
     * [Functionalities like collision, movement...](#Functionalities)
     * [Persistence from the maps](#PersistenceMaps)
     * [Textbased maps in views](#TextbasedMaps)
@@ -59,12 +58,6 @@ implemented :grinning: :sunglasses: .
 > development, easy generation from an executable jar file aso.
 
 For more detailed informations plz see the article [01 Setup the project].
-
-
-<br />
-##### Project structure<a name="ProjectStructure" />
-
-TODO clean code
 
 
 <br />
