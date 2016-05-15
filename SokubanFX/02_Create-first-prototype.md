@@ -44,7 +44,8 @@ Create first prototype<a name="CreateFirstPrototype" />
 ---
 
 Like I said in the section `Intention` here are the steps and decisions which I 
-make during the implementation from the first `prototype` from [SokubanFX].
+make during the implementation from the first `prototype` from my new [JavaFX], 
+[Maven] game [SokubanFX].
 
 
 <br />
