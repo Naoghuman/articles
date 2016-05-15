@@ -352,9 +352,13 @@ Conclusion<a name="Conclusion" />
 
 With the decisions to read the maps from a `.properties` file and show the maps 
 as `text-based` I was be able to focused my energie on the main functionalities 
-in the game like `collisions`, `evaluations` and `movement`.
-
+in the game like `collisions`, `evaluations` and `movement`.  
 So I have my prototype in a few hours implemented :thumbsup: .
+
+Download: [SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]
+
+YouTube:
+[![sokubanfx_v0.1.0-PROTOTYPE.png][sokubanfx_v0.1.0-PROTOTYPE]](https://www.youtube.com/watch?v=Kp1vWjLTIvY "SokubanFX v0.1.0-PROTOTYPE")
 
 
 
