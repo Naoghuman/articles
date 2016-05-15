@@ -28,7 +28,7 @@ Content
 
 * [Create first prototype](#CreateFirstPrototype)
     * [Basic functionalities from the project](#BasicFunctionalities)
-    * [Functionalities like collision, movement...](#Functionalities)
+    * [Functionalities like collision, evaluation, movement...](#Functionalities)
     * [Persistence from the maps](#PersistenceMaps)
     * [Textbased maps in views](#TextbasedMaps)
 * [Conclusion](#Conclusion)
@@ -61,7 +61,7 @@ For more detailed informations plz see the article [01 Setup the project].
 
 
 <br />
-##### Functionalities like collision, movement...<a name="Functionalities" />
+##### Functionalities like collision, evaluation, movement...<a name="Functionalities" />
 
 In this section I will speak about `collision` and `movement`. Beside `loading` 
 and `converting` a map &#40;which I described later in this article&#41; this 
@@ -69,52 +69,58 @@ are the main funcitionalities in the game.
 
 <br />
 Following workflow is given:
-* User want to move the player, for example he press the key DOWN.
-* Now all possible collisions must be checked, before something can moved or not.
-* With the `CheckMovementResult` then the movement from the player (and optional 
-  a box) will be done or not.
-* Finally after a successful move the game should be checked if the map is finished.
-  If so the next map can be shown.
+a) User want to move the player, for example he pressed the key DOWN.  
+b) Now all possible collisions must be checked, before something can moved or not.  
+c) With the `CheckMovementResult` then the evaluation from the player (and optional 
+   a box) will be done or not.  
+d) Now the map with eventually new coordinates can be displayed.  
+e) Finally after a successful move the game should be checked if the map is finished.
+   If so the next map can be shown.
 
 <br />
-User press the key DOWN - `GamePresenter.java`
+a) User pressed the key DOWN
 ```java
-public void onActionButtonDown() {
-    LoggerFacade.INSTANCE.debug(this.getClass(), "On action Button down"); // NOI18N
+public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
+
+    public void onActionButtonDown() {
+        LoggerFacade.INSTANCE.debug(this.getClass(), "On action Button down"); // NOI18N
         
-    final CheckMovementResult checkMovementResult = MapFacade.INSTANCE.playerMoveTo(EDirection.DOWN, actualMapModel);
-    this.evaluatePlayerMoveTo(checkMovementResult);
+        final CheckMovementResult checkMovementResult = MapFacade.INSTANCE.playerMoveTo(EDirection.DOWN, actualMapModel);
+        this.evaluatePlayerMoveTo(checkMovementResult);
         
-    final boolean shouldCheckIfMapIsFinished = checkMovementResult.isCheckIsMapFinish();
-    if (shouldCheckIfMapIsFinished) {
-        final boolean isMapFinish = MapFacade.INSTANCE.isMapFinish(actualMapModel);
-        this.evaluateIsMapFinish(isMapFinish);
+        final boolean shouldCheckIfMapIsFinished = checkMovementResult.isCheckIsMapFinish();
+        if (shouldCheckIfMapIsFinished) {
+            final boolean isMapFinish = MapFacade.INSTANCE.isMapFinish(actualMapModel);
+            this.evaluateIsMapFinish(isMapFinish);
+        }
     }
+    ...
 }
 ```
 
 <br />
-Check possible collisions return what happen - `MapMovement.java`
+b) Check possible collisions return what happen - `MapMovement.java`
 ```java
-public CheckMovementResult checkMovePlayerTo(EDirection direction, MapModel mapModel) {
-    LoggerFacade.INSTANCE.debug(this.getClass(), "Check move player to direction: " + direction.toString()); // NOI18N
+public class MapMovement {
+    public CheckMovementResult checkMovePlayerTo(EDirection direction, MapModel mapModel) {
+        LoggerFacade.INSTANCE.debug(this.getClass(), "Check move player to direction: " + direction.toString()); // NOI18N
 
-    // Player -> Wall
-    final CollisionResult collisionResultCheckCollisionPlayerWall = CollisionChecker.getDefault().checkCollisionPlayerWall(direction, mapModel);
-    final CheckMovementResult checkMovementResult = CheckMovementResult.getDefault();
-    if (collisionResultCheckCollisionPlayerWall.equals(CollisionResult.PLAYER_AGAINST__WALL)) {
-        checkMovementResult.setAnimation(EAnimation.WHAT_HAPPEN);
-        checkMovementResult.setMovement(EMovement.NONE);
+        // Player -> Wall
+        final CollisionResult collisionResultCheckCollisionPlayerWall = CollisionChecker.getDefault().checkCollisionPlayerWall(direction, mapModel);
+        final CheckMovementResult checkMovementResult = CheckMovementResult.getDefault();
+        if (collisionResultCheckCollisionPlayerWall.equals(CollisionResult.PLAYER_AGAINST__WALL)) {
+            checkMovementResult.setAnimation(EAnimation.WHAT_HAPPEN);
+            checkMovementResult.setMovement(EMovement.NONE);
             
-        return checkMovementResult;
-    }
+            return checkMovementResult;
+        }
 	
 	// and do all other collision checks also here.
+    }
+    ...
 }
 ```
 
-<br />
-Shows what collisions are possible - `CollisionResult.java`
 ```java
 public enum CollisionResult {
     
@@ -130,20 +136,93 @@ public enum CollisionResult {
 }
 ```
 
-<br />
-If a new map be should shown - `GamePresenter.java`
+c) Evalutate the `CheckMovementResult` -> new `Coordinates` for the player and 
+   optional a box.
 ```java
-private void displayMap() {
-    LoggerFacade.INSTANCE.debug(this.getClass(), "Display Map"); // NOI18N
+public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
+    private void evaluatePlayerMoveTo(CheckMovementResult checkMovementResult) {
+        // Animation will here done later
         
-    lMapInfo.setText("Map " + actualMapModel.getLevel()); // NOI18N
+        final EMovement movement = checkMovementResult.getMovement();
+        if (
+                movement.equals(EMovement.PLAYER)
+                || movement.equals(EMovement.PLAYER_AND_BOX)
+        ) {
+            // Update player
+            final Coordinates player = actualMapModel.getPlayer();
+            player.setX(player.getTranslateX());
+            player.setY(player.getTranslateY());
+            
+            if (movement.equals(EMovement.PLAYER)) {
+                this.displayMap();
+                return;
+            }
+            
+            // Update box
+            final Coordinates boxToMove = movement.getCoordinatesBoxToMove();
+            final List<Coordinates> boxes = actualMapModel.getBoxes();
+            for (Coordinates box : boxes) {
+                if (
+                        box.getX() == boxToMove.getX()
+                        && box.getY() == boxToMove.getY()
+                ) {
+                    box.setX(boxToMove.getTranslateX());
+                    box.setY(boxToMove.getTranslateY());
+                }
+            }
+            
+            this.displayMap();
+        }
+    }
+    ...
+}
+```
+
+<br />
+d) Display the map -> shows the actual updated map or the next one.
+```java
+public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
+    private void displayMap() {
+        LoggerFacade.INSTANCE.debug(this.getClass(), "Display Map"); // NOI18N
         
-    final List<String> mapAsStrings = MapFacade.INSTANCE.convertMapCoordinatesToStrings(actualMapModel);
-    taMapDisplay.setText(null);
-    mapAsStrings.stream().forEach((line) -> {
-        taMapDisplay.appendText(line);
-        taMapDisplay.appendText("\n"); // NOI18N
-    });
+        lMapInfo.setText("Map " + actualMapModel.getLevel()); // NOI18N
+        
+        final List<String> mapAsStrings = MapFacade.INSTANCE.convertMapCoordinatesToStrings(actualMapModel);
+        taMapDisplay.setText(null);
+        mapAsStrings.stream().forEach((line) -> {
+            taMapDisplay.appendText(line);
+            taMapDisplay.appendText("\n"); // NOI18N
+        });
+    }
+    ...
+}
+```
+
+<br />
+e) Finally evaluate if the map is finished. If yes show the new map.
+```java
+public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
+    private void evaluateIsMapFinish(boolean isMapFinish) {
+        LoggerFacade.INSTANCE.debug(this.getClass(), "Evaluate is Map finish"); // NOI18N
+        
+        // Keep going :)
+        if (!isMapFinish) {
+            return;
+        }
+        
+        // Map is finish !!
+        final int actualMap = PreferencesFacade.INSTANCE.getInt(
+                IMapConfiguration.PROP__ACTUAL_MAP,
+                IMapConfiguration.PROP__ACTUAL_MAP__DEFAULT_VALUE);
+        PreferencesFacade.INSTANCE.putInt(
+                IMapConfiguration.PROP__ACTUAL_MAP,
+                actualMap + 1);
+        
+        // load next map
+        this.loadActualMap();
+        this.displayMap();
+    }
+    ...
 }
 ```
 
