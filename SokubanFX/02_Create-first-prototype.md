@@ -63,12 +63,12 @@ For more detailed informations plz see the article [01 Setup the project].
 <br />
 ##### Functionalities like collision, evaluation, movement...<a name="Functionalities" />
 
-In this section I will speak about `collision` and `movement`. Beside `loading` 
-and `converting` a map &#40;which I described later in this article&#41; this 
-are the main funcitionalities in the game.
+In this section I will speak about `collision`, `evaluation` and `movement`. 
+Beside `loading` and `converting` a map &#40;which I described later in this 
+article&#41; this are the main funcitionalities in the game.
 
 <br />
-Following workflow is given:
+Following workflow is given:  
 a) User want to move the player, for example he pressed the key DOWN.  
 b) Now all possible collisions must be checked, before something can moved or not.  
 c) With the `CheckMovementResult` then the evaluation from the player (and optional 
@@ -99,7 +99,7 @@ public class GamePresenter implements Initializable, IActionConfiguration, IRegi
 ```
 
 <br />
-b) Check possible collisions return what happen - `MapMovement.java`
+b) Check possible collisions -> returns what happen.
 ```java
 public class MapMovement {
     public CheckMovementResult checkMovePlayerTo(EDirection direction, MapModel mapModel) {
