@@ -118,22 +118,100 @@ Lessons<a name="Lessons" />
 
 <br />
 ##### 1. Java 8 Basics - Method References &#40;02:29&#41;<a name="Lesson1" />
+Tools:  
+:small_blue_diamond: NetBeans IDE, JUnit, Java 8
+
+Classes:  
+-- Runnable, Thread
+ 
+Topic:  
+:small_blue_diamond: JavaFX 8 feature 'method references'  
+:small_blue_diamond: 3 schritte der vereinfachung  
+:small_blue_diamond: annonym -> lambda, mit/ohne block  
+:small_blue_diamond: ::methode  
+![empty16.png][empty16] :small_orange_diamond: Was erwartet der Caller? -> kann durch irgendeine Methode entsprechend der Signatur ersetzt werden.
+
+Extra:  
+:small_blue_diamond: Hacking through features with JUnit-Tests.
+ 
+Conclusion:  
+:small_blue_diamond: 
 
 
 <br />
 ##### 2. How Expensive Is A Thread? &#40;03:16&#41;<a name="Lesson2" />
+Tools:  
+:small_blue_diamond: VisualVM
+
+Classes:  
+:small_blue_diamond: Runnable, Thread
+ 
+Topic:  
+:small_blue_diamond: Run 10.000 threads.  
+![empty16.png][empty16] :small_orange_diamond: OutOfMemoryError  
+:small_blue_diamond: VisualVM -> Monitor -> Heap
+
+Extra:  
+:small_blue_diamond: With shortcut 'Pm' -> write public method in editor
+ 
+Conclusion:  
+:small_blue_diamond: 
 
 
 <br />
 ##### 3. Thread Pools For Robustness &#40;02:58&#41;<a name="Lesson3" />
+Tools:  
+:small_blue_diamond: VisualVM
+
+Classes:  
+:small_blue_diamond: Executors
+ 
+Topic:  
+:small_blue_diamond: Run 10.000 threads with Executors  
+![empty16.png][empty16] :small_orange_diamond: No OutOfMemoryError
+
+Extra:  
+:small_blue_diamond: With keys mark a block, copy and move the block  
+:small_blue_diamond: Popup menu 'assign return value to new variable'
+ 
+Conclusion:  
+:small_blue_diamond: 
 
 
 <br />
 ##### 4. Introducing Callables &#40;03:39&#41;<a name="Lesson4" />
+Tools:  
+:small_blue_diamond: 
+
+Classes:  
+:small_blue_diamond: 
+ 
+Topic:  
+:small_blue_diamond: 
+
+Extra:  
+:small_blue_diamond: 
+ 
+Conclusion:  
+:small_blue_diamond: 
 
 
 <br />
 ##### 5. Parallelization With Callable &#40;02:38&#41;<a name="Lesson5" />
+Tools:  
+:small_blue_diamond: 
+
+Classes:  
+:small_blue_diamond: 
+ 
+Topic:  
+:small_blue_diamond: 
+
+Extra:  
+:small_blue_diamond: 
+ 
+Conclusion:  
+:small_blue_diamond: 
 
 
 <br />
@@ -453,7 +531,7 @@ Any question? Some helpful criticism?
 
 
 [//]: # (Images)
-
+[empty16]:https://cloud.githubusercontent.com/assets/8161815/15334453/8477eb3c-1c6e-11e6-83ca-1092a7eb8c9a.png
 
 
 [//]: # (Links)
