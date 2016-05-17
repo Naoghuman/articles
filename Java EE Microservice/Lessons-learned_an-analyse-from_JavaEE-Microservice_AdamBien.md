@@ -1,4 +1,4 @@
-Lessons learned - an analyse from the video series `Java EE Microservice` from [Adam Bien]
+Lessons learned - An analyse from the video series `Java EE Microservice` from [Adam Bien]
 ===
 
 
@@ -22,13 +22,15 @@ rent, buy all...
 
 github https://github.com/AdamBien/javaeemicro.services
 
+idee: videos, die mit thematiken und tools gegroupt sind, werden entsprechend 
+      zusammengefasst.
+
 
 
 <br />
 Content
 ---
 
-* [About the autor](#Autor)
 * TODO auflistung der tools (tools, libraries, links)
 * [Lessons](#Lessons)
     1. [Java 8 Basics - Method References &#40;02:29&#41;](#Lesson1)
@@ -101,44 +103,11 @@ Content
     68. [Dynamic Configuration With In-Memory Grids and Docker &#40;09:23&#41;](#Lesson68)
     69. [Remote Configuration Via JAX-RS &#40;06:49&#41;](#Lesson69)
     70. [Big Thanks !!! &#40;01:09&#41;](#Lesson70)
-* [Summary from the lessons](#SummaryLessons)
-* [Contact](#Contact)
+* [Conclusion](#Conclusion)
 
-
-
-<br />
-About the autor<a name="Autor" />
----
-
-Let me introduce myself. My name is `Peter Rogge` and I'm a software developer 
-in Wolfsburg, Germany.
-
-Since `2008` I work by [H+D International Group] which is an IT- and engineering 
-service provider represented nationally and internationally in over 20 locations 
-with the head-quarters in Wolfsburg, Germany.
-
-
-<br />
-In my free time I investigate between `2009` an `2012` some time in [NetBeans RCP] &#40;Rich 
-Client Platform&#41; development.  
-See  
-* The `interview` [Help for Multilingual NetBeans Platform Applications] &#40;09.2009&#41; with 
-  [Geertjan Wielenga] and me.
-* The `book` [NetBeans Platform 6.9 Developer's Guide] &#40;08.2010&#41; which I helped to 
-  translate from Germany to English.
-
-<br />
-Since `2011` I change my focus to [JavaFX] -> [JavaFX 2.0] to [JavaFX 8] although in `2015` 
-I saw a video from [Adam Bien] where he mention he would love to write a [NetBeans RCP] 
-plugin for his library [afterburner.fx] when he had more time.  
-So I decided to do this:
-* See the [GitHub] project [NetBeansIDE-AfterburnerFX-Plugin] &#40;since 09.2015&#41; which is 
-  really helpful to speed up the development in combination with the library [afterburner.fx]
-  in [JavaFX] application.
-* The `interview` [Afterburner.fx NetBeans Plugin Release] &#40;11.2015&#41; with [Adam Bien] and me.
-* Have a look in the `video` [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive] where 
-  [Adam Bien] introduce my plugin &#40;at 48:00&#41;.
-
+* [About the autor](#Autor)
+    * [Contact](#Contact)
+    * [License](#License)
 
 
 <br />
@@ -429,18 +398,57 @@ Lessons<a name="Lessons" />
 
 
 <br />
-Summary from the lessons<a name="SummaryLessons" />
+Conclusion<a name="Conclusion" />
 ---
 
 
 
 <br />
-Contact<a name="Contact" />
+About the autor<a name="Autor" />
 ---
+
+Let me introduce myself. My name is `Peter Rogge` and I'm a software developer 
+in Wolfsburg, Germany.
+
+Since `2008` I work by [H+D International Group] which is an IT- and engineering 
+service provider represented nationally and internationally in over 20 locations 
+with the head-quarters in Wolfsburg, Germany.
+
+
+<br />
+In my free time I investigate between `2009` an `2012` some time in [NetBeans RCP] &#40;Rich 
+Client Platform&#41; development.  
+See  
+* The `interview` [Help for Multilingual NetBeans Platform Applications] &#40;09.2009&#41; with 
+  [Geertjan Wielenga] and me.
+* The `book` [NetBeans Platform 6.9 Developer's Guide] &#40;08.2010&#41; which I helped to 
+  translate from Germany to English.
+
+<br />
+Since `2011` I change my focus to [JavaFX] -> [JavaFX 2.0] to [JavaFX 8] although in `2015` 
+I saw a video from [Adam Bien] where he mention he would love to write a [NetBeans RCP] 
+plugin for his library [afterburner.fx] when he had more time.  
+So I decided to do this:
+* See the [GitHub] project [NetBeansIDE-AfterburnerFX-Plugin] &#40;since 09.2015&#41; which is 
+  really helpful to speed up the development in combination with the library [afterburner.fx]
+  in [JavaFX] application.
+* The `interview` [Afterburner.fx NetBeans Plugin Release] &#40;11.2015&#41; with [Adam Bien] and me.
+* Have a look in the `video` [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive] where 
+  [Adam Bien] introduce my plugin &#40;at 48:00&#41;.
+
+
+<br />
+##### Contact<a name="Contact" />
 
 Any question? Some helpful criticism?
 * Please write an [Issue] or
 * send me an `email` to <peter.rogge@yahoo.de>
+
+
+<br />
+##### License<a name="License" />
+
+* The articles in this series are licensed under [General Public License 3.0].
 
 
 
