@@ -7,18 +7,86 @@
 Intention
 ---
 
-...
+In the last articles I show first how to setup the new project with another 
+[GitHub] project from me [Project-Template-afterburnerfx-Naoghuman] and what are 
+the advantages are from using this template -> [01 Setup the project]. Then I 
+describes the steps and decisions which I make during the implementation from 
+the first `prototype` -> [02 Create first prototype].
 
+In this article I described how I stablilizate the prototype. Also some new features 
+like `user can now handle the application with KeyEvents` or the implementation from 
+the library [Ikonli].
+
+ Click on the picture to see the `SokubanFX v0.2.0-PROTOTYPE` in action :smile: in YouTube.
+[![sokubanfx_v0.2.0-PROTOTYPE.png][sokubanfx_v0.2.0-PROTOTYPE]](https://youtu.be/iKBfqk0ANj8 "SokubanFX v0.2.0-PROTOTYPE")
+
+<br/>
+You can download the new version here: [SokubanFX-v0.2.0-PROTOTYPE_2016-05-08_18-44.zip]
 
 
 <br />
 Content
 ---
 
+* ( ) TODO [Stabilization from the prototype](#Stabilization)
+    * ( ) [Stabilize the functionalities with JUnit tests](#StabilizeFunctionalities)
+    * ( ) [Change internal to lambda expressions](#LambdaExpressions)
+* ( ) TODO [New Features in SokubanFX v0.2.0-PROTOTYPE](#NewFeatures)
+    * ( ) [User can now handle the application with KeyEvents](#UserKeyEvents)
+    * ( ) [Implement the library Ikonli for icons](#LibraryIkonli)
+    * ( ) [In the Preview all 10sec a new random map will be now shown](#PreviewRandomMap)
 * [Conclusion](#Conclusion)
-* [About the autor](#Autor)
-    * [Contact](#Contact)
-* [Articles in this series](#Articles)
+* (v) [About the autor](#Autor)
+    * (v) [Contact](#Contact)
+* ( ) [Articles in this series](#Articles)
+    * ( ) TODO If this article ready, then change the additional informations
+	      in (xy) in all articles + ReadMe (articles, SokubanFX)
+
+
+
+<br />
+Stabilization from the prototype<a name="Stabilization" />
+---
+
+
+<br />
+##### Stabilize the functionalities with JUnit tests<a name="StabilizeFunctionalities" />
+
+
+<br />
+##### Change internal to lambda expressions<a name="LambdaExpressions" />
+
+
+
+
+
+
+
+
+
+<br />
+New Features in SokubanFX v0.2.0-PROTOTYPE<a name="NewFeatures" />
+---
+
+
+<br />
+##### User can now handle the application with KeyEvents<a name="UserKeyEvents" />
+
+
+<br />
+##### Implement the library Ikonli for icons<a name="LibraryIkonli" />
+
+
+<br />
+##### In the Preview all 10sec a new random map will be now shown<a name="PreviewRandomMap" />
+
+
+
+
+
+
+
+
 
 
 
@@ -26,7 +94,21 @@ Content
 Conclusion<a name="Conclusion" />
 ---
 
-TODO write conclusion
+1) Stabilization
+
+2) Some new features
+
+Download:  
+[SokubanFX-v0.2.0-PROTOTYPE_2016-05-08_18-44.zip]
+
+YouTube:
+[![sokubanfx_v0.2.0-PROTOTYPE.png][sokubanfx_v0.2.0-PROTOTYPE]](https://youtu.be/iKBfqk0ANj8 "SokubanFX v0.2.0-PROTOTYPE")
+
+
+
+
+
+
 
 
 
@@ -96,6 +178,7 @@ Articles in this series<a name="Articles" />
 
 
 [//]: # (Images)
+[sokubanfx_v0.2.0-PROTOTYPE]:https://cloud.githubusercontent.com/assets/8161815/15447479/e90b31d0-1f43-11e6-864e-d77b5c4cc7df.png
 
 
 
@@ -111,7 +194,8 @@ Articles in this series<a name="Articles" />
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
 [GitHub]:https://github.com/
 [H+D International Group]:https://www.hud.de/en/
-[Help for Multilingual NetBeans Platform Applications]:
+[Help for Multilingual NetBeans Platform Applications]:https://dzone.com/articles/multilingual-netbeans-platform-applications
+[Ikonli]:https://github.com/aalmiray/ikonli
 [Issue]:https://github.com/Naoghuman/articles/issues
 [Java]:https://en.wikipedia.org/wiki/Java_%28programming_language%29
 [JavaFX]:http://docs.oracle.com/javase/8/javase-clienttechnologies.htm
@@ -127,4 +211,3 @@ Articles in this series<a name="Articles" />
 [SokubanFX-v0.2.0-PROTOTYPE_2016-05-08_18-44.zip]:https://github.com/Naoghuman/SokubanFX/releases/tag/v0.2.0
 [Sokuban-Clone]:https://github.com/Naoghuman/sokuban-clone
 [Swing2D]:https://docs.oracle.com/javase/tutorial/2d/
-
