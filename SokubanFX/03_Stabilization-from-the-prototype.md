@@ -30,7 +30,7 @@ Content
 
 * ( ) TODO [Stabilization from the prototype](#Stabilization)
     * (v) [Stabilize with JUnit tests](#StabilizeJUnit)
-    * ( ) [Cleanup the project and other stuff](#CleanupProjet)
+    * ( ) [Stabilize with Refactoring and cleanup](#StabilizeRefactoring)
 * ( ) TODO [New Features in SokubanFX v0.2.0-PROTOTYPE](#NewFeatures)
     * ( ) [Change internal to lambda expressions](#LambdaExpressions)
     * ( ) [User can now handle the application with KeyEvents](#UserKeyEvents)
@@ -323,7 +323,7 @@ public class MovementResultTest {
 
 
 <br />
-##### Cleanup the project and other stuff<a name="CleanupProjet" />
+##### Stabilize with Refactoring and cleanup<a name="StabilizeRefactoring" />
 
 
 
