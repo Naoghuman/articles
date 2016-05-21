@@ -29,13 +29,14 @@ Content
 ---
 
 * ( ) TODO [Stabilization from the prototype](#Stabilization)
-    * ( ) [Stabilize the functionalities with JUnit tests](#StabilizeFunctionalities)
-    * ( ) [Change internal to lambda expressions](#LambdaExpressions)
+    * ( ) [Stabilize the functionalities with JUnit tests](#StabilizeJUnit)
+    * ( ) [Cleanup the project and other stuff](#CleanupProjet)
 * ( ) TODO [New Features in SokubanFX v0.2.0-PROTOTYPE](#NewFeatures)
+    * ( ) [Change internal to lambda expressions](#LambdaExpressions)
     * ( ) [User can now handle the application with KeyEvents](#UserKeyEvents)
     * ( ) [Implement the library Ikonli for icons](#LibraryIkonli)
     * ( ) [In the Preview all 10sec a new random map will be now shown](#PreviewRandomMap)
-* [Conclusion](#Conclusion)
+* TODO ( ) [Conclusion](#Conclusion)
 * (v) [About the autor](#Autor)
     * (v) [Contact](#Contact)
 * ( ) [Articles in this series](#Articles)
@@ -48,13 +49,282 @@ Content
 Stabilization from the prototype<a name="Stabilization" />
 ---
 
-
-<br />
-##### Stabilize the functionalities with JUnit tests<a name="StabilizeFunctionalities" />
+In this part I describes the steps how to stabilize the project.
 
 
 <br />
-##### Change internal to lambda expressions<a name="LambdaExpressions" />
+##### Stabilize the functionalities with JUnit tests<a name="StabilizeJUnit" />
+
+[NetBeans IDE] have a nice feature -> `Test for Existing Class` under `New` -> 
+`Unit Tests`.
+* This wizard will generate automatically a [JUnit] for an existing class.
+* Select the class which should be tested.
+* The wizard fill automatically the test package and name for the new test class.
+* Check the options under `Method Access Levels`, `Generated Code` and `Generated 
+  Comments`.
+* In the test class will automatically method stups for existing methods generated.
+* That was it :simle: .
+
+![wizard-new-test-for-existing-class.png][wizard-new-test-for-existing-class]
+
+
+<br />
+So the basic structure and functionalities are really fast generated.
+
+![test-packages.png][test-packages]
+
+<br />
+```java
+public class CollisionCheckerTest {
+    
+    private MapModel mapModel;
+    
+    private ObservableList<Coordinates> boxes;
+    private ObservableList<Coordinates> places;
+    private ObservableList<Coordinates> walls;
+    
+    @Before
+    public void setUp() {
+        mapModel = new MapModel();
+        mapModel.setPlayer(10, 10);
+        
+        boxes = FXCollections.observableArrayList();
+        places = FXCollections.observableArrayList();
+        walls = FXCollections.observableArrayList();
+    }
+
+    @Test
+    public void getDefault() {
+        CollisionChecker result = CollisionChecker.getDefault();
+        assertNotNull("Instance from CollisionChecker muss != NULL", result); // NOI18N
+    }
+    
+    @Test
+    public void checkCollisionPlayerBoxWallWithDirectionDOWN() {
+        // direction
+        final EDirection direction = EDirection.DOWN;
+        
+        // There is a box before the player (y=11) and no second box (y!=12) before the first box
+        boxes.clear();
+        boxes.add(Coordinates.getDefault(10,  2));
+        boxes.add(Coordinates.getDefault(10, 11)); // <--- 1.
+        boxes.add(Coordinates.getDefault(10, 15));
+        mapModel.setBoxes(boxes);
+        
+        walls.clear();
+        mapModel.setWalls(walls);
+        
+        ECollisionResult result = CollisionChecker.getDefault().checkCollisionPlayerBoxWall(direction, mapModel);
+        assertEquals("There is a box before the player (y=11) and no second box (y!=12) before the first box -> CollisionResult.PLAYER_AGAINST__BOX_NONE", ECollisionResult.PLAYER_AGAINST__BOX_NONE, result);
+        
+        // There is a box before the player (y=11) and a wall at (y=12)
+        boxes.clear();
+        boxes.add(Coordinates.getDefault(10,  1));
+        boxes.add(Coordinates.getDefault(10, 11)); // <--- 1.
+        boxes.add(Coordinates.getDefault(10, 15));
+        mapModel.setBoxes(boxes);
+        
+        walls.clear();
+        walls.add(Coordinates.getDefault(10,  2));
+        walls.add(Coordinates.getDefault(10, 12)); // <--- 2.
+        walls.add(Coordinates.getDefault(10, 14));
+        mapModel.setWalls(walls);
+        
+        result = CollisionChecker.getDefault().checkCollisionPlayerBoxWall(direction, mapModel);
+        assertEquals("There is a box before the player (y=11) and a wall at (y=12) -> CollisionResult.PLAYER_AGAINST__BOX_WALL", ECollisionResult.PLAYER_AGAINST__BOX_WALL, result);
+    }
+    ...
+}
+```
+
+and for all other combination also one [JUnit] test should be created:
+```java
+    public void checkCollisionPlayerBoxBoxWithDirectionLEFT()
+    public void checkCollisionPlayerBoxBoxWithDirectionRIGHT()
+    public void checkCollisionPlayerBoxBoxWithDirectionUP()
+    public void checkCollisionPlayerBoxPlaceWithDirectionDOWN()
+    public void checkCollisionPlayerBoxPlaceWithDirectionLEFT()
+    public void checkCollisionPlayerBoxPlaceWithDirectionRIGHT()
+    public void checkCollisionPlayerBoxPlaceWithDirectionUP()
+    public void checkCollisionPlayerBoxWallWithDirectionDOWN()
+    public void checkCollisionPlayerBoxWallWithDirectionLEFT()
+    public void checkCollisionPlayerBoxWallWithDirectionRIGHT()
+    public void checkCollisionPlayerBoxWallWithDirectionUP()
+    public void checkCollisionPlayerBoxWithDirectionDOWN()
+    public void checkCollisionPlayerBoxWithDirectionLEFT()
+    public void checkCollisionPlayerBoxWithDirectionRIGHT()
+    public void checkCollisionPlayerBoxWithDirectionUP()
+    public void checkCollisionPlayerWallWithDirectionDOWN()
+    public void checkCollisionPlayerWallWithDirectionLEFT()
+    public void checkCollisionPlayerWallWithDirectionRIGHT()
+    public void checkCollisionPlayerWallWithDirectionUP()
+```
+
+<br />
+```java
+public class MapMovementTest {
+
+    @Test
+    public void testCheckIsMapFinishFalse() {
+        MapMovement mm = new MapMovement();
+        
+        MapModel mmo = new MapModel();
+        ObservableList<Coordinates> boxes = FXCollections.observableArrayList();
+        boxes.add(Coordinates.getDefault(5, 5));
+        boxes.add(Coordinates.getDefault(15, 15));
+//        boxes.add(Coordinates.getDefault(25, 25)); // <-- not all boxes are on places
+        mmo.setBoxes(boxes);
+        
+        ObservableList<Coordinates> places = FXCollections.observableArrayList();
+        places.add(Coordinates.getDefault(5, 5));
+        places.add(Coordinates.getDefault(15, 15));
+        places.add(Coordinates.getDefault(25, 25));
+        mmo.setPlaces(places);
+        
+        MovementResult mr = mm.checkIsMapFinish(mmo);
+        
+        assertFalse(mr.isMapFinish());
+    }
+
+    @Test
+    public void testCheckIsMapFinishTrue() {
+        MapMovement mm = new MapMovement();
+        
+        MapModel mmo = new MapModel();
+        ObservableList<Coordinates> boxes = FXCollections.observableArrayList();
+        boxes.add(Coordinates.getDefault(5, 5));
+        boxes.add(Coordinates.getDefault(15, 15));
+        boxes.add(Coordinates.getDefault(25, 25)); // <-- all boxes are on places
+        mmo.setBoxes(boxes);
+        
+        ObservableList<Coordinates> places = FXCollections.observableArrayList();
+        places.add(Coordinates.getDefault(5, 5));
+        places.add(Coordinates.getDefault(15, 15));
+        places.add(Coordinates.getDefault(25, 25));
+        mmo.setPlaces(places);
+        
+        MovementResult mr = mm.checkIsMapFinish(mmo);
+        
+        assertTrue(mr.isMapFinish());
+    }
+
+    /*
+        Not needed, because the method is in CollisionCheckerTest#checkCollisionPlayerXyz(...)
+        tested.
+    */
+//    @Test
+//    public void testCheckMovePlayerTo() {
+//        MapMovement instance = new MapMovement();
+//        MovementResult result = instance.checkMovePlayerTo(direction, mapModel);
+//    }
+    
+}
+```
+
+<br />
+```java
+public class MovementResultTest {
+
+    @Test
+    public void testGetDefault() {
+        MovementResult mr = MovementResult.getDefault();
+        
+        assertEquals(EAnimation.NONE, mr.getAnimation());
+        assertNotNull(mr.getBoxToMove());
+        assertEquals(Coordinates.getDefault(), mr.getBoxToMove());
+        assertEquals(EMovement.NONE, mr.getMovement());
+        assertNotNull(mr.getPlayerToMove());
+        assertEquals(Coordinates.getDefault(), mr.getPlayerToMove());
+        assertFalse(mr.isMapFinish());
+    }
+
+    @Test
+    public void getBoxToMove() {
+        MovementResult mr = MovementResult.getDefault();
+        
+        assertNotNull(mr.getBoxToMove());
+        assertEquals(Coordinates.getDefault(), mr.getBoxToMove());
+    }
+
+    @Test
+    public void setBoxToMove() {
+        MovementResult mr = MovementResult.getDefault();
+        mr.setBoxToMove(Coordinates.getDefault(2, 7));
+        
+        assertNotNull(mr.getBoxToMove());
+        assertEquals(2, mr.getBoxToMove().getX());
+        assertEquals(7, mr.getBoxToMove().getY());
+    }
+
+    @Test
+    public void getPlayerToMove() {
+        MovementResult mr = MovementResult.getDefault();
+        
+        assertNotNull(mr.getPlayerToMove());
+        assertEquals(Coordinates.getDefault(), mr.getPlayerToMove());
+    }
+
+    @Test
+    public void setPlayerToMove() {
+        MovementResult mr = MovementResult.getDefault();
+        mr.setPlayerToMove(Coordinates.getDefault(2, 7));
+        
+        assertNotNull(mr.getPlayerToMove());
+        assertEquals(2, mr.getPlayerToMove().getX());
+        assertEquals(7, mr.getPlayerToMove().getY());
+    }
+
+    @Test
+    public void isMapFinish() {
+        MovementResult mr = MovementResult.getDefault();
+        
+        assertFalse(mr.isMapFinish());
+    }
+
+    @Test
+    public void setIsMapFinish() {
+        MovementResult mr = MovementResult.getDefault();
+        mr.setIsMapFinish(true);
+        
+        assertTrue(mr.isMapFinish());
+    }
+
+    @Test
+    public void getAnimation() {
+        MovementResult mr = MovementResult.getDefault();
+        
+        assertEquals(EAnimation.NONE, mr.getAnimation());
+    }
+
+    @Test
+    public void setAnimation() {
+        MovementResult mr = MovementResult.getDefault();
+        mr.setAnimation(EAnimation.REALLY_GREAT);
+        
+        assertEquals(EAnimation.REALLY_GREAT, mr.getAnimation());
+    }
+
+    @Test
+    public void getMovement() {
+        MovementResult mr = MovementResult.getDefault();
+        
+        assertEquals(EMovement.NONE, mr.getMovement());
+    }
+
+    @Test
+    public void setMovement() {
+        MovementResult mr = MovementResult.getDefault();
+        mr.setMovement(EMovement.PLAYER_AND_BOX);
+        
+        assertEquals(EMovement.PLAYER_AND_BOX, mr.getMovement());
+    }
+    
+}
+```
+
+
+<br />
+##### Cleanup the project and other stuff<a name="CleanupProjet" />
 
 
 
@@ -67,6 +337,10 @@ Stabilization from the prototype<a name="Stabilization" />
 <br />
 New Features in SokubanFX v0.2.0-PROTOTYPE<a name="NewFeatures" />
 ---
+
+
+<br />
+##### Change internal to lambda expressions<a name="LambdaExpressions" />
 
 
 <br />
@@ -179,6 +453,8 @@ Articles in this series<a name="Articles" />
 
 [//]: # (Images)
 [sokubanfx_v0.2.0-PROTOTYPE]:https://cloud.githubusercontent.com/assets/8161815/15447479/e90b31d0-1f43-11e6-864e-d77b5c4cc7df.png
+[test-packages]:https://cloud.githubusercontent.com/assets/8161815/15449322/7fd7d9e8-1f7a-11e6-916a-a324655bbacc.png
+[wizard-new-test-for-existing-class]:https://cloud.githubusercontent.com/assets/8161815/15449372/6573d96a-1f7c-11e6-858d-57ee8e8a18b8.png
 
 
 
@@ -201,6 +477,7 @@ Articles in this series<a name="Articles" />
 [JavaFX]:http://docs.oracle.com/javase/8/javase-clienttechnologies.htm
 [JavaFX 2.0]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_2.0
 [JavaFX 8]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_8
+[JUnit]:http://junit.org/junit4/
 [NetBeans IDE]:https://netbeans.org/
 [NetBeans Platform 6.9 Developer's Guide]:https://www.packtpub.com/application-development/netbeans-platform-69-developers-guide
 [NetBeans RCP]:https://netbeans.org/kb/trails/platform.html
