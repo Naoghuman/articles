@@ -30,7 +30,7 @@ Content
 
 * ( ) TODO [Stabilization from the prototype](#Stabilization)
     * (v) [Stabilize with JUnit tests](#StabilizeJUnit)
-    * ( ) [Stabilize with Refactoring and cleanup](#StabilizeRefactoring)
+    * (v) [Stabilize with Refactoring](#StabilizeRefactoring)
 * ( ) TODO [New Features in SokubanFX v0.2.0-PROTOTYPE](#NewFeatures)
     * ( ) [Change internal to lambda expressions](#LambdaExpressions)
     * ( ) [User can now handle the application with KeyEvents](#UserKeyEvents)
@@ -323,13 +323,15 @@ public class MovementResultTest {
 
 
 <br />
-##### Stabilize with Refactoring and cleanup<a name="StabilizeRefactoring" />
+##### Stabilize with Refactoring<a name="StabilizeRefactoring" />
 
-One important part for me in stabilzation from a prototype is `refactoring` and 
-`cleanup`.
+One important part for me in stabilzation from a prototype is `refactoring`:
 * [Refactoring - Improving the Design of Existing Code] by [Martin Fowler].
-* [Clean Code Developer] in :de: .
 
+Also I find it helpful to have the main points from [Clean Code Developer] (:de:)
+in mind during the stabilization.
+
+<br />
 So what can be done to stabilize the program :question:
 * Delete unnecessary files.
 * Start with documentation (at first with the project ReadMe).
@@ -342,6 +344,7 @@ So what can be done to stabilize the program :question:
 * Check layout in views and simplified if possible.
 * and more...
 
+<br />
 In generall things are done when they are ready :laughing: . But here are 3 points 
 which helps me to decided when to go to the next phase in the program development.
 * The time is over which I planned for the stabilization.
