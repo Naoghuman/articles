@@ -328,8 +328,8 @@ public class MovementResultTest {
 One important part for me in stabilzation from a prototype is `refactoring`:
 * [Refactoring - Improving the Design of Existing Code] by [Martin Fowler].
 
-Also I find it helpful to have the main points from [Clean Code Developer] (:de:)
-in mind during the stabilization.
+Also I find it helpful to have the main points from [Clean Code Developer] 
+&#40;:de:)&#41; in mind during the stabilization.
 
 <br />
 So what can be done to stabilize the program :question:
