@@ -325,11 +325,28 @@ public class MovementResultTest {
 <br />
 ##### Stabilize with Refactoring and cleanup<a name="StabilizeRefactoring" />
 
+One important part for me in stabilzation from a prototype is `refactoring` and 
+`cleanup`.
+* [Refactoring - Improving the Design of Existing Code] by [Martin Fowler].
+* [Clean Code Developer] in :de: .
 
+So what can be done to stabilize the program :question:
+* Delete unnecessary files.
+* Start with documentation (at first with the project ReadMe).
+* Update the dependencies to included libraries.
+* Update the release notes.
+* Check the package structure and move classes if needed.
+* Switch from [Java] classes to [JavaFX] classes when possible.
+* Check the names from classes, interfaces and enums and rename it if needed.
+* Move functionalities from classes to new classes -> [Single Responsibility Principle (SRP)].
+* Check layout in views and simplified if possible.
+* and more...
 
-
-
-
+In generall things are done when they are ready :laughing: . But here are 3 points 
+which helps me to decided when to go to the next phase in the program development.
+* The time is over which I planned for the stabilization.
+* The top :five: areas are cleaned.
+* Points which I havn't the time to cleanup are noted. 
 
 
 
@@ -464,6 +481,7 @@ Articles in this series<a name="Articles" />
 [Adam Bien]:http://www.adam-bien.com/roller/abien/
 [Afterburner.fx NetBeans Plugin Release]:http://www.adam-bien.com/roller/abien/entry/afterburner_fx_netbeans_plugin_release
 [afterburner.fx]:https://github.com/AdamBien/afterburner.fx
+[Clean Code Developer]:http://clean-code-developer.de/
 [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive]:https://www.youtube.com/watch?v=WsV7kSSSOGs
 [Geertjan Wielenga]:https://blogs.oracle.com/geertjan/entry/welcome_to_me
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
@@ -477,11 +495,14 @@ Articles in this series<a name="Articles" />
 [JavaFX 2.0]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_2.0
 [JavaFX 8]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_8
 [JUnit]:http://junit.org/junit4/
+[Martin Fowler]:http://martinfowler.com/
 [NetBeans IDE]:https://netbeans.org/
 [NetBeans Platform 6.9 Developer's Guide]:https://www.packtpub.com/application-development/netbeans-platform-69-developers-guide
 [NetBeans RCP]:https://netbeans.org/kb/trails/platform.html
 [NetBeansIDE-AfterburnerFX-Plugin]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin
 [Project-Template-afterburnerfx-Naoghuman]:https://github.com/Naoghuman/Project-Templates/tree/master/Project-Template-afterburnerfx-Naoghuman
+[Refactoring - Improving the Design of Existing Code]:http://martinfowler.com/books/refactoring.html
+[Single Responsibility Principle (SRP)]:https://en.wikipedia.org/wiki/Single_responsibility_principle
 [SokubanFX]:https://github.com/Naoghuman/SokubanFX
 [SokubanFX v0.2.0-PROTOTYPE]:https://youtu.be/iKBfqk0ANj8
 [SokubanFX-v0.2.0-PROTOTYPE_2016-05-08_18-44.zip]:https://github.com/Naoghuman/SokubanFX/releases/tag/v0.2.0
