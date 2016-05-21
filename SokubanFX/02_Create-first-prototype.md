@@ -564,7 +564,7 @@ Articles in this series<a name="Articles" />
 [GitHub]:https://github.com/
 [Issue]:https://github.com/Naoghuman/articles/issues
 [H+D International Group]:https://www.hud.de/en/
-[Help for Multilingual NetBeans Platform Applications]:
+[Help for Multilingual NetBeans Platform Applications]:https://dzone.com/articles/multilingual-netbeans-platform-applications
 [Java]:https://en.wikipedia.org/wiki/Java_%28programming_language%29
 [JavaFX]:http://docs.oracle.com/javase/8/javase-clienttechnologies.htm
 [JavaFX 2.0]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_2.0
