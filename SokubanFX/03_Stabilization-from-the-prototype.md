@@ -29,7 +29,7 @@ Content
 ---
 
 * ( ) TODO [Stabilization from the prototype](#Stabilization)
-    * ( ) [Stabilize the functionalities with JUnit tests](#StabilizeJUnit)
+    * (v) [Stabilize the functionalities with JUnit tests](#StabilizeJUnit)
     * ( ) [Cleanup the project and other stuff](#CleanupProjet)
 * ( ) TODO [New Features in SokubanFX v0.2.0-PROTOTYPE](#NewFeatures)
     * ( ) [Change internal to lambda expressions](#LambdaExpressions)
@@ -55,15 +55,14 @@ In this part I describes the steps how to stabilize the project.
 <br />
 ##### Stabilize the functionalities with JUnit tests<a name="StabilizeJUnit" />
 
-[NetBeans IDE] have a nice feature -> `Test for Existing Class` under `New` -> 
-`Unit Tests`.
+[NetBeans IDE] have a nice feature -> Create new [JUnit] `Test for Existing Class` 
+under `New` -> `Unit Tests`.
 * This wizard will generate automatically a [JUnit] for an existing class.
 * Select the class which should be tested.
 * The wizard fill automatically the test package and name for the new test class.
 * Check the options under `Method Access Levels`, `Generated Code` and `Generated 
   Comments`.
-* In the test class will automatically method stups for existing methods generated.
-* That was it :simle: .
+* That was it :smile: .
 
 ![wizard-new-test-for-existing-class.png][wizard-new-test-for-existing-class]
 
