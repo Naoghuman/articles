@@ -68,7 +68,7 @@ under `New` -> `Unit Tests`.
 
 
 <br />
-So the basic structure and functionalities are really fast generated.
+So the basic classes and methods are really fast generated.
 
 ![test-packages.png][test-packages]
 
