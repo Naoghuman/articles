@@ -32,7 +32,7 @@ Content
     * (v) [Stabilize with JUnit tests](#StabilizeJUnit)
     * ( ) TODO REWRITE [Stabilize with Refactoring](#StabilizeRefactoring)
 * ( ) TODO [New Features in SokubanFX v0.2.0-PROTOTYPE](#NewFeatures)
-    * ( ) [Change internal to lambda expressions](#LambdaExpressions)
+    * (v) [Change internal to lambda expressions](#LambdaExpressions)
     * ( ) [User can now handle the application with KeyEvents](#UserKeyEvents)
     * ( ) [Implement the library Ikonli for icons](#LibraryIkonli)
     * ( ) [In the Preview all 10sec a new random map will be now shown](#PreviewRandomMap)
@@ -132,12 +132,8 @@ public class CollisionCheckerTest {
         result = CollisionChecker.getDefault().checkCollisionPlayerBoxWall(direction, mapModel);
         assertEquals("There is a box before the player (y=11) and a wall at (y=12) -> CollisionResult.PLAYER_AGAINST__BOX_WALL", ECollisionResult.PLAYER_AGAINST__BOX_WALL, result);
     }
-    ...
-}
-```
-
-and for all other combination also one [JUnit] test should be created:
-```java
+    
+    // and for all other combination also a unit test is be created:
     public void checkCollisionPlayerBoxBoxWithDirectionLEFT()
     public void checkCollisionPlayerBoxBoxWithDirectionRIGHT()
     public void checkCollisionPlayerBoxBoxWithDirectionUP()
@@ -157,7 +153,10 @@ and for all other combination also one [JUnit] test should be created:
     public void checkCollisionPlayerWallWithDirectionLEFT()
     public void checkCollisionPlayerWallWithDirectionRIGHT()
     public void checkCollisionPlayerWallWithDirectionUP()
+
+}
 ```
+
 
 <br />
 ```java
@@ -345,8 +344,9 @@ So what can be done to stabilize the program :question:
 * and more...
 
 <br />
-In generall things are done when they are ready :laughing: . But here are 3 points 
-which helps me to decided when to go to the next phase in the program development.
+In generall things are done when they are ready :laughing: .  
+But here are 3 points which helps me to decided when to go to the next phase in 
+the program development.
 * The time is over which I planned for the stabilization.
 * The top :five: areas are cleaned.
 * Points which I havn't the time to cleanup are noted. 
@@ -363,12 +363,13 @@ In this section I will list what is new in SokubanFx v0.2.0.
 <br />
 ##### Change internal to lambda expressions<a name="LambdaExpressions" />
 
-First internal I switch to [Lambda Expressions].
+First internal I switch to [Lambda Expressions] which are new in [Java 8].
 
 <br />
 Here a very simple example how to stream over every `item` in a [ObservableList]:
 ```java
 public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
+
     private void displayMap() {
         LoggerFacade.INSTANCE.debug(this.getClass(), "Display Map"); // NOI18N
         
@@ -390,17 +391,19 @@ public class GamePresenter implements Initializable, IActionConfiguration, IRegi
         return label;
     }
     ...
+
 }
 ```
 
-1) This [Lambda Expressions] streams simple over every `item` in the [ObservableList]<String> mapAsStrings.
-2) For every `item` in the [ObservableList] a new formated label will be added to the [VBox] vbMap.
+1. This [Lambda Expressions] streams simple over every `item` in the [ObservableList]<String> mapAsStrings.
+2. For every `item` in the [ObservableList] a new formated label will be added to the [VBox] vbMap.
 
 <br />
 Next example shows how to iterate over a list, check something and if okay then 
 update the `coordinatesFounded`:
 ```java
 public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
+
     private Coordinates calculateFoundedCoordinates(Coordinates coordinatesToCheck, ObservableList<Coordinates> listCoordinates) {
         final Coordinates coordinatesFounded = Coordinates.getDefault();
         if (!Coordinates.isDefault(coordinatesToCheck)) {
@@ -420,20 +423,22 @@ public class GamePresenter implements Initializable, IActionConfiguration, IRegi
         return coordinatesFounded;
     }
     ...
+
 }
 ```
 
-1) For every existing `coordinates` will be checked
-2) if the `coordinates`&#40;x, y&#41; equals to the &#40;x, y&#41; parameters 
+1. For every existing `coordinates` will be checked
+2. if the `coordinates`&#40;x, y&#41; equals to the &#40;x, y&#41; parameters 
    from the `coordinatesToCheck`.
-3) If so then the `coordinatesFounded` will be updated.
-4) Because we have updated the `coordinatesFounded` we can leave the `for-each` 
+3. If so then the `coordinatesFounded` will be updated.
+4. Because we have updated the `coordinatesFounded` we can leave the `for-each` 
    iteration.
 
 <br />
 After the conversion from the `for-each` iteration to a [Lambda Expressions] we have:
 ```java
 public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
+
     private Coordinates calculateFoundedCoordinates(Coordinates coordinatesToCheck, ObservableList<Coordinates> listCoordinates) {
         final Coordinates coordinatesFounded = Coordinates.getDefault();
         if (!Coordinates.isDefault(coordinatesToCheck)) {
@@ -454,16 +459,17 @@ public class GamePresenter implements Initializable, IActionConfiguration, IRegi
         return coordinatesFounded;
     }
     ...
+
 }
 ```
 
-1) Over every existing `item` in the [ObservableList]<String> `listCoordinates` 
+1. Over every existing `item` in the [ObservableList]<String> `listCoordinates` 
    will be streamed.
-2) Then for every founded `item` will be checked &#40;filter&#41; if the 
+2. Then for every founded `item` will be checked &#40;filter&#41; if the 
    `coordinates`&#40;x, y&#41; equals to the &#40;x, y&#41; parameters from the 
    `coordinatesToCheck`.
-3) For the `first` match an [Optional<T>] will be returned.
-4) If the [Optional<T>] is not `null` &#40;means `ifPresent==true`&#41; then 
+3. For the `first` match an [Optional<T>] will be returned.
+4. If the [Optional<T>] is not `null` &#40;means `ifPresent==true`&#41; then 
    `coordinatesFounded` will be updated.
 
 <br />
@@ -471,6 +477,7 @@ In the next example the shown method will check if all `boxes` are on a `place`,
 that mean if so then the map is `finished`.
 ```java
 public class CollisionChecker {
+
     public ECollisionResult checkCollisionPlayerBoxPlaceFinish(MapModel mapModel) {
         LoggerFacade.INSTANCE.debug(this.getClass(), "Check collision 'player -> box -> place -> finish'"); // NOI18N
         
@@ -501,20 +508,22 @@ public class CollisionChecker {
         return collisionResult;
     }
     ...
+
 }
 ```
 
-1) Iterate over every `place`.
-2) Iterate over every `box`.
-3) Check if a box is on a place.
-4) Increment the `counter` for places which have a box on it.
-5) Leave the iteration from the boxes and start the next iteration with a new place.
-6) Check if the map is `finished` &#40;all boxes are on the places&#41;.
+1. Iterate over every `place`.
+2. Iterate over every `box`.
+3. Check if a box is on a place.
+4. Increment the `counter` for places which have a box on it.
+5. Leave the iteration from the boxes and start the next iteration with a new place.
+6. Check if the map is `finished` &#40;all boxes are on the places&#41;.
 
 <br />
 After the conversion to a [Lambda Expressions] we have following algorithm:
 ```java
 public class CollisionChecker {
+
     public ECollisionResult checkCollisionPlayerBoxPlaceFinish(MapModel mapModel) {
         LoggerFacade.INSTANCE.debug(this.getClass(), "Check collision 'player -> box -> place -> finish'"); // NOI18N
         
@@ -547,17 +556,18 @@ public class CollisionChecker {
         return collisionResult;
     }
     ...
+
 }
 ```
 
-1) Iterate over every `place`.
-2) Stream through all `boxes`.
-3) Then for every `box` will be checked &#40;filter&#41; if the `place`&#40;x, y&#41; 
+1. Iterate over every `place`.
+2. Stream through all `boxes`.
+3. Then for every `box` will be checked &#40;filter&#41; if the `place`&#40;x, y&#41; 
    equals to the `box`&#40;x, y&#41;.
-4) For the `first` match an [Optional<T>] will be returned.
-5) If the [Optional<T>] is not `null` &#40;means `ifPresent==true`&#41; then 
+4. For the `first` match an [Optional<T>] will be returned.
+5. If the [Optional<T>] is not `null` &#40;means `ifPresent==true`&#41; then 
    `counter` will be increased by one.
-6) Check if the map is `finished` &#40;all boxes are on the places&#41;.
+6. Check if the map is `finished` &#40;all boxes are on the places&#41;.
 
 
 <br />
@@ -692,6 +702,7 @@ Articles in this series<a name="Articles" />
 [Ikonli]:https://github.com/aalmiray/ikonli
 [Issue]:https://github.com/Naoghuman/articles/issues
 [Java]:https://en.wikipedia.org/wiki/Java_%28programming_language%29
+[Java 8]:https://www.java.com/en/download/faq/java8.xml
 [JavaFX]:http://docs.oracle.com/javase/8/javase-clienttechnologies.htm
 [JavaFX 2.0]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_2.0
 [JavaFX 8]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_8
