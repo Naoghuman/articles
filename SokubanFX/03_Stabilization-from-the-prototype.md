@@ -28,9 +28,9 @@ You can download the new version here: [SokubanFX-v0.2.0-PROTOTYPE_2016-05-08_18
 Content
 ---
 
-* ( ) TODO [Stabilization from the prototype](#Stabilization)
+* (v) TODO [Stabilization from the prototype](#Stabilization)
     * (v) [Stabilize with JUnit tests](#StabilizeJUnit)
-    * (v) [Stabilize with Refactoring](#StabilizeRefactoring)
+    * ( ) TODO REWRITE [Stabilize with Refactoring](#StabilizeRefactoring)
 * ( ) TODO [New Features in SokubanFX v0.2.0-PROTOTYPE](#NewFeatures)
     * ( ) [Change internal to lambda expressions](#LambdaExpressions)
     * ( ) [User can now handle the application with KeyEvents](#UserKeyEvents)
@@ -357,9 +357,207 @@ which helps me to decided when to go to the next phase in the program developmen
 New Features in SokubanFX v0.2.0-PROTOTYPE<a name="NewFeatures" />
 ---
 
+In this section I will list what is new in SokubanFx v0.2.0.
+
 
 <br />
 ##### Change internal to lambda expressions<a name="LambdaExpressions" />
+
+First internal I switch to [Lambda Expressions].
+
+<br />
+Here a very simple example how to stream over every `item` in a [ObservableList]:
+```java
+public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
+    private void displayMap() {
+        LoggerFacade.INSTANCE.debug(this.getClass(), "Display Map"); // NOI18N
+        
+        vbMap.getChildren().clear();
+        vbMap.getChildren().add(this.getLabel("Map: " + actualMapModel.getLevel())); // NOI18N
+        vbMap.getChildren().add(this.getLabel("")); // NOI18N
+        
+        final ObservableList<String> mapAsStrings = MapFacade.INSTANCE.convertMapCoordinatesToStrings(actualMapModel);
+        mapAsStrings.stream() // 1
+                .forEach(line -> { // 2
+                    vbMap.getChildren().add(this.getLabel(line));
+                });
+    }
+
+    private Label getLabel(String text) {
+        final Label label = new Label(text);
+        label.setFont(new Font("Monospaced Regular", 16.0d));
+        
+        return label;
+    }
+    ...
+}
+```
+
+1) This [Lambda Expressions] streams simple over every `item` in the [ObservableList]<String> mapAsStrings.
+2) For every `item` in the [ObservableList] a new formated label will be added to the [VBox] vbMap.
+
+<br />
+Next example shows how to iterate over a list, check something and if okay then 
+update the `coordinatesFounded`:
+```java
+public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
+    private Coordinates calculateFoundedCoordinates(Coordinates coordinatesToCheck, ObservableList<Coordinates> listCoordinates) {
+        final Coordinates coordinatesFounded = Coordinates.getDefault();
+        if (!Coordinates.isDefault(coordinatesToCheck)) {
+            for (Coordinates coordinates : listCoordinates) { // 1 
+                if ( // 2
+                        coordinates.getX() == coordinatesToCheck.getX()
+                        && coordinates.getY() == coordinatesToCheck.getY()
+                ) {
+                    coordinatesFounded.setX(coordinates.getX()); // 3
+                    coordinatesFounded.setY(coordinates.getY());
+                    
+                    break; // 4
+                }
+            }
+        }
+      
+        return coordinatesFounded;
+    }
+    ...
+}
+```
+
+1) For every existing `coordinates` will be checked
+2) if the `coordinates`&#40;x, y&#41; equals to the &#40;x, y&#41; parameters 
+   from the `coordinatesToCheck`.
+3) If so then the `coordinatesFounded` will be updated.
+4) Because we have updated the `coordinatesFounded` we can leave the `for-each` 
+   iteration.
+
+<br />
+After the conversion from the `for-each` iteration to a [Lambda Expressions] we have:
+```java
+public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
+    private Coordinates calculateFoundedCoordinates(Coordinates coordinatesToCheck, ObservableList<Coordinates> listCoordinates) {
+        final Coordinates coordinatesFounded = Coordinates.getDefault();
+        if (!Coordinates.isDefault(coordinatesToCheck)) {
+            listCoordinates.stream() // 1
+                    .filter(coordinates -> { // 2
+                        final boolean shouldCoordinatesUpdate = 
+                                coordinates.getX() == coordinatesToCheck.getX()
+                                && coordinates.getY() == coordinatesToCheck.getY(); 
+                        return shouldCoordinatesUpdate;
+                    })
+                    .findFirst() // 3
+                    .ifPresent(coordinates -> { // 4
+                        coordinatesFounded.setX(coordinates.getX());
+                        coordinatesFounded.setY(coordinates.getY());
+                    });
+        }
+      
+        return coordinatesFounded;
+    }
+    ...
+}
+```
+
+1) Over every existing `item` in the [ObservableList]<String> `listCoordinates` 
+   will be streamed.
+2) Then for every founded `item` will be checked &#40;filter&#41; if the 
+   `coordinates`&#40;x, y&#41; equals to the &#40;x, y&#41; parameters from the 
+   `coordinatesToCheck`.
+3) For the `first` match an [Optional<T>] will be returned.
+4) If the [Optional<T>] is not `null` &#40;means `ifPresent==true`&#41; then 
+   `coordinatesFounded` will be updated.
+
+<br />
+In the next example the shown method will check if all `boxes` are on a `place`, 
+that mean if so then the map is `finished`.
+```java
+public class CollisionChecker {
+    public ECollisionResult checkCollisionPlayerBoxPlaceFinish(MapModel mapModel) {
+        LoggerFacade.INSTANCE.debug(this.getClass(), "Check collision 'player -> box -> place -> finish'"); // NOI18N
+        
+        final ObservableList<Coordinates> places = mapModel.getPlaces();
+        final ObservableList<Coordinates> boxes = mapModel.getBoxes();
+        
+        int counter = 0;
+        for (Coordinates place : places) { // 1
+            for (Coordinates box : boxes) { // 2
+                if (
+                        place.getX() == box.getX() // 3
+                        && place.getY() == box.getY()
+                ) {
+                    ++counter; // 4
+                    break; // 5
+                }
+            }
+        }
+        
+        // All boxes are on places?
+        final int maxPlaces = places.size();
+        final boolean allBoxesAreOnPlaces = (maxPlaces == counter);
+        ECollisionResult collisionResult = ECollisionResult.NONE;
+        if (allBoxesAreOnPlaces) { // 6
+            collisionResult = ECollisionResult.PLAYER_AGAINST__BOX_PLACE_AND_FINISH;
+        }
+        
+        return collisionResult;
+    }
+    ...
+}
+```
+
+1) Iterate over every `place`.
+2) Iterate over every `box`.
+3) Check if a box is on a place.
+4) Increment the `counter` for places which have a box on it.
+5) Leave the iteration from the boxes and start the next iteration with a new place.
+6) Check if the map is `finished` &#40;all boxes are on the places&#41;.
+
+<br />
+After the conversion to a [Lambda Expressions] we have following algorithm:
+```java
+public class CollisionChecker {
+    public ECollisionResult checkCollisionPlayerBoxPlaceFinish(MapModel mapModel) {
+        LoggerFacade.INSTANCE.debug(this.getClass(), "Check collision 'player -> box -> place -> finish'"); // NOI18N
+        
+        final ObservableList<Coordinates> places = mapModel.getPlaces();
+        final ObservableList<Coordinates> boxes = mapModel.getBoxes();
+        
+        final AtomicInteger counter = new AtomicInteger(0);
+        places.forEach(place -> { // 1
+            boxes.stream() // 2
+                    .filter(box -> { // 3
+                        final boolean shouldCounterIncrement = 
+                                place.getX() == box.getX()
+                                && place.getY() == box.getY();
+                        return shouldCounterIncrement;
+                    })
+                    .findFirst() // 4
+                    .ifPresent(box -> { // 5
+                        counter.set(counter.get() + 1);
+                    });
+        });
+        
+        // All boxes are on places?
+        final int maxPlaces = places.size();
+        final boolean allBoxesAreOnPlaces = (maxPlaces == counter.get());
+        ECollisionResult collisionResult = ECollisionResult.NONE;
+        if (allBoxesAreOnPlaces) { // 6
+            collisionResult = ECollisionResult.PLAYER_AGAINST__BOX_PLACE_AND_FINISH;
+        }
+        
+        return collisionResult;
+    }
+    ...
+}
+```
+
+1) Iterate over every `place`.
+2) Stream through all `boxes`.
+3) Then for every `box` will be checked &#40;filter&#41; if the `place`&#40;x, y&#41; 
+   equals to the `box`&#40;x, y&#41;.
+4) For the `first` match an [Optional<T>] will be returned.
+5) If the [Optional<T>] is not `null` &#40;means `ifPresent==true`&#41; then 
+   `counter` will be increased by one.
+6) Check if the map is `finished` &#40;all boxes are on the places&#41;.
 
 
 <br />
@@ -498,11 +696,14 @@ Articles in this series<a name="Articles" />
 [JavaFX 2.0]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_2.0
 [JavaFX 8]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_8
 [JUnit]:http://junit.org/junit4/
+[Lambda Expressions]:https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html
 [Martin Fowler]:http://martinfowler.com/
 [NetBeans IDE]:https://netbeans.org/
 [NetBeans Platform 6.9 Developer's Guide]:https://www.packtpub.com/application-development/netbeans-platform-69-developers-guide
 [NetBeans RCP]:https://netbeans.org/kb/trails/platform.html
 [NetBeansIDE-AfterburnerFX-Plugin]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin
+[ObservableList]:https://docs.oracle.com/javase/8/javafx/api/javafx/collections/ObservableList.html
+[Optional<T>]:https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html
 [Project-Template-afterburnerfx-Naoghuman]:https://github.com/Naoghuman/Project-Templates/tree/master/Project-Template-afterburnerfx-Naoghuman
 [Refactoring - Improving the Design of Existing Code]:http://martinfowler.com/books/refactoring.html
 [Single Responsibility Principle (SRP)]:https://en.wikipedia.org/wiki/Single_responsibility_principle
@@ -511,3 +712,4 @@ Articles in this series<a name="Articles" />
 [SokubanFX-v0.2.0-PROTOTYPE_2016-05-08_18-44.zip]:https://github.com/Naoghuman/SokubanFX/releases/tag/v0.2.0
 [Sokuban-Clone]:https://github.com/Naoghuman/sokuban-clone
 [Swing2D]:https://docs.oracle.com/javase/tutorial/2d/
+[VBox]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/VBox.html
