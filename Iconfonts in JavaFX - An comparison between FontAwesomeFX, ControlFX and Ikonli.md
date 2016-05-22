@@ -1,5 +1,7 @@
-Iconfonts in JavaFX - an analyse from Naoghuman
+Iconfonts in JavaFX
 ===
+
+An comparison between FontAwesomeFX, ControlFX and Ikonli.
 
 
 
@@ -8,7 +10,7 @@ Intention
 ---
 
 TODO  
-Idea: Compare the iconfonts from AweasomeFontFX, ControlFX and Ikonli.  
+Idea: Compare the iconfonts from FontAwesomeFX, ControlFX and Ikonli.  
 List features, advances aso.
 
 
