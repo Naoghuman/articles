@@ -33,7 +33,7 @@ Content
     * ( ) TODO REWRITE [Stabilize with Refactoring](#StabilizeRefactoring)
 * ( ) TODO [New Features in SokubanFX v0.2.0-PROTOTYPE](#NewFeatures)
     * (v) [Change internal to lambda expressions](#LambdaExpressions)
-    * ( ) [User can now handle the application with KeyEvents](#UserKeyEvents)
+    * (v) [User can now handle the application with KeyEvents](#UserKeyEvents)
     * ( ) [Implement the library Ikonli for icons](#LibraryIkonli)
     * ( ) [In the Preview all 10sec a new random map will be now shown](#PreviewRandomMap)
 * TODO ( ) [Conclusion](#Conclusion)
@@ -573,6 +573,172 @@ public class CollisionChecker {
 <br />
 ##### User can now handle the application with KeyEvents<a name="UserKeyEvents" />
 
+In this new version 0.2.0 from [SokubanFX] the user have the possibilities to 
+handle the application with KeyEvents.
+
+<br />
+```java
+public class StartApplication extends Application implements IActionConfiguration, IApplicationConfiguration {
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        final ApplicationView applicationView = new ApplicationView();
+        final ApplicationPresenter applicationPresenter = applicationView.getRealPresenter();
+        
+        final Scene scene = new Scene(applicationView.getView(), 1280, 720);
+        scene.setOnKeyReleased((KeyEvent event) -> { // 1
+            this.onKeyReleased(event);
+        });
+        ...
+    }
+
+    private void onKeyReleased(KeyEvent event) {
+        // Listen to Application events
+        final KeyCode keyCode = event.getCode();
+        if (keyCode == KeyCode.ESCAPE) {  // 2
+            event.consume();
+            this.onCloseRequest();
+            
+            return;
+        }
+        
+        // MainMenu
+        if (keyCode == KeyCode.BACK_SPACE) { // 3
+            event.consume();
+            final boolean isMainMenuShown = PreferencesFacade.INSTANCE.getBoolean(
+                    IMainMenuConfiguration.PROP__MAIN_MENU_IS_SHOWN,
+                    IMainMenuConfiguration.PROP__MAIN_MENU_IS_SHOWN__DEFAULT_VALUE);
+            ActionFacade.INSTANCE.handle(isMainMenuShown ? ON_ACTION__HIDE_MAINMENU : ON_ACTION__SHOW_MAINMENU);
+            
+            return;
+        }
+        
+        // Preview
+        final boolean shouldOnKeyReleaseForPreview = PreferencesFacade.INSTANCE.getBoolean(
+                IPreviewConfiguration.PROP__KEY_RELEASED__FOR_PREVIEW, 
+                IPreviewConfiguration.PROP__KEY_RELEASED__FOR_PREVIEW__DEFAULT_VALUE);
+        if (shouldOnKeyReleaseForPreview) { // 4
+            final TransferData transferData = new TransferData();
+            transferData.setActionId(ON_ACTION__KEY_RELEASED__FOR_PREVIEW);
+            transferData.setObject(event);
+
+            ActionFacade.INSTANCE.handle(transferData);
+        }
+        
+        // Game
+        final boolean isGameViewInitialize = PreferencesFacade.INSTANCE.getBoolean(
+                IGameConfiguration.PROP__GAMEVIEW_IS_INITIALZE, 
+                IGameConfiguration.PROP__GAMEVIEW_IS_INITIALZE__DEFAULT_VALUE);
+        final boolean shouldOnKeyReleaseForGameView = PreferencesFacade.INSTANCE.getBoolean(
+                IGameConfiguration.PROP__KEY_RELEASED__FOR_GAMEVIEW, 
+                IGameConfiguration.PROP__KEY_RELEASED__FOR_GAMEVIEW__DEFAULT_VALUE);
+        if (isGameViewInitialize && shouldOnKeyReleaseForGameView) { // 5
+            final TransferData transferData = new TransferData();
+            transferData.setActionId(ON_ACTION__KEY_RELEASED__FOR_GAME);
+            transferData.setObject(event);
+
+            ActionFacade.INSTANCE.handle(transferData);
+        }
+    }
+
+    ...
+}
+```
+
+1. Add an [EventHandler<? super KeyEvent>] to the [Scene] allowds to catch all 
+   KeyEvents from the user.
+2. In all views the application shutdown when the user press `ESCAPE`.
+3. In all views when the user press `BACK_SPACE` the menu will shown on the right 
+   side.
+4. All other KeyEvents will checked first if the `preview mode` aktiv. If so then 
+   the event will delegate the the preview.
+5. At last will be checked if the event for the `game mode`. If so then...
+
+<br />
+In this example I will show what happen if the action `ON_ACTION__KEY_RELEASED__FOR_GAME` 
+is handled:
+```java
+public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
+
+    @Override
+    public void registerActions() {
+        LoggerFacade.INSTANCE.debug(this.getClass(), "Register actions in GamePresenter"); // NOI18N
+        
+        this.registerOnActionDisplayMap();
+        this.registerOnKeyReleased(); // 1
+    }
+
+    private void registerOnKeyReleased() {
+        LoggerFacade.INSTANCE.debug(this.getClass(), "Register on KeyReleased"); // NOI18N
+        
+        ActionFacade.INSTANCE.register( // 2
+                ON_ACTION__KEY_RELEASED__FOR_GAME,
+                (ActionEvent event) -> {
+                    final TransferData transferData = (TransferData) event.getSource();
+                    final KeyEvent keyEvent = (KeyEvent) transferData.getObject();
+                    this.onKeyRelease(keyEvent);
+                }
+        );
+    }
+    
+    /*
+     * KeyEvents in GameView
+     * W UP        -> move up
+     * S DOWN      -> move down
+     * A LEFT      -> move left
+     * D RIGHT     -> move right
+     * ENTER SPACE -> reset map
+     * 
+     * BACKSPACE   -> not needed - catched in ApplicationView (shows the menu)
+     * ESC         -> not needed - catched in ApplicationView (close the application)
+     */
+    private void onKeyRelease(KeyEvent keyEvent) { // 3
+        final KeyCode keyCode = keyEvent.getCode();
+        LoggerFacade.INSTANCE.debug(this.getClass(), "On KeyRelease: " + keyCode); // NOI18N
+        
+        if (
+                keyCode.equals(KeyCode.ENTER)
+                || keyCode.equals(KeyCode.SPACE)
+        ) {
+            this.onActionButtonResetMap();
+            return;
+        }
+        
+        if (!listenToKeyEvents) {
+            return;
+        }
+        
+        switch(keyCode) {
+            case W:
+            case UP:    { this.onActionButtonUp();    break; }
+            case S:
+            case DOWN:  { this.onActionButtonDown();  break; }
+            case A:
+            case LEFT:  { this.onActionButtonLeft();  break; }
+            case D:
+            case RIGHT: { this.onActionButtonRight(); break; }
+        }
+    }
+
+
+    ...
+
+}
+```
+
+1. All possible action from the class `GamePresenter` will be registered in the 
+   method `registerActions()`.
+2. Here the action is registered what happen if this action is `triggered`.
+3. If the action is triggered, then the keyEvent will be evaluated like the 
+   `JavaDoc` said. Only action to move the player or reset the map will be 
+   accept.
+
+<br />
+Because we are in a `prototype` I was a little lasy and add to every view (
+preview, game, menu) the information which keyevents will be accept.
+
+![keyevents-in-sokubanfx.png][keyevents-in-sokubanfx]
+
 
 <br />
 ##### Implement the library Ikonli for icons<a name="LibraryIkonli" />
@@ -679,6 +845,7 @@ Articles in this series<a name="Articles" />
 
 
 [//]: # (Images)
+[keyevents-in-sokubanfx]:https://cloud.githubusercontent.com/assets/8161815/15549769/6c4ad966-22ae-11e6-898b-20c2ecad5309.png
 [sokubanfx_v0.2.0-PROTOTYPE]:https://cloud.githubusercontent.com/assets/8161815/15447479/e90b31d0-1f43-11e6-864e-d77b5c4cc7df.png
 [test-packages]:https://cloud.githubusercontent.com/assets/8161815/15449322/7fd7d9e8-1f7a-11e6-916a-a324655bbacc.png
 [wizard-new-test-for-existing-class]:https://cloud.githubusercontent.com/assets/8161815/15449372/6573d96a-1f7c-11e6-858d-57ee8e8a18b8.png
@@ -694,6 +861,7 @@ Articles in this series<a name="Articles" />
 [afterburner.fx]:https://github.com/AdamBien/afterburner.fx
 [Clean Code Developer]:http://clean-code-developer.de/
 [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive]:https://www.youtube.com/watch?v=WsV7kSSSOGs
+[EventHandler<? super KeyEvent>]:https://docs.oracle.com/javase/8/javafx/api/javafx/event/EventHandler.html
 [Geertjan Wielenga]:https://blogs.oracle.com/geertjan/entry/welcome_to_me
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
 [GitHub]:https://github.com/
@@ -717,6 +885,7 @@ Articles in this series<a name="Articles" />
 [Optional<T>]:https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html
 [Project-Template-afterburnerfx-Naoghuman]:https://github.com/Naoghuman/Project-Templates/tree/master/Project-Template-afterburnerfx-Naoghuman
 [Refactoring - Improving the Design of Existing Code]:http://martinfowler.com/books/refactoring.html
+[Scene]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/Scene.html
 [Single Responsibility Principle (SRP)]:https://en.wikipedia.org/wiki/Single_responsibility_principle
 [SokubanFX]:https://github.com/Naoghuman/SokubanFX
 [SokubanFX v0.2.0-PROTOTYPE]:https://youtu.be/iKBfqk0ANj8
