@@ -34,14 +34,14 @@ Content
 * ( ) TODO [New Features in SokubanFX v0.2.0-PROTOTYPE](#NewFeatures)
     * (v) [Change internal to lambda expressions](#LambdaExpressions)
     * (v) [User can now handle the application with KeyEvents](#UserKeyEvents)
-    * ( ) [Implement the library Ikonli for icons](#LibraryIkonli)
+    * (v) [Implement the library Ikonli for icons](#LibraryIkonli)
     * ( ) [In the Preview all 10sec a new random map will be now shown](#PreviewRandomMap)
 * TODO ( ) [Conclusion](#Conclusion)
 * (v) [About the autor](#Autor)
     * (v) [Contact](#Contact)
 * ( ) [Articles in this series](#Articles)
     * ( ) TODO If this article ready, then change the additional informations
-	      in (xy) in all articles + ReadMe (articles, SokubanFX)
+	  in (xy) in all articles + ReadMe (articles, SokubanFX)
 
 
 
@@ -743,17 +743,118 @@ preview, game, menu) the information which keyevents will be accept.
 <br />
 ##### Implement the library Ikonli for icons<a name="LibraryIkonli" />
 
+For [SokubanFX] I decided for me to use the icon fonts [Ikonli]. Although 
+there are another (also excellent) icon fonts like [FontAwesomeFX] or [ControlFX]. 
+Have a look on them.
+
+<br />
+[Ikonli] have a well documented [Ikonli Guide] where momentary :two::one: icon-sets 
+are listed :exclamation:
+
+Here the official project description:
+
+> Ikonli provides icon packs that can be used in Java applications.
+> Currently Swing and JavaFX UI toolkits are supported.
+
+<br />
+To use the icon font in the project we need to include following dependencies in 
+the `pom.xml`:
+```
+<dependencies>
+    <dependency>
+        <groupId>org.kordamp.ikonli</groupId>
+        <artifactId>ikonli-core</artifactId> // 1
+        <version>1.5.0</version>
+    </dependency>
+    <dependency>
+        <groupId>org.kordamp.ikonli</groupId>
+        <artifactId>ikonli-javafx</artifactId> // 2
+        <version>1.5.0</version>
+    </dependency>
+    <dependency>
+        <groupId>org.kordamp.ikonli</groupId>
+        <artifactId>ikonli-elusive-pack</artifactId> // 3
+        <version>1.5.0</version>
+    </dependency>
+
+    ...
+</dependencies>
+```
+
+1. `ikonli-core` defines the `engine` from the icon font. Without this library 
+   nothings works :smile: .
+2. Because [SokubanFX] is a [JavaFX 8] application we `ikonli-javafx` included.
+3. First I try the `ikonli-elusive-pack` icon-set. Maybe this will changed later 
+   :question:
+
+<br />
+Here the first example how to use the iconfont [Ikonli] in the application:
+```java
+public class PreviewPresenter implements Initializable, IActionConfiguration, IRegisterActions {
+
+    private void initializeButtonPlayGame() {
+        LoggerFacade.INSTANCE.info(this.getClass(), "Initialize button PlayGame"); // NOI18N
+        
+        lPlayGame.setText(null);
+        lPlayGame.setCursor(Cursor.HAND);
+        
+        final FontIcon fiPlayAlt = new FontIcon(Elusive.PLAY_ALT); // 1
+        fiPlayAlt.setIconSize(56);
+        lPlayGame.setGraphic(fiPlayAlt); // 2
+    }
+
+    ...
+}
+```
+
+1. It's really easy to get a certain icon.
+2. In this case I will added the icon to a [Label] as graphic.
+
+And the result will look like:
+
+![icon-font-preview.png][icon-font-preview]
+
+
+<br />
+And here the next example:
+```
+public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
+
+    private void initializeButtons() {
+        LoggerFacade.INSTANCE.info(this.getClass(), "Initialize buttons"); // NOI18N
+        // 1
+        this.initializeButton(bMovePlayerDown, Elusive.ARROW_DOWN, "Move player down"); // NOI18N
+        this.initializeButton(bMovePlayerLeft, Elusive.ARROW_LEFT, "Move player left"); // NOI18N
+        this.initializeButton(bMovePlayerRight, Elusive.ARROW_RIGHT, "Move player right"); // NOI18N
+        this.initializeButton(bMovePlayerUp, Elusive.ARROW_UP, "Move player up"); // NOI18N
+        
+        this.initializeButton(bResetMap, Elusive.REFRESH, "Reset the map"); // NOI18N
+    }
+    
+    private void initializeButton(Button btn, Ikon icon, String tooltip) { // 2
+        final FontIcon fi = new FontIcon(icon);
+        fi.setIconSize(24);
+        btn.setGraphic(fi);
+        btn.setText(null);
+        btn.setTooltip(new Tooltip(tooltip));
+    }
+
+    ...
+}
+```
+
+
+1. For every [Button] with an icon the method `initializeButton(...)` will be called.
+2. Here the `icon` and `tooltip` will be added to the `btn`.
+
+And the result will look like:
+
+![icon-font-game.png][icon-font-game]
+
+
 
 <br />
 ##### In the Preview all 10sec a new random map will be now shown<a name="PreviewRandomMap" />
-
-
-
-
-
-
-
-
 
 
 
@@ -770,12 +871,6 @@ Download:
 
 YouTube:
 [![sokubanfx_v0.2.0-PROTOTYPE.png][sokubanfx_v0.2.0-PROTOTYPE]](https://youtu.be/iKBfqk0ANj8 "SokubanFX v0.2.0-PROTOTYPE")
-
-
-
-
-
-
 
 
 
@@ -845,6 +940,8 @@ Articles in this series<a name="Articles" />
 
 
 [//]: # (Images)
+[icon-font-game]:https://cloud.githubusercontent.com/assets/8161815/15626908/25ba537a-24d2-11e6-8446-a874d28f2f25.png
+[icon-font-preview]:https://cloud.githubusercontent.com/assets/8161815/15626909/2a7ecdf0-24d2-11e6-854b-eef638a3794c.png
 [keyevents-in-sokubanfx]:https://cloud.githubusercontent.com/assets/8161815/15549769/6c4ad966-22ae-11e6-898b-20c2ecad5309.png
 [sokubanfx_v0.2.0-PROTOTYPE]:https://cloud.githubusercontent.com/assets/8161815/15447479/e90b31d0-1f43-11e6-864e-d77b5c4cc7df.png
 [test-packages]:https://cloud.githubusercontent.com/assets/8161815/15449322/7fd7d9e8-1f7a-11e6-916a-a324655bbacc.png
@@ -859,15 +956,19 @@ Articles in this series<a name="Articles" />
 [Adam Bien]:http://www.adam-bien.com/roller/abien/
 [Afterburner.fx NetBeans Plugin Release]:http://www.adam-bien.com/roller/abien/entry/afterburner_fx_netbeans_plugin_release
 [afterburner.fx]:https://github.com/AdamBien/afterburner.fx
+[Button]:https://docs.oracle.com/javase/8/javafx/api/index.html?javafx/scene/control/Button.html
 [Clean Code Developer]:http://clean-code-developer.de/
+[ControlFX]:http://fxexperience.com/controlsfx/
 [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive]:https://www.youtube.com/watch?v=WsV7kSSSOGs
 [EventHandler<? super KeyEvent>]:https://docs.oracle.com/javase/8/javafx/api/javafx/event/EventHandler.html
+[FontAwesomeFX]:https://bitbucket.org/Jerady/fontawesomefx
 [Geertjan Wielenga]:https://blogs.oracle.com/geertjan/entry/welcome_to_me
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
 [GitHub]:https://github.com/
 [H+D International Group]:https://www.hud.de/en/
 [Help for Multilingual NetBeans Platform Applications]:https://dzone.com/articles/multilingual-netbeans-platform-applications
 [Ikonli]:https://github.com/aalmiray/ikonli
+[Ikonli Guide]:http://aalmiray.github.io/ikonli/
 [Issue]:https://github.com/Naoghuman/articles/issues
 [Java]:https://en.wikipedia.org/wiki/Java_%28programming_language%29
 [Java 8]:https://www.java.com/en/download/faq/java8.xml
@@ -876,6 +977,7 @@ Articles in this series<a name="Articles" />
 [JavaFX 8]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_8
 [JUnit]:http://junit.org/junit4/
 [Lambda Expressions]:https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html
+[Label]:https://docs.oracle.com/javase/8/javafx/api/index.html?javafx/scene/control/Label.html
 [Martin Fowler]:http://martinfowler.com/
 [NetBeans IDE]:https://netbeans.org/
 [NetBeans Platform 6.9 Developer's Guide]:https://www.packtpub.com/application-development/netbeans-platform-69-developers-guide
