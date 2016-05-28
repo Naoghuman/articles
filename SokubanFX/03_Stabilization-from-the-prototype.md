@@ -28,19 +28,18 @@ You can download the new version here: [SokubanFX-v0.2.0-PROTOTYPE_2016-05-08_18
 Content
 ---
 
-* (v) TODO [Stabilization from the prototype](#Stabilization)
+* (v) [Stabilization from the prototype](#Stabilization)
     * (v) [Stabilize with JUnit tests](#StabilizeJUnit)
     * ( ) TODO REWRITE [Stabilize with Refactoring](#StabilizeRefactoring)
-* ( ) TODO [New Features in SokubanFX v0.2.0-PROTOTYPE](#NewFeatures)
+* ( ) [New Features in SokubanFX v0.2.0-PROTOTYPE](#NewFeatures)
     * (v) [Change internal to lambda expressions](#LambdaExpressions)
     * (v) [User can now handle the application with KeyEvents](#UserKeyEvents)
     * (v) [Implement the library Ikonli for icons](#LibraryIkonli)
-    * ( ) [In the Preview all 10sec a new random map will be now shown](#PreviewRandomMap)
-* TODO ( ) [Conclusion](#Conclusion)
+* ( ) [Conclusion](#Conclusion)
 * (v) [About the autor](#Autor)
     * (v) [Contact](#Contact)
 * ( ) [Articles in this series](#Articles)
-    * ( ) TODO If this article ready, then change the additional informations
+    * ( ) If this article ready, then change the additional informations
 	  in (xy) in all articles + ReadMe (articles, SokubanFX)
 
 
@@ -850,11 +849,6 @@ public class GamePresenter implements Initializable, IActionConfiguration, IRegi
 And the result will look like:
 
 ![icon-font-game.png][icon-font-game]
-
-
-
-<br />
-##### In the Preview all 10sec a new random map will be now shown<a name="PreviewRandomMap" />
 
 
 
