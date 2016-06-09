@@ -34,7 +34,7 @@ Content
 * [New Features in SokubanFX v0.2.0-PROTOTYPE](#NewFeatures)
     * [Change internal functionalities to lambda expressions](#LambdaExpressions)
     * [User can now handle the application with KeyEvents](#UserKeyEvents)
-    * (v) [Implement the library Ikonli for icons](#LibraryIkonli)
+    * [Implementation from the library Ikonli for icons](#LibraryIkonli)
 * ( ) [Conclusion](#Conclusion)
 * (v) [About the autor](#Autor)
     * (v) [Contact](#Contact)
@@ -663,17 +663,17 @@ public class GamePresenter implements Initializable, IActionConfiguration, IRegi
 
 
 <br />
-##### Implement the library Ikonli for icons<a name="LibraryIkonli" />
+##### Implementation from the library Ikonli for icons<a name="LibraryIkonli" />
 
-For [SokubanFX] I decided for me to use the icon fonts [Ikonli]. Although 
-there are another (also excellent) icon fonts like [FontAwesomeFX] or [ControlFX]. 
-Have a look on them.
+For [SokubanFX] I decided for me to use the icon font [Ikonli]. Although there 
+are another excellent icon fonts like [FontAwesomeFX] or [ControlFX] I decided 
+to give [Ikonli] a try :smile: .
 
 <br />
-[Ikonli] have a well documented [Ikonli Guide] where momentary :two::one: icon-sets 
-are listed :exclamation:
+[Ikonli] have a very well documented [Ikonli Guide] where momentary :two::one: 
+icon-sets are listed :exclamation:
 
-Here the official project description:
+Here is the official project description:
 
 > Ikonli provides icon packs that can be used in Java applications.
 > Currently Swing and JavaFX UI toolkits are supported.
@@ -704,13 +704,13 @@ the `pom.xml`:
 ```
 
 1. `ikonli-core` defines the `engine` from the icon font. Without this library 
-   nothings works :smile: .
-2. Because [SokubanFX] is a [JavaFX 8] application we `ikonli-javafx` included.
-3. First I try the `ikonli-elusive-pack` icon-set. Maybe this will changed later 
+   nothings will work :smile: .
+2. Because [SokubanFX] is a [JavaFX 8] application we include `ikonli-javafx`.
+3. First I try the icon-set `ikonli-elusive-pack`. Maybe I will change this later 
    :question:
 
 <br />
-Here the first example how to use the iconfont [Ikonli] in the application:
+Here is the first example how to use the iconfont [Ikonli] in the application:
 ```java
 public class PreviewPresenter implements Initializable, IActionConfiguration, IRegisterActions {
 
@@ -738,7 +738,7 @@ And the result will look like:
 
 
 <br />
-And here the next example:
+And here is the next example:
 ```
 public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
 
@@ -766,10 +766,12 @@ public class GamePresenter implements Initializable, IActionConfiguration, IRegi
 ```
 
 
-1. For every [Button] with an icon the method `initializeButton(...)` will be called.
-2. Here the `icon` and `tooltip` will be added to the `btn`.
+1. For every [Button] with an icon the method `initializeButton(...)` will be 
+   called.
+2. In the method `initializeButton(Button, Ikon, String) the `icon` and `tooltip` 
+   will be added to the `btn`.
 
-And the result will look like:
+And the result looks like:
 
 ![icon-font-game.png][icon-font-game]
 
