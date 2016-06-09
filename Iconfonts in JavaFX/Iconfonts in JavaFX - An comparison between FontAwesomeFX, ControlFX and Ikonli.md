@@ -1,8 +1,7 @@
 Iconfonts in JavaFX
 ===
 
-An comparison between FontAwesomeFX, ControlFX and Ikonli.
-
+An comparison between the iconfonts [FontAwesomeFX], [ControlFX] and [Ikonli].
 
 
 <br />
@@ -19,22 +18,18 @@ List features, advances aso.
 Content
 ---
 
-* TODO [section](#section)
-    * [subsection](#subsection)
-* TODO [Conclusion](#Conclusion)
-* [About the autor](#Autor)
-    * [Contact](#Contact)
-    * [License](#License)
-
-
-
-<br />
-section<a name="section" />
----
-
-
-<br />
-##### subsection<a name="subsection" />
+* ( ) [Basic Conditions](#BasicConditions)
+* ( ) [Iconfont Definition](#IconfontDefinition)
+* ( ) [Iconfont FontAwesomeFX](#IconfontFontAwesomeFX)
+    * ( ) [Conclusion](#ConclusionIF)
+* ( ) [Iconfont ControlFX](#IconfontControlFX)
+    * ( ) [Conclusion](#ConclusionIC)
+* ( ) [Iconfont Ikonli](#IconfontIkonli)
+    * ( ) [Conclusion](#ConclusionII)
+* ( ) [Conclusion](#Conclusion)
+* (v) [About the autor](#Autor)
+    * (v) [Contact](#Contact)
+    * (v) [License](#License)
 
 
 
@@ -57,25 +52,27 @@ with the head-quarters in Wolfsburg, Germany.
 
 
 <br />
-In my free time I investigate between `2009` an `2012` some time in [NetBeans RCP] &#40;Rich 
-Client Platform&#41; development.  
+In my free time I investigate between `2009` an `2012` some time in [NetBeans RCP] 
+&#40;Rich Client Platform&#41; development.  
 See  
-* The `interview` [Help for Multilingual NetBeans Platform Applications] &#40;09.2009&#41; with 
-  [Geertjan Wielenga] and me.
-* The `book` [NetBeans Platform 6.9 Developer's Guide] &#40;08.2010&#41; which I helped to 
-  translate from Germany to English.
+* The `interview` [Help for Multilingual NetBeans Platform Applications] 
+  &#40;09.2009&#41; with [Geertjan Wielenga] and me.
+* The `book` [NetBeans Platform 6.9 Developer's Guide] &#40;08.2010&#41; which I 
+  helped to translate from Germany to English.
 
 <br />
-Since `2011` I change my focus to [JavaFX] -> [JavaFX 2.0] to [JavaFX 8] although in `2015` 
-I saw a video from [Adam Bien] where he mention he would love to write a [NetBeans RCP] 
-plugin for his library [afterburner.fx] when he had more time.  
+Since `2011` I change my focus to [JavaFX] &#40;[JavaFX 2.0] - [JavaFX 8]&#41;. 
+Although in `2015` I saw a video from [Adam Bien] where he mention he would love 
+to write a [NetBeans RCP] plugin for his library [afterburner.fx] when he had 
+more time.  
 So I decided to do this:
-* See the [GitHub] project [NetBeansIDE-AfterburnerFX-Plugin] &#40;since 09.2015&#41; which is 
-  really helpful to speed up the development in combination with the library [afterburner.fx]
-  in [JavaFX] application.
-* The `interview` [Afterburner.fx NetBeans Plugin Release] &#40;11.2015&#41; with [Adam Bien] and me.
-* Have a look in the `video` [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive] where 
-  [Adam Bien] introduce my plugin &#40;at 48:00&#41;.
+* See the [GitHub] project [NetBeansIDE-AfterburnerFX-Plugin] &#40;since 09.2015&#41; 
+  which is really helpful to speed up the development from [JavaFX] applications 
+  in combination with the library [afterburner.fx].
+* The `interview` [Afterburner.fx NetBeans Plugin Release] &#40;11.2015&#41; 
+  with [Adam Bien] and me.
+* Have a look in the `video` [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive] 
+  where [Adam Bien] introduce my plugin &#40;at 48:00&#41;.
 
 
 <br />
@@ -101,12 +98,15 @@ Any question? Some helpful criticism?
 [Adam Bien]:http://www.adam-bien.com/roller/abien/
 [Afterburner.fx NetBeans Plugin Release]:http://www.adam-bien.com/roller/abien/entry/afterburner_fx_netbeans_plugin_release
 [afterburner.fx]:https://github.com/AdamBien/afterburner.fx
+[ControlFX]:http://fxexperience.com/controlsfx/
 [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive]:https://www.youtube.com/watch?v=WsV7kSSSOGs
+[FontAwesomeFX]:https://bitbucket.org/Jerady/fontawesomefx
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
 [Geertjan Wielenga]:https://blogs.oracle.com/geertjan/entry/welcome_to_me
 [GitHub]:https://github.com/
 [H+D International Group]:https://www.hud.de/en/
 [Help for Multilingual NetBeans Platform Applications]:https://dzone.com/articles/multilingual-netbeans-platform-applications
+[Ikonli]:https://github.com/aalmiray/ikonli
 [Issue]:https://github.com/Naoghuman/lib-database-objectdb/issues
 [Java]:https://en.wikipedia.org/wiki/Java_%28programming_language%29
 [JavaFX]:http://docs.oracle.com/javase/8/javase-clienttechnologies.htm
