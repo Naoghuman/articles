@@ -28,8 +28,8 @@ You can download the new version here: [SokubanFX-v0.2.0-PROTOTYPE_2016-05-08_18
 Content
 ---
 
-* (v) [Stabilization from the prototype](#Stabilization)
-    * (v) [Stabilize with JUnit tests](#StabilizeJUnit)
+* [Stabilization from the prototype](#Stabilization)
+    * [Stabilize the prototype with JUnit tests](#StabilizeJUnit)
     * ( ) TODO REWRITE [Stabilize with Refactoring](#StabilizeRefactoring)
 * ( ) [New Features in SokubanFX v0.2.0-PROTOTYPE](#NewFeatures)
     * (v) [Change internal to lambda expressions](#LambdaExpressions)
@@ -52,10 +52,11 @@ In this part I describes the steps how to stabilize the project.
 
 
 <br />
-##### Stabilize with JUnit tests<a name="StabilizeJUnit" />
+##### Stabilize the prototype with JUnit tests<a name="StabilizeJUnit" />
 
-The [NetBeans IDE] have a nice feature -> Create new [JUnit] `Test for Existing Class` 
-under `New` -> `Unit Tests`.
+Create new [JUnit] tests with [NetBeans IDE] is really easy because the IDE have 
+a nice feature:  
+The action `Test for Existing Class` under `New` -> `Unit Tests`:
 * This wizard will generate automatically a [JUnit] for an existing class.
 * Select the class which should be tested.
 * The wizard fill automatically the test package and name for the new test class.
@@ -72,6 +73,7 @@ So the basic classes and methods are really fast generated.
 ![test-packages.png][test-packages]
 
 <br />
+Lets have a look on the [JUnit] tests in the class `CollisionCheckerTest`:
 ```java
 public class CollisionCheckerTest {
     
@@ -94,7 +96,7 @@ public class CollisionCheckerTest {
     @Test
     public void getDefault() {
         CollisionChecker result = CollisionChecker.getDefault();
-        assertNotNull("Instance from CollisionChecker muss != NULL", result); // NOI18N
+        assertNotNull("Instance from CollisionChecker must != NULL", result); // NOI18N
     }
     
     @Test
@@ -105,11 +107,11 @@ public class CollisionCheckerTest {
         // There is a box before the player (y=11) and no second box (y!=12) before the first box
         boxes.clear();
         boxes.add(Coordinates.getDefault(10,  2));
-        boxes.add(Coordinates.getDefault(10, 11)); // <--- 1.
+        boxes.add(Coordinates.getDefault(10, 11)); // Box before the player!
         boxes.add(Coordinates.getDefault(10, 15));
         mapModel.setBoxes(boxes);
         
-        walls.clear();
+        walls.clear(); // No walls!
         mapModel.setWalls(walls);
         
         ECollisionResult result = CollisionChecker.getDefault().checkCollisionPlayerBoxWall(direction, mapModel);
@@ -118,13 +120,13 @@ public class CollisionCheckerTest {
         // There is a box before the player (y=11) and a wall at (y=12)
         boxes.clear();
         boxes.add(Coordinates.getDefault(10,  1));
-        boxes.add(Coordinates.getDefault(10, 11)); // <--- 1.
+        boxes.add(Coordinates.getDefault(10, 11)); // // Box before the player!
         boxes.add(Coordinates.getDefault(10, 15));
         mapModel.setBoxes(boxes);
         
         walls.clear();
         walls.add(Coordinates.getDefault(10,  2));
-        walls.add(Coordinates.getDefault(10, 12)); // <--- 2.
+        walls.add(Coordinates.getDefault(10, 12)); // Wall before the Box!
         walls.add(Coordinates.getDefault(10, 14));
         mapModel.setWalls(walls);
         
@@ -132,7 +134,20 @@ public class CollisionCheckerTest {
         assertEquals("There is a box before the player (y=11) and a wall at (y=12) -> CollisionResult.PLAYER_AGAINST__BOX_WALL", ECollisionResult.PLAYER_AGAINST__BOX_WALL, result);
     }
     
-    // and for all other combination also a unit test is be created:
+    ...
+}
+```
+
+* First for every test the player position is set to `10,10` in the method `setUp()`.
+* Then all possible collisions (player -> (box -> '', box, place, wall), wall) 
+  will be tested in own methods.
+* The combination player -> '' is check in the first part from every 
+  `checkCollisionXY()` method.
+
+
+Here are a list with all `checkCollisionXY` methods:
+```java
+    public void checkCollisionPlayerBoxBoxWithDirectionDOWN()
     public void checkCollisionPlayerBoxBoxWithDirectionLEFT()
     public void checkCollisionPlayerBoxBoxWithDirectionRIGHT()
     public void checkCollisionPlayerBoxBoxWithDirectionUP()
@@ -152,12 +167,15 @@ public class CollisionCheckerTest {
     public void checkCollisionPlayerWallWithDirectionLEFT()
     public void checkCollisionPlayerWallWithDirectionRIGHT()
     public void checkCollisionPlayerWallWithDirectionUP()
-
-}
 ```
+
+Plz have a look into the source code from the class [CollisionCheckerTest] if 
+you are interest into the implementation details.
 
 
 <br />
+In the class `MapMovementTest` I will test if a map is finished after a user 
+movement or not:
 ```java
 public class MapMovementTest {
 
@@ -214,107 +232,6 @@ public class MapMovementTest {
 //        MapMovement instance = new MapMovement();
 //        MovementResult result = instance.checkMovePlayerTo(direction, mapModel);
 //    }
-    
-}
-```
-
-<br />
-```java
-public class MovementResultTest {
-
-    @Test
-    public void testGetDefault() {
-        MovementResult mr = MovementResult.getDefault();
-        
-        assertEquals(EAnimation.NONE, mr.getAnimation());
-        assertNotNull(mr.getBoxToMove());
-        assertEquals(Coordinates.getDefault(), mr.getBoxToMove());
-        assertEquals(EMovement.NONE, mr.getMovement());
-        assertNotNull(mr.getPlayerToMove());
-        assertEquals(Coordinates.getDefault(), mr.getPlayerToMove());
-        assertFalse(mr.isMapFinish());
-    }
-
-    @Test
-    public void getBoxToMove() {
-        MovementResult mr = MovementResult.getDefault();
-        
-        assertNotNull(mr.getBoxToMove());
-        assertEquals(Coordinates.getDefault(), mr.getBoxToMove());
-    }
-
-    @Test
-    public void setBoxToMove() {
-        MovementResult mr = MovementResult.getDefault();
-        mr.setBoxToMove(Coordinates.getDefault(2, 7));
-        
-        assertNotNull(mr.getBoxToMove());
-        assertEquals(2, mr.getBoxToMove().getX());
-        assertEquals(7, mr.getBoxToMove().getY());
-    }
-
-    @Test
-    public void getPlayerToMove() {
-        MovementResult mr = MovementResult.getDefault();
-        
-        assertNotNull(mr.getPlayerToMove());
-        assertEquals(Coordinates.getDefault(), mr.getPlayerToMove());
-    }
-
-    @Test
-    public void setPlayerToMove() {
-        MovementResult mr = MovementResult.getDefault();
-        mr.setPlayerToMove(Coordinates.getDefault(2, 7));
-        
-        assertNotNull(mr.getPlayerToMove());
-        assertEquals(2, mr.getPlayerToMove().getX());
-        assertEquals(7, mr.getPlayerToMove().getY());
-    }
-
-    @Test
-    public void isMapFinish() {
-        MovementResult mr = MovementResult.getDefault();
-        
-        assertFalse(mr.isMapFinish());
-    }
-
-    @Test
-    public void setIsMapFinish() {
-        MovementResult mr = MovementResult.getDefault();
-        mr.setIsMapFinish(true);
-        
-        assertTrue(mr.isMapFinish());
-    }
-
-    @Test
-    public void getAnimation() {
-        MovementResult mr = MovementResult.getDefault();
-        
-        assertEquals(EAnimation.NONE, mr.getAnimation());
-    }
-
-    @Test
-    public void setAnimation() {
-        MovementResult mr = MovementResult.getDefault();
-        mr.setAnimation(EAnimation.REALLY_GREAT);
-        
-        assertEquals(EAnimation.REALLY_GREAT, mr.getAnimation());
-    }
-
-    @Test
-    public void getMovement() {
-        MovementResult mr = MovementResult.getDefault();
-        
-        assertEquals(EMovement.NONE, mr.getMovement());
-    }
-
-    @Test
-    public void setMovement() {
-        MovementResult mr = MovementResult.getDefault();
-        mr.setMovement(EMovement.PLAYER_AND_BOX);
-        
-        assertEquals(EMovement.PLAYER_AND_BOX, mr.getMovement());
-    }
     
 }
 ```
@@ -954,6 +871,7 @@ Articles in this series<a name="Articles" />
 [afterburner.fx]:https://github.com/AdamBien/afterburner.fx
 [Button]:https://docs.oracle.com/javase/8/javafx/api/index.html?javafx/scene/control/Button.html
 [Clean Code Developer]:http://clean-code-developer.de/
+[CollisionCheckerTest]:https://github.com/Naoghuman/SokubanFX/blob/prototype-v0.2.0/src/test/java/com/github/naoghuman/sokubanfx/map/collision/CollisionCheckerTest.java
 [ControlFX]:http://fxexperience.com/controlsfx/
 [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive]:https://www.youtube.com/watch?v=WsV7kSSSOGs
 [EventHandler<? super KeyEvent>]:https://docs.oracle.com/javase/8/javafx/api/javafx/event/EventHandler.html
