@@ -33,7 +33,7 @@ Content
     * [Stabilize the prototype with Refactoring](#StabilizeRefactoring)
 * [New Features in SokubanFX v0.2.0-PROTOTYPE](#NewFeatures)
     * [Change internal functionalities to lambda expressions](#LambdaExpressions)
-    * (v) [User can now handle the application with KeyEvents](#UserKeyEvents)
+    * [User can now handle the application with KeyEvents](#UserKeyEvents)
     * (v) [Implement the library Ikonli for icons](#LibraryIkonli)
 * ( ) [Conclusion](#Conclusion)
 * (v) [About the autor](#Autor)
@@ -401,7 +401,7 @@ public class GamePresenter implements Initializable, IActionConfiguration, IRegi
    the item `coordinatesFounded` will be updated.
 
 <br />
-In the next example again first the `old way` will be shown how to check if all 
+In the last example again first the `old way` will be shown how to check if all 
 `boxes` are on a `place`, that mean if so then the map is `finished`.
 ```java
 public class CollisionChecker {
@@ -573,18 +573,17 @@ public class StartApplication extends Application implements IActionConfiguratio
 }
 ```
 
-1. Add an [EventHandler<? super KeyEvent>] to the [Scene] allowds to catch all 
+1. Adds an [EventHandler<? super KeyEvent>] to the [Scene] allows to catch all 
    KeyEvents from the user.
-2. In all views the application shutdown when the user press `ESCAPE`.
-3. In all views when the user press `BACK_SPACE` the menu will shown on the right 
-   side.
-4. All other KeyEvents will checked first if the `preview mode` aktiv. If so then 
-   the event will delegate the the preview.
-5. At last will be checked if the event for the `game mode`. If so then...
+2. In all views the user can shutdown the application when he press the key `ESCAPE`.
+3. In all views the menu will shown when the user press the key `BACK_SPACE`.
+4. All other KeyEvents will be checked first if the `preview mode` aktiv. If so 
+   then the event will delegate to the preview.
+5. At last it will be checked if the `game mode` is active. If so then...
 
 <br />
 In this example I will show what happen if the action `ON_ACTION__KEY_RELEASED__FOR_GAME` 
-is handled:
+is fired:
 ```java
 public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
 
@@ -654,18 +653,13 @@ public class GamePresenter implements Initializable, IActionConfiguration, IRegi
 }
 ```
 
-1. All possible action from the class `GamePresenter` will be registered in the 
+1. All possible actions from the class `GamePresenter` will be registered in the 
    method `registerActions()`.
-2. Here the action is registered what happen if this action is `triggered`.
-3. If the action is triggered, then the keyEvent will be evaluated like the 
-   `JavaDoc` said. Only action to move the player or reset the map will be 
-   accept.
-
-<br />
-Because we are in a `prototype` I was a little lasy and add to every view (
-preview, game, menu) the information which keyevents will be accept.
-
-![keyevents-in-sokubanfx.png][keyevents-in-sokubanfx]
+2. Shows the implementation from the action what happen if the registered action 
+   is `triggered`.
+3. If the above descripted action is triggered, then the KeyEvent will be evaluated 
+   like the `JavaDoc` said. Only actions to move the player or reset the map will 
+   be accept.
 
 
 <br />
