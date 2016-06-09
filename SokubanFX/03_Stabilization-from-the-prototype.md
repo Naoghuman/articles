@@ -31,8 +31,8 @@ Content
 * [Stabilization from the prototype](#Stabilization)
     * [Stabilize the prototype with JUnit tests](#StabilizeJUnit)
     * [Stabilize the prototype with Refactoring](#StabilizeRefactoring)
-* ( ) [New Features in SokubanFX v0.2.0-PROTOTYPE](#NewFeatures)
-    * (v) [Change internal to lambda expressions](#LambdaExpressions)
+* [New Features in SokubanFX v0.2.0-PROTOTYPE](#NewFeatures)
+    * [Change internal functionalities to lambda expressions](#LambdaExpressions)
     * (v) [User can now handle the application with KeyEvents](#UserKeyEvents)
     * (v) [Implement the library Ikonli for icons](#LibraryIkonli)
 * ( ) [Conclusion](#Conclusion)
@@ -286,12 +286,12 @@ In this section I will list what is new in SokubanFx v0.2.0.
 
 
 <br />
-##### Change internal to lambda expressions<a name="LambdaExpressions" />
+##### Change internal functionalities to lambda expressions<a name="LambdaExpressions" />
 
-First internal I switch to [Lambda Expressions] which are new in [Java 8].
+New in [Java 8] are [Lambda Expressions] which are really interesting and powerful. 
 
 <br />
-Here a very simple example how to stream over every `item` in a [ObservableList]:
+Here is a very simple example how to stream over every `item` in an [ObservableList]:
 ```java
 public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
 
@@ -320,12 +320,14 @@ public class GamePresenter implements Initializable, IActionConfiguration, IRegi
 }
 ```
 
-1. This [Lambda Expressions] streams simple over every `item` in the [ObservableList]<String> mapAsStrings.
-2. For every `item` in the [ObservableList] a new formated label will be added to the [VBox] vbMap.
+1. This [Lambda Expressions] streams simple over every `item` in the 
+   [ObservableList]<String> mapAsStrings.
+2. For every `item` in the [ObservableList] a new formated label will be added 
+   to the [VBox] vbMap.
 
 <br />
-Next example shows how to iterate over a list, check something and if okay then 
-update the `coordinatesFounded`:
+The next example will show first the `old way` how to iterate over a list, check 
+something and if okay then update the iterated `item`:
 ```java
 public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
 
@@ -360,7 +362,8 @@ public class GamePresenter implements Initializable, IActionConfiguration, IRegi
    iteration.
 
 <br />
-After the conversion from the `for-each` iteration to a [Lambda Expressions] we have:
+Then after the conversion from the `for-each` iteration to a [Lambda Expressions] 
+we have:
 ```java
 public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
 
@@ -395,11 +398,11 @@ public class GamePresenter implements Initializable, IActionConfiguration, IRegi
    `coordinatesToCheck`.
 3. For the `first` match an [Optional<T>] will be returned.
 4. If the [Optional<T>] is not `null` &#40;means `ifPresent==true`&#41; then 
-   `coordinatesFounded` will be updated.
+   the item `coordinatesFounded` will be updated.
 
 <br />
-In the next example the shown method will check if all `boxes` are on a `place`, 
-that mean if so then the map is `finished`.
+In the next example again first the `old way` will be shown how to check if all 
+`boxes` are on a `place`, that mean if so then the map is `finished`.
 ```java
 public class CollisionChecker {
 
