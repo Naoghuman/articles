@@ -30,7 +30,7 @@ Content
 
 * [Stabilization from the prototype](#Stabilization)
     * [Stabilize the prototype with JUnit tests](#StabilizeJUnit)
-    * ( ) TODO REWRITE [Stabilize with Refactoring](#StabilizeRefactoring)
+    * [Stabilize the prototype with Refactoring](#StabilizeRefactoring)
 * ( ) [New Features in SokubanFX v0.2.0-PROTOTYPE](#NewFeatures)
     * (v) [Change internal to lambda expressions](#LambdaExpressions)
     * (v) [User can now handle the application with KeyEvents](#UserKeyEvents)
@@ -238,34 +238,43 @@ public class MapMovementTest {
 
 
 <br />
-##### Stabilize with Refactoring<a name="StabilizeRefactoring" />
+##### Stabilize the prototype with Refactoring<a name="StabilizeRefactoring" />
 
-One important part for me in stabilzation from a prototype is `refactoring`:
+One really important part for me in development an application is `refactoring`:
 * [Refactoring - Improving the Design of Existing Code] by [Martin Fowler].
 
 Also I find it helpful to have the main points from [Clean Code Developer] 
 &#40;:de:&#41; in mind during the stabilization.
 
 <br />
-So what can be done to stabilize the program :question:
+So what for `refactorings` can be done to stabilize the program :question:
 * Delete unnecessary files.
-* Start with documentation (at first with the project ReadMe).
-* Update the dependencies to included libraries.
-* Update the release notes.
+* Start with documentation &#40;at first with the project ReadMe&#41;.
+* Update the dependencies for included libraries.
+* Create templates if possible &#40;for example for the realease notes&#41;.
 * Check the package structure and move classes if needed.
+* Check the names from classes, interfaces and enums and rename them if needed.
 * Switch from [Java] classes to [JavaFX] classes when possible.
-* Check the names from classes, interfaces and enums and rename it if needed.
 * Move functionalities from classes to new classes -> [Single Responsibility Principle (SRP)].
 * Check layout in views and simplified if possible.
-* and more...
+* ...
 
 <br />
-In generall things are done when they are ready :laughing: .  
-But here are 3 points which helps me to decided when to go to the next phase in 
+In general things are done when they are ready :laughing: .  
+But here are 3 points which helps me to decided when to goto the next phase in 
 the program development.
 * The time is over which I planned for the stabilization.
-* The top :five: areas are cleaned.
-* Points which I havn't the time to cleanup are noted. 
+* The top :five: areas in the application are cleaned.
+* Points which I havn't the time to cleanup are noted for the next release.
+
+<br />
+In general (2).  
+Normally in my private projects I implement, fix following issues in one release 
+&#40;one release needs 2-3 weeks&#41;:
+* 1 new feature
+* and /or 1 enhancement.
+* 3 - 4 bug fixes.
+* 5 - 7 refactorings.
 
 
 
