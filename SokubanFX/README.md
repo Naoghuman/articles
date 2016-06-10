@@ -34,13 +34,13 @@ This article series described how I create the game [SokubanFX] with [JavaFX] an
 [NetBeans IDE]. Inspired by my [Java] game `Sokuban-Clone` which I wrote 2008 I 
 decided to rewrite the game in `April 2016`.
 
-* **&#40;updated&#41;** The article [01 Setup the project] describes the steps 
-  how to setup a new project in [GitHub] with my project template and what are 
-  the advantages from using this template [Project-Template-afterburnerfx-Naoghuman].
-* **&#40;new&#41;** The article [02 Create first prototype] describes the steps 
-  and decisions which I make during the implementation from the first `prototype`.
-* _&#40;not started&#41;_ The article [03 Stabilization from the prototype] 
-  describes the steps how I stabilize the prototype.
+* The article [01 Setup the project] describes the steps how to setup a new project 
+  in [GitHub] with my project template and what are the advantages from using this 
+  template [Project-Template-afterburnerfx-Naoghuman].
+* The article [02 Create first prototype] describes the steps and decisions which 
+  I make during the implementation from the first `prototype`.
+* **&#40;new&#41;** The article [03 Stabilization from the prototype] describes 
+  the steps how I stabilize the prototype.
 
 
 
