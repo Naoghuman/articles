@@ -35,9 +35,9 @@ Content
     * [Change internal functionalities to lambda expressions](#LambdaExpressions)
     * [User can now handle the application with KeyEvents](#UserKeyEvents)
     * [Implementation from the library Ikonli for icons](#LibraryIkonli)
-* ( ) [Conclusion](#Conclusion)
-* (v) [About the autor](#Autor)
-    * (v) [Contact](#Contact)
+* [Conclusion](#Conclusion)
+* [About the autor](#Autor)
+    * [Contact](#Contact)
 * ( ) [Articles in this series](#Articles)
     * ( ) If this article ready, then change the additional informations
 	  in (xy) in all articles + ReadMe (articles, SokubanFX)
@@ -781,9 +781,12 @@ And the result looks like:
 Conclusion<a name="Conclusion" />
 ---
 
-1) Stabilization
+`JUnit` tests, `refactoring`, `clean code` and `bug fixing` are the key points to 
+stabilize an application from my view. In every release I will spend between 50% 
+and 60% from the time to this topics. The rest is reserved for new features or 
+enhancements.
 
-2) Some new features
+For me this works very well and for you?
 
 Download:  
 [SokubanFX-v0.2.0-PROTOTYPE_2016-05-08_18-44.zip]
