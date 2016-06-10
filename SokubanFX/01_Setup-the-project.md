@@ -31,19 +31,19 @@ Content
 
 * [Setup the project](#SetupTheProject)
     * [Download the project template](#DownloadTemplate)
-    * **&#40;updated&#41;** [Tweak the project template](#TweakTemplate)  
+    * [Tweak the project template](#TweakTemplate)  
       [_Tweak the project &#40;name, properties, packages...&#41;_](#TweakProject)  
       [_Update different files like `log4j2.xml`, `application.properties`, `application.fxml`..._](#UpdateFiles)  
       [_Update the JavaDoc &#40;license, autor&#41; if needed_](#UpdateJavaDoc)  
       [_Last steps..._](#LastSteps)
-    * **&#40;updated&#41;** [What is the advantages from using this template?](#AdvanceTemplate)  
+    * [What is the advantages from using this template?](#AdvanceTemplate)  
       [_The advantage from the plugin `javafx-maven-plugin`_](#AdvJavMavPlu)  
       [_The advantage from the library `afterburner.fx`_](#AdvAft)  
       [_The advantage from the library `lib-action`_](#AdvLibAct)    
       [_The advantage from the library `lib-logger`_](#AdvLibLog)  
       [_The advantage from the library `lib-preferences`_](#AdvLibPre)  
       [_The advantage from the library `lib-properties`_](#AdvLibPro)
-* **&#40;new&#41;** [Conclusion](#Conclusion)
+* [Conclusion](#Conclusion)
 * [About the autor](#Autor)
     * [Contact](#Contact)
 * [Articles in this series](#Articles)
@@ -133,7 +133,7 @@ which are necessary to tweak the template.
 
 
 <br />
-#### **&#40;updated&#41;** What is the advantages from using this template?<a name="AdvanceTemplate" />
+#### What is the advantages from using this template?<a name="AdvanceTemplate" />
 
 After the preperation from the project template we will have a well configured 
 minimal [JavaFX], [Maven] desktop application with following below listed 
@@ -473,7 +473,7 @@ https://github.com/Naoghuman/lib-properties
 
 
 <br />
-**&#40;new&#41;** Conclusion<a name="Conclusion" />
+Conclusion<a name="Conclusion" />
 ---
 
 It seems there are many points which should be updated in the project template. 
