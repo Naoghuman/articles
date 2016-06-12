@@ -763,10 +763,10 @@ public class GamePresenter implements Initializable, IActionConfiguration, IRegi
 ```
 
 
-1. For every [Button] with an icon the method `initializeButton(...)` will be 
-   called.
-2. In the method `initializeButton(Button, Ikon, String) the `icon` and `tooltip` 
-   will be added to the `btn`.
+1. For every play-[Button] with an icon the method `initializeButton(...)` will 
+   be called.
+2. In the method `initializeButton(Button, Ikon, String)` the icon and tooltip 
+   will be added to the [Button].
 
 And the result looks like:
 
