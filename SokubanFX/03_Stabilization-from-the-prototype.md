@@ -502,7 +502,6 @@ public class CollisionChecker {
 In this new version 0.2.0 from [SokubanFX] the user have the possibilities to 
 handle the application with KeyEvents.
 
-<br />
 ```java
 public class StartApplication extends Application implements IActionConfiguration, IApplicationConfiguration {
 
