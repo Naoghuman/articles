@@ -678,7 +678,7 @@ Here is the official project description:
 <br />
 To use the icon font in the project we need to include following dependencies in 
 the `pom.xml`:
-```
+```xml
 <dependencies>
     <dependency>
         <groupId>org.kordamp.ikonli</groupId>
