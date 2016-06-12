@@ -862,8 +862,8 @@ Articles in this series<a name="Articles" />
 
 
 [//]: # (Images)
-[icon-font-game]:https://cloud.githubusercontent.com/assets/8161815/15626908/25ba537a-24d2-11e6-8446-a874d28f2f25.png
-[icon-font-preview]:https://cloud.githubusercontent.com/assets/8161815/15626909/2a7ecdf0-24d2-11e6-854b-eef638a3794c.png
+[icon-font-game]:https://cloud.githubusercontent.com/assets/8161815/15988997/4835c344-3067-11e6-9f0c-41efe4f44829.png
+[icon-font-preview]:https://cloud.githubusercontent.com/assets/8161815/15988994/3ee05ba6-3067-11e6-824e-f3a90fc4cd84.png
 [keyevents-in-sokubanfx]:https://cloud.githubusercontent.com/assets/8161815/15549769/6c4ad966-22ae-11e6-898b-20c2ecad5309.png
 [sokubanfx_v0.2.0-PROTOTYPE]:https://cloud.githubusercontent.com/assets/8161815/15447479/e90b31d0-1f43-11e6-864e-d77b5c4cc7df.png
 [test-packages]:https://cloud.githubusercontent.com/assets/8161815/15449322/7fd7d9e8-1f7a-11e6-916a-a324655bbacc.png
