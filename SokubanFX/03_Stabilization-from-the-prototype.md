@@ -735,8 +735,8 @@ And the result will look like:
 
 
 <br />
-And here is the next example:
-```
+And here in the next example I show how to add icons to the play-buttons:
+```java
 public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
 
     private void initializeButtons() {
