@@ -8,7 +8,7 @@ Intention
 ---
 
 This article series described how I create the game [SokubanFX] with [JavaFX] 
-and [NetBeans IDE]. Inspired by my [Java] game `Sokuban-Clone` which I wrote 
+and [NetBeans IDE]. Inspired by my old [Java] game `Sokuban-Clone` which I wrote 
 2008 I decided to rewrite the game in `April 2016`.
 
 
@@ -19,7 +19,7 @@ Content
 
 * [How to create the game SokubanFX](#ArticlesSokubanFX)  
   This article series described how I create the game [SokubanFX] with [JavaFX] 
-  and [NetBeans IDE]. Inspired by my [Java] game `Sokuban-Clone` which I wrote 
+  and [NetBeans IDE]. Inspired by my old [Java] game `Sokuban-Clone` which I wrote 
   2008 I decided to rewrite the game in `April 2016`.
 * [About the autor](#Autor)
     * [Contact](#Contact)
@@ -39,8 +39,8 @@ decided to rewrite the game in `April 2016`.
   template [Project-Template-afterburnerfx-Naoghuman].
 * The article [02 Create first prototype] describes the steps and decisions which 
   I make during the implementation from the first `prototype`.
-* **&#40;new&#41;** The article [03 Stabilization from the prototype] describes 
-  the steps how I stabilize the prototype.
+* The article [03 Stabilization from the prototype] describes the steps how I 
+  stabilize the prototype.
 
 
 
@@ -91,7 +91,7 @@ Any question? Some helpful criticism?
 <br />
 ##### License<a name="License" />
 
-* The articles in this series are licensed under [General Public License 3.0].
+* All articles in this series are licensed under [General Public License 3.0].
 
 
 
