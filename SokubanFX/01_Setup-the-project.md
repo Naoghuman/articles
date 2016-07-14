@@ -17,7 +17,7 @@ In `2008` I wrote a little game [Sokuban-Clone] with [Java] and [Swing2D].
 <br />
 In `April 2016` I decided to rewrite the game in [JavaFX].
 
-In this first article I will write down the steps how I setup the new project with 
+In this first article I will show the steps how to setup the new project with 
 another [GitHub] project from me `Project-Template-afterburnerfx-Naoghuman` and 
 what are the advantages from using this template:
 * [GitHub] project: https://github.com/Naoghuman/Project-Templates
@@ -82,8 +82,8 @@ b) Clone the project with https://github.com/Naoghuman/Project-Templates.git
 <br />
 ##### Tweak the project template<a name="TweakTemplate" />
 
-In the project is a file `Tweak-Project-Template.txt` where the steps are listed 
-which are necessary to tweak the template.
+In the project root folder is the file `Tweak-Project-Template.txt` where the 
+steps are listed which are necessary to tweak the template.
 
 
 <br />
@@ -235,13 +235,13 @@ public class ApplicationPresenter implements Initializable, IActionConfiguration
 
 1. With the interface `com.github.naoghuman.lib.action.api.IRegisterActions` the 
    developer override the method `registerActions()`.
-2. In this method all individual actions from `ApplicationPresenter` will be 
+2. In this method all individual actions from the class`ApplicationPresenter` 
+   will be registered.
+3. If the `GameView` is instantiate, then over the instance from the `GamePresenter` 
+   the method `registerActions()` will be called and all actions in the class will be 
    registered.
-3. If the `GameView` will be instantiate, then over the `GamePresenter` the method 
-   `registerActions()` will be called and then all actions in the class will be 
-   registered.
-4. Acces to the action can be done with the `action-key`. In this case is that 
-   `ON_ACTION__CHANGE_TO_GAMEVIEW` next code snippet.
+4. Access to the action can be done with the `action-key`. In this case is that 
+   `ON_ACTION__CHANGE_TO_GAMEVIEW` &#40;see next code snippet&#41;.
 
 ```java
 public class PreviewPresenter implements Initializable, IActionConfiguration, IRegisterActions {
@@ -269,7 +269,7 @@ for more informations plz: https://github.com/Naoghuman/lib-action
 <br />
 ##### _The advantage from the library `lib-logger`_<a name="AdvLibLog" />
 
-* The library [lib-logger] delivers a clean `api` the logging with the log 
+* The library [lib-logger] delivers a clean `api` for logging with the log 
   framework [log4j2] in a [JavaFX] application.
 
 There are also many additional methods like logging a message at start or end 
@@ -328,10 +328,9 @@ https://github.com/Naoghuman/lib-logger
 
 <br />
 How does this works?  
-* In [SokubanFX] is an interface `IMapConfiguration` defined which contains among 
-  others following constants.
-* This allowed me to store the information which is the actual `map` from the 
-  player. Have he played successful a map, then the counter will increased by `one`.
+In [SokubanFX] is an interface `IMapConfiguration` defined which contains among 
+others following constants.
+
 ```java
 public interface IMapConfiguration {
     
@@ -343,9 +342,12 @@ public interface IMapConfiguration {
 }
 ```
 
+This allowed me to store the information which is the actual `map` from the 
+player. Have he played successful a map, then the counter will increased by `one`.
+
 
 <br />
-Here one example how to ready this information:
+How to read this informations can be seen in next example:
 ```java
 public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
 
@@ -439,7 +441,7 @@ public class StartApplication extends Application implements IActionConfiguratio
 ![properties-file.png][properties-file]
 
 <br />
-Access to a property is done with:
+Access to a property can be done with:
 ```java
 public class StartApplication extends Application implements IActionConfiguration, IApplicationConfiguration {
 
@@ -464,7 +466,6 @@ public class StartApplication extends Application implements IActionConfiguratio
 ```
 
 <br />
-
 It's also possible to register and access `SystemProperties` via the library.
 
 The library is well documentated, when you are interested plz see the project 
@@ -537,7 +538,7 @@ Articles in this series<a name="Articles" />
 * This article series described how I create the game [SokubanFX] with [JavaFX] 
   and [NetBeans IDE] inspired by my [Java] [Swing2D] game [Sokuban-Clone] which 
   I wrote `2008`.
-* The articles in this series are licensed under [General Public License 3.0].
+* All articles in this series are licensed under [General Public License 3.0].
 
 
 <br />
@@ -548,8 +549,8 @@ Articles in this series<a name="Articles" />
   template [Project-Template-afterburnerfx-Naoghuman].
 * The article [02 Create first prototype] describes the steps and decisions which 
   I make during the implementation from the first `prototype`.
-* **&#40;new&#41;** The article [03 Stabilization from the prototype] describes 
-  the steps how I stabilize the prototype.
+* The article [03 Stabilization from the prototype] describes the steps how I 
+  stabilize the prototype.
 
 
 
