@@ -13,9 +13,9 @@ the advantages are from using this template -> [01 Setup the project]. Then I
 describes the steps and decisions which I make during the implementation from 
 the first `prototype` -> [02 Create first prototype].
 
-In this article I described how I stablilizate the prototype. Also some new features 
-like `user can now handle the application with KeyEvents` or the implementation from 
-the library [Ikonli].
+In this article I will describe how I stablilizate the prototype. Also some new 
+features like `user can now handle the application with KeyEvents` or the 
+implementation from the library [Ikonli].
 
  Click on the picture to see the `SokubanFX v0.2.0-PROTOTYPE` in action :smile: in YouTube.
 [![sokubanfx_v0.2.0-PROTOTYPE.png][sokubanfx_v0.2.0-PROTOTYPE]](https://youtu.be/iKBfqk0ANj8 "SokubanFX v0.2.0-PROTOTYPE")
@@ -32,9 +32,9 @@ Content
     * [Stabilize the prototype with JUnit tests](#StabilizeJUnit)
     * [Stabilize the prototype with Refactoring](#StabilizeRefactoring)
 * [New Features in SokubanFX v0.2.0-PROTOTYPE](#NewFeatures)
-    * [Change internal functionalities to lambda expressions](#LambdaExpressions)
     * [User can now handle the application with KeyEvents](#UserKeyEvents)
     * [Implementation from the library Ikonli for icons](#LibraryIkonli)
+    * [Change internal functionalities to lambda expressions](#LambdaExpressions)
 * [Conclusion](#Conclusion)
 * [About the autor](#Autor)
     * [Contact](#Contact)
@@ -46,14 +46,14 @@ Content
 Stabilization from the prototype<a name="Stabilization" />
 ---
 
-In this part I describes the steps how to stabilize the project.
+In this part I will describe the steps how to stabilize the project.
 
 
 <br />
 ##### Stabilize the prototype with JUnit tests<a name="StabilizeJUnit" />
 
-Create new [JUnit] tests with [NetBeans IDE] is really easy because the IDE have 
-a nice feature:  
+Creating from new [JUnit] tests with [NetBeans IDE] is really easy because the 
+IDE have a nice feature which is:  
 The action `Test for Existing Class` under `New` -> `Unit Tests`:
 * This wizard will generate automatically a [JUnit] for an existing class.
 * Select the class which should be tested.
@@ -66,12 +66,12 @@ The action `Test for Existing Class` under `New` -> `Unit Tests`:
 
 
 <br />
-So the basic classes and methods are really fast generated.
+So the basic test classes and methods are really fast generated.
 
 ![test-packages.png][test-packages]
 
 <br />
-Lets have a look on the [JUnit] tests in the class `CollisionCheckerTest`:
+Lets have together a look on the [JUnit] tests in the class `CollisionCheckerTest`:
 ```java
 public class CollisionCheckerTest {
     
@@ -168,7 +168,7 @@ Here are a list with all `checkCollisionXY` methods:
 ```
 
 Plz have a look into the source code from the class [CollisionCheckerTest] if 
-you are interest into the implementation details.
+you are interest into the implementation details from these methods.
 
 
 <br />
@@ -234,12 +234,21 @@ public class MapMovementTest {
 }
 ```
 
+* First the positions from the boxes are defined.
+* Then the positions from the places are defined.
+* With the call from `mm.isMapFinish()` in the class `MomventResult` the engine will 
+  check if all boxes are on a place.
+    * If so the map is finished otherwise not.
+
 
 <br />
 ##### Stabilize the prototype with Refactoring<a name="StabilizeRefactoring" />
 
-One really important part for me in development an application is `refactoring`:
-* [Refactoring - Improving the Design of Existing Code] by [Martin Fowler].
+One really important part for me in development from an application is `refactoring`. 
+It's so important for me that I can say that my programming style is founded on this 
+topic:
+* See [Refactoring - Improving the Design of Existing Code] by [Martin Fowler] for 
+  more information.
 
 Also I find it helpful to have the main points from [Clean Code Developer] 
 &#40;:de:&#41; in mind during the stabilization.
@@ -261,16 +270,16 @@ So what for `refactorings` can be done to stabilize the program :question:
 In general things are done when they are ready :laughing: .  
 But here are 3 points which helps me to decided when to goto the next phase in 
 the program development.
-* The time is over which I planned for the stabilization.
-* The top :five: areas in the application are cleaned.
-* Points which I havn't the time to cleanup are noted for the next release.
+* The time is over which I planned for the actual phase (version).
+* The top :five: `dirtiest` areas in the application are cleaned.
+* Points which I haven't the time to cleanup are noted for the next release.
 
 <br />
 In general (2).  
 Normally in my private projects I implement, fix following issues in one release 
-&#40;one release needs 2-3 weeks&#41;:
+&#40;so one release needs 2-3 weeks&#41;:
 * 1 new feature
-* and /or 1 enhancement.
+* and / or 1 enhancement.
 * 3 - 4 bug fixes.
 * 5 - 7 refactorings.
 
@@ -280,7 +289,281 @@ Normally in my private projects I implement, fix following issues in one release
 New Features in SokubanFX v0.2.0-PROTOTYPE<a name="NewFeatures" />
 ---
 
-In this section I will list what is new in SokubanFx v0.2.0.
+In this section I will write what is new in SokubanFx v0.2.0.
+
+
+<br />
+##### User can now handle the application with KeyEvents<a name="UserKeyEvents" />
+
+In the new version 0.2.0 from [SokubanFX] the user has the possibility to 
+handle the application with KeyEvents.
+
+```java
+public class StartApplication extends Application implements IActionConfiguration, IApplicationConfiguration {
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        final ApplicationView applicationView = new ApplicationView();
+        final ApplicationPresenter applicationPresenter = applicationView.getRealPresenter();
+        
+        final Scene scene = new Scene(applicationView.getView(), 1280, 720);
+        scene.setOnKeyReleased((KeyEvent event) -> { // 1
+            this.onKeyReleased(event);
+        });
+        ...
+    }
+
+    private void onKeyReleased(KeyEvent event) {
+        // Listen to Application events
+        final KeyCode keyCode = event.getCode();
+        if (keyCode == KeyCode.ESCAPE) {  // 2
+            event.consume();
+            this.onCloseRequest();
+            
+            return;
+        }
+        
+        // MainMenu
+        if (keyCode == KeyCode.BACK_SPACE) { // 3
+            event.consume();
+            final boolean isMainMenuShown = PreferencesFacade.INSTANCE.getBoolean(
+                    IMainMenuConfiguration.PROP__MAIN_MENU_IS_SHOWN,
+                    IMainMenuConfiguration.PROP__MAIN_MENU_IS_SHOWN__DEFAULT_VALUE);
+            ActionFacade.INSTANCE.handle(isMainMenuShown ? ON_ACTION__HIDE_MAINMENU : ON_ACTION__SHOW_MAINMENU);
+            
+            return;
+        }
+        
+        // Preview
+        final boolean shouldOnKeyReleaseForPreview = PreferencesFacade.INSTANCE.getBoolean(
+                IPreviewConfiguration.PROP__KEY_RELEASED__FOR_PREVIEW, 
+                IPreviewConfiguration.PROP__KEY_RELEASED__FOR_PREVIEW__DEFAULT_VALUE);
+        if (shouldOnKeyReleaseForPreview) { // 4
+            final TransferData transferData = new TransferData();
+            transferData.setActionId(ON_ACTION__KEY_RELEASED__FOR_PREVIEW);
+            transferData.setObject(event);
+
+            ActionFacade.INSTANCE.handle(transferData);
+        }
+        
+        // Game
+        final boolean isGameViewInitialize = PreferencesFacade.INSTANCE.getBoolean(
+                IGameConfiguration.PROP__GAMEVIEW_IS_INITIALZE, 
+                IGameConfiguration.PROP__GAMEVIEW_IS_INITIALZE__DEFAULT_VALUE);
+        final boolean shouldOnKeyReleaseForGameView = PreferencesFacade.INSTANCE.getBoolean(
+                IGameConfiguration.PROP__KEY_RELEASED__FOR_GAMEVIEW, 
+                IGameConfiguration.PROP__KEY_RELEASED__FOR_GAMEVIEW__DEFAULT_VALUE);
+        if (isGameViewInitialize && shouldOnKeyReleaseForGameView) { // 5
+            final TransferData transferData = new TransferData();
+            transferData.setActionId(ON_ACTION__KEY_RELEASED__FOR_GAME);
+            transferData.setObject(event);
+
+            ActionFacade.INSTANCE.handle(transferData);
+        }
+    }
+
+    ...
+}
+```
+
+1. Adds an [EventHandler<? super KeyEvent>] to the [Scene] which catch all 
+   KeyEvents from the user.
+2. In all views from the application the user can close the application 
+   with the key `ESCAPE`.
+3. Also in all views the menu can be shown when the user press the key `BACK_SPACE`.
+4. All other KeyEvents will be checked first if the `preview modus` is activ. If 
+   so then the event will delegate to the preview view.
+5. At last it will be checked if the `game mode` is active. If so then...
+
+<br />
+In this example I will show what happen if the action `ON_ACTION__KEY_RELEASED__FOR_GAME` 
+is fired:
+```java
+public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
+
+    @Override
+    public void registerActions() {
+        LoggerFacade.INSTANCE.debug(this.getClass(), "Register actions in GamePresenter"); // NOI18N
+        
+        this.registerOnActionDisplayMap();
+        this.registerOnKeyReleased(); // 1
+    }
+
+    private void registerOnKeyReleased() {
+        LoggerFacade.INSTANCE.debug(this.getClass(), "Register on KeyReleased"); // NOI18N
+        
+        ActionFacade.INSTANCE.register( // 2
+                ON_ACTION__KEY_RELEASED__FOR_GAME,
+                (ActionEvent event) -> {
+                    final TransferData transferData = (TransferData) event.getSource();
+                    final KeyEvent keyEvent = (KeyEvent) transferData.getObject();
+                    this.onKeyRelease(keyEvent);
+                }
+        );
+    }
+    
+    /*
+     * KeyEvents in GameView
+     * W UP        -> move up
+     * S DOWN      -> move down
+     * A LEFT      -> move left
+     * D RIGHT     -> move right
+     * ENTER SPACE -> reset map
+     * 
+     * BACKSPACE   -> not needed - catched in ApplicationView (shows the menu)
+     * ESC         -> not needed - catched in ApplicationView (close the application)
+     */
+    private void onKeyRelease(KeyEvent keyEvent) { // 3
+        final KeyCode keyCode = keyEvent.getCode();
+        LoggerFacade.INSTANCE.debug(this.getClass(), "On KeyRelease: " + keyCode); // NOI18N
+        
+        if (
+                keyCode.equals(KeyCode.ENTER)
+                || keyCode.equals(KeyCode.SPACE)
+        ) {
+            this.onActionButtonResetMap();
+            return;
+        }
+        
+        if (!listenToKeyEvents) {
+            return;
+        }
+        
+        switch(keyCode) {
+            case W:
+            case UP:    { this.onActionButtonUp();    break; }
+            case S:
+            case DOWN:  { this.onActionButtonDown();  break; }
+            case A:
+            case LEFT:  { this.onActionButtonLeft();  break; }
+            case D:
+            case RIGHT: { this.onActionButtonRight(); break; }
+        }
+    }
+
+    ...
+
+}
+```
+
+1. All possible actions from the class `GamePresenter` will be registered in the 
+   method `registerActions()`.
+2. Shows the registration from the action `ON_ACTION__KEY_RELEASED__FOR_GAME`.
+3. If the above described action is triggered, then the KeyEvent will be evaluated 
+   like the `JavaDoc` said. Only actions to move the player or reset the map will 
+   be accept.
+
+
+<br />
+##### Implementation from the library Ikonli for icons<a name="LibraryIkonli" />
+
+For [SokubanFX] I decided to use the icon font [Ikonli]. Although there 
+are another excellent icon fonts like [FontAwesomeFX] or [ControlFX] I decided 
+to give [Ikonli] a try :smile: .
+
+<br />
+[Ikonli] have a very well documented [Ikonli Guide] where momentary :two::one: 
+(version 1.5.0) icon-sets are listed :exclamation:
+
+Here is the official project description:
+
+> Ikonli provides icon packs that can be used in Java applications.
+> Currently Swing and JavaFX UI toolkits are supported.
+
+<br />
+To use the icon font in the project we need to include following dependencies in 
+the `pom.xml`:
+```xml
+<dependencies>
+    <dependency>
+        <groupId>org.kordamp.ikonli</groupId>
+        <artifactId>ikonli-core</artifactId> // 1
+        <version>1.5.0</version>
+    </dependency>
+    <dependency>
+        <groupId>org.kordamp.ikonli</groupId>
+        <artifactId>ikonli-javafx</artifactId> // 2
+        <version>1.5.0</version>
+    </dependency>
+    <dependency>
+        <groupId>org.kordamp.ikonli</groupId>
+        <artifactId>ikonli-elusive-pack</artifactId> // 3
+        <version>1.5.0</version>
+    </dependency>
+
+    ...
+</dependencies>
+```
+
+1. `ikonli-core` defines the `engine` from the icon font. Without this library 
+   nothings will work :smile: .
+2. Because [SokubanFX] is a [JavaFX 8] application we include `ikonli-javafx`.
+3. First choose is the icon-set `ikonli-elusive-pack`. Maybe I will change this later 
+   :question:
+
+<br />
+Here is the first example how to use the iconfont [Ikonli] in the application:
+```java
+public class PreviewPresenter implements Initializable, IActionConfiguration, IRegisterActions {
+
+    private void initializeButtonPlayGame() {
+        LoggerFacade.INSTANCE.info(this.getClass(), "Initialize button PlayGame"); // NOI18N
+        
+        lPlayGame.setText(null);
+        lPlayGame.setCursor(Cursor.HAND);
+        
+        final FontIcon fiPlayAlt = new FontIcon(Elusive.PLAY_ALT); // 1
+        fiPlayAlt.setIconSize(56);
+        lPlayGame.setGraphic(fiPlayAlt); // 2
+    }
+
+    ...
+}
+```
+
+1. It's really easy to get the icon.
+2. In this case I will added the icon to a [Label] as graphic.
+
+And the result will look like:
+
+![icon-font-preview.png][icon-font-preview]
+
+
+<br />
+And in the next example we can see how to add some icons to the play-buttons:
+```java
+public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
+
+    private void initializeButtons() {
+        LoggerFacade.INSTANCE.info(this.getClass(), "Initialize buttons"); // NOI18N
+        // 1
+        this.initializeButton(bMovePlayerDown, Elusive.ARROW_DOWN, "Move player down"); // NOI18N
+        this.initializeButton(bMovePlayerLeft, Elusive.ARROW_LEFT, "Move player left"); // NOI18N
+        this.initializeButton(bMovePlayerRight, Elusive.ARROW_RIGHT, "Move player right"); // NOI18N
+        this.initializeButton(bMovePlayerUp, Elusive.ARROW_UP, "Move player up"); // NOI18N
+        
+        this.initializeButton(bResetMap, Elusive.REFRESH, "Reset the map"); // NOI18N
+    }
+    
+    private void initializeButton(Button btn, Ikon icon, String tooltip) { // 2
+        final FontIcon fi = new FontIcon(icon);
+        fi.setIconSize(24);
+        btn.setGraphic(fi);
+        btn.setText(null);
+        btn.setTooltip(new Tooltip(tooltip));
+    }
+
+    ...
+}
+```
+
+1. For every play-[Button] the method `initializeButton(...)` will be called.
+2. In the method `initializeButton(Button, Ikon, String)` the icon and a tooltip 
+   will be added to the [Button].
+
+And the result looks like:
+
+![icon-font-game.png][icon-font-game]
 
 
 <br />
@@ -360,7 +643,7 @@ public class GamePresenter implements Initializable, IActionConfiguration, IRegi
    iteration.
 
 <br />
-Then after the conversion from the `for-each` iteration to a [Lambda Expressions] 
+Then after the conversion from the `for-each` iteration to the [Lambda Expressions] 
 we have:
 ```java
 public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
@@ -399,8 +682,8 @@ public class GamePresenter implements Initializable, IActionConfiguration, IRegi
    the item `coordinatesFounded` will be updated.
 
 <br />
-In the last example again first the `old way` will be shown how to check if all 
-`boxes` are on a `place`, that mean if so then the map is `finished`.
+In the last example from this section again first time the `old way` will be shown 
+how to check if all `boxes` are on a `place`, that mean if so then the map is `finished`.
 ```java
 public class CollisionChecker {
 
@@ -496,283 +779,6 @@ public class CollisionChecker {
 6. Check if the map is `finished` &#40;all boxes are on the places&#41;.
 
 
-<br />
-##### User can now handle the application with KeyEvents<a name="UserKeyEvents" />
-
-In this new version 0.2.0 from [SokubanFX] the user have the possibilities to 
-handle the application with KeyEvents.
-
-```java
-public class StartApplication extends Application implements IActionConfiguration, IApplicationConfiguration {
-
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        final ApplicationView applicationView = new ApplicationView();
-        final ApplicationPresenter applicationPresenter = applicationView.getRealPresenter();
-        
-        final Scene scene = new Scene(applicationView.getView(), 1280, 720);
-        scene.setOnKeyReleased((KeyEvent event) -> { // 1
-            this.onKeyReleased(event);
-        });
-        ...
-    }
-
-    private void onKeyReleased(KeyEvent event) {
-        // Listen to Application events
-        final KeyCode keyCode = event.getCode();
-        if (keyCode == KeyCode.ESCAPE) {  // 2
-            event.consume();
-            this.onCloseRequest();
-            
-            return;
-        }
-        
-        // MainMenu
-        if (keyCode == KeyCode.BACK_SPACE) { // 3
-            event.consume();
-            final boolean isMainMenuShown = PreferencesFacade.INSTANCE.getBoolean(
-                    IMainMenuConfiguration.PROP__MAIN_MENU_IS_SHOWN,
-                    IMainMenuConfiguration.PROP__MAIN_MENU_IS_SHOWN__DEFAULT_VALUE);
-            ActionFacade.INSTANCE.handle(isMainMenuShown ? ON_ACTION__HIDE_MAINMENU : ON_ACTION__SHOW_MAINMENU);
-            
-            return;
-        }
-        
-        // Preview
-        final boolean shouldOnKeyReleaseForPreview = PreferencesFacade.INSTANCE.getBoolean(
-                IPreviewConfiguration.PROP__KEY_RELEASED__FOR_PREVIEW, 
-                IPreviewConfiguration.PROP__KEY_RELEASED__FOR_PREVIEW__DEFAULT_VALUE);
-        if (shouldOnKeyReleaseForPreview) { // 4
-            final TransferData transferData = new TransferData();
-            transferData.setActionId(ON_ACTION__KEY_RELEASED__FOR_PREVIEW);
-            transferData.setObject(event);
-
-            ActionFacade.INSTANCE.handle(transferData);
-        }
-        
-        // Game
-        final boolean isGameViewInitialize = PreferencesFacade.INSTANCE.getBoolean(
-                IGameConfiguration.PROP__GAMEVIEW_IS_INITIALZE, 
-                IGameConfiguration.PROP__GAMEVIEW_IS_INITIALZE__DEFAULT_VALUE);
-        final boolean shouldOnKeyReleaseForGameView = PreferencesFacade.INSTANCE.getBoolean(
-                IGameConfiguration.PROP__KEY_RELEASED__FOR_GAMEVIEW, 
-                IGameConfiguration.PROP__KEY_RELEASED__FOR_GAMEVIEW__DEFAULT_VALUE);
-        if (isGameViewInitialize && shouldOnKeyReleaseForGameView) { // 5
-            final TransferData transferData = new TransferData();
-            transferData.setActionId(ON_ACTION__KEY_RELEASED__FOR_GAME);
-            transferData.setObject(event);
-
-            ActionFacade.INSTANCE.handle(transferData);
-        }
-    }
-
-    ...
-}
-```
-
-1. Adds an [EventHandler<? super KeyEvent>] to the [Scene] allows to catch all 
-   KeyEvents from the user.
-2. In all views the user can shutdown the application when he press the key `ESCAPE`.
-3. In all views the menu will shown when the user press the key `BACK_SPACE`.
-4. All other KeyEvents will be checked first if the `preview mode` aktiv. If so 
-   then the event will delegate to the preview.
-5. At last it will be checked if the `game mode` is active. If so then...
-
-<br />
-In this example I will show what happen if the action `ON_ACTION__KEY_RELEASED__FOR_GAME` 
-is fired:
-```java
-public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
-
-    @Override
-    public void registerActions() {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "Register actions in GamePresenter"); // NOI18N
-        
-        this.registerOnActionDisplayMap();
-        this.registerOnKeyReleased(); // 1
-    }
-
-    private void registerOnKeyReleased() {
-        LoggerFacade.INSTANCE.debug(this.getClass(), "Register on KeyReleased"); // NOI18N
-        
-        ActionFacade.INSTANCE.register( // 2
-                ON_ACTION__KEY_RELEASED__FOR_GAME,
-                (ActionEvent event) -> {
-                    final TransferData transferData = (TransferData) event.getSource();
-                    final KeyEvent keyEvent = (KeyEvent) transferData.getObject();
-                    this.onKeyRelease(keyEvent);
-                }
-        );
-    }
-    
-    /*
-     * KeyEvents in GameView
-     * W UP        -> move up
-     * S DOWN      -> move down
-     * A LEFT      -> move left
-     * D RIGHT     -> move right
-     * ENTER SPACE -> reset map
-     * 
-     * BACKSPACE   -> not needed - catched in ApplicationView (shows the menu)
-     * ESC         -> not needed - catched in ApplicationView (close the application)
-     */
-    private void onKeyRelease(KeyEvent keyEvent) { // 3
-        final KeyCode keyCode = keyEvent.getCode();
-        LoggerFacade.INSTANCE.debug(this.getClass(), "On KeyRelease: " + keyCode); // NOI18N
-        
-        if (
-                keyCode.equals(KeyCode.ENTER)
-                || keyCode.equals(KeyCode.SPACE)
-        ) {
-            this.onActionButtonResetMap();
-            return;
-        }
-        
-        if (!listenToKeyEvents) {
-            return;
-        }
-        
-        switch(keyCode) {
-            case W:
-            case UP:    { this.onActionButtonUp();    break; }
-            case S:
-            case DOWN:  { this.onActionButtonDown();  break; }
-            case A:
-            case LEFT:  { this.onActionButtonLeft();  break; }
-            case D:
-            case RIGHT: { this.onActionButtonRight(); break; }
-        }
-    }
-
-
-    ...
-
-}
-```
-
-1. All possible actions from the class `GamePresenter` will be registered in the 
-   method `registerActions()`.
-2. Shows the implementation from the action what happen if the registered action 
-   is `triggered`.
-3. If the above descripted action is triggered, then the KeyEvent will be evaluated 
-   like the `JavaDoc` said. Only actions to move the player or reset the map will 
-   be accept.
-
-
-<br />
-##### Implementation from the library Ikonli for icons<a name="LibraryIkonli" />
-
-For [SokubanFX] I decided for me to use the icon font [Ikonli]. Although there 
-are another excellent icon fonts like [FontAwesomeFX] or [ControlFX] I decided 
-to give [Ikonli] a try :smile: .
-
-<br />
-[Ikonli] have a very well documented [Ikonli Guide] where momentary :two::one: 
-icon-sets are listed :exclamation:
-
-Here is the official project description:
-
-> Ikonli provides icon packs that can be used in Java applications.
-> Currently Swing and JavaFX UI toolkits are supported.
-
-<br />
-To use the icon font in the project we need to include following dependencies in 
-the `pom.xml`:
-```xml
-<dependencies>
-    <dependency>
-        <groupId>org.kordamp.ikonli</groupId>
-        <artifactId>ikonli-core</artifactId> // 1
-        <version>1.5.0</version>
-    </dependency>
-    <dependency>
-        <groupId>org.kordamp.ikonli</groupId>
-        <artifactId>ikonli-javafx</artifactId> // 2
-        <version>1.5.0</version>
-    </dependency>
-    <dependency>
-        <groupId>org.kordamp.ikonli</groupId>
-        <artifactId>ikonli-elusive-pack</artifactId> // 3
-        <version>1.5.0</version>
-    </dependency>
-
-    ...
-</dependencies>
-```
-
-1. `ikonli-core` defines the `engine` from the icon font. Without this library 
-   nothings will work :smile: .
-2. Because [SokubanFX] is a [JavaFX 8] application we include `ikonli-javafx`.
-3. First I try the icon-set `ikonli-elusive-pack`. Maybe I will change this later 
-   :question:
-
-<br />
-Here is the first example how to use the iconfont [Ikonli] in the application:
-```java
-public class PreviewPresenter implements Initializable, IActionConfiguration, IRegisterActions {
-
-    private void initializeButtonPlayGame() {
-        LoggerFacade.INSTANCE.info(this.getClass(), "Initialize button PlayGame"); // NOI18N
-        
-        lPlayGame.setText(null);
-        lPlayGame.setCursor(Cursor.HAND);
-        
-        final FontIcon fiPlayAlt = new FontIcon(Elusive.PLAY_ALT); // 1
-        fiPlayAlt.setIconSize(56);
-        lPlayGame.setGraphic(fiPlayAlt); // 2
-    }
-
-    ...
-}
-```
-
-1. It's really easy to get a certain icon.
-2. In this case I will added the icon to a [Label] as graphic.
-
-And the result will look like:
-
-![icon-font-preview.png][icon-font-preview]
-
-
-<br />
-And here in the next example I show how to add icons to the play-buttons:
-```java
-public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
-
-    private void initializeButtons() {
-        LoggerFacade.INSTANCE.info(this.getClass(), "Initialize buttons"); // NOI18N
-        // 1
-        this.initializeButton(bMovePlayerDown, Elusive.ARROW_DOWN, "Move player down"); // NOI18N
-        this.initializeButton(bMovePlayerLeft, Elusive.ARROW_LEFT, "Move player left"); // NOI18N
-        this.initializeButton(bMovePlayerRight, Elusive.ARROW_RIGHT, "Move player right"); // NOI18N
-        this.initializeButton(bMovePlayerUp, Elusive.ARROW_UP, "Move player up"); // NOI18N
-        
-        this.initializeButton(bResetMap, Elusive.REFRESH, "Reset the map"); // NOI18N
-    }
-    
-    private void initializeButton(Button btn, Ikon icon, String tooltip) { // 2
-        final FontIcon fi = new FontIcon(icon);
-        fi.setIconSize(24);
-        btn.setGraphic(fi);
-        btn.setText(null);
-        btn.setTooltip(new Tooltip(tooltip));
-    }
-
-    ...
-}
-```
-
-
-1. For every play-[Button] with an icon the method `initializeButton(...)` will 
-   be called.
-2. In the method `initializeButton(Button, Ikon, String)` the icon and tooltip 
-   will be added to the [Button].
-
-And the result looks like:
-
-![icon-font-game.png][icon-font-game]
-
-
 
 <br />
 Conclusion<a name="Conclusion" />
@@ -845,7 +851,7 @@ Articles in this series<a name="Articles" />
 * This article series described how I create the game [SokubanFX] with [JavaFX] 
   and [NetBeans IDE] inspired by my [Java] [Swing2D] game [Sokuban-Clone] which 
   I wrote `2008`.
-* The articles in this series are licensed under [General Public License 3.0].
+* All articles in this series are licensed under [General Public License 3.0].
 
 
 <br />
@@ -856,8 +862,8 @@ Articles in this series<a name="Articles" />
   template [Project-Template-afterburnerfx-Naoghuman].
 * The article [02 Create first prototype] describes the steps and decisions which 
   I make during the implementation from the first `prototype`.
-* **&#40;new&#41;** The article [03 Stabilization from the prototype] describes 
-  the steps how I stabilize the prototype.
+* The article [03 Stabilization from the prototype] describes the steps how I 
+  stabilize the prototype.
 
 
 
