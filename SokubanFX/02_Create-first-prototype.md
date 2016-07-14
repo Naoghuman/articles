@@ -147,6 +147,7 @@ public enum CollisionResult {
 }
 ```
 
+<br />
 c) Evalutate the `CheckMovementResult` -> new `Coordinates` for the player and 
    optional a box.
 ```java
@@ -351,7 +352,7 @@ means `text based`:
 ![game-view.png][game-view]
 
 <br />
-Loading a map from the `.properties` file
+Loading a map from the `.properties` file as `List<String>`:
 ```java
 class MapLoader implements IMapConfiguration {
     public List<String> loadMapAsStrings(int level) {
@@ -369,7 +370,7 @@ class MapLoader implements IMapConfiguration {
 ```
 
 <br />
-Converting a List<String> to a `MapModel`
+Converting a `List<String>` to a `MapModel`:
 ```java
 public class MapConverter {
     public MapModel convertStringsToMap(final int level, final List<String> mapAsStrings) {
@@ -414,7 +415,7 @@ public class MapConverter {
 ```
 
 <br />
-Converting a MapModel to a `List<String>`
+Converting a `MapModel` to a `List<String>`:
 ```java
 public class MapConverter {
     public List<String> convertMapCoordinatesToStrings(MapModel mapModel) {
