@@ -9,9 +9,9 @@ Intention
 
 In the last article [01 Setup the project] I show how to setup the new project 
 with another [GitHub] project from me [Project-Template-afterburnerfx-Naoghuman] 
-and what are the advantages are from using this template.
+and what are the advantages from using this template.
 
-In this article I describes the steps and decisions which I make during the 
+In this article I will describes the steps and decisions which I make during the 
 implementation from the first `prototype`. Click on the picture to see the 
 `SokubanFX v0.1.0-PROTOTYPE` in action :smile: in YouTube.
 
@@ -48,9 +48,10 @@ make during the implementation from the first `prototype` from my new [JavaFX],
 
 > So here is the `importants` decision from me -> no game-engine :flushed: .
 
-Normally a game have a game-loop which runs with xy fps. Loops over the `update()` 
-and `render()` methods. [JavaFX] comes with own classes around this topic like 
-[Animation] -> the parent class from [Timeline] and [Transition].
+Normally a game have a game-loop which runs with xy fps. The engine will then 
+loops over the `update()` and `render()` methods. [JavaFX] comes with own 
+classes around this topic like [Animation] -> the parent class from [Timeline] 
+and [Transition].
 
 If the functionality from this classes and all sub-classes not enough, then I 
 have the possibility to use the class [AnimationTimer] which triggers the 
@@ -61,7 +62,7 @@ method `handle(long)` in every frame (which leeds then to a game-engine :grin: )
 ##### Basic functionalities from the project<a name="BasicFunctionalities" />
 
 Because I used my project template [Project-Template-afterburnerfx-Naoghuman] to 
-create the [SokubanFX] project all basic functionalities which I want was 
+create the [SokubanFX] project all basic functionalities which I want was almost 
 implemented :grinning: :sunglasses: .
 
 > Logging, ActionEvent- and Properties-Handling,  support for the [JavaFX] 
@@ -125,7 +126,7 @@ public class MapMovement {
             return checkMovementResult;
         }
 	
-	// and do all other collision checks also here.
+	// and do all other collision checks here also.
     }
     ...
 }
@@ -189,7 +190,7 @@ public class GamePresenter implements Initializable, IActionConfiguration, IRegi
 ```
 
 <br />
-d) Display the map -> shows the actual updated map or the next one.
+d) Display the map -> shows the actual updated map.
 ```java
 public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
     private void displayMap() {
@@ -528,7 +529,7 @@ Articles in this series<a name="Articles" />
 * This article series described how I create the game [SokubanFX] with [JavaFX] 
   and [NetBeans IDE] inspired by my [Java] [Swing2D] game [Sokuban-Clone] which 
   I wrote `2008`.
-* The articles in this series are licensed under [General Public License 3.0].
+* All articles in this series are licensed under [General Public License 3.0].
 
 
 <br />
@@ -539,8 +540,8 @@ Articles in this series<a name="Articles" />
   template [Project-Template-afterburnerfx-Naoghuman].
 * The article [02 Create first prototype] describes the steps and decisions which 
   I make during the implementation from the first `prototype`.
-* **&#40;new&#41;** The article [03 Stabilization from the prototype] describes 
-  the steps how I stabilize the prototype.
+* The article [03 Stabilization from the prototype] describes the steps how I 
+  stabilize the prototype.
 
 
 
