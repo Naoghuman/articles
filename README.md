@@ -38,8 +38,8 @@ decided to rewrite the game in `April 2016`.
   template [Project-Template-afterburnerfx-Naoghuman].
 * The article [02 Create first prototype] describes the steps and decisions which 
   I make during the implementation from the first `prototype`.
-* **&#40;new&#41;** The article [03 Stabilization from the prototype] describes 
-  the steps how I stabilize the prototype.
+* The article [03 Stabilization from the prototype] describes the steps how I 
+  stabilize the prototype.
 
 
 
@@ -90,7 +90,7 @@ Any question? Some helpful criticism?
 <br />
 ##### License<a name="License" />
 
-* The articles in this series are licensed under [General Public License 3.0].
+* All articles in this series are licensed under [General Public License 3.0].
 
 
 
