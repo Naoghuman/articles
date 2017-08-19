@@ -3,7 +3,6 @@
 
 
 
-<br />
 Intention
 ---
 
@@ -17,12 +16,10 @@ implementation from the first `prototype`. Click on the picture to see the
 
 [![sokubanfx_v0.1.0-PROTOTYPE.png][sokubanfx_v0.1.0-PROTOTYPE]](https://www.youtube.com/watch?v=Kp1vWjLTIvY "SokubanFX v0.1.0-PROTOTYPE")
 
-<br/>
 You can download the `prototype` here: [SokubanFX-0.1.0-PROTOTYPE_2016-04-30_08-22.zip]
 
 
 
-<br />
 Content
 ---
 
@@ -38,7 +35,6 @@ Content
 
 
 
-<br />
 Create first prototype<a name="CreateFirstPrototype" />
 ---
 
@@ -58,7 +54,6 @@ have the possibility to use the class [AnimationTimer] which triggers the
 method `handle(long)` in every frame (which leeds then to a game-engine :grin: ).
 
 
-<br />
 ##### Basic functionalities from the project<a name="BasicFunctionalities" />
 
 Because I used my project template [Project-Template-afterburnerfx-Naoghuman] to 
@@ -71,14 +66,12 @@ implemented :grinning: :sunglasses: .
 For more detailed informations plz see the article [01 Setup the project].
 
 
-<br />
 ##### Functionalities like collision, evaluation, movement...<a name="Functionalities" />
 
 In this section I will speak about `collision`, `evaluation` and `movement`. 
 Beside `loading` and `converting` a map &#40;which I described later in this 
 article&#41; this are the main funcitionalities in the game.
 
-<br />
 Following workflow is given:  
 a) User want to move the player, for example he pressed the key DOWN.  
 b) Now all possible collisions must be checked, before something can moved or not.  
@@ -88,7 +81,6 @@ d) Now the map with eventually new coordinates can be displayed.
 e) Finally after a successful move the game should be checked if the map is finished.
    If so the next map can be shown.
 
-<br />
 a) User pressed the key DOWN
 ```java
 public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
@@ -109,7 +101,6 @@ public class GamePresenter implements Initializable, IActionConfiguration, IRegi
 }
 ```
 
-<br />
 b) Check possible collisions -> returns what happen.
 ```java
 public class MapMovement {
@@ -147,7 +138,6 @@ public enum CollisionResult {
 }
 ```
 
-<br />
 c) Evalutate the `CheckMovementResult` -> new `Coordinates` for the player and 
    optional a box.
 ```java
@@ -190,7 +180,6 @@ public class GamePresenter implements Initializable, IActionConfiguration, IRegi
 }
 ```
 
-<br />
 d) Display the map -> shows the actual updated map.
 ```java
 public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
@@ -210,7 +199,6 @@ public class GamePresenter implements Initializable, IActionConfiguration, IRegi
 }
 ```
 
-<br />
 e) Finally evaluate if the map is finished. If yes show the new map.
 ```java
 public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
@@ -239,14 +227,12 @@ public class GamePresenter implements Initializable, IActionConfiguration, IRegi
 ```
 
 
-<br />
 ##### Persistence from the maps<a name="PersistenceMaps" />
 
 In my old [Java] [Swing2D] game [Sokuban-Clone] the maps are persist as txt-files.
 
 ![sokuban-clone-map-txt.png][sokuban-clone-map-txt]
 
-<br />
 This maps was readed with:
 ```java
 public final boolean loadTileMap(int level)
@@ -292,12 +278,10 @@ In the method are a lot of more code for converting the map but that
     * see [Single Responsibility Principle (SRP)]
     * see [Separation of Concerns (SoC)]
 
-<br />
 In [SokubanFX] I decide to be a little lazy and use for all maps one properties-file.
 
 ![sokuban-map-properties.png][sokuban-map-properties]
 
-<br />
 So its really easy to read a map and convert it to a `List<String>`:
 ```java
 class MapLoader implements IMapConfiguration {
@@ -339,7 +323,6 @@ class MapLoader implements IMapConfiguration {
 ```
 
 
-<br />
 ##### Textbased maps in views<a name="TextbasedMaps" />
 
 Because we are in a prototype I decided for me to show the game without `graphics`, 
@@ -351,7 +334,6 @@ means `text based`:
 `Game` view
 ![game-view.png][game-view]
 
-<br />
 Loading a map from the `.properties` file as `List<String>`:
 ```java
 class MapLoader implements IMapConfiguration {
@@ -369,7 +351,6 @@ class MapLoader implements IMapConfiguration {
 }
 ```
 
-<br />
 Converting a `List<String>` to a `MapModel`:
 ```java
 public class MapConverter {
@@ -414,7 +395,6 @@ public class MapConverter {
 }
 ```
 
-<br />
 Converting a `MapModel` to a `List<String>`:
 ```java
 public class MapConverter {
@@ -461,7 +441,6 @@ public class MapConverter {
 
 
 
-<br />
 Conclusion<a name="Conclusion" />
 ---
 
@@ -478,7 +457,6 @@ YouTube:
 
 
 
-<br />
 About the autor<a name="Autor" />
 ---
 
@@ -490,7 +468,6 @@ service provider represented nationally and internationally in over 20 locations
 with the head-quarters in Wolfsburg, Germany.
 
 
-<br />
 In my free time I investigate between `2009` an `2012` some time in [NetBeans RCP] 
 &#40;Rich Client Platform&#41; development.  
 See  
@@ -514,7 +491,6 @@ So I decided to do this:
   where [Adam Bien] introduce my plugin &#40;at 48:00&#41;.
 
 
-<br />
 ##### Contact<a name="Contact" />
 
 Any question? Some helpful criticism?
@@ -523,7 +499,6 @@ Any question? Some helpful criticism?
 
 
 
-<br />
 Articles in this series<a name="Articles" />
 ---
 
@@ -533,7 +508,6 @@ Articles in this series<a name="Articles" />
 * All articles in this series are licensed under [General Public License 3.0].
 
 
-<br />
 ##### Articles
 
 * The article [01 Setup the project] describes the steps how to setup a new project 

@@ -3,7 +3,6 @@ How to create the game SokubanFX
 
 
 
-<br />
 Intention
 ---
 
@@ -13,7 +12,6 @@ and [NetBeans IDE]. Inspired by my old [Java] game `Sokuban-Clone` which I wrote
 
 
 
-<br />
 Content
 ---
 
@@ -26,7 +24,6 @@ Content
     * [License](#License)
 
 
-<br />
 How to create the game SokubanFX<a name="ArticlesSokubanFX" />
 ---
 
@@ -44,7 +41,6 @@ decided to rewrite the game in `April 2016`.
 
 
 
-<br />
 About the autor<a name="Autor" />
 ---
 
@@ -56,7 +52,6 @@ service provider represented nationally and internationally in over 20 locations
 with the head-quarters in Wolfsburg, Germany.
 
 
-<br />
 In my free time I investigate between `2009` an `2012` some time in [NetBeans RCP] 
 &#40;Rich Client Platform&#41; development.  
 See  
@@ -65,7 +60,6 @@ See
 * The `book` [NetBeans Platform 6.9 Developer's Guide] &#40;08.2010&#41; which I 
   helped to translate from Germany to English.
 
-<br />
 Since `2011` I change my focus to [JavaFX] &#40;[JavaFX 2.0] - [JavaFX 8]&#41;. 
 Although in `2015` I saw a video from [Adam Bien] where he mention he would love 
 to write a [NetBeans RCP] plugin for his library [afterburner.fx] when he had 
@@ -80,7 +74,6 @@ So I decided to do this:
   where [Adam Bien] introduce my plugin &#40;at 48:00&#41;.
 
 
-<br />
 ##### Contact<a name="Contact" />
 
 Any question? Some helpful criticism?
@@ -88,7 +81,6 @@ Any question? Some helpful criticism?
 * send me an `email` to <peter.rogge@yahoo.de>
 
 
-<br />
 ##### License<a name="License" />
 
 * All articles in this series are licensed under [General Public License 3.0].

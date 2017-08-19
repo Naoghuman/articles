@@ -3,7 +3,6 @@
 
 
 
-<br />
 Intention
 ---
 
@@ -14,7 +13,6 @@ In `2008` I wrote a little game [Sokuban-Clone] with [Java] and [Swing2D].
 * Download: https://github.com/Naoghuman/sokuban-clone/releases
 
 
-<br />
 In `April 2016` I decided to rewrite the game in [JavaFX].
 
 In this first article I will show the steps how to setup the new project with 
@@ -25,7 +23,6 @@ what are the advantages from using this template:
 
 
 
-<br />
 Content
 ---
 
@@ -50,7 +47,6 @@ Content
 
 
 
-<br />
 Setup the project<a name="SetupTheProject" />
 ---
 
@@ -64,7 +60,6 @@ https://github.com/Naoghuman/Project-Templates/releases/tag/v0.1.0.
 * Unzip the `zip` file to a folder from your choose and doubleclick the `jar` file.
 
 
-<br />
 ##### Download the project template<a name="DownloadTemplate" />
 
 There are two possiblilities to `included` the project template into your 
@@ -79,14 +74,12 @@ b) Clone the project with https://github.com/Naoghuman/Project-Templates.git
   to a new destination.
 
 
-<br />
 ##### Tweak the project template<a name="TweakTemplate" />
 
 In the project root folder is the file `Tweak-Project-Template.txt` where the 
 steps are listed which are necessary to tweak the template.
 
 
-<br />
 ##### _Tweak the project &#40;name, properties, packages...&#41;_<a name="TweakProject" />
 
 * Rename the project `name` (display name, artefactID and folder).
@@ -96,7 +89,7 @@ steps are listed which are necessary to tweak the template.
    * `Run` -> Update the start class.
    * `License Header` -> If you don't want the pre-choosen [General Public License 3.0].
 
-<br />
+
 ##### _Update different files like `log4j2.xml`, `application.properties`, `application.fxml`..._<a name="UpdateFiles" />
 
 * Update the reference in the tag `fx:controller` in the file 
@@ -109,7 +102,6 @@ steps are listed which are necessary to tweak the template.
 * Update the file `log4j2.xml` in the default package from `Other Sources/` if 
   needed.
 
-<br />
 ##### _Update the JavaDoc &#40;license, autor&#41; if needed_<a name="UpdateJavaDoc" />
 
 * If your project license different from [General Public License 3.0] which is 
@@ -123,7 +115,6 @@ steps are listed which are necessary to tweak the template.
 * Rename the `autor` in all `java` files and `application.properties`.
     * Same here -> `Replace...`, `Replace in Projects...`.
 
-<br />
 ##### _Last steps..._<a name="LastSteps" />
 
 * Move the folder 'me' to your `local` maven repository.
@@ -132,7 +123,6 @@ steps are listed which are necessary to tweak the template.
   [Maven Central], then this step wouldn't be necessary anymore.
 
 
-<br />
 #### What is the advantages from using this template?<a name="AdvanceTemplate" />
 
 After the preperation from the project template we will have a well configured 
@@ -142,7 +132,6 @@ advantages. Also every library have for it's own great functionalities its the
 advantage :innocent: from the template.
 
 
-<br />
 ##### _The advantage from the plugin `javafx-maven-plugin`_<a name="AdvJavMavPlu" />
 
 * An interactive guide `how to configured` the plugin can be found under: 
@@ -154,13 +143,11 @@ advantage :innocent: from the template.
 ![generated-jar-file.png][generated-jar-file]
 
 
-<br />
 ##### _The advantage from the library `afterburner.fx`_<a name="AdvAft" />
 
 * Included is the library [afterburner.fx] which is really helpful by the 
   development from [JavaFX] applications.
 
-<br />
 With the library 'afterburner.fx' it's possible to do something like:
 ```java
 final List<CategoryModel> categoryModels = SqlFacade.INSTANCE.getCategorySqlProvider().findAll(matrixModel.getId());
@@ -174,7 +161,6 @@ for (CategoryModel categoryModel : categoryModels) {
 ```
 
 
-<br />
 One more advantage from the `usage` from the library [afterburner.fx] with 
 [NetBeans IDE] is that you can use a plugin from me which helps zu generate the 
 files:
@@ -185,7 +171,6 @@ The plugin is available above the `Update Center` from [NetBeans IDE] or in the
 [GitHub] project: https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin/releases
 
 
-<br />
 ##### _The advantage from the library `lib-action`_<a name="AdvLibAct" />
 
 * Action events can be easily `registered` and `handled` with the library [lib-action].
@@ -266,7 +251,6 @@ which can store for example `data models`. The library is well documented so see
 for more informations plz: https://github.com/Naoghuman/lib-action
 
 
-<br />
 ##### _The advantage from the library `lib-logger`_<a name="AdvLibLog" />
 
 * The library [lib-logger] delivers a clean `api` for logging with the log 
@@ -302,7 +286,6 @@ Start SokubanFX v0.1.0-PROTOTYPE.
 ################################################################################     [LibLogger]
 ```
 
-<br />
 With the project template comes also a predefined `log4j2.xml` which can be 
 easily updated for the needs from the project.  
 See also the section [_Update different files like `log4j2.xml`, `application.properties`, `application.fxml`..._](#UpdateFiles)
@@ -313,7 +296,6 @@ The library is well documentated, plz see the project `ReadMe` for more details:
 https://github.com/Naoghuman/lib-logger
 
 
-<br />
 ##### _The advantage from the library `lib-preferences`_<a name="AdvLibPre" />
 
 * Sometimes we have simple data like user have open a specific dialog, choose a
@@ -326,7 +308,6 @@ https://github.com/Naoghuman/lib-logger
 ![preferences-file.png][preferences-file]
 
 
-<br />
 How does this works?  
 In [SokubanFX] is an interface `IMapConfiguration` defined which contains among 
 others following constants.
@@ -346,7 +327,6 @@ This allowed me to store the information which is the actual `map` from the
 player. Have he played successful a map, then the counter will increased by `one`.
 
 
-<br />
 How to read this informations can be seen in next example:
 ```java
 public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
@@ -365,7 +345,6 @@ public class GamePresenter implements Initializable, IActionConfiguration, IRegi
 }
 ```
 
-<br />
 and here how to store this information in the file.
 ```java
 public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
@@ -395,7 +374,6 @@ public class GamePresenter implements Initializable, IActionConfiguration, IRegi
 }
 ```
 
-<br />
 There are many more functionalitites like add a `java.util.prefs.PreferenceChangeListener` 
 to the `Preferences` via the methods `forApplication(): Preferences` and / or 
 `forModule(Class): Preferences`.
@@ -405,7 +383,6 @@ https://github.com/Naoghuman/lib-preferences
 
 
 
-<br />
 ##### _The advantage from the library `lib-properties`_<a name="AdvLibPro" />
 
 * With the library [lib-properties] easy `registering` and `accessing` from own 
@@ -413,7 +390,6 @@ https://github.com/Naoghuman/lib-preferences
     * _Hint:_ `Own` properties means properties files which are not automatically 
       included into the `Presenter`s through the library [afterburner.fx].
 
-<br />
 How to register a resource bundle:
 ```java
 public interface IApplicationConfiguration {
@@ -440,7 +416,6 @@ public class StartApplication extends Application implements IActionConfiguratio
 
 ![properties-file.png][properties-file]
 
-<br />
 Access to a property can be done with:
 ```java
 public class StartApplication extends Application implements IActionConfiguration, IApplicationConfiguration {
@@ -465,7 +440,6 @@ public class StartApplication extends Application implements IActionConfiguratio
 }
 ```
 
-<br />
 It's also possible to register and access `SystemProperties` via the library.
 
 The library is well documentated, when you are interested plz see the project 
@@ -473,7 +447,6 @@ The library is well documentated, when you are interested plz see the project
 https://github.com/Naoghuman/lib-properties
 
 
-<br />
 Conclusion<a name="Conclusion" />
 ---
 
@@ -486,7 +459,6 @@ And plz don't forget that the `greatest` advantage in a project is the harmonic
 
 
 
-<br />
 About the autor<a name="Autor" />
 ---
 
@@ -498,7 +470,6 @@ service provider represented nationally and internationally in over 20 locations
 with the head-quarters in Wolfsburg, Germany.
 
 
-<br />
 In my free time I investigate between `2009` an `2012` some time in [NetBeans RCP] 
 &#40;Rich Client Platform&#41; development.  
 See  
@@ -507,7 +478,6 @@ See
 * The `book` [NetBeans Platform 6.9 Developer's Guide] &#40;08.2010&#41; which I 
   helped to translate from Germany to English.
 
-<br />
 Since `2011` I change my focus to [JavaFX] &#40;[JavaFX 2.0] - [JavaFX 8]&#41;. 
 Although in `2015` I saw a video from [Adam Bien] where he mention he would love 
 to write a [NetBeans RCP] plugin for his library [afterburner.fx] when he had 
@@ -522,7 +492,6 @@ So I decided to do this:
   where [Adam Bien] introduce my plugin &#40;at 48:00&#41;.
 
 
-<br />
 ##### Contact<a name="Contact" />
 
 Any question? Some helpful criticism?
@@ -531,7 +500,6 @@ Any question? Some helpful criticism?
 
 
 
-<br />
 Articles in this series<a name="Articles" />
 ---
 
@@ -541,7 +509,6 @@ Articles in this series<a name="Articles" />
 * All articles in this series are licensed under [General Public License 3.0].
 
 
-<br />
 ##### Articles
 
 * The article [01 Setup the project] describes the steps how to setup a new project 

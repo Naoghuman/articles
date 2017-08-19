@@ -3,7 +3,6 @@
 
 
 
-<br />
 Intention
 ---
 
@@ -15,16 +14,14 @@ the first `prototype` -> [02 Create first prototype].
 
 In this article I will describe how I stablilizate the prototype. Also some new 
 features like `user can now handle the application with KeyEvents` or the 
-implementation from the library [Ikonli].
+implementation from the library [Ikonli] are handled.
 
  Click on the picture to see the `SokubanFX v0.2.0-PROTOTYPE` in action :smile: in YouTube.
 [![sokubanfx_v0.2.0-PROTOTYPE.png][sokubanfx_v0.2.0-PROTOTYPE]](https://youtu.be/iKBfqk0ANj8 "SokubanFX v0.2.0-PROTOTYPE")
 
-<br/>
 You can download the new version here: [SokubanFX-v0.2.0-PROTOTYPE_2016-05-08_18-44.zip]
 
 
-<br />
 Content
 ---
 
@@ -42,14 +39,12 @@ Content
 
 
 
-<br />
 Stabilization from the prototype<a name="Stabilization" />
 ---
 
 In this part I will describe the steps how to stabilize the project.
 
 
-<br />
 ##### Stabilize the prototype with JUnit tests<a name="StabilizeJUnit" />
 
 Creating from new [JUnit] tests with [NetBeans IDE] is really easy because the 
@@ -65,12 +60,10 @@ The action `Test for Existing Class` under `New` -> `Unit Tests`:
 ![wizard-new-test-for-existing-class.png][wizard-new-test-for-existing-class]
 
 
-<br />
 So the basic test classes and methods are really fast generated.
 
 ![test-packages.png][test-packages]
 
-<br />
 Lets have together a look on the [JUnit] tests in the class `CollisionCheckerTest`:
 ```java
 public class CollisionCheckerTest {
@@ -171,7 +164,6 @@ Plz have a look into the source code from the class [CollisionCheckerTest] if
 you are interest into the implementation details from these methods.
 
 
-<br />
 In the class `MapMovementTest` I will test if a map is finished after a user 
 movement or not:
 ```java
@@ -241,7 +233,6 @@ public class MapMovementTest {
     * If so the map is finished otherwise not.
 
 
-<br />
 ##### Stabilize the prototype with Refactoring<a name="StabilizeRefactoring" />
 
 One really important part for me in development from an application is `refactoring`. 
@@ -253,7 +244,6 @@ topic:
 Also I find it helpful to have the main points from [Clean Code Developer] 
 &#40;:de:&#41; in mind during the stabilization.
 
-<br />
 So what for `refactorings` can be done to stabilize the program :question:
 * Delete unnecessary files.
 * Start with documentation &#40;at first with the project ReadMe&#41;.
@@ -266,7 +256,6 @@ So what for `refactorings` can be done to stabilize the program :question:
 * Check layout in views and simplified if possible.
 * ...
 
-<br />
 In general things are done when they are ready :laughing: .  
 But here are 3 points which helps me to decided when to goto the next phase in 
 the program development.
@@ -274,7 +263,6 @@ the program development.
 * The top :five: `dirtiest` areas in the application are cleaned.
 * Points which I haven't the time to cleanup are noted for the next release.
 
-<br />
 In general (2).  
 Normally in my private projects I implement, fix following issues in one release 
 &#40;so one release needs 2-3 weeks&#41;:
@@ -285,14 +273,12 @@ Normally in my private projects I implement, fix following issues in one release
 
 
 
-<br />
 New Features in SokubanFX v0.2.0-PROTOTYPE<a name="NewFeatures" />
 ---
 
 In this section I will write what is new in SokubanFx v0.2.0.
 
 
-<br />
 ##### User can now handle the application with KeyEvents<a name="UserKeyEvents" />
 
 In the new version 0.2.0 from [SokubanFX] the user has the possibility to 
@@ -375,7 +361,6 @@ public class StartApplication extends Application implements IActionConfiguratio
    so then the event will delegate to the preview view.
 5. At last it will be checked if the `game mode` is active. If so then...
 
-<br />
 In this example I will show what happen if the action `ON_ACTION__KEY_RELEASED__FOR_GAME` 
 is fired:
 ```java
@@ -454,14 +439,12 @@ public class GamePresenter implements Initializable, IActionConfiguration, IRegi
    be accept.
 
 
-<br />
 ##### Implementation from the library Ikonli for icons<a name="LibraryIkonli" />
 
 For [SokubanFX] I decided to use the icon font [Ikonli]. Although there 
 are another excellent icon fonts like [FontAwesomeFX] or [ControlFX] I decided 
 to give [Ikonli] a try :smile: .
 
-<br />
 [Ikonli] have a very well documented [Ikonli Guide] where momentary :two::one: 
 (version 1.5.0) icon-sets are listed :exclamation:
 
@@ -470,7 +453,6 @@ Here is the official project description:
 > Ikonli provides icon packs that can be used in Java applications.
 > Currently Swing and JavaFX UI toolkits are supported.
 
-<br />
 To use the icon font in the project we need to include following dependencies in 
 the `pom.xml`:
 ```xml
@@ -501,7 +483,6 @@ the `pom.xml`:
 3. First choose is the icon-set `ikonli-elusive-pack`. Maybe I will change this later 
    :question:
 
-<br />
 Here is the first example how to use the iconfont [Ikonli] in the application:
 ```java
 public class PreviewPresenter implements Initializable, IActionConfiguration, IRegisterActions {
@@ -529,7 +510,6 @@ And the result will look like:
 ![icon-font-preview.png][icon-font-preview]
 
 
-<br />
 And in the next example we can see how to add some icons to the play-buttons:
 ```java
 public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
@@ -566,12 +546,10 @@ And the result looks like:
 ![icon-font-game.png][icon-font-game]
 
 
-<br />
 ##### Change internal functionalities to lambda expressions<a name="LambdaExpressions" />
 
 New in [Java 8] are [Lambda Expressions] which are really interesting and powerful. 
 
-<br />
 Here is a very simple example how to stream over every `item` in an [ObservableList]:
 ```java
 public class GamePresenter implements Initializable, IActionConfiguration, IRegisterActions {
@@ -606,7 +584,6 @@ public class GamePresenter implements Initializable, IActionConfiguration, IRegi
 2. For every `item` in the [ObservableList] a new formated label will be added 
    to the [VBox] vbMap.
 
-<br />
 The next example will show first the `old way` how to iterate over a list, check 
 something and if okay then update the iterated `item`:
 ```java
@@ -642,7 +619,6 @@ public class GamePresenter implements Initializable, IActionConfiguration, IRegi
 4. Because we have updated the `coordinatesFounded` we can leave the `for-each` 
    iteration.
 
-<br />
 Then after the conversion from the `for-each` iteration to the [Lambda Expressions] 
 we have:
 ```java
@@ -681,7 +657,6 @@ public class GamePresenter implements Initializable, IActionConfiguration, IRegi
 4. If the [Optional<T>] is not `null` &#40;means `ifPresent==true`&#41; then 
    the item `coordinatesFounded` will be updated.
 
-<br />
 In the last example from this section again first time the `old way` will be shown 
 how to check if all `boxes` are on a `place`, that mean if so then the map is `finished`.
 ```java
@@ -728,7 +703,6 @@ public class CollisionChecker {
 5. Leave the iteration from the boxes and start the next iteration with a new place.
 6. Check if the map is `finished` &#40;all boxes are on the places&#41;.
 
-<br />
 After the conversion to a [Lambda Expressions] we have following algorithm:
 ```java
 public class CollisionChecker {
@@ -780,7 +754,6 @@ public class CollisionChecker {
 
 
 
-<br />
 Conclusion<a name="Conclusion" />
 ---
 
@@ -799,7 +772,6 @@ YouTube:
 
 
 
-<br />
 About the autor<a name="Autor" />
 ---
 
@@ -811,7 +783,6 @@ service provider represented nationally and internationally in over 20 locations
 with the head-quarters in Wolfsburg, Germany.
 
 
-<br />
 In my free time I investigate between `2009` an `2012` some time in [NetBeans RCP] 
 &#40;Rich Client Platform&#41; development.  
 See  
@@ -835,7 +806,6 @@ So I decided to do this:
   where [Adam Bien] introduce my plugin &#40;at 48:00&#41;.
 
 
-<br />
 ##### Contact<a name="Contact" />
 
 Any question? Some helpful criticism?
@@ -844,7 +814,6 @@ Any question? Some helpful criticism?
 
 
 
-<br />
 Articles in this series<a name="Articles" />
 ---
 
@@ -854,7 +823,6 @@ Articles in this series<a name="Articles" />
 * All articles in this series are licensed under [General Public License 3.0].
 
 
-<br />
 ##### Articles
 
 * The article [01 Setup the project] describes the steps how to setup a new project 

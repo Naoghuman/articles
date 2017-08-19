@@ -3,7 +3,6 @@
 
 
 
-<br />
 Intention
 ---
 
@@ -11,7 +10,6 @@ In the last articles TODO
 
 
 
-<br />
 Content
 ---
 
@@ -22,7 +20,6 @@ Content
 
 
 
-<br />
 Conclusion<a name="Conclusion" />
 ---
 
@@ -36,7 +33,6 @@ TODO[![sokubanfx_v0.2.0-PROTOTYPE.png][sokubanfx_v0.2.0-PROTOTYPE]](https://yout
 
 
 
-<br />
 About the autor<a name="Autor" />
 ---
 
@@ -48,7 +44,6 @@ service provider represented nationally and internationally in over 20 locations
 with the head-quarters in Wolfsburg, Germany.
 
 
-<br />
 In my free time I investigate between `2009` an `2012` some time in [NetBeans RCP] 
 &#40;Rich Client Platform&#41; development.  
 See  
@@ -57,7 +52,6 @@ See
 * The `book` [NetBeans Platform 6.9 Developer's Guide] &#40;08.2010&#41; which I 
   helped to translate from Germany to English.
 
-<br />
 Since `2011` I change my focus to [JavaFX] &#40;[JavaFX 2.0] - [JavaFX 8]&#41;. 
 Although in `2015` I saw a video from [Adam Bien] where he mention he would love 
 to write a [NetBeans RCP] plugin for his library [afterburner.fx] when he had 
@@ -72,7 +66,6 @@ So I decided to do this:
   where [Adam Bien] introduce my plugin &#40;at 48:00&#41;.
 
 
-<br />
 ##### Contact<a name="Contact" />
 
 Any question? Some helpful criticism?
@@ -81,7 +74,6 @@ Any question? Some helpful criticism?
 
 
 
-<br />
 Articles in this series<a name="Articles" />
 ---
 
@@ -91,7 +83,6 @@ Articles in this series<a name="Articles" />
 * The articles in this series are licensed under [General Public License 3.0].
 
 
-<br />
 ##### Articles
 
 * The article [01 Setup the project] describes the steps how to setup a new project 
