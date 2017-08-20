@@ -100,9 +100,10 @@ the basic files in context from a [JavaFX] and [Maven] and [afterburner.fx] proj
 
 | GitHub | [NetBeansIDE-AfterburnerFX-Plugin] |
 | --- | --- |
-| Last release | [1.5.0] _(Stable, 6 releases)_ |
-| Licence | [General Public License 3.0] |
 | Since | Sep 22, 2015 |
+| Releases | [NetBeansIDE-AfterburnerFX-Plugin Releases] _(6 releases)_ |
+| Last release | [1.5.0] _(Stable)_ |
+| Licence | [General Public License 3.0] |
 
 
 
@@ -124,6 +125,7 @@ _Image:_ [UML] Lib-Logger
 **Example**  
 After including the library into your [Maven] project with
 ```java
+<!-- https://mvnrepository.com/artifact/com.github.naoghuman/lib-logger -->
 <dependency>
     <groupId>com.github.naoghuman</groupId>
     <artifactId>lib-logger</artifactId>
@@ -132,7 +134,8 @@ After including the library into your [Maven] project with
 ```
 
 put also the file `log4j2.xml` into the default resource package `src/main/resources` 
-in your project. Then logging is simple:
+in your project.  
+Then logging is really simple like:
 ```java
 public static final void loadResourcesInCache() {
     LoggerFacade.getDefault().debug(TemplateLoader.class, "Load resources in cache"); // NOI18N
@@ -145,7 +148,7 @@ public static final void loadResourcesInCache() {
 ```
 
 **Conclusion**  
-With the library `Lib-Logger it's really easy to integrate the feature `logging` 
+With the library `Lib-Logger` it's really easy to integrate the feature `logging` 
 into your `library`, `game` and / or `application`.  
 
 
@@ -291,4 +294,5 @@ TODO
 [NetBeans IDE]:https://netbeans.org/
 [NetBeans RCP]:https://netbeans.org/kb/trails/platform.html
 [NetBeansIDE-AfterburnerFX-Plugin]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin
+[NetBeansIDE-AfterburnerFX-Plugin Releases]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin/releases
 [UML]:https://en.wikipedia.org/wiki/Unified_Modeling_Language
