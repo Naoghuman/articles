@@ -164,6 +164,94 @@ into your `library`, `game` and / or `application`.
 
 ### Lib-Action _(Stable)_<a name="LiAc" />
 
+> __Library description__  
+> `Lib-Action` is a library for `easy` storing and accessing actions 
+> ([EventHandler]&lt;[ActionEvent]&gt;) in a [JavaFX] &amp; [Maven] desktop 
+> application.
+
+_Image:_ [UML] Lib-Action  
+![UML-diagram_Lib-Action_v0.5.1_2017-07-22_23-42.png][UML-diagram_Lib-Action_v0.5.1_2017-07-22_23-42]
+
+
+**Example**  
+After including the library into your [Maven] project with
+```java
+<!-- https://mvnrepository.com/artifact/com.github.naoghuman/lib-action -->
+<dependency>
+    <groupId>com.github.naoghuman</groupId>
+    <artifactId>lib-action</artifactId>
+    <version>0.5.1</version>
+</dependency>
+```
+
+see following example how to `register` an `action`:
+```java
+public class ApplicationPresenter implements RegisterActions ... {
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        // This method will be executed during the initialization from the class 
+        // ApplicationPresenter. So all methods in this method will be registered 
+        // during the initialization.
+        this.register();
+        ...
+    }
+    ...
+    @Override
+    public void register() {
+        LoggerFacade.getDefault().debug(this.getClass(), "Register actions in [ApplicationPresenter]"); // NOI18N
+        
+        this.registerOnActionOpenTerm();
+        ...
+    }
+    ...
+    private void registerOnActionOpenTerm() {
+        LoggerFacade.getDefault().debug(this.getClass(), "Register on action open [Term]"); // NOI18N
+        
+        ActionHandlerFacade.getDefault().register(
+                ACTION__APPLICATION__OPEN_TERM,
+                (ActionEvent event) -> {
+                    final TransferData transferData = (TransferData) event.getSource();
+                    final Optional<Long> entityId = transferData.getLong();
+                    if (entityId.isPresent()) {
+                        this.onActionOpenTermWithId(entityId);
+                    }
+                });
+    }
+}
+```
+
+The above registered action can be easly `executed` with following statement:
+```java
+private Label getLabel(Term term) {
+    final Label label = new Label(term.getTitle());
+    label.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2) {
+                final TransferData transferData = new TransferData();
+                transferData.setActionId(ACTION__APPLICATION__OPEN_TERM);
+                transferData.setObject(term);
+                
+                ActionFacade.getDefault().handle(transferData);
+            }
+        });
+}
+```
+
+**Conclusion**  
+With the library `Lib-Action` it's really easy to register actions 
+([EventHandler]&lt;[ActionEvent]&gt;) in your `library`, `game` and / or 
+`application`.
+
+
+**Library details**  
+
+| GitHub | [Lib-Action] |
+| --- | --- |
+| Since | Jul 26, 2014 |
+| Releases | [Lib-Action Releases] _(15 releases)_ |
+| Last release | [Lib-Action v0.5.1] _(Stable)_ |
+| Licence | [General Public License 3.0] |
+
+
 ### Lib-Database-ObjectDB _(Stable)_<a name="LiDaOb" />
 
 ### Lib-Preferences _(Stable)_<a name="LiPre" />
@@ -264,6 +352,7 @@ TODO
 [//]: # (Images)
 [plugin-3-primary-files]:https://cloud.githubusercontent.com/assets/8161815/23524833/a4122dca-ff8c-11e6-8200-77395646fbb0.png
 [plugin-6-generated-files]:https://cloud.githubusercontent.com/assets/8161815/23524879/c901106a-ff8c-11e6-97b1-31ba03b7b679.png
+[UML-diagram_Lib-Action_v0.5.1_2017-07-22_23-42]:https://user-images.githubusercontent.com/8161815/28494737-a28b46f6-6f37-11e7-8c66-01083545c092.png
 [UML-diagram_Lib-Logger_v0.5.1_2017-07-19_23-44]:https://user-images.githubusercontent.com/8161815/28390956-64b5d38a-6cdc-11e7-84b7-153ace99fc3e.png
 [video-netBeanside-afterburnerfx-plugin]:https://cloud.githubusercontent.com/assets/8161815/15169398/3b51c3de-173b-11e6-8a8f-39cc6b826260.png
 
@@ -271,11 +360,13 @@ TODO
 
 [//]: # (Links)
 [1.5.0]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin/releases/tag/v1.5.0
+[ActionEvent]:http://docs.oracle.com/javase/8/javafx/api/javafx/event/ActionEvent.html
 [Adam Bien]:http://www.adam-bien.com/roller/abien/
 [Afterburner.fx NetBeans Plugin Release]:http://www.adam-bien.com/roller/abien/entry/afterburner_fx_netbeans_plugin_release
 [afterburner.fx]:https://github.com/AdamBien/afterburner.fx
 [Apache Log4j 2]:https://logging.apache.org/log4j/2.0/index.html
 [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive]:https://www.youtube.com/watch?v=WsV7kSSSOGs
+[EventHandler]:http://docs.oracle.com/javase/8/javafx/api/javafx/event/EventHandler.html
 [Geertjan Wielenga]:https://blogs.oracle.com/geertjan/entry/welcome_to_me
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
 [GitHub]:https://github.com/
@@ -286,6 +377,9 @@ TODO
 [JavaFX]:http://docs.oracle.com/javase/8/javase-clienttechnologies.htm
 [JavaFX 2.0]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_2.0
 [JavaFX 8]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_8
+[Lib-Action]:https://github.com/Naoghuman/lib-action
+[Lib-Action Releases]:https://github.com/Naoghuman/lib-action/releases
+[Lib-Action v0.5.1]:https://github.com/Naoghuman/lib-action/releases/tag/v0.5.1
 [Lib-Logger]:https://github.com/Naoghuman/lib-logger
 [Lib-Logger Releases]:https://github.com/Naoghuman/lib-logger/releases
 [Lib-Logger v0.5.1]:https://github.com/Naoghuman/lib-logger/releases/tag/v0.5.1
