@@ -89,21 +89,66 @@ _Image:_ Click on the image will open the `YouTube` video
 _Image:_ Shows the view `3. Primary Files` from the new wizard  
 ![plugin-3-primary-files.png][plugin-3-primary-files]
 
-
 **Plugin details**  
 
 | GitHub | [NetBeansIDE-AfterburnerFX-Plugin] |
 | --- | --- |
-| Last release | [1.5.0] _(Stable)_ |
+| Last release | [1.5.0] _(Stable, 6 releases)_ |
 | Licence | [General Public License 3.0] |
-| Since | 22 Sep 2015 |
+| Since | Sep 22, 2015 |
 
 
 
 Core Libraries<a name="CoLi" />
 ---
 
+TODO
+
 ### Lib-Logger _(Stable)_<a name="LiLo" />
+
+> __Library description__  
+> `Lib-Logger` is a library for `easy` logging with the [Apache Log4j 2] in a 
+> [JavaFX] &amp; [Maven] desktop application.
+
+_Image:_ [UML] Lib-Logger  
+![UML-diagram_Lib-Logger_v0.5.1_2017-07-19_23-44.png][UML-diagram_Lib-Logger_v0.5.1_2017-07-19_23-44]
+
+**Example**
+After including the library into your [Maven] project with
+```java
+<dependency>
+    <groupId>com.github.naoghuman</groupId>
+    <artifactId>lib-logger</artifactId>
+    <version>0.5.1</version>
+</dependency>
+```
+
+put also the file `log4j2.xml` into the default resource package `src/main/resources` 
+in your project. Then logging is simple:
+```java
+public static final void loadResourcesInCache() {
+    LoggerFacade.getDefault().debug(TemplateLoader.class, "Load resources in cache"); // NOI18N
+
+    ...
+}
+
+// which will print in the console and in the configured `xy.log` file:
+2017-05-27 08:56:53,757  DEBUG Load resources in cache     [TemplateLoader]
+```
+
+**Conclusion**  
+With the library `Lib-Logger it's really easy to integrate the feature `logging` 
+into your `library`, `game` and / or `application`.  
+
+**Library details**  
+
+| GitHub | [Lib-Logger] |
+| --- | --- |
+| Since | Jul 13, 2014 |
+| Releases | [Lib-Logger Releases] _(13 releases)_ |
+| Last release | [Lib-Logger v0.5.1] _(Stable)_ |
+| Licence | [General Public License 3.0] |
+
 
 ### Lib-Action _(Stable)_<a name="LiAc" />
 
@@ -205,16 +250,19 @@ TODO
 
 
 [//]: # (Images)
-[video-netBeanside-afterburnerfx-plugin]:https://cloud.githubusercontent.com/assets/8161815/15169398/3b51c3de-173b-11e6-8a8f-39cc6b826260.png
 [plugin-3-primary-files]:https://cloud.githubusercontent.com/assets/8161815/23524833/a4122dca-ff8c-11e6-8200-77395646fbb0.png
 [plugin-6-generated-files]:https://cloud.githubusercontent.com/assets/8161815/23524879/c901106a-ff8c-11e6-97b1-31ba03b7b679.png
+[UML-diagram_Lib-Logger_v0.5.1_2017-07-19_23-44]:https://user-images.githubusercontent.com/8161815/28390956-64b5d38a-6cdc-11e7-84b7-153ace99fc3e.png
+[video-netBeanside-afterburnerfx-plugin]:https://cloud.githubusercontent.com/assets/8161815/15169398/3b51c3de-173b-11e6-8a8f-39cc6b826260.png
 
 
 
 [//]: # (Links)
+[1.5.0]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin/releases/tag/v1.5.0
 [Adam Bien]:http://www.adam-bien.com/roller/abien/
 [Afterburner.fx NetBeans Plugin Release]:http://www.adam-bien.com/roller/abien/entry/afterburner_fx_netbeans_plugin_release
 [afterburner.fx]:https://github.com/AdamBien/afterburner.fx
+[Apache Log4j 2]:https://logging.apache.org/log4j/2.0/index.html
 [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive]:https://www.youtube.com/watch?v=WsV7kSSSOGs
 [Geertjan Wielenga]:https://blogs.oracle.com/geertjan/entry/welcome_to_me
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
@@ -226,9 +274,12 @@ TODO
 [JavaFX]:http://docs.oracle.com/javase/8/javase-clienttechnologies.htm
 [JavaFX 2.0]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_2.0
 [JavaFX 8]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_8
+[Lib-Logger]:https://github.com/Naoghuman/lib-logger
+[Lib-Logger Releases]:https://github.com/Naoghuman/lib-logger/releases
+[Lib-Logger v0.5.1]:https://github.com/Naoghuman/lib-logger/releases/tag/v0.5.1
 [Maven]:http://maven.apache.org/
 [NetBeans Platform 6.9 Developer's Guide]:https://www.packtpub.com/application-development/netbeans-platform-69-developers-guide
 [NetBeans IDE]:https://netbeans.org/
 [NetBeans RCP]:https://netbeans.org/kb/trails/platform.html
 [NetBeansIDE-AfterburnerFX-Plugin]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin
-[1.5.0]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin/releases/tag/v1.5.0
+[UML]:https://en.wikipedia.org/wiki/Unified_Modeling_Language
