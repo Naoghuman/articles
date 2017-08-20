@@ -17,8 +17,8 @@ _Image:_ Overview Naoghuman's JavaFX projects in GitHub
 ![overview-naoghumans-javafx-projects-in-github-v1.png][overview-naoghumans-javafx-projects-in-github-v1]
 
 > __Hint__  
-> All `libraries`, `games` and `projects` from me (Naoghuman) are licensed under 
-> [General Public License 3.0].
+> All `plugins`, `libraries`, `games` and `projects` from me (Naoghuman) are 
+> licensed under [General Public License 3.0].
 
 
 
