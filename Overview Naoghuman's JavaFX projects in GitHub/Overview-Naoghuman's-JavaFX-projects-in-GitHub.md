@@ -6,7 +6,19 @@ Overview Naoghuman's JavaFX projects in GitHub
 Intention
 ---
 
-TODO
+In this article I want to give an `overiew` about my [JavaFx] `plugins`, `libraries`, 
+`games` and `applications` and how they work together.
+* The `basement` from my projects are the libraries in [Core Libraries].
+* Next I have [Extended Libraries] which depends on one or more from the `Core Libraries`.
+* In the [Games] and [Applications] I used then the `Core Libraries` and `Extended Libraries` 
+  if needed.
+
+_Image:_ Overview Naoghuman's JavaFX projects in GitHub  
+![overview-naoghumans-javafx-projects-in-github-v1.png][overview-naoghumans-javafx-projects-in-github-v1]
+
+> __Hint__  
+> All `libraries`, `games` and `projects` from me (Naoghuman) are licensed under 
+> [General Public License 3.0].
 
 
 
