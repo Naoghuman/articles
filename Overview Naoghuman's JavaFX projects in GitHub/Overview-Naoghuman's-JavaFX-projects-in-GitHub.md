@@ -48,7 +48,7 @@ Plugins<a name="Pl" />
 
 ### NetBeansIDE-AfterburnerFX-Plugin _(Stable)_<a name="NeBeAfPl" />
 
-> __Plugin description__ 
+> __Plugin description__  
 > The `NetBeansIDE-AfterburnerFX-Plugin` is a [NetBeans IDE] plugin which supports
 > the file generation in **convention** with the library [afterburner.fx] in a [JavaFX] 
 > project.
@@ -77,7 +77,7 @@ _Image:_ Click on the image will open the `YouTube` video
 _Image:_ Shows the view `3. Primary Files` from the new wizard  
 ![plugin-3-primary-files.png][plugin-3-primary-files]
 
-> __Hint__ 
+> __Hint__  
 > For more informations and examples about the [NetBeans IDE] plugin plz see the 
 > `GitHub` project [NetBeansIDE-AfterburnerFX-Plugin].
 
