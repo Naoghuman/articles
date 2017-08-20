@@ -77,9 +77,13 @@ _Image:_ Click on the image will open the `YouTube` video
 _Image:_ Shows the view `3. Primary Files` from the new wizard  
 ![plugin-3-primary-files.png][plugin-3-primary-files]
 
-> __Hint__  
-> For more informations and examples about the [NetBeans IDE] plugin plz see the 
-> `GitHub` project [NetBeansIDE-AfterburnerFX-Plugin].
+
+**Plugin details**  
+| GitHub | [NetBeansIDE-AfterburnerFX-Plugin] |
+| --- | --- |
+| Last release | [1.5.0] _(Stable)_ |
+| Licence | [General Public License 3.0] |
+| Since | 22 Sep 2015 |
 
 
 
@@ -214,3 +218,4 @@ TODO
 [NetBeans IDE]:https://netbeans.org/
 [NetBeans RCP]:https://netbeans.org/kb/trails/platform.html
 [NetBeansIDE-AfterburnerFX-Plugin]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin
+[1.5.0]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin/releases/tag/v1.5.0
