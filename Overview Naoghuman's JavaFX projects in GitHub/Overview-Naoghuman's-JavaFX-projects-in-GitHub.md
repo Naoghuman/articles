@@ -74,7 +74,7 @@ _Image:_ Shows the view `3. Primary Files` from the new wizard
 ![plugin-3-primary-files.png][plugin-3-primary-files]
 
 
-**Example**
+**Example**  
 The following picture shows all possible files which can be generate in one slide 
 with the new wizard after installing the plugin in your [NetBeans IDE].
 
@@ -91,7 +91,7 @@ _Image:_ Click on the image will open the `YouTube` video
 [![video-netBeanside-afterburnerfx-plugin.png][video-netBeanside-afterburnerfx-plugin]](https://www.youtube.com/watch?v=WsV7kSSSOGs "NetBeansIDE-AfterburnerFX-Plugin")
 
 
-**Conclusion**
+**Conclusion**  
 With the plugin [NetBeansIDE-AfterburnerFX-Plugin] I'm able to quickly generate 
 the basic files in context from a [JavaFX] and [Maven] and [afterburner.fx] project.
 
@@ -121,7 +121,7 @@ _Image:_ [UML] Lib-Logger
 ![UML-diagram_Lib-Logger_v0.5.1_2017-07-19_23-44.png][UML-diagram_Lib-Logger_v0.5.1_2017-07-19_23-44]
 
 
-**Example**
+**Example**  
 After including the library into your [Maven] project with
 ```java
 <dependency>
