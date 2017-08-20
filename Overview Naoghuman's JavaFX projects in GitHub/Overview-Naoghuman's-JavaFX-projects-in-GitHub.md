@@ -26,17 +26,17 @@ Content
     - [Lib-Tile _(Stable)_](#LiTi)
     - [Lib-Emoticon _(Stable)_](#LiEm)
     - [Lib-Testdata _(Development)_](#LiTe)
-    - [Lib-Sampler_(Prototpye)_](#LiSa)
-    - [Lib-Map_(Prototype)_](#LiMa)
+    - [Lib-Sampler _(Prototpye)_](#LiSa)
+    - [Lib-Map _(Prototype)_](#LiMa)
+* [Games](#Gam)
+    - [SokubanFX _(Development)_](#SoFx)
+    - [StepByStep _(Prototpye)_](#StBySt)
 * [Applications](#App)
     - [ABC-List _(Development)_](#AbLi)
     - [HabitFX _(Development)_](#HaFx)
     - [Competency Matrix _(Prototpye)_](#CoMa)
     - [Concentration _(Planed)_](#Con)
     - [TypeWriter _(Planed)_](#TyWr)
-* [Games](#Gam)
-    - [SokubanFX _(Development)_](#SoFx)
-    - [StepByStep _(Prototpye)_](#StBySt)
 * [About the autor](#Autor)
     - [Contact](#Contact)
 * [Other articles from me](#OtherArticles)
@@ -47,6 +47,39 @@ Plugins<a name="Pl" />
 ---
 
 ### NetBeansIDE-AfterburnerFX-Plugin _(Stable)_<a name="NeBeAfPl" />
+
+> __Plugin description__ 
+> The `NetBeansIDE-AfterburnerFX-Plugin` is a [NetBeans IDE] plugin which supports
+> the file generation in **convention** with the library [afterburner.fx] in a [JavaFX] 
+> project.
+> 
+> The following primary files `[FileName].fxml`, `[FileName]Presenter.java`, `[FileName]View.java` 
+> and optional `[FileName].css`, `[FileName].properties` and `configuration.properties` 
+> can be created in a new wizard.  
+> One conditional is that *[FileName].toLowerCase()* must be **equals** with the *last* choosen package name.
+
+
+With the plugin [NetBeansIDE-AfterburnerFX-Plugin] I'm able to quickly generate 
+the basic files in context from a [JavaFX] and [Maven] and [afterburner.fx] project.
+
+_Image:_ Shows an example from `generated` files  
+![plugin-6-generated-files.png][plugin-6-generated-files]
+
+
+**Press**  
+* `Interview` with `Adam Bien` about me and the plugin: [Afterburner.fx NetBeans Plugin Release]
+* `Adam Bien` introduced my plugin in one of his videos 
+  `DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive` &#40;see at 48:00)&#41;:
+
+_Image:_ Click on the image will open the `YouTube` video  
+[![video-netBeanside-afterburnerfx-plugin.png][video-netBeanside-afterburnerfx-plugin]](https://www.youtube.com/watch?v=WsV7kSSSOGs "NetBeansIDE-AfterburnerFX-Plugin")
+
+_Image:_ Shows the view `3. Primary Files` from the new wizard  
+![plugin-3-primary-files.png][plugin-3-primary-files]
+
+> __Hint__ 
+> For more informations and examples about the [NetBeans IDE] plugin plz see the 
+> `GitHub` project [NetBeansIDE-AfterburnerFX-Plugin].
 
 
 
@@ -82,6 +115,15 @@ Extended Libraries<a name="ExLi" />
 
 
 
+Games<a name="Gam" />
+---
+
+### SokubanFX _(Development)_<a name="SoFx" />
+
+### StepByStep _(Prototpye)_<a name="StBySt" />
+
+
+
 Applications<a name="App" />
 ---
 
@@ -94,15 +136,6 @@ Applications<a name="App" />
 ### Concentration _(Planed)_<a name="Con" />
 
 ### TypeWriter _(Planed)_<a name="TyWr" />
-
-
-
-Games<a name="Gam" />
----
-
-### SokubanFX _(Development)_<a name="SoFx" />
-
-### StepByStep _(Prototpye)_<a name="StBySt" />
 
 
 
@@ -155,24 +188,29 @@ TODO
 
 
 [//]: # (Images)
+[video-netBeanside-afterburnerfx-plugin]:https://cloud.githubusercontent.com/assets/8161815/15169398/3b51c3de-173b-11e6-8a8f-39cc6b826260.png
+[plugin-3-primary-files]:https://cloud.githubusercontent.com/assets/8161815/23524833/a4122dca-ff8c-11e6-8200-77395646fbb0.png
+[plugin-6-generated-files]:https://cloud.githubusercontent.com/assets/8161815/23524879/c901106a-ff8c-11e6-97b1-31ba03b7b679.png
 
 
 
 [//]: # (Links)
-  [Adam Bien]:http://www.adam-bien.com/roller/abien/
-  [Afterburner.fx NetBeans Plugin Release]:http://www.adam-bien.com/roller/abien/entry/afterburner_fx_netbeans_plugin_release
-  [afterburner.fx]:https://github.com/AdamBien/afterburner.fx
-  [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive]:https://www.youtube.com/watch?v=WsV7kSSSOGs
-  [Geertjan Wielenga]:https://blogs.oracle.com/geertjan/entry/welcome_to_me
-  [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
-  [GitHub]:https://github.com/
-  [H+D International Group]:https://www.hud.de/en/
-  [Help for Multilingual NetBeans Platform Applications]:https://dzone.com/articles/multilingual-netbeans-platform-applications
-  [Issue]:https://github.com/Naoghuman/articles/issues
-  [Java]:https://en.wikipedia.org/wiki/Java_%28programming_language%29
-  [JavaFX]:http://docs.oracle.com/javase/8/javase-clienttechnologies.htm
-  [JavaFX 2.0]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_2.0
-  [JavaFX 8]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_8
-  [NetBeans Platform 6.9 Developer's Guide]:https://www.packtpub.com/application-development/netbeans-platform-69-developers-guide
-  [NetBeans RCP]:https://netbeans.org/kb/trails/platform.html
-  [NetBeansIDE-AfterburnerFX-Plugin]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin
+[Adam Bien]:http://www.adam-bien.com/roller/abien/
+[Afterburner.fx NetBeans Plugin Release]:http://www.adam-bien.com/roller/abien/entry/afterburner_fx_netbeans_plugin_release
+[afterburner.fx]:https://github.com/AdamBien/afterburner.fx
+[DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive]:https://www.youtube.com/watch?v=WsV7kSSSOGs
+[Geertjan Wielenga]:https://blogs.oracle.com/geertjan/entry/welcome_to_me
+[General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
+[GitHub]:https://github.com/
+[H+D International Group]:https://www.hud.de/en/
+[Help for Multilingual NetBeans Platform Applications]:https://dzone.com/articles/multilingual-netbeans-platform-applications
+[Issue]:https://github.com/Naoghuman/articles/issues
+[Java]:https://en.wikipedia.org/wiki/Java_%28programming_language%29
+[JavaFX]:http://docs.oracle.com/javase/8/javase-clienttechnologies.htm
+[JavaFX 2.0]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_2.0
+[JavaFX 8]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_8
+[Maven]:http://maven.apache.org/
+[NetBeans Platform 6.9 Developer's Guide]:https://www.packtpub.com/application-development/netbeans-platform-69-developers-guide
+[NetBeans IDE]:https://netbeans.org/
+[NetBeans RCP]:https://netbeans.org/kb/trails/platform.html
+[NetBeansIDE-AfterburnerFX-Plugin]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin
