@@ -70,9 +70,13 @@ Plugins<a name="Pl" />
 > can be created in a new wizard.  
 > One conditional is that *[FileName].toLowerCase()* must be **equals** with the *last* choosen package name.
 
+_Image:_ Shows the view `3. Primary Files` from the new wizard  
+![plugin-3-primary-files.png][plugin-3-primary-files]
 
-With the plugin [NetBeansIDE-AfterburnerFX-Plugin] I'm able to quickly generate 
-the basic files in context from a [JavaFX] and [Maven] and [afterburner.fx] project.
+
+**Example**
+The following picture shows all possible files which can be generate in one slide 
+with the new wizard after installing the plugin in your [NetBeans IDE].
 
 _Image:_ Shows an example from `generated` files  
 ![plugin-6-generated-files.png][plugin-6-generated-files]
@@ -86,8 +90,11 @@ _Image:_ Shows an example from `generated` files
 _Image:_ Click on the image will open the `YouTube` video  
 [![video-netBeanside-afterburnerfx-plugin.png][video-netBeanside-afterburnerfx-plugin]](https://www.youtube.com/watch?v=WsV7kSSSOGs "NetBeansIDE-AfterburnerFX-Plugin")
 
-_Image:_ Shows the view `3. Primary Files` from the new wizard  
-![plugin-3-primary-files.png][plugin-3-primary-files]
+
+**Conclusion**
+With the plugin [NetBeansIDE-AfterburnerFX-Plugin] I'm able to quickly generate 
+the basic files in context from a [JavaFX] and [Maven] and [afterburner.fx] project.
+
 
 **Plugin details**  
 
@@ -112,6 +119,7 @@ TODO
 
 _Image:_ [UML] Lib-Logger  
 ![UML-diagram_Lib-Logger_v0.5.1_2017-07-19_23-44.png][UML-diagram_Lib-Logger_v0.5.1_2017-07-19_23-44]
+
 
 **Example**
 After including the library into your [Maven] project with
@@ -139,6 +147,7 @@ public static final void loadResourcesInCache() {
 **Conclusion**  
 With the library `Lib-Logger it's really easy to integrate the feature `logging` 
 into your `library`, `game` and / or `application`.  
+
 
 **Library details**  
 
