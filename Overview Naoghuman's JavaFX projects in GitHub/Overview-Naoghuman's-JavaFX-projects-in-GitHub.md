@@ -79,6 +79,7 @@ _Image:_ Shows the view `3. Primary Files` from the new wizard
 
 
 **Plugin details**  
+
 | GitHub | [NetBeansIDE-AfterburnerFX-Plugin] |
 | --- | --- |
 | Last release | [1.5.0] _(Stable)_ |
