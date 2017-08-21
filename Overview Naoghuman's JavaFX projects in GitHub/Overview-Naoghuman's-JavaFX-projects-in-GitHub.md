@@ -510,7 +510,7 @@ and access values from it.
 | GitHub | [Lib-Properties] |
 | --- | --- |
 | Since | Jul 18, 2014 |
-| Releases | [Lib-Properties Releases] _(132 releases)_ |
+| Releases | [Lib-Properties Releases] _(12 releases)_ |
 | Last release | [Lib-Properties v0.5.0] _(Stable)_ |
 | Licence | [General Public License 3.0] |
 
