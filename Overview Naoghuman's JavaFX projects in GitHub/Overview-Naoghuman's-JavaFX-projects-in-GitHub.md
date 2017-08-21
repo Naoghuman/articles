@@ -357,6 +357,89 @@ and perform `CRUD` operations with an entity.
 
 ### Lib-Preferences _(Stable)_<a name="LiPre" />
 
+> __Library description__  
+> `Lib-Preferences` is a library for `easy` storing simple data to a 
+> Preferences.[properties] file in a [JavaFX] &amp; [Maven] desktop application.
+
+_Image:_ [UML] Preferences  
+![UML-diagram_Lib-Preferences_v0.5.1_2017-08-02_22-04.png][UML-diagram_Lib-Preferences_v0.5.1_2017-08-02_22-04]
+
+
+**Example**  
+Including the library into a [Maven] project can done with:
+```java
+<!-- https://mvnrepository.com/artifact/com.github.naoghuman/lib-preferences -->
+<dependency>
+    <groupId>com.github.naoghuman</groupId>
+    <artifactId>lib-preferences</artifactId>
+    <version>0.5.1</version>
+</dependency>
+```
+
+```java
+/**
+ * Putting a {@code value} in the file {@code Preferences.properties} in 
+ * {@code ApplicationContext} will write in this case following statement in 
+ * the file:<br>
+ * {@code com.github.naoghuman.lib.preferences.internal.my.string.key2=y}
+ * <p>
+ * Searching / writing in {@code ApplicationContext} means in this case that 
+ * the engine search / write a {@code key=my.string.key2} with a prefix 
+ * {@code com.github.naoghuman.lib.preferences.internal}. So the complete {@code key}
+ * for the search / to write is {@code com.github.naoghuman.lib.preferences.internal.my.string.key2}.
+ * <p>
+ * Because the search engine find the {@code key} in the file not the {@code default} 
+ * value {@code x} will be returned instead the stored value {@code y} will used.
+ */
+@Test
+public void putStringInApplicationContext() {
+    PreferencesFacade.getDefault().put("my.string.key2", "y");
+
+    final String storedValue = PreferencesFacade.getDefault().get("my.string.key2", "x");
+    assertEquals("y", storedValue);
+}
+```
+
+```java
+/**
+ * Putting a {@code value} in the file {@code Preferences.properties} in 
+ * {@code ApplicationContext} will write in this case following statement in 
+ * the file:<br>
+ * {@code com.github.naoghuman.lib.preferences.internal.my.string.key2=y}
+ * <p>
+ * Searching / writing in {@code ApplicationContext} means in this case that 
+ * the engine search / write a {@code key=my.string.key2} with a prefix 
+ * {@code com.github.naoghuman.lib.preferences.internal}. So the complete {@code key}
+ * for the search / to write is {@code com.github.naoghuman.lib.preferences.internal.my.string.key2}.
+ * <p>
+ * Because the search engine find the {@code key} in the file not the {@code default} 
+ * value {@code x} will be returned instead the stored value {@code y} will used.
+ */
+@Test
+public void putStringInApplicationContext() {
+    PreferencesFacade.getDefault().put("my.string.key2", "y");
+        
+    final String storedValue = PreferencesFacade.getDefault().get("my.string.key2", "x");
+    assertEquals("y", storedValue);
+}
+```
+
+
+**Conclusion**  
+With the library `Preferences` it's really easy to write and read `simple data` in a 
+`Preferences.properties` file.
+
+
+**Library details**  
+
+| GitHub | [Lib-Preferences] |
+| --- | --- |
+| Since | Jul 16, 2014 |
+| Releases | [Lib-Preferences Releases] _(11 releases)_ |
+| Last release | [Lib-Preferences v0.5.1] _(Stable)_ |
+| Licence | [General Public License 3.0] |
+
+
 ### Lib-Properties _(Stable)_<a name="LiPro" />
 
 
@@ -456,6 +539,7 @@ TODO
 [UML-diagram_Lib-Action_v0.5.1_2017-07-22_23-42]:https://user-images.githubusercontent.com/8161815/28494737-a28b46f6-6f37-11e7-8c66-01083545c092.png
 [UML-diagram_Lib-Database-ObjectDB_v0.5.1_2017-07-30_15-34]:https://user-images.githubusercontent.com/8161815/28753983-b1feefba-753c-11e7-9233-3a4a16f9a1ad.png
 [UML-diagram_Lib-Logger_v0.5.1_2017-07-19_23-44]:https://user-images.githubusercontent.com/8161815/28390956-64b5d38a-6cdc-11e7-84b7-153ace99fc3e.png
+[UML-diagram_Lib-Preferences_v0.5.1_2017-08-02_22-04]:https://user-images.githubusercontent.com/8161815/28892584-c3b4afd0-77ce-11e7-8d52-65c4cc491c88.png
 [video-netBeanside-afterburnerfx-plugin]:https://cloud.githubusercontent.com/assets/8161815/15169398/3b51c3de-173b-11e6-8a8f-39cc6b826260.png
 
 
@@ -488,6 +572,9 @@ TODO
 [Lib-Logger]:https://github.com/Naoghuman/lib-logger
 [Lib-Logger Releases]:https://github.com/Naoghuman/lib-logger/releases
 [Lib-Logger v0.5.1]:https://github.com/Naoghuman/lib-logger/releases/tag/v0.5.1
+[Lib-Preferences]:https://github.com/Naoghuman/lib-preferences
+[Lib-Preferences Releases]:https://github.com/Naoghuman/lib-preferences/releases
+[Lib-Preferences v0.5.1]:https://github.com/Naoghuman/lib-preferences/releases/tag/v0.5.1
 [Maven]:http://maven.apache.org/
 [NetBeans Platform 6.9 Developer's Guide]:https://www.packtpub.com/application-development/netbeans-platform-69-developers-guide
 [NetBeans IDE]:https://netbeans.org/
@@ -495,4 +582,5 @@ TODO
 [NetBeansIDE-AfterburnerFX-Plugin]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin
 [NetBeansIDE-AfterburnerFX-Plugin Releases]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin/releases
 [ObjectDB]:http://www.objectdb.com/
+[properties]:http://en.wikipedia.org/wiki/.properties
 [UML]:https://en.wikipedia.org/wiki/Unified_Modeling_Language
