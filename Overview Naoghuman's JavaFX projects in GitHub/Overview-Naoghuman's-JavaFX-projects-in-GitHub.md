@@ -147,6 +147,7 @@ public static final void loadResourcesInCache() {
 2017-05-27 08:56:53,757  DEBUG Load resources in cache     [TemplateLoader]
 ```
 
+
 **Conclusion**  
 With the library `Lib-Logger` it's really easy to integrate the feature `logging` 
 into your `library`, `game` and / or `application`.  
@@ -236,6 +237,7 @@ private Label getLabel(Term term) {
 }
 ```
 
+
 **Conclusion**  
 With the library `Lib-Action` it's really easy to register actions 
 ([EventHandler]&lt;[ActionEvent]&gt;) in your `library`, `game` and / or 
@@ -253,6 +255,105 @@ With the library `Lib-Action` it's really easy to register actions
 
 
 ### Lib-Database-ObjectDB _(Stable)_<a name="LiDaOb" />
+
+> __Library description__  
+> `Lib-Database-ObjectDB` is a library for easy accessing an [ObjectDB] database 
+> in a [JavaFX] &amp; [Maven] desktop application.
+
+_Image:_ [UML] Lib-Database-ObjectDB  
+![UML-diagram_Lib-Database-ObjectDB_v0.5.1_2017-07-30_15-34.png][UML-diagram_Lib-Database-ObjectDB_v0.5.1_2017-07-30_15-34]
+
+
+**Example**  
+Including the library into a [Maven] project can done with:
+```java
+<!-- https://mvnrepository.com/artifact/com.github.naoghuman/lib-database-objectdb -->
+<dependency>
+    <groupId>com.github.naoghuman</groupId>
+    <artifactId>lib-database-objectdb</artifactId>
+    <version>0.5.1</version>
+</dependency>
+```
+
+How to `register` an database:
+```java
+public class StartApplication extends Application {
+    ...
+    @Override
+    public void init() throws Exception {
+        // Register the resource-bundle
+        PropertiesFacade.getDefault().register(KEY__APPLICATION__RESOURCE_BUNDLE);
+        ...
+        // Register the database
+        DatabaseFacade.getDefault().register(Properties.getPropertyForApplication(KEY__APPLICATION__DATABASE));
+    }
+}
+
+public interface IPropertiesConfiguration {
+    public static final String KEY__APPLICATION__RESOURCE_BUNDLE = "/com/github/naoghuman/abclist/i18n/application.properties"; // NOI18N
+    public static final String KEY__TESTDATA_APPLICATION__DATABASE = "application.database"; // NOI18N
+    ...
+}
+```
+
+How to create and update an `Exercise`:
+```java
+public class SqlProvider ... {
+    public void createExercise(final Exercise exercise) {
+        final StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+                
+        ExerciseSqlService.getDefault().create(exercise);
+        
+        stopWatch.split();
+        this.printToLog(stopWatch.toSplitString(), 1, "createExercise(Exercise)"); // NOI18N
+        stopWatch.stop();
+    }
+    ...
+    public void updateExercise(final Exercise exercise) {
+        final StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+        
+        ExerciseSqlService.getDefault().update(exercise);
+        
+        stopWatch.split();
+        this.printToLog(stopWatch.toSplitString(), 1, "updateExercise(Exercise)"); // NOI18N
+        stopWatch.stop();
+    }
+}
+
+final class ExerciseSqlService ... {
+    void create(Exercise exercise) {
+        if (Objects.equals(exercise.getId(), DEFAULT_ID)) {
+            exercise.setId(System.currentTimeMillis());
+            DatabaseFacade.getDefault().getCrudService().create(exercise);
+        }
+        else {
+            this.update(exercise);
+        }
+    }
+    ...
+    void update(Exercise exercise) {
+        DatabaseFacade.getDefault().getCrudService().update(exercise);
+    }
+}
+```
+
+
+**Conclusion**  
+With the library `Lib-Database-ObjectDB` it's really easy to register an database 
+and perform `CRUD` operations with an entity.
+
+
+**Library details**  
+
+| GitHub | [Lib-Database-ObjectDB] |
+| --- | --- |
+| Since | Nov 25, 2014 |
+| Releases | [Lib-Database-ObjectDB Releases] _(11 releases)_ |
+| Last release | [Lib-Database-ObjectDB v0.5.1] _(Stable)_ |
+| Licence | [General Public License 3.0] |
+
 
 ### Lib-Preferences _(Stable)_<a name="LiPre" />
 
@@ -353,6 +454,7 @@ TODO
 [plugin-3-primary-files]:https://cloud.githubusercontent.com/assets/8161815/23524833/a4122dca-ff8c-11e6-8200-77395646fbb0.png
 [plugin-6-generated-files]:https://cloud.githubusercontent.com/assets/8161815/23524879/c901106a-ff8c-11e6-97b1-31ba03b7b679.png
 [UML-diagram_Lib-Action_v0.5.1_2017-07-22_23-42]:https://user-images.githubusercontent.com/8161815/28494737-a28b46f6-6f37-11e7-8c66-01083545c092.png
+[UML-diagram_Lib-Database-ObjectDB_v0.5.1_2017-07-30_15-34]:https://user-images.githubusercontent.com/8161815/28753983-b1feefba-753c-11e7-9233-3a4a16f9a1ad.png
 [UML-diagram_Lib-Logger_v0.5.1_2017-07-19_23-44]:https://user-images.githubusercontent.com/8161815/28390956-64b5d38a-6cdc-11e7-84b7-153ace99fc3e.png
 [video-netBeanside-afterburnerfx-plugin]:https://cloud.githubusercontent.com/assets/8161815/15169398/3b51c3de-173b-11e6-8a8f-39cc6b826260.png
 
@@ -380,6 +482,9 @@ TODO
 [Lib-Action]:https://github.com/Naoghuman/lib-action
 [Lib-Action Releases]:https://github.com/Naoghuman/lib-action/releases
 [Lib-Action v0.5.1]:https://github.com/Naoghuman/lib-action/releases/tag/v0.5.1
+[Lib-Database-ObjectDB]:https://github.com/Naoghuman/lib-database-objectdb
+[Lib-Database-ObjectDB Releases]:https://github.com/Naoghuman/lib-database-objectdb/releases
+[Lib-Database-ObjectDB v0.5.1]:https://github.com/Naoghuman/lib-database-objectdb/releases/tag/v0.5.1
 [Lib-Logger]:https://github.com/Naoghuman/lib-logger
 [Lib-Logger Releases]:https://github.com/Naoghuman/lib-logger/releases
 [Lib-Logger v0.5.1]:https://github.com/Naoghuman/lib-logger/releases/tag/v0.5.1
@@ -389,4 +494,5 @@ TODO
 [NetBeans RCP]:https://netbeans.org/kb/trails/platform.html
 [NetBeansIDE-AfterburnerFX-Plugin]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin
 [NetBeansIDE-AfterburnerFX-Plugin Releases]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin/releases
+[ObjectDB]:http://www.objectdb.com/
 [UML]:https://en.wikipedia.org/wiki/Unified_Modeling_Language
