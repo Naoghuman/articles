@@ -442,6 +442,78 @@ With the library `Preferences` it's really easy to write and read `simple data` 
 
 ### Lib-Properties _(Stable)_<a name="LiPro" />
 
+> __Library description__  
+> `Lib-Properties` is a library for `easy` loading [properties] files in a [JavaFX] 
+> &amp; [Maven] desktop application.
+
+_Image:_ [UML] Lib-Properties  
+![UML-diagram_Lib-Properties_v0.5.0_2017-07-17_21-17.png][UML-diagram_Lib-Properties_v0.5.0_2017-07-17_21-17]
+
+
+**Example**  
+Including the library into a [Maven] project can be done with:
+```java
+<!-- https://mvnrepository.com/artifact/com.github.naoghuman/lib-properties -->
+<dependency>
+    <groupId>com.github.naoghuman</groupId>
+    <artifactId>lib-properties</artifactId>
+    <version>0.5.0</version>
+</dependency>
+```
+
+How to `register` a resource bundle:
+```java
+public interface IApplicationConfiguration {
+    ...
+    public static final String DBW__RESOURCE_BUNDLE = "/de/pro/dbw/application/DreamBetterWorlds.properties"; // NOI18N
+}
+
+public class DreamBetterWorlds extends Application implements IApplicationConfiguration, IPreferencesConfiguration {
+    @Override
+    public void init() throws Exception {
+        PropertiesFacade.getDefault().register(DBW__RESOURCE_BUNDLE);
+        ...
+    }
+
+    ...
+}
+```
+
+How to `access` a value from the resource bundle:
+```java
+
+public class DreamBetterWorlds extends Application implements IApplicationConfiguration, IPreferencesConfiguration {
+    private static final String KEY__APPLICATION__TITLE = "application.title"; // NOI18N
+    ...
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        stage.setTitle(this.getProperty(KEY__APPLICATION__TITLE));
+        ...
+    }
+
+    private String getProperty(String propertyKey) {
+        return PropertiesFacade.getDefault().getProperty(DBW__RESOURCE_BUNDLE, propertyKey);
+    }
+    ...
+}
+```
+
+
+**Conclusion**  
+With the library `Lib-Properties` it's really easy to register an `properties` file 
+and access values from it.
+
+
+**Library details**  
+
+| GitHub | [Lib-Properties] |
+| --- | --- |
+| Since | Jul 18, 2014 |
+| Releases | [Lib-Properties Releases] _(132 releases)_ |
+| Last release | [Lib-Properties v0.5.0] _(Stable)_ |
+| Licence | [General Public License 3.0] |
+
 
 
 Extended Libraries<a name="ExLi" />
@@ -540,6 +612,7 @@ TODO
 [UML-diagram_Lib-Database-ObjectDB_v0.5.1_2017-07-30_15-34]:https://user-images.githubusercontent.com/8161815/28753983-b1feefba-753c-11e7-9233-3a4a16f9a1ad.png
 [UML-diagram_Lib-Logger_v0.5.1_2017-07-19_23-44]:https://user-images.githubusercontent.com/8161815/28390956-64b5d38a-6cdc-11e7-84b7-153ace99fc3e.png
 [UML-diagram_Lib-Preferences_v0.5.1_2017-08-02_22-04]:https://user-images.githubusercontent.com/8161815/28892584-c3b4afd0-77ce-11e7-8d52-65c4cc491c88.png
+[UML-diagram_Lib-Properties_v0.5.0_2017-07-17_21-17]:https://user-images.githubusercontent.com/8161815/28286098-5c85b802-6b37-11e7-8db0-47eed1156c43.png
 [video-netBeanside-afterburnerfx-plugin]:https://cloud.githubusercontent.com/assets/8161815/15169398/3b51c3de-173b-11e6-8a8f-39cc6b826260.png
 
 
@@ -575,6 +648,9 @@ TODO
 [Lib-Preferences]:https://github.com/Naoghuman/lib-preferences
 [Lib-Preferences Releases]:https://github.com/Naoghuman/lib-preferences/releases
 [Lib-Preferences v0.5.1]:https://github.com/Naoghuman/lib-preferences/releases/tag/v0.5.1
+[Lib-Properties]:https://github.com/Naoghuman/lib-properties
+[Lib-Properties Releases]:https://github.com/Naoghuman/lib-properties/releases
+[Lib-Properties v0.5.0]:https://github.com/Naoghuman/lib-properties/releases/tag/v0.5.0
 [Maven]:http://maven.apache.org/
 [NetBeans Platform 6.9 Developer's Guide]:https://www.packtpub.com/application-development/netbeans-platform-69-developers-guide
 [NetBeans IDE]:https://netbeans.org/
