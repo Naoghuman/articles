@@ -122,7 +122,7 @@ _Image:_ [UML] Lib-Logger
 ![UML-diagram_Lib-Logger_v0.5.1_2017-07-19_23-44.png][UML-diagram_Lib-Logger_v0.5.1_2017-07-19_23-44]
 
 
-**Example**  
+**Examples**  
 After including the library into your [Maven] project with
 ```java
 <!-- https://mvnrepository.com/artifact/com.github.naoghuman/lib-logger -->
@@ -174,7 +174,7 @@ _Image:_ [UML] Lib-Action
 ![UML-diagram_Lib-Action_v0.5.1_2017-07-22_23-42.png][UML-diagram_Lib-Action_v0.5.1_2017-07-22_23-42]
 
 
-**Example**  
+**Examples**  
 After including the library into your [Maven] project with
 ```java
 <!-- https://mvnrepository.com/artifact/com.github.naoghuman/lib-action -->
@@ -264,7 +264,7 @@ _Image:_ [UML] Lib-Database-ObjectDB
 ![UML-diagram_Lib-Database-ObjectDB_v0.5.1_2017-07-30_15-34.png][UML-diagram_Lib-Database-ObjectDB_v0.5.1_2017-07-30_15-34]
 
 
-**Example**  
+**Examples**  
 Including the library into a [Maven] project can done with:
 ```java
 <!-- https://mvnrepository.com/artifact/com.github.naoghuman/lib-database-objectdb -->
@@ -365,7 +365,7 @@ _Image:_ [UML] Preferences
 ![UML-diagram_Lib-Preferences_v0.5.1_2017-08-02_22-04.png][UML-diagram_Lib-Preferences_v0.5.1_2017-08-02_22-04]
 
 
-**Example**  
+**Examples**  
 Including the library into a [Maven] project can done with:
 ```java
 <!-- https://mvnrepository.com/artifact/com.github.naoghuman/lib-preferences -->
@@ -450,7 +450,7 @@ _Image:_ [UML] Lib-Properties
 ![UML-diagram_Lib-Properties_v0.5.0_2017-07-17_21-17.png][UML-diagram_Lib-Properties_v0.5.0_2017-07-17_21-17]
 
 
-**Example**  
+**Examples**  
 Including the library into a [Maven] project can be done with:
 ```java
 <!-- https://mvnrepository.com/artifact/com.github.naoghuman/lib-properties -->
