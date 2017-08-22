@@ -147,6 +147,42 @@ public static final void loadResourcesInCache() {
 2017-05-27 08:56:53,757  DEBUG Load resources in cache     [TemplateLoader]
 ```
 
+Here is an example output from the application [ABC-List] (`/log/application.log`):
+```java
+2017-08-22 05:32:54,469  DEBUG Load properties: /com/github/naoghuman/abclist/i18n/application.properties     [LibProperties]
+2017-08-22 05:32:54,476  DEBUG Load properties: /com/github/naoghuman/abclist/i18n/converter.properties     [LibProperties]
+2017-08-22 05:32:54,477  INFO  
+################################################################################
+Start ABC-List v0.4.0-SNAPSHOT.
+################################################################################     [LibLogger]
+2017-08-22 05:32:54,478  DEBUG   Init preferences file     [LibPreferences]
+2017-08-22 05:32:54,479  DEBUG Initialize ObjectDB with database: application     [LibDatabase]
+2017-08-22 05:32:54,660  INFO  Initialize ApplicationPresenter     [ApplicationPresenter]
+2017-08-22 05:32:54,771  INFO  Initialize [Navigation] buttons     [ApplicationPresenter]
+2017-08-22 05:32:54,804  INFO  Initialize [Navigation] [TabPane]     [ApplicationPresenter]
+2017-08-22 05:32:54,806  INFO  Initialize [Navigation] tab [Links]     [ApplicationPresenter]
+2017-08-22 05:32:54,812  INFO  Initialize [Navigation] tab [Terms]     [ApplicationPresenter]
+2017-08-22 05:32:54,814  INFO  Initialize [Navigation] tab [Topics]     [ApplicationPresenter]
+2017-08-22 05:32:54,820  INFO  Initialize [WelcomeView]     [ApplicationPresenter]
+2017-08-22 05:32:54,859  INFO  Initialize WelcomePresenter     [WelcomePresenter]
+2017-08-22 05:32:54,860  DEBUG Register actions in [ApplicationPresenter]     [ApplicationPresenter]
+2017-08-22 05:32:54,860  DEBUG Register on action open [Exercise]     [ApplicationPresenter]
+2017-08-22 05:32:54,861  DEBUG Register action: ACTION__APPLICATION__OPEN_EXERCISE     [ILibAction]
+2017-08-22 05:32:54,861  DEBUG Register on action open [Term]     [ApplicationPresenter]
+2017-08-22 05:32:54,862  DEBUG Register action: ACTION__APPLICATION__OPEN_TERM     [ILibAction]
+2017-08-22 05:32:54,862  DEBUG On action refresh [Navigation] tab [Topics]     [ApplicationPresenter]
+2017-08-22 05:32:54,864  DEBUG Add CrudService: DEFAULT     [LibDatabase]
+2017-08-22 05:32:55,162  DEBUG Find by named query: Topic.findAll     [CrudService]
+2017-08-22 05:32:55,324  DEBUG   + Need 00:00:00.456 for [10000] entities in [findAllTopics()]     [SqlProvider]
+2017-08-22 05:32:58,631  DEBUG Shutdown ObjectDB     [LibDatabase]
+2017-08-22 05:32:58,631  DEBUG Shutdown EntityManager: DEFAULT     [CrudService]
+2017-08-22 05:32:58,642  DEBUG Shutdown EntityManagerFactory     [LibDatabase]
+2017-08-22 05:32:58,691  INFO  
+################################################################################
+Stop ABC-List v0.4.0-SNAPSHOT.
+################################################################################     [LibLogger]
+```
+
 
 **Conclusion**  
 With the library `Lib-Logger` it's really easy to integrate the feature `logging` 
