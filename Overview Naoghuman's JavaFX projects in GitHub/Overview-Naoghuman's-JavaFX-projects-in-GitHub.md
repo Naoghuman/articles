@@ -25,38 +25,39 @@ _Image:_ Overview Naoghuman's JavaFX projects in GitHub
 Content
 ---
 
-* [Plugins](#Pl)
+* [Tier 0: Plugins](#Ti0Pl)
     - [NetBeansIDE-AfterburnerFX-Plugin _(Stable)_](#NeBeAfPl)
-* [Core Libraries](#CoLi)
+* [Tier 1: Core Libraries](#Ti1CoLi)
     - [Lib-Logger _(Stable)_](#LiLo)
     - [Lib-Action _(Stable)_](#LiAc)
     - [Lib-Database-ObjectDB _(Stable)_](#LiDaOb)
     - [Lib-Preferences _(Stable)_](#LiPre)
     - [Lib-Properties _(Stable)_](#LiPro)
-* [Extended Libraries](#ExLi)
+* [Tier 2: Extended Libraries](#Ti2ExLi)
     - [Lib-Tag _(Stable)_](#LiTa)
     - [Lib-Tile _(Stable)_](#LiTi)
     - [Lib-Emoticon _(Stable)_](#LiEm)
     - [Lib-Testdata _(Development)_](#LiTe)
     - [Lib-Sampler _(Prototpye)_](#LiSa)
     - [Lib-Map _(Prototype)_](#LiMa)
-* [Games](#Gam)
-    - [SokubanFX _(Development)_](#SoFx)
-    - [StepByStep _(Prototpye)_](#StBySt)
-* [Applications](#App)
-    - [ABC-List _(Development)_](#AbLi)
-    - [HabitFX _(Development)_](#HaFx)
-    - [Competency Matrix _(Prototpye)_](#CoMa)
-    - [Concentration _(Planed)_](#Con)
-    - [TypeWriter _(Planed)_](#TyWr)
+* [Tier 3: Applications / Games](#Ti3ApGa)
+    - [Application ABC-List _(Development)_](#ApAbLi)
+    - [Application HabitFX _(Development)_](#ApHaFx)
+    - [Application Competency Matrix _(Prototpye)_](#ApCoMa)
+    - [Application Concentration _(Planed)_](#ApCon)
+    - [Application TypeWriter _(Planed)_](#ApTyWr)
+    - [Game SokubanFX _(Development)_](#GaSoFx)
+    - [Game StepByStep _(Prototpye)_](#GaStBySt)
 * [About the autor](#Autor)
     - [Contact](#Contact)
 * [Other articles from me](#OtherArticles)
 
 
 
-Plugins<a name="Pl" />
+Tier 0: Plugins<a name="Ti0Pl" />
 ---
+
+TODO
 
 ### NetBeansIDE-AfterburnerFX-Plugin _(Stable)_<a name="NeBeAfPl" />
 
@@ -107,7 +108,7 @@ the basic files in context from a [JavaFX] and [Maven] and [afterburner.fx] proj
 
 
 
-Core Libraries<a name="CoLi" />
+Tier 1: Core Libraries<a name="Ti1CoLi" />
 ---
 
 TODO
@@ -552,7 +553,7 @@ and access values from it.
 
 
 
-Extended Libraries<a name="ExLi" />
+Tier 2: Extended Libraries<a name="Ti2ExLi" />
 ---
 
 ### Lib-Tag _(Stable)_<a name="LiTa" />
@@ -568,28 +569,27 @@ Extended Libraries<a name="ExLi" />
 ### Lib-Map_(Prototype)_<a name="LiMa" />
 
 
-
-Games<a name="Gam" />
+Tier 3: Applications / Games<a name="Ti3ApGa" />
 ---
 
-### SokubanFX _(Development)_<a name="SoFx" />
+TODO
 
-### StepByStep _(Prototpye)_<a name="StBySt" />
+### Application ABC-List _(Development)_<a name="ApAbLi" />
+
+### Application HabitFX _(Development)_<a name="ApHaFx" />
+
+### Application Competency Matrix _(Prototpye)_<a name="ApCoMa" />
+
+### Application Concentration _(Planed)_<a name="ApCon" />
+
+### Application TypeWriter _(Planed)_<a name="ApTyWr" />
+
+### Game SokubanFX _(Development)_<a name="GaSoFx" />
+
+### Game StepByStep _(Prototpye)_<a name="GaStBySt" />
 
 
 
-Applications<a name="App" />
----
-
-### ABC-List _(Development)_<a name="AbLi" />
-
-### HabitFX _(Development)_<a name="HaFx" />
-
-### Competency Matrix _(Prototpye)_<a name="CoMa" />
-
-### Concentration _(Planed)_<a name="Con" />
-
-### TypeWriter _(Planed)_<a name="TyWr" />
 
 
 
