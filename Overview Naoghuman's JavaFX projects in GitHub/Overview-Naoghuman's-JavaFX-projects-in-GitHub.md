@@ -23,9 +23,9 @@ _Image:_ Overview Naoghuman's JavaFX projects in GitHub
 ![overview-naoghumans-javafx-projects-in-github-v1.png][overview-naoghumans-javafx-projects-in-github-v1]
 
 > __Hint__  
-> Every entry in every `Tier` follows the same structure -> description, examples, 
-> conclusion and then the details. Exception is the `NetBeansIDE-AfterburnerFX-Plugin` 
-> where I added a subsection `Press`.
+> Every entry in every `Tier` have following subsections: Description, Examples, 
+> Conclusion and then the Details.  
+> Exception is the `NetBeansIDE-AfterburnerFX-Plugin` where I added a subsection `Press`.
 
 
 
@@ -68,7 +68,7 @@ TODO
 
 ### NetBeansIDE-AfterburnerFX-Plugin _(Stable)_<a name="NeBeAfPl" />
 
-> __Plugin description__  
+> __Description__  
 > The `NetBeansIDE-AfterburnerFX-Plugin` is a [NetBeans IDE] plugin which supports
 > the file generation in **convention** with the library [afterburner.fx] in a [JavaFX] 
 > project.
@@ -82,7 +82,7 @@ _Image:_ Shows the view `3. Primary Files` from the new wizard
 ![plugin-3-primary-files.png][plugin-3-primary-files]
 
 
-**Example**  
+**Examples**  
 The following picture shows all possible files which can be generate in one slide 
 with the new wizard after installing the plugin in your [NetBeans IDE].
 
@@ -104,7 +104,7 @@ With the plugin [NetBeansIDE-AfterburnerFX-Plugin] I'm able to quickly generate
 the basic files in context from a [JavaFX] and [Maven] and [afterburner.fx] project.
 
 
-**Plugin details**  
+**Details**  
 
 | GitHub | [NetBeansIDE-AfterburnerFX-Plugin] |
 | --- | --- |
@@ -122,7 +122,7 @@ TODO
 
 ### Lib-Logger _(Stable)_<a name="LiLo" />
 
-> __Library description__  
+> __Description__  
 > `Lib-Logger` is a library for `easy` logging with the [Apache Log4j 2] in a 
 > [JavaFX] &amp; [Maven] desktop application.
 
@@ -197,7 +197,7 @@ With the library `Lib-Logger` it's really easy to integrate the feature `logging
 into your `library`, `game` and / or `application`.  
 
 
-**Library details**  
+**Details**  
 
 | GitHub | [Lib-Logger] |
 | --- | --- |
@@ -209,7 +209,7 @@ into your `library`, `game` and / or `application`.
 
 ### Lib-Action _(Stable)_<a name="LiAc" />
 
-> __Library description__  
+> __Description__  
 > `Lib-Action` is a library for `easy` storing and accessing actions 
 > ([EventHandler]&lt;[ActionEvent]&gt;) in a [JavaFX] &amp; [Maven] desktop 
 > application.
@@ -288,7 +288,7 @@ With the library `Lib-Action` it's really easy to register actions
 `application`.
 
 
-**Library details**  
+**Details**  
 
 | GitHub | [Lib-Action] |
 | --- | --- |
@@ -300,7 +300,7 @@ With the library `Lib-Action` it's really easy to register actions
 
 ### Lib-Database-ObjectDB _(Stable)_<a name="LiDaOb" />
 
-> __Library description__  
+> __Description__  
 > `Lib-Database-ObjectDB` is a library for easy accessing an [ObjectDB] database 
 > in a [JavaFX] &amp; [Maven] desktop application.
 
@@ -389,7 +389,7 @@ With the library `Lib-Database-ObjectDB` it's really easy to register an databas
 and perform `CRUD` operations with an entity.
 
 
-**Library details**  
+**Details**  
 
 | GitHub | [Lib-Database-ObjectDB] |
 | --- | --- |
@@ -401,7 +401,7 @@ and perform `CRUD` operations with an entity.
 
 ### Lib-Preferences _(Stable)_<a name="LiPre" />
 
-> __Library description__  
+> __Description__  
 > `Lib-Preferences` is a library for `easy` storing simple data to a 
 > Preferences.[properties] file in a [JavaFX] &amp; [Maven] desktop application.
 
@@ -474,7 +474,7 @@ With the library `Preferences` it's really easy to write and read `simple data` 
 `Preferences.properties` file.
 
 
-**Library details**  
+**Details**  
 
 | GitHub | [Lib-Preferences] |
 | --- | --- |
@@ -486,7 +486,7 @@ With the library `Preferences` it's really easy to write and read `simple data` 
 
 ### Lib-Properties _(Stable)_<a name="LiPro" />
 
-> __Library description__  
+> __Description__  
 > `Lib-Properties` is a library for `easy` loading [properties] files in a [JavaFX] 
 > &amp; [Maven] desktop application.
 
@@ -549,7 +549,7 @@ With the library `Lib-Properties` it's really easy to register an `properties` f
 and access values from it.
 
 
-**Library details**  
+**Details**  
 
 | GitHub | [Lib-Properties] |
 | --- | --- |
@@ -565,13 +565,58 @@ Tier 2: Extended Libraries<a name="Ti2ExLi" />
 
 ### Lib-Tag _(Stable)_<a name="LiTa" />
 
+> __Description__  
+
+**Examples**  
+
+**Conclusion**  
+
+**Details**  
+
+
 ### Lib-Tile _(Stable)_<a name="LiTi" />
+
+> __Description__  
+
+**Examples**  
+
+**Conclusion**  
+
+**Details**  
+
 
 ### Lib-Emoticon _(Stable)_<a name="LiEm" />
 
+> __Description__  
+
+**Examples**  
+
+**Conclusion**  
+
+**Details**  
+
+
 ### Lib-Testdata _(Development)_<a name="LiTe" />
 
+> __Description__  
+
+**Examples**  
+
+**Conclusion**  
+
+**Details**  
+
+
 ### Lib-Sampler_(Prototpye)_<a name="LiSa" />
+
+> __Description__  
+
+**Examples**  
+
+**Conclusion**  
+
+**Details**  
+
 
 ### Lib-Map_(Prototype)_<a name="LiMa" />
 
@@ -583,20 +628,79 @@ TODO
 
 ### Application ABC-List _(Development)_<a name="ApAbLi" />
 
+> __Description__  
+
+**Examples**  
+
+**Conclusion**  
+
+**Details**  
+
+
 ### Application HabitFX _(Development)_<a name="ApHaFx" />
+
+> __Description__  
+
+**Examples**  
+
+**Conclusion**  
+
+**Details**  
+
 
 ### Application Competency Matrix _(Prototpye)_<a name="ApCoMa" />
 
+> __Description__  
+
+**Examples**  
+
+**Conclusion**  
+
+**Details**  
+
+
 ### Application Concentration _(Planed)_<a name="ApCon" />
+
+> __Description__  
+
+**Examples**  
+
+**Conclusion**  
+
+**Details**  
+
 
 ### Application TypeWriter _(Planed)_<a name="ApTyWr" />
 
+> __Description__  
+
+**Examples**  
+
+**Conclusion**  
+
+**Details**  
+
+
 ### Game SokubanFX _(Development)_<a name="GaSoFx" />
+
+> __Description__  
+
+**Examples**  
+
+**Conclusion**  
+
+**Details**  
+
 
 ### Game StepByStep _(Prototpye)_<a name="GaStBySt" />
 
+> __Description__  
 
+**Examples**  
 
+**Conclusion**  
+
+**Details**  
 
 
 
