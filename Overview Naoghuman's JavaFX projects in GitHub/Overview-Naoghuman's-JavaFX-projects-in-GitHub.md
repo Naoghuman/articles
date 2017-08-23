@@ -86,6 +86,8 @@ _Image:_ Shows the view `3. Primary Files` from the new wizard
 The following picture shows all possible files which can be generate in one slide 
 with the new wizard after installing the plugin in your [NetBeans IDE].
 
+TODO add more info -> installation over netbeans, image show wizard
+
 _Image:_ Shows an example from `generated` files  
 ![plugin-6-generated-files.png][plugin-6-generated-files]
 
@@ -563,6 +565,8 @@ and access values from it.
 Tier 2: Extended Libraries<a name="Ti2ExLi" />
 ---
 
+TODO
+
 ### Lib-Tag _(Stable)_<a name="LiTa" />
 
 > __Description__  
@@ -577,12 +581,178 @@ Tier 2: Extended Libraries<a name="Ti2ExLi" />
 ### Lib-Tile _(Stable)_<a name="LiTi" />
 
 > __Description__  
+> `Lib-Tile` is a multi [Maven] project written in [JavaFX] and [NetBeans IDE] 
+> and provides the functionalities to use and handle easily [Tile]s in your [JavaFX] 
+> application.  
+ 
+> A [Tile] is per definition a little transparent [Image] which overlay a 
+> background-color or -image with the help of repetitions from the image in a layer.
+
 
 **Examples**  
 
+_Image:_ Crimson Night &#040;Dark / Landscape&#041; with different tile images
+![different-tile-images_v0.3.0.png][different-tile-images_v0.3.0]
+
+> __Hint__  
+> Normally only one [Tile] can shown simultaneously. For demonstration purpose 
+> I have merge different [Tile]s in one picture.
+
+Like in the subsection `Description` mentioned is `Lib-Tile` multi [Maven] project. 
+Currently following submodules are available:  
+
+_[Lib-Tile-Core]_  
+The library `Lib-Tile-Core` provides the API to load a [Tile] (which is per definition 
+a little transparent Image) as a [Background] or an [Image] with a concrete implementation 
+from a [TileLoader].  
+
+The main point to access the functionalities from this `API` is the class 
+[TileProvider]. For example with the method `TileProvider#loadAsBackground(TileLoader, Tile)` 
+the developer can load a [Tile] as a [Background].
+
+Class [TileProvider]:
+```java
+/**
+ * The singleton {@code TileProvider} allowed the developer access to all relevant 
+ * methods in context from the {@code API} from the library {@code Lib-Tile-Core}.
+ * <p>
+ * For example with the methods {@code getDefaultTile(XY)} a concrete instance from 
+ * the {@code Inteface} {@link com.github.naoghuman.lib.tile.core.Tile} can be created.
+ * <br>
+ * With the method {@code getDefaultValidator()} the developer have access to a 
+ * default implementation from the {@code Inteface} 
+ * {@link com.github.naoghuman.lib.tile.core.TileValidator}.
+ *
+ * @author Naoghuman
+ * @since  0.2.0
+ * @see    com.github.naoghuman.lib.tile.core.Tile
+ * @see    com.github.naoghuman.lib.tile.core.TileValidator
+ */
+public final class TileProvider
+```
+
+_[Lib-Tile-TransparentTextures]_  
+With the library `Lib-Tile-TransparentTextures` the developer have access to the 
+tileset `Transparent Textures` from the internet page https://www.transparenttextures.com/ 
+through the enum `TransparentTexturesTile`. Momentary that are `396` [Tile]s.
+
+The tile images from this tileset are outsourced in a own library 
+[Lib-Tile-TransparentTextures-Images] to reduce the size from this library. One 
+more advance is that you can use an `own` [TileLoader] in combination with the 
+library `Lib-Tile-TransparentTextures`. So you don't need to include the hole 
+library (with all 396 images) [Lib-Tile-TransparentTextures-Images] into your 
+project which size is momenatry `13MB`.
+
+Class [TransparentTexturesTile]:
+```java
+/**
+ * The class {@code TransparentTexturesTileSet} is a collection from 
+ * {@link com.github.naoghuman.lib.tile.core.Tile}s which representated the 
+ * {@code Tileset} from the internet page <a href="https://www.transparenttextures.com/">https://www.transparenttextures.com/</a>.
+ * <p>
+ * The individual {@link com.github.naoghuman.lib.tile.core.Tile} can be loaded 
+ * with the class {@link com.github.naoghuman.lib.tile.core.TileProvider}.
+ * <br>
+ * See there the methods
+ * <ul>
+ * <li>{@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsBackground(com.github.naoghuman.lib.tile.core.TileLoader, com.github.naoghuman.lib.tile.core.Tile)}</li>
+ * <li>{@link com.github.naoghuman.lib.tile.core.TileProvider#loadAsImage(com.github.naoghuman.lib.tile.core.TileLoader, com.github.naoghuman.lib.tile.core.Tile)}</li>
+ * </ul>
+ * 
+ * @author Naoghuman
+ * @since 0.2.0
+ * @see com.github.naoghuman.lib.tile.core.Tile
+ * @see com.github.naoghuman.lib.tile.core.TileLoader
+ * @see com.github.naoghuman.lib.tile.core.TileProvider
+ */
+public final class TransparentTexturesTileSet extends TileSet {
+    
+    private static final String SCOPE = TransparentTexturesTileLoader.getDefault().getScope();
+
+    /**
+     * The <code>Java</code> representation from the tile: 3Px Tile
+     */
+    public static final Tile TT_3PX_TILE = TileProvider.getDefault().getDefaultTile(SCOPE, "tt-3px-tile.png", "3Px Tile", 100, 100, "Gre3g", "http://gre3g.livejournal.com/"); // NOI18N
+    
+    /**
+     * The <code>Java</code> representation from the tile: 45 Degree Fabric (Dark)
+     */
+    public static final Tile TT_45_DEGREE_FABRIC_DARK = TileProvider.getDefault().getDefaultTile(SCOPE, "tt-45-degree-fabric-dark.png", "45 Degree Fabric (Dark)", 315, 315, "Atle Mo", "http://atle.co/"); // NOI18N
+    
+    ...
+}
+```
+
+_[Lib-Tile-TransparentTextures-Images]_  
+The library `Lib-Tile-TransparentTextures-Images` contains all 396 images from 
+the tileset `Transparent Textures`.
+* All images from this library are wrapped in [Tile]s in the class [TransparentTexturesTileSet] 
+  which is is located in the library [Lib-Tile-TransparentTextures].
+* The images can be loaded over the class [TileProvider] from the library [Lib-Tile-Core] 
+  as an [Background] or [Image].
+* With the separation from the implementation ([Tile]s) in the library [Lib-Tile-TransparentTextures] 
+  and the images in [Lib-Tile-TransparentTextures-Images] the developer can create 
+  `reduced` and / or `mixed` [TileSet]s. See the examples in the library [Lib-Tile-Customized-Examples]
+  for more information.
+
+Class [TransparentTexturesTileLoader]:
+```java
+/**
+ * The class {@code TransparentTexturesTileLoader} allowed to load a
+ * {@link com.github.naoghuman.lib.tile.core.Tile} with the help from the class
+ * {@link com.github.naoghuman.lib.tile.core.TileProvider}.
+ * <p>
+ * A {@code TileLoader} supports a {@code Tile} if gollowing conditions are true:
+ * <ul>
+ * <li>If the {@code scope} from both ({@code Tile} and {@code TileLoader}) are equals.</li>
+ * <li>If this {@code TileLoader} supports the {@code prefix} from the {@code Tile}.</li>
+ * </ul>
+ * 
+ * @author Naoghuman
+ * @since 0.2.0
+ * @see com.github.naoghuman.lib.tile.core.Tile
+ * @see com.github.naoghuman.lib.tile.core.TileLoader
+ * @see com.github.naoghuman.lib.tile.core.TileProvider
+ */
+public final class TransparentTexturesTileLoader extends TileLoader
+```
+
+_[Lib-Tile-Customized-Examples]_  
+The library `Lib-Tile-Customized-Examples` provides different examples about 
+`CustomizedTileSets`. There will be following demonstrations:
+* An example which shows how to implemente a `reduced` [TileSet]. A reduced TileSet 
+  contains different predefined `Tiles` from an existing `TileSet` which is in this
+  example `TransparentTextures`.
+* The next example _(will be implemented in the future)_ shows an `mixed` TileSet. 
+  A mixed TileSet contains predefined and own Tiles.
+* The last example _(will be implemented in the future)_ shows an `own` TileSet. 
+  Like `own` means this example contains only own Tiles.
+
+Class [CustomizedExampleReducedTileSet]:
+```java
+/**
+ * TODO
+ * 
+ * @author Naoghuman
+ * @since  0.2.0
+ */
+public final class CustomizedExampleReducedTileSet extends TileSet
+```
+
+
 **Conclusion**  
+The libraries around `Lib-Tile` it's for the developer easily possible to load 
+and managed `Tiles` in their applications, games.
+
 
 **Details**  
+
+| GitHub | [Lib-Tile] |
+| --- | --- |
+| Since | Aug 02, 2016 |
+| Releases | [Lib-Tile Releases] _(2 releases)_ |
+| Last release | [Lib-Tile v0.2.0] _(Stable)_ |
+| Licence | [General Public License 3.0] |
 
 
 ### Lib-Emoticon _(Stable)_<a name="LiEm" />
@@ -753,6 +923,7 @@ TODO
 
 
 [//]: # (Images)
+[different-tile-images_v0.3.0]:https://user-images.githubusercontent.com/8161815/29042867-12cc8c62-7bb9-11e7-8780-c6c3e68a2374.png
 [plugin-3-primary-files]:https://cloud.githubusercontent.com/assets/8161815/23524833/a4122dca-ff8c-11e6-8200-77395646fbb0.png
 [plugin-6-generated-files]:https://cloud.githubusercontent.com/assets/8161815/23524879/c901106a-ff8c-11e6-97b1-31ba03b7b679.png
 [UML-diagram_Lib-Action_v0.5.1_2017-07-22_23-42]:https://user-images.githubusercontent.com/8161815/28494737-a28b46f6-6f37-11e7-8c66-01083545c092.png
@@ -771,6 +942,8 @@ TODO
 [Afterburner.fx NetBeans Plugin Release]:http://www.adam-bien.com/roller/abien/entry/afterburner_fx_netbeans_plugin_release
 [afterburner.fx]:https://github.com/AdamBien/afterburner.fx
 [Apache Log4j 2]:https://logging.apache.org/log4j/2.0/index.html
+[Background]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/Background.html
+[CustomizedExampleReducedTileSet]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Customized-Examples/src/main/java/com/github/naoghuman/lib/tile/customized/examples/reducedtileset/CustomizedExampleReducedTileSet.java
 [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive]:https://www.youtube.com/watch?v=WsV7kSSSOGs
 [EventHandler]:http://docs.oracle.com/javase/8/javafx/api/javafx/event/EventHandler.html
 [Geertjan Wielenga]:https://blogs.oracle.com/geertjan/entry/welcome_to_me
@@ -778,6 +951,7 @@ TODO
 [GitHub]:https://github.com/
 [H+D International Group]:https://www.hud.de/en/
 [Help for Multilingual NetBeans Platform Applications]:https://dzone.com/articles/multilingual-netbeans-platform-applications
+[Image]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/image/Image.html
 [Issue]:https://github.com/Naoghuman/articles/issues
 [Java]:https://en.wikipedia.org/wiki/Java_%28programming_language%29
 [JavaFX]:http://docs.oracle.com/javase/8/javase-clienttechnologies.htm
@@ -798,6 +972,13 @@ TODO
 [Lib-Properties]:https://github.com/Naoghuman/lib-properties
 [Lib-Properties Releases]:https://github.com/Naoghuman/lib-properties/releases
 [Lib-Properties v0.5.0]:https://github.com/Naoghuman/lib-properties/releases/tag/v0.5.0
+[Lib-Tile]:https://github.com/Naoghuman/lib-tile
+[Lib-Tile Releases]:https://github.com/Naoghuman/lib-tile/releases
+[Lib-Tile v0.2.0]:https://github.com/Naoghuman/lib-tile/releases/tag/v0.2.0
+[Lib-Tile-Core]:https://github.com/Naoghuman/lib-tile/tree/master/Lib-Tile-Core
+[Lib-Tile-Customized-Examples]:https://github.com/Naoghuman/lib-tile/tree/master/Lib-Tile-Customized-Examples
+[Lib-Tile-TransparentTextures]:https://github.com/Naoghuman/lib-tile/tree/master/Lib-Tile-TransparentTextures
+[Lib-Tile-TransparentTextures-Images]:https://github.com/Naoghuman/lib-tile/tree/master/Lib-Tile-TransparentTextures-Images
 [Maven]:http://maven.apache.org/
 [NetBeans Platform 6.9 Developer's Guide]:https://www.packtpub.com/application-development/netbeans-platform-69-developers-guide
 [NetBeans IDE]:https://netbeans.org/
@@ -806,4 +987,11 @@ TODO
 [NetBeansIDE-AfterburnerFX-Plugin Releases]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin/releases
 [ObjectDB]:http://www.objectdb.com/
 [properties]:http://en.wikipedia.org/wiki/.properties
+[Tile]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/Tile.java
+[TileLoader]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/TileLoader.java
+[TileProvider]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/TileProvider.java
+[TileSet]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/TileSet.java
+[TransparentTexturesTile]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-TransparentTextures/src/main/java/com/github/naoghuman/lib/tile/transparenttextures/TransparentTexturesTile.java
+[TransparentTexturesTileLoader]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-TransparentTextures/src/main/java/com/github/naoghuman/lib/tile/transparenttextures/images/TransparentTexturesTileLoader.java
+[TransparentTexturesTileSet]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-TransparentTextures/src/main/java/com/github/naoghuman/lib/tile/transparenttextures/TransparentTexturesTileSet.java
 [UML]:https://en.wikipedia.org/wiki/Unified_Modeling_Language
