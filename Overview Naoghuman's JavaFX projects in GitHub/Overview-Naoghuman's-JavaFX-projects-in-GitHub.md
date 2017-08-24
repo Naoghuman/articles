@@ -8,9 +8,10 @@ Intention
 
 In this article I want to give an `overiew` about my [JavaFx] `plugins`, `libraries`, 
 `games` and `applications` and how they work together.
-* TODO The `Tier 0: Extras` section contains a [NetBeansIDE-AfterburnerFX-Plugin] 
+* The `Tier 0: Extras` section contains on the one side the [NetBeansIDE-AfterburnerFX-Plugin] 
   which supports the [JavaFX] development in a [Maven] context in conjunction 
-  with the library [afterburner.fx] from [Adam Bien].
+  with the library [afterburner.fx] from [Adam Bien]. On the other side also the 
+  project `Incubator` where I hold on my ideas for new projects.
 * The `Tier 1: Core Libraries` section contains all core libraries from me 
   which I used in all my projects depends on the concrete case.
 * The `Tier 2: Extended Libraries` section contains libraries which depends 
@@ -34,7 +35,7 @@ Content
 
 * [Tier 0: Extras](#Ti0Pl)
     - [NetBeansIDE-AfterburnerFX-Plugin _(Stable)_](#NeBeAfPl)
-    - [Incubator] _(Prototype/Planed)_] (#Inc)
+    - [Incubator _(Prototype/Planed)_] (#Incu)
 * [Tier 1: Core Libraries](#Ti1CoLi)
     - [Lib-Logger _(Stable)_](#LiLo)
     - [Lib-Action _(Stable)_](#LiAc)
@@ -117,15 +118,27 @@ the basic files in context from a [JavaFX] and [Maven] and [afterburner.fx] proj
 | Licence | [General Public License 3.0] |
 
 
-### Incubator _(Prototype/Planed)_<a name="Inc" />
+### Incubator _(Prototype/Planed)_<a name="Incu" />
 
 > __Description__  
+> The project `Incubator` contains my dreams, ideas and projects which are on the 
+> way to become reality or not :smile: .
+
+_Image:_ Overview Incubator  
+![incubator.png][incubator]
+
 
 **Examples**  
+* `Lib-Tag`, `Lib-Testdata`, `StepByStep`...
+
 
 **Conclusion**  
+The project `Incubator` is a good place for all ideas. Sometimes I try something 
+and a day, a month or a year later I start a real project like `Lib-Tag` for example.
+
 
 **Details**  
+No releases are available in `Incubator`.
 
 
 Tier 1: Core Libraries<a name="Ti1CoLi" />
@@ -1021,6 +1034,7 @@ TODO
 
 [//]: # (Images)
 [different-tile-images_v0.3.0]:https://user-images.githubusercontent.com/8161815/29042867-12cc8c62-7bb9-11e7-8780-c6c3e68a2374.png
+[incubator]:https://user-images.githubusercontent.com/8161815/29682630-f7ecc2bc-890b-11e7-99ba-4f7d31711513.png
 [overview_lib-tag-core_2017-05-25_19-23]:https://cloud.githubusercontent.com/assets/8161815/26462105/c35caf22-417f-11e7-9831-fd6fadda85cb.png
 [plugin-3-primary-files]:https://cloud.githubusercontent.com/assets/8161815/23524833/a4122dca-ff8c-11e6-8200-77395646fbb0.png
 [plugin-6-generated-files]:https://cloud.githubusercontent.com/assets/8161815/23524879/c901106a-ff8c-11e6-97b1-31ba03b7b679.png
