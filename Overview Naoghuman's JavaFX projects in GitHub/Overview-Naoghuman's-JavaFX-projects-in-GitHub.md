@@ -8,7 +8,7 @@ Intention
 
 In this article I want to give an `overiew` about my [JavaFx] `plugins`, `libraries`, 
 `games` and `applications` and how they work together.
-* The `Tier 0: Plugins` section contains a [NetBeansIDE-AfterburnerFX-Plugin] 
+* TODO The `Tier 0: Extras` section contains a [NetBeansIDE-AfterburnerFX-Plugin] 
   which supports the [JavaFX] development in a [Maven] context in conjunction 
   with the library [afterburner.fx] from [Adam Bien].
 * The `Tier 1: Core Libraries` section contains all core libraries from me 
@@ -32,7 +32,7 @@ _Image:_ Overview Naoghuman's JavaFX projects in GitHub
 Content
 ---
 
-* [Tier 0: Plugins](#Ti0Pl)
+* [Tier 0: Extras](#Ti0Pl)
     - [NetBeansIDE-AfterburnerFX-Plugin _(Stable)_](#NeBeAfPl)
 * [Tier 1: Core Libraries](#Ti1CoLi)
     - [Lib-Logger _(Stable)_](#LiLo)
@@ -61,7 +61,7 @@ Content
 
 
 
-Tier 0: Plugins<a name="Ti0Pl" />
+Tier 0: Extras<a name="Ti0Pl" />
 ---
 
 TODO
