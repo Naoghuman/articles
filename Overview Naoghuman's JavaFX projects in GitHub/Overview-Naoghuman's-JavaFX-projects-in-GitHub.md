@@ -41,9 +41,9 @@ Content
     - [Lib-Preferences _(Stable)_](#LiPre)
     - [Lib-Properties _(Stable)_](#LiPro)
 * [Tier 2: Extended Libraries](#Ti2ExLi)
-    - [Lib-Tag _(Stable)_](#LiTa)
-    - [Lib-Tile _(Stable)_](#LiTi)
-    - [Lib-Emoticon _(Stable)_](#LiEm)
+    - [Lib-Tag _(Development)_](#LiTa)
+    - [Lib-Tile _(Development)_](#LiTi)
+    - [Lib-Emoticon _(Development)_](#LiEm)
     - [Lib-Testdata _(Development)_](#LiTe)
     - [Lib-Sampler _(Prototpye)_](#LiSa)
     - [Lib-Map _(Prototype)_](#LiMa)
@@ -567,7 +567,7 @@ Tier 2: Extended Libraries<a name="Ti2ExLi" />
 
 TODO
 
-### Lib-Tag _(Stable)_<a name="LiTa" />
+### Lib-Tag _(Development)_<a name="LiTa" />
 
 > __Description__  
 
@@ -578,7 +578,7 @@ TODO
 **Details**  
 
 
-### Lib-Tile _(Stable)_<a name="LiTi" />
+### Lib-Tile _(Development)_<a name="LiTi" />
 
 > __Description__  
 > `Lib-Tile` is a multi [Maven] project written in [JavaFX] and [NetBeans IDE] 
@@ -751,11 +751,11 @@ and managed `Tiles` in their applications, games.
 | --- | --- |
 | Since | Aug 02, 2016 |
 | Releases | [Lib-Tile Releases] _(2 releases)_ |
-| Last release | [Lib-Tile v0.2.0] _(Stable)_ |
+| Last release | [Lib-Tile v0.2.0] _(Development)_ |
 | Licence | [General Public License 3.0] |
 
 
-### Lib-Emoticon _(Stable)_<a name="LiEm" />
+### Lib-Emoticon _(Development)_<a name="LiEm" />
 
 > __Description__  
 
