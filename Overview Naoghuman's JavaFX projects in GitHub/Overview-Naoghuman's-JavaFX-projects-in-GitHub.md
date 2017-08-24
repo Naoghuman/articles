@@ -581,12 +581,99 @@ TODO
 ### Lib-Tag _(Development)_<a name="LiTa" />
 
 > __Description__  
+> `Lib-Tag` is a library to use and handle easily [Tag]s in your a [JavaFX] &amp; 
+> [Maven] application.  
+> A `Tag` is basically a simple [String] which can be used for example in a [Button], 
+> [Label] or another [JavaFX] components. Suchlike tagged topics can be easily searched 
+> or analysed for a `Tag`.
 
+  
 **Examples**  
 
+Written in [JavaFX] and [NetBeans IDE] the project contains several sub-libraries 
+for specific tasks. Momentary with `0.2.0` following sub-libraries are available:
+* The sub-library `Lib-Tag-Core` contains the core functionalities from the project.
+* The sub-library `Lib-Tag-Components` allowed to show [Tag]s in different [JavaFX] 
+  gui components.
+
+_[Lib-Tag-Core]_  
+The sub-library `Lib-Tag-Core` contains the core functionalities to perform the 
+CRUD (`Create`, `Read`, `Update` and `Delete`) operations for a [Tag].
+
+_Image:_ [UML] Lib-Tag-Core  
+![overview_lib-tag-core_2017-05-25_19-23.png][overview_lib-tag-core_2017-05-25_19-23]
+
+Example how to use the fluent builder [TagBuilder] to create a [Tag]:
+```java
+/**
+ * With the fluent builder {@code TagBuilder} its possible to create a 
+ * {@code Tag}.
+ * <ul>
+ * <li>The first two attributes {@code id} and {@code title} are mandory.</li>
+ * <li>The other attributes are {@code optional}.</li>
+ * <li>All defined values will be validate against the {@code Interface}
+ * {@code Validator}.</li>
+ * </ul>
+ */
+final Tag tag = TagBuilder.create()
+        .id(Tag.DEFAULT_ID)               // mandory (NOT NULL)
+        .title("title")                   // mandory (NOT NULL && NOT EMPTY)
+        .generationTime(Long.MIN_VALUE)   // optional
+        .description("description")       // optional
+        .style("style")                   // optional
+        .build();
+```
+
+_[Lib-Tag-Components]_  
+The sub-library `Lib-Tag-Components` contains different possibilities to show a 
+[Tag] in different [JavaFX] gui components.
+* Currently a `Tag` can be represented as a [Button] or a [Label].
+* A list of `Tag`s can be shown in the container [FlowPane].
+
+_Image:_ [UML] Lib-Tag-Components  
+![UML-diagram_Lib-Tag-Components_v0.2.0_2017-07-22_18-07.png][UML-diagram_Lib-Tag-Components_v0.2.0_2017-07-22_18-07]
+
+Class [TagComponentsFacade]:
+```java
+/**
+ * Over the {@code Class} {@link com.github.naoghuman.lib.tag.components.core.TagComponentsFacade} 
+ * the developer have access to several possibilities to show a {@link  com.github.naoghuman.lib.tag.core.Tag} 
+ * in different {@code JavaFX} gui components.<br>
+ * Momentary following possibilities exists:
+ * <p>
+ * Show a {@code Tag} as a
+ * <ul>
+ * <li>JavaFX {@link javafx.scene.control.Button}.</li>
+ * <li>JavaFX {@link javafx.scene.control.Label}.</li>
+ * </ul>
+ * Show a {@link java.util.List} of {@code Tag}s in a
+ * <ul>
+ * <li>JavaFX {@link javafx.scene.layout.FlowPane}.</li>
+ * </ul>
+ * 
+ * @author Naoghuman
+ * @since  0.2.0
+ * @see    com.github.naoghuman.lib.tag.components.core.TagButton
+ * @see    com.github.naoghuman.lib.tag.components.core.TagFlowPane
+ * @see    com.github.naoghuman.lib.tag.components.core.TagLabel
+ */
+public final class TagComponentsFacade implements TagButton, TagFlowPane, TagLabel
+```
+
+
 **Conclusion**  
+With the libraries from `Lib-Tag` it's easy for the developer to integrate the 
+feature [Tag] in their `applications`.
+
 
 **Details**  
+
+| GitHub | [Lib-Tag] |
+| --- | --- |
+| Since | Mar 09, 2017 |
+| Releases | [Lib-Tag Releases] _(2 releases)_ |
+| Last release | [Lib-Tag v0.2.0] _(Development)_ |
+| Licence | [General Public License 3.0] | 
 
 
 ### Lib-Tile _(Development)_<a name="LiTi" />
@@ -595,7 +682,6 @@ TODO
 > `Lib-Tile` is a multi [Maven] project written in [JavaFX] and [NetBeans IDE] 
 > and provides the functionalities to use and handle easily [Tile]s in your [JavaFX] 
 > application.  
- 
 > A [Tile] is per definition a little transparent [Image] which overlay a 
 > background-color or -image with the help of repetitions from the image in a layer.
 
@@ -935,6 +1021,7 @@ TODO
 
 [//]: # (Images)
 [different-tile-images_v0.3.0]:https://user-images.githubusercontent.com/8161815/29042867-12cc8c62-7bb9-11e7-8780-c6c3e68a2374.png
+[overview_lib-tag-core_2017-05-25_19-23]:https://cloud.githubusercontent.com/assets/8161815/26462105/c35caf22-417f-11e7-9831-fd6fadda85cb.png
 [plugin-3-primary-files]:https://cloud.githubusercontent.com/assets/8161815/23524833/a4122dca-ff8c-11e6-8200-77395646fbb0.png
 [plugin-6-generated-files]:https://cloud.githubusercontent.com/assets/8161815/23524879/c901106a-ff8c-11e6-97b1-31ba03b7b679.png
 [UML-diagram_Lib-Action_v0.5.1_2017-07-22_23-42]:https://user-images.githubusercontent.com/8161815/28494737-a28b46f6-6f37-11e7-8c66-01083545c092.png
@@ -942,6 +1029,7 @@ TODO
 [UML-diagram_Lib-Logger_v0.5.1_2017-07-19_23-44]:https://user-images.githubusercontent.com/8161815/28390956-64b5d38a-6cdc-11e7-84b7-153ace99fc3e.png
 [UML-diagram_Lib-Preferences_v0.5.1_2017-08-02_22-04]:https://user-images.githubusercontent.com/8161815/28892584-c3b4afd0-77ce-11e7-8d52-65c4cc491c88.png
 [UML-diagram_Lib-Properties_v0.5.0_2017-07-17_21-17]:https://user-images.githubusercontent.com/8161815/28286098-5c85b802-6b37-11e7-8db0-47eed1156c43.png
+[UML-diagram_Lib-Tag-Components_v0.2.0_2017-07-22_18-07]:https://user-images.githubusercontent.com/8161815/28492739-f0c22878-6f08-11e7-9b92-3d95f33990cb.png
 [video-netBeanside-afterburnerfx-plugin]:https://cloud.githubusercontent.com/assets/8161815/15169398/3b51c3de-173b-11e6-8a8f-39cc6b826260.png
 
 
@@ -954,9 +1042,11 @@ TODO
 [afterburner.fx]:https://github.com/AdamBien/afterburner.fx
 [Apache Log4j 2]:https://logging.apache.org/log4j/2.0/index.html
 [Background]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/Background.html
+[Button]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/Button.html
 [CustomizedExampleReducedTileSet]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Customized-Examples/src/main/java/com/github/naoghuman/lib/tile/customized/examples/reducedtileset/CustomizedExampleReducedTileSet.java
 [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive]:https://www.youtube.com/watch?v=WsV7kSSSOGs
 [EventHandler]:http://docs.oracle.com/javase/8/javafx/api/javafx/event/EventHandler.html
+[FlowPane]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/FlowPane.html
 [Geertjan Wielenga]:https://blogs.oracle.com/geertjan/entry/welcome_to_me
 [General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
 [GitHub]:https://github.com/
@@ -968,6 +1058,7 @@ TODO
 [JavaFX]:http://docs.oracle.com/javase/8/javase-clienttechnologies.htm
 [JavaFX 2.0]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_2.0
 [JavaFX 8]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_8
+[Label]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/Label.html
 [Lib-Action]:https://github.com/Naoghuman/lib-action
 [Lib-Action Releases]:https://github.com/Naoghuman/lib-action/releases
 [Lib-Action v0.5.1]:https://github.com/Naoghuman/lib-action/releases/tag/v0.5.1
@@ -983,6 +1074,11 @@ TODO
 [Lib-Properties]:https://github.com/Naoghuman/lib-properties
 [Lib-Properties Releases]:https://github.com/Naoghuman/lib-properties/releases
 [Lib-Properties v0.5.0]:https://github.com/Naoghuman/lib-properties/releases/tag/v0.5.0
+[Lib-Tag]:https://github.com/Naoghuman/lib-tag/tree/master/lib-tag
+[Lib-Tag-Core]:https://github.com/Naoghuman/lib-tag/tree/master/lib-tag-core
+[Lib-Tag-Components]:https://github.com/Naoghuman/lib-tag/tree/master/lib-tag-components
+[Lib-Tag Releases]:https://github.com/Naoghuman/lib-tag/tree/master/lib-tag/releases
+[Lib-Tag v0.2.0]:https://github.com/Naoghuman/lib-tag/tree/master/lib-tag/releases/v0.2.0
 [Lib-Tile]:https://github.com/Naoghuman/lib-tile
 [Lib-Tile Releases]:https://github.com/Naoghuman/lib-tile/releases
 [Lib-Tile v0.2.0]:https://github.com/Naoghuman/lib-tile/releases/tag/v0.2.0
@@ -998,6 +1094,10 @@ TODO
 [NetBeansIDE-AfterburnerFX-Plugin Releases]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin/releases
 [ObjectDB]:http://www.objectdb.com/
 [properties]:http://en.wikipedia.org/wiki/.properties
+[String]:https://docs.oracle.com/javase/8/docs/api/java/lang/String.html
+[Tag]:https://github.com/Naoghuman/lib-tag/blob/master/lib-tag-core/src/main/java/com/github/naoghuman/lib/tag/core/Tag.java
+[TagBuilder]:https://github.com/Naoghuman/lib-tag/blob/master/lib-tag-core/src/main/java/com/github/naoghuman/lib/tag/core/TagBuilder.java
+[TagComponentsFacade]:https://github.com/Naoghuman/lib-tag/blob/master/lib-tag-components/src/main/java/com/github/naoghuman/lib/tag/components/core/TagComponentsFacade.java
 [Tile]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/Tile.java
 [TileLoader]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/TileLoader.java
 [TileProvider]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Core/src/main/java/com/github/naoghuman/lib/tile/core/TileProvider.java
