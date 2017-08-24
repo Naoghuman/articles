@@ -35,7 +35,7 @@ Content
 
 * [Tier 0: Extras](#Ti0Pl)
     - [NetBeansIDE-AfterburnerFX-Plugin _(Stable)_](#NeBeAfPl)
-    - [Incubator _(Prototype/Planed)_] (#Incu)
+    - [Incubator _(Prototype/Planed)_](#Incu)
 * [Tier 1: Core Libraries](#Ti1CoLi)
     - [Lib-Logger _(Stable)_](#LiLo)
     - [Lib-Action _(Stable)_](#LiAc)
