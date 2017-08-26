@@ -934,15 +934,15 @@ and managed `Emoticons` in their applications, games.
 
 **Details**  
 
+> __Hint__  
+> This project is in early development and no releases are available.
+
 | GitHub | [Lib-Emoticon] |
 | --- | --- |
 | Since | Feb 16, 2017 |
 | Releases | [Lib-Emoticon Releases] _(0 releases)_ |
 | Last release | -------- |
 | Licence | [General Public License 3.0] |
-
-> __Hint__  
-> This project is in early development and no releases are available.
 
 
 ### Lib-Testdata _(Early Development)_<a name="LiTe" />
