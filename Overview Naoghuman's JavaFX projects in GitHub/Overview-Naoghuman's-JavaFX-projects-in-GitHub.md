@@ -45,8 +45,8 @@ Content
 * [Tier 2: Extended Libraries](#Ti2ExLi)
     - [Lib-Tag _(Development)_](#LiTa)
     - [Lib-Tile _(Development)_](#LiTi)
-    - [Lib-Emoticon _(Development)_](#LiEm)
-    - [Lib-Testdata _(Development)_](#LiTe)
+    - [Lib-Emoticon _(Early Development)_](#LiEm)
+    - [Lib-Testdata _(Early Development)_](#LiTe)
     - [Lib-Sampler _(Prototpye)_](#LiSa)
     - [Lib-Map _(Prototype)_](#LiMa)
 * [Tier 3: Applications / Games](#Ti3ApGa)
@@ -591,6 +591,13 @@ Tier 2: Extended Libraries<a name="Ti2ExLi" />
 
 TODO
 
+
+
+
+
+
+
+
 ### Lib-Tag _(Development)_<a name="LiTa" />
 
 > __Description__  
@@ -689,6 +696,14 @@ feature [Tag] in their `applications`.
 | Licence | [General Public License 3.0] | 
 
 
+
+
+
+
+
+
+
+
 ### Lib-Tile _(Development)_<a name="LiTi" />
 
 > __Description__  
@@ -708,7 +723,7 @@ _Image:_ Crimson Night &#040;Dark / Landscape&#041; with different tile images
 > Normally only one [Tile] can shown simultaneously. For demonstration purpose 
 > I have merge different [Tile]s in one picture.
 
-Like in the subsection `Description` mentioned is `Lib-Tile` multi [Maven] project. 
+Like in the subsection `Description` mentioned is `Lib-Tile` a multi [Maven] project. 
 Currently following submodules are available:  
 
 _[Lib-Tile-Core]_  
@@ -851,7 +866,7 @@ public final class CustomizedExampleReducedTileSet extends TileSet
 
 
 **Conclusion**  
-The libraries around `Lib-Tile` it's for the developer easily possible to load 
+With the libraries around `Lib-Tile` it's for the developer easily possible to load 
 and managed `Tiles` in their applications, games.
 
 
@@ -865,7 +880,72 @@ and managed `Tiles` in their applications, games.
 | Licence | [General Public License 3.0] |
 
 
-### Lib-Emoticon _(Development)_<a name="LiEm" />
+### Lib-Emoticon _(Early Development)_<a name="LiEm" />
+
+> __Description__  
+> `Lib-Emoticon` is a multi [Maven] project written in [JavaFX] and [NetBeans IDE] 
+> and provides the functionalities to use and handle easily [Emoticon]s as [Image]s 
+> in your JavaFX application.
+
+_Image:_ Demo application v0.1.0-SNAPSHOT  
+![demo-application-v0.1.0-SNAPSHOT.png][demo-application-v0.1.0-SNAPSHOT]
+
+> __Hint__  
+> This project is in early development and no releases are available.
+
+
+**Examples**  
+
+Written in [JavaFX] and [NetBeans IDE] the project contains several sublibraries 
+for specific tasks. Momentary with the version `0.1.0-SNAPSHOT` following submodules 
+are available:
+* The sublibrary `Lib-Emoticon-Core` contains the core functionalities from the 
+  project to load an [Emoticon] as an [Image].
+* The sublibrary `Lib-Emoticon-Emoji` allowed the developer to have access to the 
+  emoticonset [Emoji cheat sheet] through the class [EmojiEmoticonSet].
+* The sublibrary `Lib-Emoticon-Emoji-Images` contains the [Image]s from the 
+  emoticonset  [Emoji cheat sheet]. Currently that are `882` images.
+* The sublibrary `Lib-Emoticon-Demo` contains a little [JavaFX] application which 
+  demonstrate the functionalities from the previvous mentioned sublibraries.
+
+_[Lib-Emoticon-Core]_  
+
+The sublibrary `Lib-Emoticon-Core` provides the API to load an [Emoticon] as 
+an [Image] with a concrete implementation from an [EmoticonLoader].
+
+_[Lib-Emoticon-Emoji]_  
+
+With the sublibrary `Lib-Emoticon-Emoji` the developer have access to the 
+emoticonset [Emoji cheat sheet] through the class [EmojiEmoticonSet]. Momentary 
+that are `882` [Emoticon]s.
+
+_[Lib-Emoticon-Emoji-Images]_  
+
+The sublibrary `Lib-Emoticon-Emoji-Images` contains all images from the 
+emoticonset [Emoji cheat sheet]. Currently that are `882` images.
+
+_[Lib-Emoticon-Demo]_  
+
+The library 'Lib-Emoticon-Demo' contains a little [JavaFX] application which 
+demonstrate the functionalities from the previvous mentioned sublibraries.
+
+
+**Conclusion**  
+With the libraries around `Lib-Emoticon` it's for the developer easily to load 
+and managed `Emoticons` in their applications, games.
+
+
+**Details**  
+
+| GitHub | [Lib-Emoticon] |
+| --- | --- |
+| Since | Feb 16, 2017 |
+| Releases | [Lib-Emoticon Releases] _(0 releases)_ |
+| Last release | -------- |
+| Licence | [General Public License 3.0] |
+
+
+### Lib-Testdata _(Early Development)_<a name="LiTe" />
 
 > __Description__  
 
@@ -876,7 +956,7 @@ and managed `Tiles` in their applications, games.
 **Details**  
 
 
-### Lib-Testdata _(Development)_<a name="LiTe" />
+### Lib-Sampler _(Prototpye)_<a name="LiSa" />
 
 > __Description__  
 
@@ -887,18 +967,7 @@ and managed `Tiles` in their applications, games.
 **Details**  
 
 
-### Lib-Sampler_(Prototpye)_<a name="LiSa" />
-
-> __Description__  
-
-**Examples**  
-
-**Conclusion**  
-
-**Details**  
-
-
-### Lib-Map_(Prototype)_<a name="LiMa" />
+### Lib-Map _(Prototype)_<a name="LiMa" />
 
 
 Tier 3: Applications / Games<a name="Ti3ApGa" />
@@ -1033,6 +1102,7 @@ TODO
 
 
 [//]: # (Images)
+[demo-application-v0.1.0-SNAPSHOT]:https://cloud.githubusercontent.com/assets/8161815/23338535/c417558c-fc0d-11e6-9338-8622dfcc74d7.png
 [different-tile-images_v0.3.0]:https://user-images.githubusercontent.com/8161815/29042867-12cc8c62-7bb9-11e7-8780-c6c3e68a2374.png
 [incubator]:https://user-images.githubusercontent.com/8161815/29682630-f7ecc2bc-890b-11e7-99ba-4f7d31711513.png
 [overview_lib-tag-core_2017-05-25_19-23]:https://cloud.githubusercontent.com/assets/8161815/26462105/c35caf22-417f-11e7-9831-fd6fadda85cb.png
@@ -1059,6 +1129,11 @@ TODO
 [Button]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/Button.html
 [CustomizedExampleReducedTileSet]:https://github.com/Naoghuman/lib-tile/blob/master/Lib-Tile-Customized-Examples/src/main/java/com/github/naoghuman/lib/tile/customized/examples/reducedtileset/CustomizedExampleReducedTileSet.java
 [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive]:https://www.youtube.com/watch?v=WsV7kSSSOGs
+[Emoji cheat sheet]:http://www.webpagefx.com/tools/emoji-cheat-sheet/
+[EmojiEmoticonSet]:https://github.com/Naoghuman/lib-emoticon/blob/master/Lib-Emoticon-Emoji/src/main/java/com/github/naoghuman/lib/emoticon/emoji/EmojiEmoticonSet.java
+[Emoticon]:https://en.wikipedia.org/wiki/List_of_emoticons
+[EmoticonLoader]:https://github.com/Naoghuman/lib-emoticon/blob/master/Lib-Emoticon-Core/src/main/java/com/github/naoghuman/lib/emoticon/core/EmoticonLoader.java
+[EmoticonSet]:https://github.com/Naoghuman/lib-emoticon/blob/master/Lib-Emoticon-Core/src/main/java/com/github/naoghuman/lib/emoticon/core/EmoticonSet.java
 [EventHandler]:http://docs.oracle.com/javase/8/javafx/api/javafx/event/EventHandler.html
 [FlowPane]:https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/FlowPane.html
 [Geertjan Wielenga]:https://blogs.oracle.com/geertjan/entry/welcome_to_me
@@ -1079,6 +1154,12 @@ TODO
 [Lib-Database-ObjectDB]:https://github.com/Naoghuman/lib-database-objectdb
 [Lib-Database-ObjectDB Releases]:https://github.com/Naoghuman/lib-database-objectdb/releases
 [Lib-Database-ObjectDB v0.5.1]:https://github.com/Naoghuman/lib-database-objectdb/releases/tag/v0.5.1
+[Lib-Emoticon]:https://github.com/Naoghuman/lib-emoticon
+[Lib-Emoticon-Core]:https://github.com/Naoghuman/lib-emoticon/tree/master/Lib-Emoticon-Core
+[Lib-Emoticon-Demo]:https://github.com/Naoghuman/lib-emoticon/tree/master/Lib-Emoticon-Demo
+[Lib-Emoticon-Emoji]:https://github.com/Naoghuman/lib-emoticon/tree/master/Lib-Emoticon-Emoji
+[Lib-Emoticon-Emoji-Images]:https://github.com/Naoghuman/lib-emoticon/tree/master/Lib-Emoticon-Emoji-Images
+[Lib-Emoticon Releases]:https://github.com/Naoghuman/lib-emoticon/releases
 [Lib-Logger]:https://github.com/Naoghuman/lib-logger
 [Lib-Logger Releases]:https://github.com/Naoghuman/lib-logger/releases
 [Lib-Logger v0.5.1]:https://github.com/Naoghuman/lib-logger/releases/tag/v0.5.1
