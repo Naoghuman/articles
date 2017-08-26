@@ -910,21 +910,29 @@ _[Lib-Emoticon-Core]_
 The sublibrary `Lib-Emoticon-Core` provides the API to load an [Emoticon] as 
 an [Image] with a concrete implementation from an [EmoticonLoader].
 
+TODO see section 'Lib-Tile'.
+
 _[Lib-Emoticon-Emoji]_  
 
 With the sublibrary `Lib-Emoticon-Emoji` the developer have access to the 
 emoticonset [Emoji cheat sheet] through the class [EmojiEmoticonSet]. Momentary 
 that are `882` [Emoticon]s.
 
+TODO see section 'Lib-Tile'.
+
 _[Lib-Emoticon-Emoji-Images]_  
 
 The sublibrary `Lib-Emoticon-Emoji-Images` contains all images from the 
 emoticonset [Emoji cheat sheet]. Currently that are `882` images.
 
+TODO see section 'Lib-Tile'.
+
 _[Lib-Emoticon-Demo]_  
 
 The library 'Lib-Emoticon-Demo' contains a little [JavaFX] application which 
 demonstrate the functionalities from the previvous mentioned sublibraries.
+
+TODO see section 'Lib-Tile'.
 
 
 **Conclusion**  
