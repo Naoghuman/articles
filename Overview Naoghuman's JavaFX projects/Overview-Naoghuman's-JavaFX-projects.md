@@ -1,4 +1,4 @@
-Overview Naoghuman's JavaFX projects in GitHub
+Overview Naoghuman's JavaFX projects
 ===
 
 
@@ -20,8 +20,8 @@ In this article I want to give an `overiew` about my [JavaFx] `plugins`, `librar
   and `games` from me where I used the libraries from the sections `Tier 1: Core Libraries` 
   and `Tier 2: Extended Libraries`.
 
-_Image:_ Overview Naoghuman's JavaFX projects in GitHub  
-![overview-naoghumans-javafx-projects-in-github-v1.png][overview-naoghumans-javafx-projects-in-github-v1]
+_Image:_ Overview Naoghuman's JavaFX projects  
+![overview-naoghumans-javafx-projects-v1.png][overview-naoghumans-javafx-projects-v1]
 
 > __Hint__  
 > Every entry in every `Tier` have following subsections: Description, Examples, 
