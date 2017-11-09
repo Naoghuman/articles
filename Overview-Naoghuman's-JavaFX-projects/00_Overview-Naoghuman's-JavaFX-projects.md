@@ -2,26 +2,46 @@ Overview Naoghuman's JavaFX projects
 ===
 
 
---------------------------------------
-Structure from this article
-- intention   -> contains why i am write this article.
-- image tiers -> 1 image says more then 1000 words
-- links to the tiers articles with a short overview what the reader can expect in
-  the articles (links).
-- about the author
-
---------------------------------------
-
 
 Intention
 ---
 
-In this article I want to give an `overiew` about my [JavaFx] `plugins`, `libraries`, 
+In this article I want to give an `overiew` about my [JavaFX] `plugins`, `libraries`, 
 `games` and `applications` and how they work together.
 
 TODO update the image  
 _Image:_ Overview Naoghuman's JavaFX projects  
 ![Overview_Naoghuman's_JavaFX_Project_in_GitHub_2017-08-28_17-43.png][Overview_Naoghuman's_JavaFX_Project_in_GitHub_2017-08-28_17-43]
+
+##### Tier-0 Basics
+
+In the first section `Tier-0 Basics` I introduced on the one side the [NetBeansIDE-AfterburnerFX-Plugin] 
+which supports the [JavaFX] development in a [Maven] context in conjunction with the library 
+[afterburner.fx] from [Adam Bien]. On the other side also the project `Incubator` where I hold on 
+my ideas for new projects.
+* More informations about the plugin and the project Incubator can be found in [Article Tier-0 Basics].
+
+
+##### Tier-1 Core Libraries
+
+In the next section `Tier-1 Core Libraries` I explained all core libraries developed from 
+me which I used in all my projects depends on the concrete case.
+* More about these core libraries can be found in [Article Tier-1 Core Libraries].
+
+
+##### Tier-2 Extended Libraries
+
+In the third section `Tier-2 Extended Libraries` all libraries from me are listed which 
+depends on one or more libraries from the section `Tier-1 Core Libraries`.
+* More informations about the extended libraries from me can be found in [Article Tier-2 Extended Libraries].
+
+
+##### Tier-3 Applications / Games
+
+In the last section `Tier-3 Applications / Games` I introduced different `applications` 
+and `games` from me where I used the previsous explained plugin and libraries from the 
+sections tier-0 to tier-2.
+* Please have a look for more informations about this topic in [Article Tier-3 Applications / Games].
 
 
 
@@ -75,6 +95,10 @@ Any question? Some helpful criticism?
 [Adam Bien]:http://www.adam-bien.com/roller/abien/
 [afterburner.fx]:https://github.com/AdamBien/afterburner.fx
 [Afterburner.fx NetBeans Plugin Release]:http://www.adam-bien.com/roller/abien/entry/afterburner_fx_netbeans_plugin_release
+[Article Tier-0 Basics]:https://github.com/Naoghuman/articles/blob/master/Overview-Naoghuman's-JavaFX-projects/01_Tier-0_Basics.md
+[Article Tier-1 Core Libraries]:https://github.com/Naoghuman/articles/blob/master/Overview-Naoghuman's-JavaFX-projects/02_Tier-1_Core-Libraries.md
+[Article Tier-2 Extended Libraries]:https://github.com/Naoghuman/articles/blob/master/Overview-Naoghuman's-JavaFX-projects/03_Tier-2_Extended-Libraries.md
+[Article Tier-3 Applications / Games]:https://github.com/Naoghuman/articles/blob/master/Overview-Naoghuman's-JavaFX-projects/04_Tier-3_Applications-Games.md
 [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive]:https://www.youtube.com/watch?v=WsV7kSSSOGs
 [Geertjan Wielenga]:https://blogs.oracle.com/geertjan/entry/welcome_to_me
 [GitHub]:https://github.com/
@@ -84,6 +108,7 @@ Any question? Some helpful criticism?
 [JavaFX]:http://docs.oracle.com/javase/8/javase-clienttechnologies.htm
 [JavaFX 2.0]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_2.0
 [JavaFX 8]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_8
+[Maven]:http://maven.apache.org/
 [NetBeans Platform 6.9 Developer's Guide]:https://www.packtpub.com/application-development/netbeans-platform-69-developers-guide
 [NetBeans RCP]:https://netbeans.org/kb/trails/platform.html
 [NetBeansIDE-AfterburnerFX-Plugin]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin
