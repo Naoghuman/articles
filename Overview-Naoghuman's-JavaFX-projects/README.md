@@ -73,19 +73,19 @@ Part 3: Tier-2 Extended Libraries<a name="Pa3Ti2ExLi" /> __(coming soon)__
 
 In the third part `Tier-2 Extended Libraries` from this article series  I list all 
 libraries from me which depends on one or more libraries from the previous section.
-* Concrete the following libraries will be introduced: [Lib-Emoticon], [Lib-Tag], [Lib-Tile], [Lib-Testdata], [Lib-Map], [Lib-Sampler] 
-* More informations about them can be found in [Article Tier-2 Extended Libraries].
+* Concrete the following libraries will be introduced: [Lib-Emoticon], [Lib-Map], [Lib-Sampler], [Lib-Statistic], [Lib-Tag], [Lib-Testdata], [Lib-Tile]
+* More informations about them can be found in [Article Tier-2 Extended Libraries] __(coming soon)__.
 
 
 
 Part 4: Tier-3 Applications / Games<a name="Pa4Ti3ApGa" /> __(coming soon)__
 ---
 
-An in the last part `Tier-3 Applications / Games` I introduce different `applications` 
+And in the last part `Tier-3 Applications / Games` I introduce different `applications` 
 and `games` from me where I used the previsous explained plugin and libraries.
 * Concrete the following applications will be introduced: [ABC-List], [HabitFX],  [Competency-Matrix], [TypeWriter]
 * Concrete the following games will be introduced: [SokubanFX], [StepByStep], [Concentration] 
-* More informations about them can be found in [Article Tier-3 Applications / Games].
+* More informations about them can be found in [Article Tier-3 Applications / Games] __(coming soon)__.
 
 
 
@@ -137,17 +137,18 @@ Any question? Some helpful criticism?
 
 
 [//]: # (Links)
+[ABC-List]:https://github.com/Naoghuman/ABC-List
 [Adam Bien]:http://www.adam-bien.com/roller/abien/
 [afterburner.fx]:https://github.com/AdamBien/afterburner.fx
 [Afterburner.fx NetBeans Plugin Release]:http://www.adam-bien.com/roller/abien/entry/afterburner_fx_netbeans_plugin_release
 [Article Tier-0 Basics]:https://github.com/Naoghuman/articles/blob/master/Overview-Naoghuman's-JavaFX-projects/Tier-0_Basics.md
 [Article Tier-1 Core Libraries]:https://github.com/Naoghuman/articles/blob/master/Overview-Naoghuman's-JavaFX-projects/Tier-1_Core-Libraries.md
-[Article Tier-2 Extended Libraries]:https://github.com/Naoghuman/articles/blob/master/Overview-Naoghuman's-JavaFX-projects/Tier-2_Extended-Libraries.md
-[Article Tier-3 Applications / Games]:https://github.com/Naoghuman/articles/blob/master/Overview-Naoghuman's-JavaFX-projects/Tier-3_Applications-Games.md
+[Competency-Matrix]:https://github.com/Naoghuman/Competency-Matrix
 [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive]:https://www.youtube.com/watch?v=WsV7kSSSOGs
 [Geertjan Wielenga]:https://blogs.oracle.com/geertjan/entry/welcome_to_me
 [GitHub]:https://github.com/
 [H+D International Group]:https://www.hud.de/en/
+[HabitFX]:https://github.com/Naoghuman/HabitFX
 [Help for Multilingual NetBeans Platform Applications]:https://dzone.com/articles/multilingual-netbeans-platform-applications
 [Incubator]:https://github.com/Naoghuman/Incubator
 [Issue]:https://github.com/Naoghuman/articles/issues
@@ -156,11 +157,18 @@ Any question? Some helpful criticism?
 [JavaFX 8]:https://en.wikipedia.org/wiki/JavaFX#JavaFX_8
 [Lib-Action]:https://github.com/Naoghuman/lib-action
 [Lib-Database-ObjectDB]:https://github.com/Naoghuman/lib-database-objectdb
+[Lib-Emoticon]:https://github.com/Naoghuman/lib-emoticon
 [Lib-Logger]:https://github.com/Naoghuman/lib-logger
 [Lib-Preferenes]:https://github.com/Naoghuman/lib-preferences
 [Lib-Properties]:https://github.com/Naoghuman/lib-properties
+[Lib-Sampler]:https://github.com/Naoghuman/lib-sampler
+[Lib-Statistic]:https://github.com/Naoghuman/lib-statistic
+[Lib-Tag]:https://github.com/Naoghuman/lib-tag
+[Lib-Testdata]:https://github.com/Naoghuman/lib-testdata
+[Lib-Tile]:https://github.com/Naoghuman/lib-tile
 [Lib-Validation]:https://github.com/Naoghuman/lib-validation
 [Maven]:http://maven.apache.org/
 [NetBeans Platform 6.9 Developer's Guide]:https://www.packtpub.com/application-development/netbeans-platform-69-developers-guide
 [NetBeans RCP]:https://netbeans.org/kb/trails/platform.html
 [NetBeansIDE-AfterburnerFX-Plugin]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin
+[SokubanFX]:https://github.com/Naoghuman/SokubanFX
