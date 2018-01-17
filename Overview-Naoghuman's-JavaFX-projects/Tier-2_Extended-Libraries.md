@@ -14,6 +14,7 @@ Content
 ---
 * [About the autor](#Autor)
     - [Contact](#Contact)
+    - [License](#License)
 
 
 
@@ -57,6 +58,11 @@ Any question? Some helpful criticism?
 * send me an `email` to <peter.rogge@yahoo.de>
 
 
+##### License<a name="License" />
+
+* All articles in this series are licensed under [General Public License 3.0].
+
+
 
 [//]: # (Images)
 
@@ -68,6 +74,7 @@ Any question? Some helpful criticism?
 [Afterburner.fx NetBeans Plugin Release]:http://www.adam-bien.com/roller/abien/entry/afterburner_fx_netbeans_plugin_release
 [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive]:https://www.youtube.com/watch?v=WsV7kSSSOGs
 [Geertjan Wielenga]:https://blogs.oracle.com/geertjan/entry/welcome_to_me
+[General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
 [GitHub]:https://github.com/
 [H+D International Group]:https://www.hud.de/en/
 [Help for Multilingual NetBeans Platform Applications]:https://dzone.com/articles/multilingual-netbeans-platform-applications

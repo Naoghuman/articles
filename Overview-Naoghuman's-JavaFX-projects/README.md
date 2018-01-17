@@ -22,6 +22,7 @@ Content
 * [Part 4: Tier-3 Applications / Games](#Pa4Ti3ApGa) __(coming soon)__
 * [About the autor](#Autor)
     - [Contact](#Contact)
+    - [License](#License)
 
 
 
@@ -129,6 +130,11 @@ Any question? Some helpful criticism?
 * send me an `email` to <peter.rogge@yahoo.de>
 
 
+##### License<a name="License" />
+
+* All articles in this series are licensed under [General Public License 3.0].
+
+
 
 [//]: # (Images)
 [incubator_2017-08-24_20-25]:https://user-images.githubusercontent.com/8161815/34910682-989f2588-f8ba-11e7-9e40-829d6180b46c.png
@@ -146,6 +152,7 @@ Any question? Some helpful criticism?
 [Competency-Matrix]:https://github.com/Naoghuman/Competency-Matrix
 [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive]:https://www.youtube.com/watch?v=WsV7kSSSOGs
 [Geertjan Wielenga]:https://blogs.oracle.com/geertjan/entry/welcome_to_me
+[General Public License 3.0]:http://www.gnu.org/licenses/gpl-3.0.en.html
 [GitHub]:https://github.com/
 [H+D International Group]:https://www.hud.de/en/
 [HabitFX]:https://github.com/Naoghuman/HabitFX
