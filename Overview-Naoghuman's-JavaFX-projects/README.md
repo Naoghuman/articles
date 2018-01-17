@@ -17,7 +17,7 @@ _Image:_ Overview Naoghuman's JavaFX projects (from 01-13-2018 / MM-dd-yyyy)
 Content
 ---
 * [Part 1: Tier-0 Basics](#Pa1Ti0Ba)
-* [Part 2: Tier-1 Core Libraries](#Pa2Ti1CoLi)
+* [Part 2: Tier-1 Core Libraries](#Pa2Ti1CoLi) __(coming soon)__
 * [Part 3: Tier-2 Extended Libraries](#Pa3Ti2ExLi) __(coming soon)__
 * [Part 4: Tier-3 Applications / Games](#Pa4Ti3ApGa) __(coming soon)__
 * [About the autor](#Autor)
@@ -43,7 +43,7 @@ _Image:_ [Incubator]
 
 
 
-Part 2: Tier-1 Core Libraries<a name="Pa2Ti1CoLi" />
+Part 2: Tier-1 Core Libraries<a name="Pa2Ti1CoLi" /> __(coming soon)__
 ---
 
 In the second part `Tier-1 Core Libraries` I explained the core libraries from me which I 
