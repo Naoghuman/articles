@@ -6,6 +6,9 @@ Tier-0 Basics
 Intention
 ---
 
+_Image:_ Overview Naoghuman's JavaFX projects in `Tier-0 Basics` (from 01-17-2018 / MM-dd-yyyy)  
+![Overview_Naoghuman_GitHub-Projects_Tier-0_2018-01-17_05-36.png][Overview_Naoghuman_GitHub-Projects_Tier-0_2018-01-17_05-36]
+
 
 
 Content
@@ -63,6 +66,7 @@ Any question? Some helpful criticism?
 
 
 [//]: # (Images)
+[Overview_Naoghuman_GitHub-Projects_Tier-0_2018-01-17_05-36]:https://user-images.githubusercontent.com/8161815/35026029-edc529be-fb48-11e7-967c-d1b0bbea24dd.png
 
 
 
