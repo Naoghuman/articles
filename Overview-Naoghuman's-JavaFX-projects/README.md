@@ -9,47 +9,62 @@ Intention
 In this article series I want to give an `overview` about my [JavaFX] `plugins`, `libraries`, 
 `games` and `applications` and how they based on and work together.
 
-_Image:_ Overview Naoghuman's JavaFX projects (from 01-13-2018 / MM-dd-yyyy)  
+_Image:_ Overview Naoghuman's JavaFX projects (01-13-2018 / MM-dd-yyyy)  
 ![Overview_Naoghuman_GitHub-Projects_2018-01-13_09-45.png][Overview_Naoghuman_GitHub-Projects_2018-01-13_09-45]
 
 
 
 Content
 ---
-* [Part 1: Tier-0 Basics](#Pa1Ti0Ba)
-* [Part 2: Tier-1 Core Libraries](#Pa2Ti1CoLi) __(coming soon)__
-* [Part 3: Tier-2 Extended Libraries](#Pa3Ti2ExLi) __(coming soon)__
-* [Part 4: Tier-3 Applications / Games](#Pa4Ti3ApGa) __(coming soon)__
+* [Tier-0 Basics](#Ti0Ba)
+* [Tier-1 Core Libraries](#Ti1CoLi) __(coming soon)__
+* [Tier-2 Extended Libraries](#Ti2ExLi) __(coming soon)__
+* [Tier-3 Applications / Games](#Ti3ApGa) __(coming soon)__
 * [About the autor](#Autor)
     - [Contact](#Contact)
     - [License](#License)
 
 
 
-Part 1: Tier-0 Basics<a name="Pa1Ti0Ba" />
+Tier-0 Basics<a name="Ti0Ba" />
 ---
 
-In the first part `Tier-0 Basics` from this article series I want to introduce on the 
-one side my [NetBeansIDE-AfterburnerFX-Plugin] which supports the [JavaFX] development 
+In the first part from this article series I want to introduce on the one side my 
+[NetBeansIDE-AfterburnerFX-Plugin] which supports the [JavaFX] development 
 in a [Maven] context in conjunction with the library [afterburner.fx] from [Adam Bien].  
-On the other side the project [Incubator] where I hold on my ideas for new projects.
+On the other side the project [Incubator] where I hold my ideas for new projects.
 
-More informations about both projects can be found here: [Article Tier-0 Basics]
-
-_Image:_ [NetBeansIDE-AfterburnerFX-Plugin]  
+_Image:_ NetBeansIDE-AfterburnerFX-Plugin  
 ![netbeans-javafx-plugin_2018-01-13_23-33.png][netbeans-javafx-plugin_2018-01-13_23-33]
 
-_Image:_ [Incubator]  
+_Project Description:_  
+The `NetBeansIDE-AfterburnerFX-Plugin` is a [NetBeans IDE] plugin which supports
+the file generation in **convention** with the library [afterburner.fx] in a [JavaFX] 
+project.
+
+_Image:_ Incubator  
 ![incubator_2017-08-24_20-25.png][incubator_2017-08-24_20-25]
 
+_Project Description:_  
+The project `Incubator` contains my dreams, ideas and projects which are on the 
+way to become reality or not :smile: .
 
 
-Part 2: Tier-1 Core Libraries<a name="Pa2Ti1CoLi" /> __(coming soon)__
+> __Article__  
+> More informations about the introduced projects can be found in the [Article Tier-0 Basics].
+
+> __GitHub__   
+> Here you can navigate directly to the `GitHub` projects [NetBeansIDE-AfterburnerFX-Plugin] 
+> and [Incubator].
+
+
+
+Tier-1 Core Libraries<a name="Ti1CoLi" /> __(coming soon)__
 ---
 
-In the second part `Tier-1 Core Libraries` I explained the core libraries from me which I 
-used in all my projects depends on the concrete case. Concrete the following libraries 
-will be introduced:
+In the second part `Tier-1 Core Libraries` I explained the core libraries from me 
+which I used in all my projects depends on the concrete case. Concrete the 
+following libraries will be introduced:
 * [Lib-Action]  
   Lib-Action is a library for `easy` storing and accessing actions (EventHandler<ActionEvent>) in a JavaFX & Maven desktop application.
 * [Lib-Database-ObjectDB]  
@@ -63,29 +78,31 @@ will be introduced:
 * [Lib-Validation]  
   Lib-Validation is a library for `easy` validating in a JavaFX & Maven application.
 
-
-
-More informations about them can be found in [Article Tier-1 Core Libraries].
+More informations about them can be found in [Article Tier-1 Core Libraries] __(coming soon)__.
 
 
 
-Part 3: Tier-2 Extended Libraries<a name="Pa3Ti2ExLi" /> __(coming soon)__
+Tier-2 Extended Libraries<a name="Ti2ExLi" /> __(coming soon)__
 ---
 
-In the third part `Tier-2 Extended Libraries` from this article series  I list all 
-libraries from me which depends on one or more libraries from the previous section.
-* Concrete the following libraries will be introduced: [Lib-Emoticon], [Lib-Map], [Lib-Sampler], [Lib-Statistic], [Lib-Tag], [Lib-Testdata], [Lib-Tile]
+In the third part `Tier-2 Extended Libraries` from this article series I 
+list all libraries from me which depends on one or more libraries from the previous 
+section.
+* Concrete the following libraries will be introduced: [Lib-Emoticon], [Lib-Map], 
+  [Lib-Sampler], [Lib-Statistic], [Lib-Tag], [Lib-Testdata], [Lib-Tile]
 * More informations about them can be found in [Article Tier-2 Extended Libraries] __(coming soon)__.
 
 
 
-Part 4: Tier-3 Applications / Games<a name="Pa4Ti3ApGa" /> __(coming soon)__
+Tier-3 Applications / Games<a name="Ti3ApGa" /> __(coming soon)__
 ---
 
 And in the last part `Tier-3 Applications / Games` I introduce different `applications` 
 and `games` from me where I used the previsous explained plugin and libraries.
-* Concrete the following applications will be introduced: [ABC-List], [HabitFX],  [Competency-Matrix], [TypeWriter]
-* Concrete the following games will be introduced: [SokubanFX], [StepByStep], [Concentration] 
+* Concrete the following applications will be introduced: [ABC-List], [HabitFX], 
+  [Competency-Matrix], [TypeWriter]
+* Concrete the following games will be introduced: [SokubanFX], [StepByStep], 
+  [Concentration] 
 * More informations about them can be found in [Article Tier-3 Applications / Games] __(coming soon)__.
 
 
@@ -149,6 +166,8 @@ Any question? Some helpful criticism?
 [Afterburner.fx NetBeans Plugin Release]:http://www.adam-bien.com/roller/abien/entry/afterburner_fx_netbeans_plugin_release
 [Article Tier-0 Basics]:https://github.com/Naoghuman/articles/blob/master/Overview-Naoghuman's-JavaFX-projects/Tier-0_Basics.md
 [Article Tier-1 Core Libraries]:https://github.com/Naoghuman/articles/blob/master/Overview-Naoghuman's-JavaFX-projects/Tier-1_Core-Libraries.md
+[Article Tier-2 Extended Libraries]:https://github.com/Naoghuman/articles/blob/master/Overview-Naoghuman's-JavaFX-projects/Tier-2_Extended-Libraries.md
+[Article Tier-3 Applications / Games]:https://github.com/Naoghuman/articles/blob/master/Overview-Naoghuman's-JavaFX-projects/Tier-3_Applications-Games.md
 [Competency-Matrix]:https://github.com/Naoghuman/Competency-Matrix
 [DI, IoC and MVP With Java FX -- afterburner.fx Deep Dive]:https://www.youtube.com/watch?v=WsV7kSSSOGs
 [Geertjan Wielenga]:https://blogs.oracle.com/geertjan/entry/welcome_to_me
@@ -175,6 +194,7 @@ Any question? Some helpful criticism?
 [Lib-Tile]:https://github.com/Naoghuman/lib-tile
 [Lib-Validation]:https://github.com/Naoghuman/lib-validation
 [Maven]:http://maven.apache.org/
+[NetBeans IDE]:https://netbeans.org/
 [NetBeans Platform 6.9 Developer's Guide]:https://www.packtpub.com/application-development/netbeans-platform-69-developers-guide
 [NetBeans RCP]:https://netbeans.org/kb/trails/platform.html
 [NetBeansIDE-AfterburnerFX-Plugin]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin
