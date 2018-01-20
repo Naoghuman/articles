@@ -14,7 +14,10 @@ Contains different articles from me around [Java], [JavaFX], [NetBeans],
 Content
 ---
 
-* [How to create the game SokubanFX](#ArticlesSokubanFX)  
+* [Overview Naoghuman's JavaFX Projects](#OvNaJaPr)  
+  In this article series I want to give an `overview` about my [JavaFX] `plugins`, 
+  `libraries`, `games` and `applications` and how they based on and work together.
+* [How to create the game SokubanFX](#HoToCrThGaSo)  
   This article series described how I create the game [SokubanFX] with [JavaFX] 
   and [NetBeans IDE]. Inspired by my [Java] game `Sokuban-Clone` which I wrote 
   2008 I decided to rewrite the game in `April 2016`.
@@ -23,7 +26,29 @@ Content
     * [License](#License)
 
 
-How to create the game SokubanFX<a name="ArticlesSokubanFX" />
+
+Overview Naoghuman's JavaFX Projects<a name="OvNaJaPr" />
+---
+
+In this article series I want to give an `overview` about my [JavaFX] `plugins`, 
+`libraries`, `games` and `applications` and how they based on and work together.
+
+* An introduction and overview about the articles from this series can be found 
+  here: [Introduction Overview Naoghuman's JavaFX Projects]
+* In the article [Tier-0 Basics] I introduced the projects which builds the basics 
+  from my [JavaFX] development.
+* __(coming soon)__ In the second part [Tier-1 Core Libraries] I explained the 
+  core libraries from me which I used in all my projects depends on the concrete 
+  case.
+* __(coming soon)__ In the third part [Tier-2 Extended Libraries] from this article 
+  series  I list all libraries from me which depends on one or more libraries from 
+  the previous section.
+* __(coming soon)__ And in the last part [Tier-3 Applications / Games] I introduce 
+  different `applications` and `games` from me where I used the previsous explained 
+  plugin and libraries.
+
+
+How to create the game SokubanFX<a name="HoToCrThGaSo" />
 ---
 
 This article series described how I create the game [SokubanFX] with [JavaFX] and 
@@ -99,6 +124,7 @@ Any question? Some helpful criticism?
 [GitHub]:https://github.com/
 [H+D International Group]:https://www.hud.de/en/
 [Help for Multilingual NetBeans Platform Applications]:https://dzone.com/articles/multilingual-netbeans-platform-applications
+[Introduction Overview Naoghuman's JavaFX Projects]:https://github.com/Naoghuman/articles/tree/master/Overview-Naoghuman's-JavaFX-projects
 [Issue]:https://github.com/Naoghuman/lib-database-objectdb/issues
 [Java]:https://en.wikipedia.org/wiki/Java_%28programming_language%29
 [JavaFX]:http://docs.oracle.com/javase/8/javase-clienttechnologies.htm
@@ -111,3 +137,7 @@ Any question? Some helpful criticism?
 [NetBeansIDE-AfterburnerFX-Plugin]:https://github.com/Naoghuman/NetBeansIDE-AfterburnerFX-Plugin
 [Project-Template-afterburnerfx-Naoghuman]:https://github.com/Naoghuman/Project-Templates/tree/master/Project-Template-afterburnerfx-Naoghuman
 [SokubanFX]:https://github.com/Naoghuman/SokubanFX
+[Tier-0 Basics]:https://github.com/Naoghuman/articles/blob/master/Overview-Naoghuman's-JavaFX-projects/Tier-0_Basics.md
+[Tier-1 Core Libraries]:https://github.com/Naoghuman/articles/blob/master/Overview-Naoghuman's-JavaFX-projects/Tier-1_Core-Libraries.md
+[Tier-2 Extended Libraries]:https://github.com/Naoghuman/articles/blob/master/Overview-Naoghuman's-JavaFX-projects/Tier-2_Extended-Libraries.md
+[Tier-3 Applications / Games]:https://github.com/Naoghuman/articles/blob/master/Overview-Naoghuman's-JavaFX-projects/Tier-3_Applications-Games.md
